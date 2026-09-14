@@ -1,4 +1,4 @@
-import {createElement,useEffect,useState} from 'react';
+import {createElement,useEffect,useRef,useState} from 'react';
 import trees from '../../.react-build/page-trees.json';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
@@ -21,6 +21,9 @@ export function ArchivePage({route}) {
   const [collectionFilter,setCollectionFilter]=useState('all');
   const [photoFilter,setPhotoFilter]=useState('all');
   const [activePhoto,setActivePhoto]=useState(null);
+  const [playingTrack,setPlayingTrack]=useState(null);
+  const medleyPlayers=useRef(new Map());
+  const medley=route==='highlight-medley.html';
   const contents=route==='contents.html';
   const notice=route==='notice.html';
   const gallery=route==='gallery.html';
@@ -90,6 +93,14 @@ export function ArchivePage({route}) {
     const cls=classes(node);
     let children=node.children.map((child,i)=>render(child,i));
     if(node.tag==='option')delete props.selected;
+    if(medley&&node.tag==='audio'){
+      const source=descendants(node,n=>n.tag==='source')[0].props.src;
+      props.ref=element=>{if(element)medleyPlayers.current.set(source,element);else medleyPlayers.current.delete(source);};
+      props.onPlay=event=>{medleyPlayers.current.forEach(other=>{if(other!==event.currentTarget&&!other.paused)other.pause();});setPlayingTrack(source);};
+      props.onPause=event=>{if(event.currentTarget.currentTime!==event.currentTarget.duration)setPlayingTrack(current=>current===source?null:current);};
+      props.onEnded=()=>setPlayingTrack(current=>current===source?null:current);
+    }
+    if(medley&&(cls.has('medley-master')||cls.has('medley-track'))){const source=descendants(node,n=>n.tag==='source')[0].props.src;if(playingTrack===source)props.className+=' is-playing';}
     if(editorial&&cls.has('fv-photo')){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(album && cls.has('archive26-photo') && props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(imageArchive&&isStoryPhoto(node)&&props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}

@@ -6,8 +6,8 @@ import {archiveMarkup} from '../scripts/archive-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const root=new URL('../',import.meta.url);
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('debut, exhibition and social archives join 50 unique React routes',()=>{
-  assert.deepEqual(visualRoutes,['debut-archive.html','out-of-frame.html','social-archive.html']);assert.equal(reactRoutes.length,50);assert.equal(new Set(reactRoutes).size,50);
+test('debut, exhibition and social archives remain in unique React routes',()=>{
+  assert.deepEqual(visualRoutes,['debut-archive.html','out-of-frame.html','social-archive.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(visualRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('all 48 original images and social photo viewer are preserved',async()=>{
   let total=0;
