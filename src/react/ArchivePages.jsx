@@ -5,6 +5,7 @@ import {GalleryLightbox} from './GalleryLightbox.jsx';
 import {AlbumLightbox} from './AlbumLightbox.jsx';
 import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes} from './routes.mjs';
 import {StageLightbox} from './StageLightbox.jsx';
+import {CollectionPhotoDialog} from './CollectionPhotoDialog.jsx';
 const classes=node => new Set((node.props?.className ?? '').split(/\s+/));
 function descendants(node,predicate) {
   if (typeof node==='string') return [];
@@ -23,6 +24,9 @@ export function ArchivePage({route}) {
   const contents=route==='contents.html';
   const notice=route==='notice.html';
   const gallery=route==='gallery.html';
+  const editorial=route==='five-voices.html';
+  const portrait=editorial?nodes.flatMap(n=>descendants(n,n=>classes(n).has('fv-photo'))).find(n=>n.props['data-full']===activePhoto):null;
+  const portraitPhoto=portrait?{full:portrait.props['data-full'],label:portrait.props['data-caption']}:null;
   const imageArchive=stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route);
   const album=albumRoutes.includes(route)||stageRoutes.includes(route)||storyRoutes.includes(route);
   const albumItems=album?nodes.flatMap(n=>descendants(n,n=>classes(n).has('archive26-photo')&&n.props['data-full'])):[];
@@ -78,6 +82,7 @@ export function ArchivePage({route}) {
   },[contents]);
   function render(node,key) {
     if(typeof node==='string')return node;
+    if(editorial&&node.props.id==='fv-viewer')return <CollectionPhotoDialog key={key} variant="editorial" photo={portraitPhoto} onClose={()=>setActivePhoto(null)}/>;
     if(gallery && node.props.id==='galleryLightbox')return <GalleryLightbox key={key} photo={photo} index={photoIndex} total={lightboxItems.length} onClose={()=>setActivePhoto(null)} onMove={movePhoto} />;
     if(album && node.props.id==='archive26Lightbox')return <AlbumLightbox key={key} photo={albumPhoto} index={albumIndex} total={albumItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveAlbum} />;
     if(imageArchive&&['fmLightbox','behindLightbox','travelLightbox','sg-viewer'].includes(node.props.id))return <StageLightbox key={key} variant={node.props.id==='sg-viewer'?'sg':node.props.id.replace('Lightbox','')} photo={stagePhoto} index={stageIndex} total={stageItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveStage}/>;
@@ -85,6 +90,7 @@ export function ArchivePage({route}) {
     const cls=classes(node);
     let children=node.children.map((child,i)=>render(child,i));
     if(node.tag==='option')delete props.selected;
+    if(editorial&&cls.has('fv-photo')){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(album && cls.has('archive26-photo') && props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(imageArchive&&isStoryPhoto(node)&&props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(props[filterKey]!==undefined) {

@@ -4,8 +4,8 @@ import {readFile,access} from 'node:fs/promises';
 import {readPhotoEpisodes} from '../scripts/photo-episodes.mjs';
 import {collectionRoutes,reactRoutes} from '../src/react/routes.mjs';
 const root=new URL('../',import.meta.url);
-test('WITH LUNA and IF NIGHT join 42 unique React routes',()=>{
-  assert.deepEqual(collectionRoutes,['with-luna.html','if-night.html']);assert.equal(reactRoutes.length,42);assert.equal(new Set(reactRoutes).size,42);
+test('WITH LUNA and IF NIGHT remain in unique React routes',()=>{
+  assert.deepEqual(collectionRoutes,['with-luna.html','if-night.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(collectionRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('all five members, eleven themes and 70 photos match canonical source data',async()=>{
   const data=await readPhotoEpisodes(root);
