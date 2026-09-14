@@ -1,5 +1,6 @@
 import {createElement,useEffect,useRef,useState} from 'react';
 import {medleyClassName} from './medley.mjs';
+import {NativeAudio} from './NativeAudio.jsx';
 import trees from '../../.react-build/page-trees.json';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
@@ -131,7 +132,7 @@ export function ArchivePage({route}) {
       if(cls.has('gallery-item')){props.hidden=!matchesPhoto(props['data-category'] ?? '',photoFilter);if(props['data-full'])props.onClick=()=>setActivePhoto(props['data-full']);}
       if(cls.has('gallery-count'))children=`${filteredItems.length} PHOTOS`;
     }
-    return createElement(node.tag,props,...(Array.isArray(children)?children:[children]));
+    return createElement(node.tag==='audio'?NativeAudio:node.tag,props,...(Array.isArray(children)?children:[children]));
   }
   return <>{nodes.map((node,i)=>render(node,i))}</>;
 }
