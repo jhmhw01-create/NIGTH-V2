@@ -4,6 +4,7 @@ import {resolve, join, basename} from 'node:path';
 import {PageLayout} from '../src/components/layout.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
 import {buildReactPages} from './build-react.mjs';
+import {auditSite} from './audit-site.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'dist');
 await mkdir(output, {recursive:true});
@@ -31,3 +32,7 @@ let hasOriginalAssets = false;
 try { hasOriginalAssets = (await stat(join(output,'assets/css/style.css'))).isFile(); } catch {}
 console.log('Built ' + routes.size + ' routes with shared Header/Footer.');
 if (!hasOriginalAssets) console.log('Asset overlay build: retain original assets directory, or copy it into public/assets before building a standalone site.');
+if (hasOriginalAssets) {
+  const audit=await auditSite(output);
+  console.log(`Site audit passed: ${audit.pages} pages, ${audit.links} local references, ${audit.files} unique targets.`);
+}
