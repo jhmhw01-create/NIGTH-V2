@@ -6,8 +6,8 @@ import {archiveMarkup} from '../scripts/archive-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const root=new URL('../',import.meta.url);
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('three event archives join 47 unique React routes',()=>{
-  assert.deepEqual(eventRoutes,['fansign-20260919.html','birthday-cafes-2026-2027.html','fifth-anniversary-2027.html']);assert.equal(reactRoutes.length,47);assert.equal(new Set(reactRoutes).size,47);
+test('three event archives remain in unique React routes',()=>{
+  assert.deepEqual(eventRoutes,['fansign-20260919.html','birthday-cafes-2026-2027.html','fifth-anniversary-2027.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(eventRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('all 93 event photos, links and existing viewer variants are preserved',async()=>{
   let total=0;

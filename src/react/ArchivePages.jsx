@@ -3,7 +3,7 @@ import trees from '../../.react-build/page-trees.json';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
 import {AlbumLightbox} from './AlbumLightbox.jsx';
-import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,eventRoutes} from './routes.mjs';
+import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,eventRoutes,visualRoutes} from './routes.mjs';
 import {StageLightbox} from './StageLightbox.jsx';
 import {CollectionPhotoDialog} from './CollectionPhotoDialog.jsx';
 const classes=node => new Set((node.props?.className ?? '').split(/\s+/));
@@ -27,7 +27,7 @@ export function ArchivePage({route}) {
   const editorial=route==='five-voices.html';
   const portrait=editorial?nodes.flatMap(n=>descendants(n,n=>classes(n).has('fv-photo'))).find(n=>n.props['data-full']===activePhoto):null;
   const portraitPhoto=portrait?{full:portrait.props['data-full'],label:portrait.props['data-caption']}:null;
-  const imageArchive=stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||eventRoutes.includes(route);
+  const imageArchive=stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route);
   const album=albumRoutes.includes(route)||stageRoutes.includes(route)||storyRoutes.includes(route)||eventRoutes.includes(route);
   const albumItems=album?nodes.flatMap(n=>descendants(n,n=>classes(n).has('archive26-photo')&&n.props['data-full'])):[];
   const albumIndex=albumItems.findIndex(n=>n.props['data-full']===activePhoto);
