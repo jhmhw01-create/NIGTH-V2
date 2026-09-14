@@ -82,5 +82,17 @@
     "title": "LUCID",
     "attributesHtml": " class=\"album-card reveal\" id=\"lucid\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">06</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>4TH MINI ALBUM</span><span>3RD YEAR</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“꿈이라는 걸 알면서도, 우리는 끝내 눈을 뜨지 않는다.”</p>\n<p class=\"album-concept\">자각몽과 현실의 경계가 흐려지며 NIGHT의 세계가 본격적으로 비현실적인 영역으로 확장된다.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>3RD YEAR</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN · TAEHOON</strong></div>\n  <div><small>TITLE TRACK</small><strong>DREAMWALKER</strong></div>\n  <div><small>TRACKS</small><strong>5 TRACKS</strong></div>\n</div>\n<p class=\"era-note\"><span>ERA NOTE</span>현재 5인의 색이 완전히 자리 잡은 작품. 자각몽과 현실의 경계를 다루며 PHANTOM으로 이어지는 몽환적 세계를 열었다.</p>\n<ol class=\"track-list\">\n<li><span>False Awake</span></li>\n<li class=\"title-track\"><span>DREAMWALKER</span><em>TITLE</em></li>\n<li><span>Déjà Vu</span></li>\n<li><span>Glass Room</span></li>\n<li><span>Sleep Paralysis</span></li>\n</ol>\n</div>\n"
+  },
+  {
+    "id": "rest",
+    "title": "REST",
+    "attributesHtml": " class=\"discography-card reveal\" id=\"rest\"",
+    "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">DIGITAL SINGLE</span><h2>{{title}}</h2><p class=\"album-tagline\">REST · NEXT TIME</p></div><span class=\"discography-year\">2029.11.02</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2029.11.02</strong></div><div><span>LINE-UP</span><strong>DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON</strong></div><div><span>TITLE TRACK</span><strong>NEXT TIME</strong></div><div class=\"phantom-tracklist-meta\"><span>TRACKS</span><ol class=\"phantom-tracklist\"><li class=\"is-title\"><b>01</b><strong>NEXT TIME</strong><em>TITLE</em></li></ol></div></div>"
+  },
+  {
+    "id": "paradox",
+    "title": "PARADOX",
+    "attributesHtml": " class=\"discography-card reveal\" id=\"paradox\"",
+    "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">ALBUM</span><h2>{{title}}</h2><p class=\"album-tagline\">완벽함의 모순. 아름다운 낙원과 그 안의 어긋남을 따라가는 PARADOX의 공식 기록.</p></div><span class=\"discography-year\">2029.08.27</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2029.08.27</strong></div><div><span>LINE-UP</span><strong>DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON</strong></div><div><span>TITLE TRACK</span><strong>PARADISE</strong></div><div class=\"phantom-tracklist-meta\"><span>TRACKS</span><ol class=\"phantom-tracklist\"><li><b>01</b><strong>PROMISE</strong></li><li><b>02</b><strong>ARRIVAL</strong></li><li class=\"is-title\"><b>03</b><strong>PARADISE</strong><em>TITLE</em></li><li><b>04</b><strong>STRANGE</strong></li><li><b>05</b><strong>THRESHOLD</strong></li></ol></div></div><a class=\"btn secondary album-detail-link\" href=\"paradox-2029.html\">VIEW ALBUM ARCHIVE →</a>"
   }
 ]

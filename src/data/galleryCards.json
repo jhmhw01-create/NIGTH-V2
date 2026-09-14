@@ -174,5 +174,13 @@
     "attributesHtml": " class=\"gallery-archive-entry\" id=\"season-2027\"",
     "bodyTemplateHtml": "<img src=\"assets/images/season-2027/academy-19.webp\" alt=\"2027 LUNA ACADEMY 시즌그리팅\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2027 SEASON’S GREETINGS</span><h2>{{title}}</h2><p>키트 구성품, 학생기록부와 시간표, 멤버 Q&amp;A와 계절별 사진으로 만나는 NIGHT의 2027 시즌그리팅.</p><a href=\"season-greetings-2027.html\">ENTER THE ACADEMY ↗</a></div>",
     "href": "season-greetings-2027.html"
+  },
+  {
+    "id": "gallery-paradox",
+    "category": "music",
+    "title": "PARADOX",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2029/paradox/comeback/15.webp\" alt=\"PARADOX 발매 이미지\" loading=\"lazy\"><div><span>2029.08.27 · ALBUM</span><h2>{{title}}</h2><p>콘셉트 · 컴백 자료 · 패키지 · 음악방송 58장.</p><a href=\"paradox-2029.html\">ENTER PARADOX ↗</a></div>",
+    "href": "paradox-2029.html"
   }
 ]

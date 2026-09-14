@@ -5,8 +5,8 @@ import {albumRoutes,reactRoutes} from '../src/react/routes.mjs';
 import {albumMarkup} from '../scripts/album-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('eight album archives remain in unique React routes',()=>{
-  assert.equal(albumRoutes.length,8);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(albumRoutes.every(route=>reactRoutes.includes(route)));
+test('nine album archives remain in unique React routes',()=>{
+  assert.equal(albumRoutes.length,9);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(albumRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('album conversion preserves photos and exactly one authored dialog where needed',async()=>{
   for(const route of albumRoutes){

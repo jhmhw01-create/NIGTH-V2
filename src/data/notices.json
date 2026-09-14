@@ -214,5 +214,17 @@
     "title": "NIGHT OFFICIAL PHOTO BOOK 발간 안내",
     "attributesHtml": " data-notice-category=\"contents\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "\n            <summary>\n              <time>2026.04.01</time>\n              <span class=\"notice-category\">EDITORIAL</span>\n              <strong>{{title}}</strong>\n            </summary>\n            <div class=\"notice-body\">\n              <p>NIGHT의 공식 화보가 2026년 4월 1일 발간되었습니다. 관련 이미지 일부는 GALLERY의 EDITORIAL 아카이브에서 확인할 수 있습니다.</p>\n              <a class=\"notice-link-btn\" href=\"https://jhmhw01-create.github.io/NIGHT_EDITORIAL/\" target=\"_blank\" rel=\"noopener noreferrer\">VIEW EDITORIAL SITE →</a>\n            </div>\n          "
+  },
+  {
+    "id": "rest-release",
+    "title": "REST 디지털 싱글 · NEXT TIME 공개",
+    "attributesHtml": " id=\"rest-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.11.02</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 디지털 싱글 REST와 타이틀곡 NEXT TIME이 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/next-time.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/next-time.webp\" alt=\"REST · NEXT TIME\" loading=\"lazy\"></a><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/release.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/release.webp\" alt=\"REST RELEASE · 2029.11.02\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"discography.html#rest\">VIEW DISCOGRAPHY →</a></div>"
+  },
+  {
+    "id": "paradox-release",
+    "title": "PARADOX 발매 및 PARADISE 공개",
+    "attributesHtml": " id=\"paradox-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.08.27</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 PARADOX와 타이틀곡 PARADISE가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"paradox-2029.html\"><img src=\"assets/images/2029/paradox/comeback/15.webp\" alt=\"PARADOX RELEASE · 2029.08.27\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"paradox-2029.html\">VIEW ALBUM ARCHIVE →</a></div>"
   }
 ]

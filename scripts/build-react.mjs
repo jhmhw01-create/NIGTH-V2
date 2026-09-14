@@ -50,5 +50,5 @@ export async function buildReactPages() {
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
 await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"></head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
   }
-  console.log('All 52 routes pre-rendered with React; existing page URLs preserved.');
+  console.log(`All ${routes.length} routes pre-rendered with React; existing page URLs preserved.`);
 }

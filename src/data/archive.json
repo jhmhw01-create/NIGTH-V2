@@ -10,6 +10,34 @@
   },
   "records": [
     {
+      "id": "paradox-2029",
+      "href": "paradox-2029.html",
+      "title": "PARADOX — NIGHT",
+      "category": "music",
+      "summary": "완벽함의 모순. 아름다운 낙원과 그 안의 어긋남을 따라가는 PARADOX의 공식 기록.",
+      "image": "assets/images/2029/paradox/comeback/15.webp",
+      "keywords": "PARADOX PARADISE DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON",
+      "searchText": "완벽함의 모순. 아름다운 낙원과 그 안의 어긋남을 따라가는 PARADOX의 공식 기록. 2029.08.27 PROMISE ARRIVAL PARADISE STRANGE THRESHOLD 콘셉트 포토 · 필름 컴백 자료 앨범 패키지 음악방송"
+    },
+    {
+      "id": "discography-paradox",
+      "href": "discography.html#paradox",
+      "title": "PARADOX",
+      "category": "music",
+      "summary": "2029.08.27 · PARADISE",
+      "keywords": "PARADOX PROMISE ARRIVAL PARADISE STRANGE THRESHOLD",
+      "searchText": "완벽함의 모순. 아름다운 낙원과 그 안의 어긋남을 따라가는 PARADOX의 공식 기록."
+    },
+    {
+      "id": "discography-rest",
+      "href": "discography.html#rest",
+      "title": "REST",
+      "category": "music",
+      "summary": "2029.11.02 · DIGITAL SINGLE · NEXT TIME",
+      "keywords": "REST NEXT TIME",
+      "searchText": "REST 2029.11.02 DIGITAL SINGLE NEXT TIME"
+    },
+    {
       "id": "after-hours",
       "href": "after-hours.html",
       "title": "AFTER HOURS — NIGHT",

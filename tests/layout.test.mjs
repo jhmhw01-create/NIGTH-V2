@@ -11,7 +11,7 @@ test('shared navigation has ten unique entries and one active item',()=>{
 });
 test('all page content and overlays survive layout rendering',async()=>{
   const pages=await readdir(new URL('src/pages/',root));
-  assert.equal(pages.filter(x=>x.endsWith('.json')).length,52);
+  assert.equal(pages.filter(x=>x.endsWith('.json')).length,53);
   for(const name of pages){
     const page=JSON.parse(await readFile(new URL('src/pages/'+name,root),'utf8'));
     const output=PageLayout(page);
@@ -23,7 +23,7 @@ test('all page content and overlays survive layout rendering',async()=>{
 });
 test('archive contains every route and all fourteen album anchors',async()=>{
   const catalog=JSON.parse(await readFile(new URL('src/data/archive.json',root),'utf8'));
-  assert.equal(catalog.records.length,65);
-  assert.equal(new Set(catalog.records.map(x=>x.id)).size,65);
-  assert.equal(catalog.records.filter(x=>x.href.startsWith('discography.html#')).length,14);
+  assert.equal(catalog.records.length,68);
+  assert.equal(new Set(catalog.records.map(x=>x.id)).size,68);
+  assert.equal(catalog.records.filter(x=>x.href.startsWith('discography.html#')).length,16);
 });
