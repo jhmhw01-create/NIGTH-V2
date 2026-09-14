@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {routeData,serializeRouteData} from '../scripts/route-data.mjs';
 const source={trees:{'complete-2027.html':['album'],'listen.html':['audio']},navigation:{},catalog:{records:['record']},photos:{originals:['episode'],flowers:['flower'],luna:['luna'],gallery:['theme']},products:['product']};
 test('each route receives only its own data and home receives no archive payload',()=>{
-  assert.deepEqual(routeData('index.html',source),{navigation:null});
+  assert.deepEqual(routeData('index.html',source),{navigation:null,updates:[]});
   assert.deepEqual(routeData('complete-2027.html',source),{navigation:null,nodes:['album']});
   assert.deepEqual(routeData('archive.html',source),{navigation:null,catalog:source.catalog});
   assert.deepEqual(routeData('store.html',source),{navigation:null,products:source.products});

@@ -12,6 +12,7 @@ import {albumMarkup} from './album-markup.mjs';
 import {archiveMarkup} from './archive-markup.mjs';
 import {detailNavigation} from './detail-navigation.mjs';
 import {routeData,serializeRouteData} from './route-data.mjs';
+import {homeUpdates} from './home-updates.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
@@ -43,11 +44,11 @@ export async function buildReactPages() {
   const {renderPage}=await import(pathToFileURL(serverFile).href);
   for(const route of routes) {
     const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));
-    const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products});
+    const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products,updates:homeUpdates(collections.notices)});
     const markup=renderPage(route,pageData);
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
-    await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"></head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
+await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"></head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
   }
   console.log('All 52 routes pre-rendered with React; existing page URLs preserved.');
 }

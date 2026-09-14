@@ -1,6 +1,7 @@
 import {vlogEpisodes,expandVlog} from '../src/react/photo-data.mjs';
-export function routeData(route,{trees,navigation,catalog,photos,products}){
+export function routeData(route,{trees,navigation,catalog,photos,products,updates=[]}){
   const data={navigation:navigation[route]??null};
+  if(route==='index.html')data.updates=updates;
   if(trees[route])data.nodes=trees[route];
   if(route==='archive.html')data.catalog=catalog;
   if(route==='store.html')data.products=products;

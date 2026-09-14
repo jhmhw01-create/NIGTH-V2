@@ -12,7 +12,8 @@ function ArchiveLinks() { return (<section className={"section home-archive"}><d
 
 function Fanclub() { return (<section className={"section-tight"}><div className={"container fanclub-banner reveal"}><img alt={"NIGHT 공식 응원봉 MOONLIGHT"} src={"assets/images/night-luna.png"} /><div className={"fanclub-copy"}><span className={"section-kicker"}>{"Official Fanclub"}</span><h3>{"Under the same night."}</h3><p>{"NIGHT와 팬이 같은 밤을 공유하는 공간. 공식 팬클럽 LUNA와 응원봉 MOONLIGHT의 콘셉트 및 디테일을 확인할 수 있다."}</p><a className={"btn"} href={"fanclub.html"}>{"ENTER FANCLUB"}</a></div></div></section>); }
 
-export function HomePage() {
+function HomeGuide({updates}){return <section className="section-tight home-guide"><div className="container"><div className="home-guide-intro"><span className="section-kicker">START HERE</span><h2>어떤 NIGHT를 찾고 있나요?</h2><p>앨범 정보는 디스코그래피, 사진은 갤러리, 인터뷰와 일상 이야기는 콘텐츠에서 확인하세요.</p><form action="archive.html" role="search"><label htmlFor="home-query">전체 아카이브 검색</label><div><input id="home-query" type="search" name="q" placeholder="앨범·멤버·콘텐츠 이름"/><button type="submit">검색 →</button></div></form></div><div className="home-updates"><div className="section-head"><h2>최근 공식 공지</h2><a href="notice.html">전체 공지 →</a></div><p>기존 공지 중 팬클럽·행사·콘텐츠 소식을 날짜순으로 보여드립니다. 앨범 소식은 디스코그래피에서 확인하세요.</p><ul>{updates.map(item=><li key={item.id}><a href={item.href}><span>{item.date}</span><strong>{item.title}</strong><span aria-hidden="true">↗</span></a></li>)}</ul></div></div></section>;}
+export function HomePage({updates=[]}) {
   useEffect(() => {
     const elements = document.querySelectorAll("#night-react-root .reveal");
     if (!("IntersectionObserver" in window)) { elements.forEach(el => el.classList.add("is-visible")); return; }
@@ -22,5 +23,5 @@ export function HomePage() {
     if (anchor) document.getElementById(anchor)?.scrollIntoView();
     return () => observer.disconnect();
   }, []);
-  return <main><Hero /><About /><Members /><Anniversary /><ArchiveLinks /><Fanclub /></main>;
+  return <main><Hero /><HomeGuide updates={updates}/><About /><Members /><Anniversary /><ArchiveLinks /><Fanclub /></main>;
 }
