@@ -1,0 +1,57 @@
+/* Separate night-time atmosphere from reading surfaces; never change media. */
+body[data-night-surface="home"] {
+  --bg: #0a0a12;
+  --bg-soft: #14141e;
+  --line: rgba(219,218,230,.21);
+}
+body[data-night-surface="information"] {
+  --bg: #14141c;
+  --bg-soft: #1b1b26;
+  --panel: #20202b;
+  --muted: #cbc7d4;
+  --line: rgba(219,218,230,.24);
+  background-color: var(--bg);
+}
+body[data-night-surface="information"] .site-header {
+  background: rgba(17,17,25,.94);
+}
+body[data-night-surface="information"] :is(.discography-card,.archive-result-card,.gallery-archive-entry) {
+  background: #1e1e29;
+  border-color: var(--line);
+}
+body[data-night-surface="information"].contents-text-page .content-card {
+  background: #1e1e29;
+  border-color: var(--line);
+}
+body[data-night-surface="information"] .notice-item {
+  background: #1a1a24;
+}
+body[data-night-surface="information"] .notice-item[open] {
+  background: #22222e;
+}
+body[data-night-surface="information"] :is(.notice-body,.archive-result-copy p,.archive-results-head,#archive-search-form>label,.archive-new-lead,.paradox-audio-note) {
+  color: var(--muted);
+}
+body[data-night-surface="information"] :is(.archive-search-row input,.archive-explorer select,.archive-explorer button) {
+  background: var(--bg-soft);
+  border-color: var(--line);
+}
+body[data-night-surface="information"] #archive-filters button[aria-pressed="true"] {
+  background: #393145;
+  border-color: #b8a8d7;
+  color: #fff;
+}
+body[data-night-surface="information"] .archive-result-image {
+  background: #252530;
+}
+body[data-night-surface="information"] .archive-result-placeholder {
+  color: #b5afc3;
+}
+body[data-night-surface="information"].contents-text-page .contents-hero {
+  background: #171720;
+}
+body[data-night-surface="information"].contents-text-page .content-card:hover,
+body[data-night-surface="information"] .archive-result-card:hover {
+  background: #262331;
+  border-color: var(--purple-soft);
+}
