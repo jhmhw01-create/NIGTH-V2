@@ -1,4 +1,5 @@
 import {createElement,useEffect,useRef,useState} from 'react';
+import {medleyClassName} from './medley.mjs';
 import trees from '../../.react-build/page-trees.json';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
@@ -100,7 +101,7 @@ export function ArchivePage({route}) {
       props.onPause=event=>{if(event.currentTarget.currentTime!==event.currentTarget.duration)setPlayingTrack(current=>current===source?null:current);};
       props.onEnded=()=>setPlayingTrack(current=>current===source?null:current);
     }
-    if(medley&&(cls.has('medley-master')||cls.has('medley-track'))){const source=descendants(node,n=>n.tag==='source')[0].props.src;if(playingTrack===source)props.className+=' is-playing';}
+    if(medley&&(cls.has('medley-master')||cls.has('medley-track'))){const source=descendants(node,n=>n.tag==='source')[0].props.src;props.className=medleyClassName(props.className,playingTrack===source);}
     if(editorial&&cls.has('fv-photo')){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(album && cls.has('archive26-photo') && props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(imageArchive&&isStoryPhoto(node)&&props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}

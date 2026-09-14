@@ -5,8 +5,17 @@ import {readStoreProducts,parseStoreProducts} from '../scripts/store-products.mj
 import {addCartItem,readCart,quantityValue,productList,cartKey} from '../src/react/store.mjs';
 import {reactRoutes} from '../src/react/routes.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
+import {medleyClassName} from '../src/react/medley.mjs';
 const root=new URL('../',import.meta.url);
 const products=await readStoreProducts(root);
+test('medley cards remain visible through play, pause and track changes',()=>{
+  for(const playing of [false,true,false,true,false]){
+    const classes=medleyClassName('medley-track reveal',playing).split(' ');
+    assert.ok(classes.includes('is-visible'));
+    assert.equal(classes.includes('is-playing'),playing);
+  }
+  assert.equal(medleyClassName('medley-master',false),'medley-master');
+});
 test('all 52 existing routes are covered exactly once by React',async()=>{
   const pages=await readdir(new URL('src/pages/',root));
   assert.equal(reactRoutes.length,52);assert.equal(new Set(reactRoutes).size,52);
