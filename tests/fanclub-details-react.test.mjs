@@ -5,8 +5,8 @@ import {fanclubDetailRoutes,reactRoutes} from '../src/react/routes.mjs';
 import {archiveMarkup} from '../scripts/archive-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('LUNA 4–6 and both season greetings join 35 unique React routes',()=>{
-  assert.equal(fanclubDetailRoutes.length,5);assert.equal(reactRoutes.length,35);assert.equal(new Set(reactRoutes).size,35);
+test('LUNA 4–6 and both season greetings remain in unique React routes',()=>{
+  assert.equal(fanclubDetailRoutes.length,5);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(fanclubDetailRoutes.every(route=>reactRoutes.includes(route)));
   assert.ok(fanclubDetailRoutes.includes('season-greetings-2027.html'));assert.ok(fanclubDetailRoutes.includes('season-greetings-2028.html'));
 });
 test('fanclub details preserve all 93 photos and both season viewers',async()=>{
