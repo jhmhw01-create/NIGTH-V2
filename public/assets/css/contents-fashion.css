@@ -40,5 +40,8 @@ body.contents-page .btn{background:none;border:0;border-bottom:1px solid var(--l
 body.contents-page .btn:hover{background:none;border-color:var(--text);box-shadow:none;transform:none}
 body.contents-page a:focus-visible,body.contents-page button:focus-visible{outline:2px solid var(--text);outline-offset:5px}
 body.contents-page .site-footer{background:none;border-top:1px solid var(--line);color:var(--muted)}
+/* Override the earlier reading-surface rules only on this text-based hub. */
+body.contents-page.contents-text-page .contents-hero{background:none}
+body.contents-page.contents-text-page .content-card,body.contents-page.contents-text-page .content-card:hover{background:none}
 @media(max-width:860px){body.contents-page .container{width:calc(100% - 40px)}body.contents-page .contents-hero-inner{padding:60px 0 50px}body.contents-page .section-head{align-items:start;flex-direction:column}body.contents-page .nav-links{max-height:calc(100dvh - 76px);overflow-y:auto;background:#151412}}
 @media(max-width:760px){body.contents-page .contents-grid,body.contents-page .contents-grid.is-filtered{grid-template-columns:1fr;gap:30px}body.contents-page .contents-filters{gap:4px 22px}body.contents-page .contents-text-entry p{font-size:13px}body.contents-page .contents-more-grid{grid-template-columns:1fr}body.contents-page .contents-more-actions{justify-content:flex-start}}
