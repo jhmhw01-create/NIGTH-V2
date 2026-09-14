@@ -5,8 +5,8 @@ import {editorialRoutes,reactRoutes} from '../src/react/routes.mjs';
 import {archiveMarkup} from '../scripts/archive-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('PRESS and FIVE VOICES join 44 unique React routes',()=>{
-  assert.deepEqual(editorialRoutes,['press.html','five-voices.html']);assert.equal(reactRoutes.length,44);assert.equal(new Set(reactRoutes).size,44);
+test('PRESS and FIVE VOICES remain in unique React routes',()=>{
+  assert.deepEqual(editorialRoutes,['press.html','five-voices.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(editorialRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('editorial conversion preserves all authored articles and interview photos',async()=>{
   for(const route of editorialRoutes){

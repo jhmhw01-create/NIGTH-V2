@@ -5,4 +5,5 @@ export const storyRoutes=['behind.html','travel.html','observation-2027.html'];
 export const playerRoutes=['vlog.html','night-originals.html'];
 export const collectionRoutes=['with-luna.html','if-night.html'];
 export const editorialRoutes=['press.html','five-voices.html'];
-export const reactRoutes=['index.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html','archive.html','member-doha.html','member-ihwan.html','member-jiwoo.html','member-taehun.html','member-woohyun.html',...albumRoutes,...stageRoutes,...fanclubDetailRoutes,...storyRoutes,...playerRoutes,...collectionRoutes,...editorialRoutes];
+export const eventRoutes=['fansign-20260919.html','birthday-cafes-2026-2027.html','fifth-anniversary-2027.html'];
+export const reactRoutes=['index.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html','archive.html','member-doha.html','member-ihwan.html','member-jiwoo.html','member-taehun.html','member-woohyun.html',...albumRoutes,...stageRoutes,...fanclubDetailRoutes,...storyRoutes,...playerRoutes,...collectionRoutes,...editorialRoutes,...eventRoutes];
