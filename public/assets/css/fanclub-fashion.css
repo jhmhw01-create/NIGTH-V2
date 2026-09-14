@@ -1,0 +1,68 @@
+/* LUNA editorial index: page-scoped; original media and kit records unchanged. */
+body:has(.luna-membership-archive){--bg:#151412;--bg-soft:#1c1b18;--text:#eeeae1;--muted:#beb9b0;--silver:#eeeae1;--purple-soft:#d0c8ba;--line:rgba(238,234,225,.22);background:#151412;color:var(--text)}
+body:has(.luna-membership-archive)::before{display:none}
+body:has(.luna-membership-archive) .site-header{background:#151412;border-bottom:1px solid var(--line);backdrop-filter:none}
+body:has(.luna-membership-archive) .brand{color:var(--text);text-shadow:none}
+body:has(.luna-membership-archive) .nav-links{font-size:11px;letter-spacing:.13em}
+body:has(.luna-membership-archive) .nav-links a{display:inline-flex;align-items:center;min-height:44px}
+body:has(.luna-membership-archive) .nav-links a:hover,body:has(.luna-membership-archive) .nav-links a.active{color:var(--text);text-shadow:none}
+body:has(.luna-membership-archive) .container{width:calc(100% - 96px);max-width:1440px}
+body:has(.luna-membership-archive) main>.section:first-child{padding:100px 0 64px}
+body:has(.luna-membership-archive) .section-kicker{color:var(--muted);font-size:10px;letter-spacing:.2em}
+body:has(.luna-membership-archive) .section-title{font:400 clamp(30px,4vw,54px)/1.2 Georgia,serif;letter-spacing:-.025em;overflow-wrap:anywhere;color:var(--text)}
+body:has(.luna-membership-archive) main>.section:first-child .section-title{font-size:clamp(64px,9vw,120px);margin:18px 0 26px}
+body:has(.luna-membership-archive) .section-desc{color:var(--muted);font-size:14px;line-height:1.9;max-width:720px}
+body:has(.luna-membership-archive) .quote{border:0;padding:0;font:400 clamp(17px,2vw,24px)/1.6 Georgia,serif;letter-spacing:.02em;color:var(--text)}
+body:has(.luna-membership-archive) .fanclub-jump-nav{border-color:var(--line);gap:8px 32px;margin-top:36px}
+body:has(.luna-membership-archive) .fanclub-jump-nav a{color:var(--text);min-height:44px;font-size:10px;letter-spacing:.12em}
+body:has(.luna-membership-archive) .section-tight{padding:30px 0}
+body:has(.luna-membership-archive) .lightstick-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:64px;padding-top:30px;border-top:1px solid var(--line)}
+body:has(.luna-membership-archive) .lightstick-grid img{display:block;width:100%;height:auto;max-width:440px;margin:auto;border:0;box-shadow:none;filter:none;opacity:1}
+body:has(.luna-membership-archive) .color-row{gap:20px;flex-wrap:wrap}
+body:has(.luna-membership-archive) .color-chip{border:0;background:none;padding:0;min-width:130px}
+body:has(.luna-membership-archive) .color-chip strong{font-size:12px;font-weight:400}
+body:has(.luna-membership-archive) .color-chip small{font-size:11px;line-height:1.8}
+body:has(.luna-membership-archive) .bio-grid{gap:28px 48px}
+body:has(.luna-membership-archive) .bio-card{padding:24px 0;border:0;border-top:1px solid var(--line);background:none}
+body:has(.luna-membership-archive) .bio-card h3{font-size:10px;font-weight:400;letter-spacing:.16em;color:var(--text)}
+body:has(.luna-membership-archive) .bio-card p{font-size:14px;line-height:1.9}
+body:has(.luna-membership-archive) .luna-membership-archive,body:has(.luna-membership-archive) .fanclub-organized{padding:70px 0}
+body:has(.luna-membership-archive) .section-head{align-items:start;gap:32px;margin-bottom:40px}
+body:has(.luna-membership-archive) .section-head>div{min-width:0;flex:1}
+body:has(.luna-membership-archive) .section-head>.section-desc{flex:0 1 400px}
+body:has(.luna-membership-archive) .luna-archive-list{gap:0}
+body:has(.luna-membership-archive) .luna-archive-card{padding:40px 0;border:0;border-top:1px solid var(--line);background:none;box-shadow:none;overflow:visible;min-width:0}
+body:has(.luna-membership-archive) #membership .luna-archive-card:not(.luna-first):not(.luna-second):not(.luna-third){grid-template-columns:320px minmax(0,1fr);gap:48px}
+body:has(.luna-membership-archive) .luna-archive-card>div{min-width:0}
+body:has(.luna-membership-archive) .luna-archive-card h3{font:400 clamp(26px,3vw,42px)/1.2 Georgia,serif;letter-spacing:-.015em;color:var(--text);margin:10px 0 14px}
+body:has(.luna-membership-archive) .luna-generation{font-size:10px;line-height:1.8;color:var(--muted)}
+body:has(.luna-membership-archive) .luna-tagline{font:italic 400 16px/1.7 Georgia,serif;color:var(--text)}
+body:has(.luna-membership-archive) .luna-period{font-size:11px;line-height:1.8;text-align:left;color:var(--muted);letter-spacing:.06em}
+body:has(.luna-membership-archive) .luna-archive-card p{font-size:14px;line-height:1.9;color:var(--muted)}
+body:has(.luna-membership-archive) .luna-archive-card .luna-tagline{font-size:16px;color:var(--text)}
+body:has(.luna-membership-archive) .luna-archive-card .luna-period{font-size:11px}
+body:has(.luna-membership-archive) .luna-archive-glow{display:none}
+body:has(.luna-membership-archive) .luna-archive-card:is(.luna-first,.luna-second,.luna-third){display:grid;grid-template-columns:320px minmax(0,1fr);gap:24px 48px;align-items:start}
+body:has(.luna-membership-archive) .luna-archive-poster{grid-column:1;grid-row:1/span 2;display:block;min-width:0}
+body:has(.luna-membership-archive) .luna-archive-card img{display:block;width:100%;height:auto;max-width:100%;filter:none;opacity:1;transform:none;object-fit:contain}
+body:has(.luna-membership-archive) .luna-archive-header{grid-column:2;border:0;margin:0;padding:0;gap:20px;flex-wrap:wrap}
+body:has(.luna-membership-archive) .luna-archive-grid{grid-column:2;grid-template-columns:1fr;gap:26px}
+body:has(.luna-membership-archive) .luna-meta-block span,body:has(.luna-membership-archive) .luna-kit-label,body:has(.luna-membership-archive) .luna-archive-note span{font-size:10px;color:var(--text);letter-spacing:.14em}
+body:has(.luna-membership-archive) .luna-archive-note{padding:18px 0 0;border:0;border-top:1px solid var(--line);background:none}
+body:has(.luna-membership-archive) .luna-kit-block{padding:22px 0 0;border:0;border-top:1px solid var(--line);background:none}
+body:has(.luna-membership-archive) .luna-kit-list{gap:8px 24px}
+body:has(.luna-membership-archive) .luna-kit-list li{padding-left:0;font-size:12px;line-height:1.8;color:var(--muted)}
+body:has(.luna-membership-archive) .luna-kit-list li::before{display:none}
+body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry){display:grid;grid-template-columns:220px minmax(0,1fr);gap:48px;align-items:center;background:none;border:0;border-top:1px solid var(--line);box-shadow:none;padding:32px 0;margin-bottom:0}
+body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry) img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;filter:none;opacity:1;transform:none;border:0}
+body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry)>div{min-width:0}
+body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry) h2{font:400 clamp(24px,3vw,36px)/1.3 Georgia,serif;color:var(--text);margin:12px 0}
+body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry) span{color:var(--muted);font-size:10px;letter-spacing:.14em}
+body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry) p{color:var(--muted);font-size:14px;line-height:1.9}
+body:has(.luna-membership-archive) :is(.luna-archive-card,.nc-entry,.md-store-entry,.fanmeeting-entry) a:not(:has(img)){display:inline-flex;align-items:center;min-height:44px;padding:10px 0;margin-top:14px;border:0;border-bottom:1px solid var(--line);background:none;box-shadow:none;border-radius:0;color:var(--text);font-size:11px;letter-spacing:.08em}
+body:has(.luna-membership-archive) a:hover{color:var(--text)}
+body:has(.luna-membership-archive) a:focus-visible{outline:2px solid var(--text);outline-offset:5px}
+body:has(.luna-membership-archive) .site-footer{background:none;border-top:1px solid var(--line);color:var(--muted)}
+@media(max-width:1000px){body:has(.luna-membership-archive) #membership .luna-archive-card:not(.luna-first):not(.luna-second):not(.luna-third),body:has(.luna-membership-archive) .luna-archive-card:is(.luna-first,.luna-second,.luna-third){grid-template-columns:260px minmax(0,1fr);gap:24px 32px}body:has(.luna-membership-archive) .lightstick-grid{gap:32px}}
+@media(max-width:860px){body:has(.luna-membership-archive) .container{width:calc(100% - 40px)}body:has(.luna-membership-archive) main>.section:first-child{padding:60px 0 40px}body:has(.luna-membership-archive) .section-head{flex-direction:column;gap:18px}body:has(.luna-membership-archive) .section-head>.section-desc{flex:auto}body:has(.luna-membership-archive) .lightstick-grid{grid-template-columns:1fr}body:has(.luna-membership-archive) .lightstick-grid img{max-width:360px}body:has(.luna-membership-archive) .nav-links{max-height:calc(100dvh - 76px);overflow-y:auto;background:#151412}body:has(.luna-membership-archive) .luna-membership-archive,body:has(.luna-membership-archive) .fanclub-organized{padding:48px 0}}
+@media(max-width:680px){body:has(.luna-membership-archive) #membership .luna-archive-card:not(.luna-first):not(.luna-second):not(.luna-third),body:has(.luna-membership-archive) .luna-archive-card:is(.luna-first,.luna-second,.luna-third){grid-template-columns:1fr;gap:24px}body:has(.luna-membership-archive) .luna-archive-poster{grid-column:1;grid-row:auto}body:has(.luna-membership-archive) .luna-archive-header,body:has(.luna-membership-archive) .luna-archive-grid{grid-column:1}body:has(.luna-membership-archive) .luna-archive-card>a{max-width:360px}body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry){grid-template-columns:1fr;gap:24px}body:has(.luna-membership-archive) :is(.nc-entry,.md-store-entry,.fanmeeting-entry) img{max-width:320px}body:has(.luna-membership-archive) .bio-grid{grid-template-columns:1fr}body:has(.luna-membership-archive) .luna-kit-list{grid-template-columns:1fr}body:has(.luna-membership-archive) .fanclub-jump-nav{gap:8px 20px}}
