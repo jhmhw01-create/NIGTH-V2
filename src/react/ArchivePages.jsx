@@ -1,6 +1,7 @@
 import {createElement,useEffect,useRef,useState} from 'react';
 import {medleyClassName} from './medley.mjs';
 import {NativeAudio} from './NativeAudio.jsx';
+import {releaseOrder} from './release-order.mjs';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
 import {AlbumLightbox} from './AlbumLightbox.jsx';
@@ -95,9 +96,10 @@ export function ArchivePage({route,nodes}) {
     if(route==='discography.html'&&cls.has('discography-list')){
       const cards=node.children.filter(n=>typeof n!=='string'&&(classes(n).has('discography-card')||classes(n).has('album-card')));
       const releaseDate=card=>{const date=descendants(card,n=>classes(n).has('discography-year'))[0];if(date)return nodeText(date);const release=descendants(card,n=>n.tag==='div'&&n.children.some(c=>typeof c!=='string'&&nodeText(c)==='RELEASE'))[0];return nodeText(descendants(release,n=>n.tag==='strong')[0]);};
+      const order=card=>releaseOrder(card.props.id,releaseDate(card));
       const groups=new Map();
-      cards.sort((a,b)=>releaseDate(b).localeCompare(releaseDate(a))).forEach(card=>{
-        const year=releaseDate(card).slice(0,4);
+      cards.sort((a,b)=>order(b).key.localeCompare(order(a).key)).forEach(card=>{
+        const year=order(card).year;
         if(!groups.has(year))groups.set(year,[]);
         groups.get(year).push(card);
       });

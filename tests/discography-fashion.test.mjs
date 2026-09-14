@@ -1,6 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {releaseOrder} from '../src/react/release-order.mjs';
+test('legacy activity-year labels never sort above recent releases',()=>{
+  assert.equal(releaseOrder('lucid','3RD YEAR').year,'2025');
+  assert.equal(releaseOrder('nocturne','1ST YEAR · LATE').year,'2023');
+  const rows=[['rest','2029.11.02'],['eclipse','2ND YEAR · EARLY'],['new-moon','2ND YEAR · LATE'],['no-signal','2ND YEAR · MID']];
+  assert.deepEqual(rows.sort((a,b)=>releaseOrder(...b).key.localeCompare(releaseOrder(...a).key)).map(r=>r[0]),['rest','new-moon','no-signal','eclipse']);
+});
 test('discography fashion is scoped and preserves text-only accessible releases',async()=>{
   const css=await readFile(new URL('../public/assets/css/discography-fashion.css',import.meta.url),'utf8');
   assert.ok(css.includes('body:has(.discography-section)'));
