@@ -1,2 +1,3 @@
 export const albumRoutes=['after-hours.html','complete-2027.html','infinity-2027.html','sensational-2027.html','wings-2028.html','persona-2028.html','nightmare-2029.html','era-archive.html'];
-export const reactRoutes=['index.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html','archive.html','member-doha.html','member-ihwan.html','member-jiwoo.html','member-taehun.html','member-woohyun.html',...albumRoutes];
+export const stageRoutes=['concert-archive.html','dream-night-2027.html','beyond-night-2028.html','fanmeeting.html','special-mc.html','year-end-awards-2026.html','daesang-moments.html','awards.html'];
+export const reactRoutes=['index.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html','archive.html','member-doha.html','member-ihwan.html','member-jiwoo.html','member-taehun.html','member-woohyun.html',...albumRoutes,...stageRoutes];
