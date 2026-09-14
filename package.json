@@ -1,0 +1,8 @@
+{
+  "name": "night-archive",
+  "private": true,
+  "type": "module",
+  "scripts": {"build": "node scripts/build.mjs", "test": "node --test tests/*.test.mjs", "preview": "node scripts/preview.mjs"},
+  "engines": {"node": ">=18"},
+  "description": "NIGHT shared-component static web project; no external dependencies."
+}

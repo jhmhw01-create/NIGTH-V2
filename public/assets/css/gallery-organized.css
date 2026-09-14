@@ -1,0 +1,22 @@
+.gallery-jump-nav{display:flex;flex-wrap:wrap;gap:24px;margin-top:20px}
+.gallery-jump-nav a{display:flex;align-items:center;min-height:44px;font-size:11px;letter-spacing:.1em}
+#gallery-collections,#gallery-photos{scroll-margin-top:100px}
+.gallery-collection-filters{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+.gallery-collection-filters button{min-height:44px;padding:10px 16px;color:#dbdae6;background:#15151d;border:1px solid #383842;font:inherit;font-size:12px;cursor:pointer}
+.gallery-collection-filters button[aria-pressed=true]{background:#282232;border-color:#aa9bcf}
+.gallery-collection-status{font-size:12px;color:#aaa9b6}
+.gallery-collection-group{margin:32px 0 48px}
+.gallery-collection-group>h2{font-size:20px;font-weight:400;margin-bottom:20px}
+.gallery-collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.gallery-archive-entry{display:flex;flex-direction:column;min-width:0;border:1px solid #292933;background:#121218}
+.gallery-archive-entry>img{display:block;width:100%;aspect-ratio:16/10;height:auto!important;object-fit:contain!important;background:#191920}
+.gallery-archive-entry>div{padding:20px;display:flex;flex:1;flex-direction:column}
+.gallery-archive-entry span{color:#b6a4d4;font-size:10px;letter-spacing:.08em}
+.gallery-archive-entry h2{font-size:21px;font-weight:400;line-height:1.4;margin:12px 0;overflow-wrap:anywhere}
+.gallery-archive-entry p{font-size:13px;color:#aaa9b6;line-height:1.8;margin:0 0 20px}
+.gallery-archive-entry a{margin-top:auto;min-height:44px;display:flex;align-items:center;font-size:11px;letter-spacing:.06em}
+.gallery-photo-heading{padding-top:40px;border-top:1px solid #383842}
+.gallery-collection-filters button:focus-visible,.gallery-archive-entry a:focus-visible,.gallery-jump-nav a:focus-visible{outline:2px solid #b8a7e8;outline-offset:4px}
+.gallery-section [hidden]{display:none!important}
+@media(max-width:1000px){.gallery-collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.gallery-collection-grid{grid-template-columns:1fr}.gallery-collection-filters button{padding:10px 12px}}

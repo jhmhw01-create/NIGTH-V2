@@ -1,0 +1,38 @@
+[
+  {
+    "id": "memberships-1",
+    "title": "AFTERIMAGE",
+    "attributesHtml": " class=\"luna-archive-card reveal\"",
+    "bodyTemplateHtml": "<a href=\"luna6.html\"><img src=\"assets/images/luna6/01-box.png\" alt=\"LUNA 6기 AFTERIMAGE\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 6th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Even after the light fades, you remain.</p><p class=\"luna-period\"><time datetime=\"2028-11-20\">2028.11.20</time> · KIT ARCHIVE</p><p>빛이 사라진 뒤에도 남는 잔상처럼 이어지는 NIGHT와 LUNA의 여섯 번째 기록.</p><a class=\"btn\" href=\"luna6.html\">EXPLORE THE KIT →</a></div>"
+  },
+  {
+    "id": "memberships-2",
+    "title": "EVERNIGHT",
+    "attributesHtml": " class=\"luna-archive-card reveal\"",
+    "bodyTemplateHtml": "<a href=\"luna5.html\"><img src=\"assets/images/luna5/03-membership-box.png\" alt=\"LUNA 5기 EVERNIGHT\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 5th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Stay with us. After every night.</p><p class=\"luna-period\"><time datetime=\"2027-11-20\">2027.11.20</time> · KIT ARCHIVE</p><p>모든 밤이 지난 뒤에도 함께 머무는 NIGHT와 LUNA의 다섯 번째 멤버십 기록.</p><a class=\"btn\" href=\"luna5.html\">EXPLORE THE KIT →</a></div>"
+  },
+  {
+    "id": "luna-fourth",
+    "title": "MOONLIT ILLUSION",
+    "attributesHtml": " class=\"luna-archive-card luna-fourth luna4-entry reveal\" id=\"luna-fourth\"",
+    "bodyTemplateHtml": "\n<a href=\"luna4.html\" aria-label=\"LUNA 4기 MOONLIT ILLUSION 상세 페이지 열기\"><img src=\"assets/images/luna4/contents-preview.webp\" width=\"1448\" height=\"1086\" alt=\"LUNA 4기 MOONLIT ILLUSION 키트 구성 미리보기\" loading=\"lazy\"/></a>\n<div><span class=\"luna-generation\">LUNA 4th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Between illusion and moonlight, we meet.</p><p class=\"luna-period\"><time datetime=\"2026-10-15\">2026.10.15</time> · KIT ARCHIVE</p><p>환상과 달빛 사이에서 다시 만나는 NIGHT와 LUNA의 네 번째 밤. 키트 구성품과 다섯 멤버의 포토북·포토카드·ID 포토를 만나보세요.</p><p>DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON</p><a class=\"btn\" href=\"luna4.html\">EXPLORE THE KIT →</a></div>\n"
+  },
+  {
+    "id": "memberships-4",
+    "title": "LUNAR PHASE",
+    "attributesHtml": " class=\"luna-archive-card luna-third reveal\"",
+    "bodyTemplateHtml": "\n<a class=\"luna-archive-poster\" href=\"assets/images/visual-archive/luna-03.webp\" target=\"_blank\" rel=\"noopener\"><img src=\"assets/images/visual-archive/luna-03.webp\" alt=\"LUNA 3기 공식 포스터\" loading=\"lazy\"/></a>\n<div class=\"luna-archive-glow\" aria-hidden=\"true\"></div>\n<div class=\"luna-archive-header\"><div><span class=\"luna-generation\">LUNA 3rd Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">A New Phase of NIGHT.</p></div><span class=\"luna-period\">NIGHT 3년 차</span></div>\n<div class=\"luna-archive-grid\">\n<div class=\"luna-archive-copy\">\n<div class=\"luna-meta-block\"><span>MEMBERS</span><p>윤도하 / 박이환 / 천지우 / 성우현 / 유태훈</p></div>\n<div class=\"luna-meta-block\"><span>CONCEPT</span><p>유태훈 합류 이후 현재의 NIGHT 5인 체제가 자리 잡은 시기. 달의 위상처럼 변화하고 새롭게 완성된 NIGHT를 표현하며, 기존의 도시적 밤에서 달·몽환·반사·비현실적인 이미지로 세계관이 확장되기 시작한다.</p></div>\n<div class=\"luna-meta-block\"><span>MAIN COLORS</span><p>Black / Midnight Blue / Violet / Silver</p></div>\n<div class=\"luna-archive-note\"><span>ARCHIVE NOTE</span><p>현재 NIGHT 5인 체제로 제작된 첫 LUNA 공식 키트.</p></div>\n</div>\n<div class=\"luna-kit-block\"><span class=\"luna-kit-label\">KIT CONTENTS</span><ul class=\"luna-kit-list\">\n<li>Official Kit Box</li><li>Membership Card</li><li>LUNA 3rd Book</li><li>Photocard Set (5EA)</li><li>ID Photo Set (5EA)</li><li>Concept Postcard Set</li><li>Lunar Phase Card</li><li>Mini Group Poster</li><li>Sticker Set</li><li>Acrylic Moon Charm</li>\n</ul></div>\n</div>\n"
+  },
+  {
+    "id": "memberships-5",
+    "title": "SHADOW BETWEEN",
+    "attributesHtml": " class=\"luna-archive-card luna-second reveal\"",
+    "bodyTemplateHtml": "\n<a class=\"luna-archive-poster\" href=\"assets/images/visual-archive/luna-02.webp\" target=\"_blank\" rel=\"noopener\"><img src=\"assets/images/visual-archive/luna-02.webp\" alt=\"LUNA 2기 공식 포스터\" loading=\"lazy\"/></a>\n<div class=\"luna-archive-glow\" aria-hidden=\"true\"></div>\n<div class=\"luna-archive-header\"><div><span class=\"luna-generation\">LUNA 2nd Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Where Light Fades, We Remain.</p></div><span class=\"luna-period\">NIGHT 2년 차 초반</span></div>\n<div class=\"luna-archive-grid\">\n<div class=\"luna-archive-copy\">\n<div class=\"luna-meta-block\"><span>MEMBERS</span><p>윤도하 / 박이환 / 천지우 / 성우현 / ANGELO</p></div>\n<div class=\"luna-meta-block\"><span>CONCEPT</span><p>초기의 도시적인 밤에서 한층 더 짙고 극적인 분위기로 변화한 시기. 빛과 그림자 사이의 NIGHT를 표현한 성숙한 에디토리얼 팬클럽 키트.</p></div>\n<div class=\"luna-meta-block\"><span>MAIN COLORS</span><p>Black / Burgundy / Smoke Gray / Silver</p></div>\n<div class=\"luna-archive-note\"><span>ARCHIVE NOTE</span><p>ANGELO가 포함된 마지막 LUNA 공식 키트.</p></div>\n</div>\n<div class=\"luna-kit-block\"><span class=\"luna-kit-label\">KIT CONTENTS</span><ul class=\"luna-kit-list\">\n<li>Official Kit Box</li><li>Membership Card</li><li>Photobook</li><li>Photocard Set (5EA)</li><li>Film Photo Set</li><li>Photo Strip Set</li><li>Archive Card Set</li><li>Folded Poster</li><li>Sticker Set</li><li>Metal Bookmark</li>\n</ul></div>\n</div>\n"
+  },
+  {
+    "id": "memberships-6",
+    "title": "AFTER MIDNIGHT",
+    "attributesHtml": " class=\"luna-archive-card luna-first reveal\"",
+    "bodyTemplateHtml": "\n<a class=\"luna-archive-poster\" href=\"assets/images/visual-archive/luna-01.webp\" target=\"_blank\" rel=\"noopener\"><img src=\"assets/images/visual-archive/luna-01.webp\" alt=\"LUNA 1기 공식 포스터\" loading=\"lazy\"/></a>\n<div class=\"luna-archive-glow\" aria-hidden=\"true\"></div>\n<div class=\"luna-archive-header\"><div><span class=\"luna-generation\">LUNA 1st Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Meet Us After Midnight.</p></div><span class=\"luna-period\">NIGHT 데뷔 1년 차</span></div>\n<div class=\"luna-archive-grid\">\n<div class=\"luna-archive-copy\">\n<div class=\"luna-meta-block\"><span>MEMBERS</span><p>윤도하 / 박이환 / 천지우 / 성우현 / ANGELO</p></div>\n<div class=\"luna-meta-block\"><span>CONCEPT</span><p>NIGHT와 LUNA가 처음 만난 시기. 데뷔 초기 NIGHT의 도시적인 밤, 자정, 네온과 세련된 다크 무드를 담은 첫 공식 팬클럽 키트.</p></div>\n<div class=\"luna-meta-block\"><span>MAIN COLORS</span><p>Black / Midnight Navy / Silver / Cool Blue</p></div>\n</div>\n<div class=\"luna-kit-block\"><span class=\"luna-kit-label\">KIT CONTENTS</span><ul class=\"luna-kit-list\">\n<li>Official Kit Box</li><li>Membership Card</li><li>Welcome Book / Profile Book</li><li>Photocard Set (5EA)</li><li>Member Message Card Set (5EA)</li><li>Postcard Set</li><li>Photo Strip Set</li><li>Group Poster</li><li>Sticker Set</li><li>Letter from NIGHT</li>\n</ul></div>\n</div>\n"
+  }
+]

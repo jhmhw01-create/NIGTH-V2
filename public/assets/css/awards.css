@@ -1,0 +1,67 @@
+.awards-page{background:radial-gradient(circle at 77% 7%,rgba(112,86,189,.13),transparent 28rem),#06060d}
+.awards-hero{padding:112px 0 72px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.awards-hero::after{content:"RECORD";position:absolute;right:-.04em;bottom:-.28em;color:rgba(220,218,237,.025);font-family:Georgia,"Times New Roman",serif;font-size:clamp(110px,22vw,310px);letter-spacing:.04em;line-height:1;pointer-events:none}
+.awards-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:end;position:relative;z-index:1}
+.awards-hero h1{margin:6px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(54px,7.6vw,104px);font-weight:500;letter-spacing:.035em;line-height:.88}
+.awards-hero h1 span{font-size:.49em;color:#d9d4e6;letter-spacing:.08em}
+.awards-hero-copy>p{margin:0;color:#cbc5d7;font-size:16px;line-height:1.9;max-width:580px}
+.record-stamps{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border:1px solid var(--line)}
+.record-stamps span{min-height:82px;padding:15px 13px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:5px}
+.record-stamps span:last-child{border-right:0}
+.record-stamps small{color:#8f879f;font-size:11px;letter-spacing:.13em}
+.record-stamps strong{color:#ddd8e8;font-size:12px;letter-spacing:.08em;font-weight:500;line-height:1.45}
+.archive-section-head{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:34px}
+.archive-section-head h2{margin:5px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(38px,5vw,58px);font-weight:500}
+.archive-section-head>p{max-width:500px;margin:0;color:var(--muted);font-size:15px;line-height:1.8}
+.awards-ledger-section{padding-bottom:76px}
+.award-records{border-top:1px solid rgba(219,218,230,.24)}
+.award-record{display:grid;grid-template-columns:72px minmax(0,1fr) 220px;gap:28px;align-items:center;padding:30px 12px;border-bottom:1px solid var(--line);transition:background .25s ease,border-color .25s ease}
+.award-record:hover{background:linear-gradient(90deg,rgba(122,92,255,.07),transparent);border-color:rgba(184,168,255,.25)}
+.record-index{font-family:Georgia,"Times New Roman",serif;color:#766d87;font-size:15px;letter-spacing:.12em}
+.award-record small,.achievement-list small,.progression-grid small{color:var(--purple-soft);font-size:12px;letter-spacing:.16em}
+.award-record h3{margin:5px 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:25px;font-weight:500;letter-spacing:.025em;overflow-wrap:anywhere}
+.award-record p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.record-lineup{text-align:right;color:#8e879b;font-size:11px;letter-spacing:.1em;line-height:1.7;overflow-wrap:anywhere}
+.award-status{margin-top:22px;padding:25px 28px;border-left:2px solid #8976d5;background:linear-gradient(90deg,rgba(122,92,255,.09),rgba(255,255,255,.012));display:grid;grid-template-columns:180px minmax(240px,.8fr) 1fr;gap:26px;align-items:center}
+.award-status span{color:var(--purple-soft);font-size:11px;letter-spacing:.13em}
+.award-status strong{font-family:Georgia,"Times New Roman",serif;font-size:18px;font-weight:500;letter-spacing:.08em}
+.award-status p{margin:0;color:var(--muted);font-size:15px;line-height:1.7}
+.achievements-section{padding-top:76px;background:linear-gradient(180deg,rgba(255,255,255,.018),transparent)}
+.achievement-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.achievement-list li{display:grid;grid-template-columns:50px 1fr;gap:18px;min-height:210px;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(10,9,18,.4)}
+.achievement-list li:last-child{grid-column:1/-1;min-height:auto}
+.achievement-list li>span{font-family:Georgia,"Times New Roman",serif;color:#746b82;font-size:24px}
+.achievement-list h3{margin:5px 0 10px;font-family:Georgia,"Times New Roman",serif;font-size:25px;font-weight:500;overflow-wrap:anywhere}
+.achievement-list p{margin:0;color:var(--muted);font-size:15px;line-height:1.8}
+.career-progression{padding-top:40px}
+.progression-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.progression-grid article{min-height:300px;padding:27px 24px;display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(155deg,rgba(122,92,255,.04),rgba(255,255,255,.009))}
+.progression-grid h3{margin:11px 0 16px;font-family:Georgia,"Times New Roman",serif;font-size:24px;font-weight:500;overflow-wrap:anywhere}
+.progression-grid p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.progression-grid span{margin-top:auto;padding-top:26px;color:#aaa3b7;font-size:11px;letter-spacing:.13em;overflow-wrap:anywhere}
+.awards-note{margin-top:18px;padding:22px 25px;border:1px solid var(--line);display:grid;grid-template-columns:130px 1fr auto;gap:24px;align-items:center}
+.awards-note strong{color:var(--purple-soft);font-size:11px;letter-spacing:.15em}
+.awards-note p{margin:0;color:var(--muted);font-size:14px}
+.awards-note a{font-size:11px;letter-spacing:.12em;color:#ddd6f0;border-bottom:1px solid rgba(184,168,255,.3);padding-bottom:3px}
+.awards-page main p{font-size:1rem}
+.record-stamps small,.record-lineup,.award-status span,.progression-grid span,.awards-note strong,.awards-note a{font-size:.75rem}
+.record-stamps strong{font-size:.875rem;overflow-wrap:anywhere}
+.awards-hero h1{line-height:1.1}
+.awards-hero h1 span{display:inline-block;line-height:1.2}
+.awards-page main a:focus-visible{outline:2px solid var(--purple-soft);outline-offset:6px}
+@media(max-width:900px){
+  .awards-hero-grid{grid-template-columns:1fr;gap:42px}.record-stamps{max-width:650px}
+  .award-record{grid-template-columns:58px 1fr}.record-lineup{grid-column:2;text-align:left}
+  .award-status{grid-template-columns:1fr 1fr}.award-status p{grid-column:1/-1}
+  .progression-grid{grid-template-columns:repeat(2,1fr)}
+  .awards-note{grid-template-columns:1fr}.awards-note a{justify-self:start}
+}
+@media(max-width:640px){
+  .awards-hero{padding:84px 0 56px}.awards-hero h1{font-size:clamp(47px,15vw,68px)}
+  .record-stamps{grid-template-columns:1fr}.record-stamps span{min-height:68px;border-right:0;border-bottom:1px solid var(--line)}.record-stamps span:last-child{border-bottom:0}
+  .archive-section-head{display:block}.archive-section-head>p{margin-top:14px}
+  .award-record{grid-template-columns:1fr;gap:12px;padding:25px 4px}.record-lineup{grid-column:auto}.record-index{font-size:12px}
+  .award-status{grid-template-columns:1fr;padding:23px 21px}.award-status p{grid-column:auto}
+  .achievement-list{grid-template-columns:1fr}.achievement-list li,.achievement-list li:last-child{grid-column:auto;grid-template-columns:38px 1fr;padding:23px 18px;min-height:auto}
+  .progression-grid{grid-template-columns:1fr}.progression-grid article{min-height:250px}
+}

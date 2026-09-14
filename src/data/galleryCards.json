@@ -1,0 +1,178 @@
+[
+  {
+    "id": "gallery-1",
+    "category": "visual",
+    "title": "OUT OF FRAME",
+    "attributesHtml": " class=\"gallery-archive-entry\" id=\"out-of-frame\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/out-of-frame/space-01.webp\" alt=\"OUT OF FRAME 전시회 1구역\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2029.05.18 — 06.03 · OFFICIAL EXHIBITION</span><h2>{{title}}</h2><p>NIGHT OFF-CAMERA ARCHIVE. 다섯 전시 공간과 공식 티켓으로 만나는 프레임 밖의 NIGHT.</p><a href=\"out-of-frame.html\">ENTER THE EXHIBITION ↗</a></div>",
+    "href": "out-of-frame.html"
+  },
+  {
+    "id": "gallery-2",
+    "category": "visual",
+    "title": "FIVE VOICES",
+    "attributesHtml": " class=\"gallery-archive-entry\" id=\"five-voices\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/five-voices/after-interview.webp\" alt=\"FIVE VOICES 인터뷰 후 NIGHT 단체 사진\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>NIGHT EDITORIAL · FIVE VOICES</span><h2>{{title}}</h2><p>다섯 멤버의 개인 인터뷰와 포트레이트, 인터뷰가 끝난 뒤의 NIGHT.</p><a href=\"five-voices.html\">READ FIVE VOICES ↗</a></div>",
+    "href": "five-voices.html"
+  },
+  {
+    "id": "gallery-3",
+    "category": "stage",
+    "title": "SPECIAL MC",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/final-additions/mc/mc-01.webp\" alt=\"SPECIAL MC\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>MUSIC SHOW · SPECIAL MC</span><h2>{{title}}</h2><p>다섯 멤버의 음악방송 스페셜 MC 이미지 아카이브.</p><a href=\"special-mc.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "special-mc.html"
+  },
+  {
+    "id": "gallery-4",
+    "category": "luna",
+    "title": "OFF DUTY",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/final-additions/season/season-06.webp\" alt=\"OFF DUTY\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2028 SEASON’S GREETINGS</span><h2>{{title}}</h2><p>NIGHT의 2028 시즌그리팅 OFF DUTY. 캘린더와 다이어리, 포토북부터 멤버 생일 카드까지.</p><a href=\"season-greetings-2028.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "season-greetings-2028.html"
+  },
+  {
+    "id": "gallery-5",
+    "category": "visual",
+    "title": "SOCIAL ARCHIVE",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/final-additions/social/social-08.webp\" alt=\"SOCIAL ARCHIVE\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>OFFICIAL SOCIAL · IMAGE ARCHIVE</span><h2>{{title}}</h2><p>제공된 가상 SNS 계정과 게시물, 멤버 캐릭터 공개 이미지를 보관한 정적 아카이브. 실제 SNS 계정이나 외부 서비스 링크가 아닙니다.</p><a href=\"social-archive.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "social-archive.html"
+  },
+  {
+    "id": "gallery-6",
+    "category": "stage",
+    "title": "DAESANG MOMENTS",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/final-additions/awards/awards-03.webp\" alt=\"DAESANG MOMENTS\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2027 / 2028 · AWARDS PHOTO ARCHIVE</span><h2>{{title}}</h2><p>2027년 COMPLETE의 첫 대상과 2028년 NIGHT의 두 번째 대상, 대기실 비하인드 기록.</p><a href=\"daesang-moments.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "daesang-moments.html"
+  },
+  {
+    "id": "gallery-7",
+    "category": "music",
+    "title": "NIGHTMARE",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2029/nightmare/nightmare-release.webp\" alt=\"NIGHTMARE 공식 비주얼\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2029.02.23 · OFFICIAL ARCHIVE</span><h2>{{title}}</h2><p>악몽의 정체를 뒤집는 BLACK NIGHT와 다섯 속성, 앨범·MV·무대 기록.</p><a href=\"nightmare-2029.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "nightmare-2029.html"
+  },
+  {
+    "id": "gallery-8",
+    "category": "music",
+    "title": "PERSONA",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2028/persona/persona-063.webp\" alt=\"PERSONA 공식 비주얼\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2028.08.21 · OFFICIAL ARCHIVE</span><h2>{{title}}</h2><p>DAY와 NIGHT, 두 얼굴로 이어지는 PERSONA의 콘셉트와 앨범, 뮤직비디오 스틸 및 무대 기록.</p><a href=\"persona-2028.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "persona-2028.html"
+  },
+  {
+    "id": "gallery-9",
+    "category": "stage",
+    "title": "NIGHT 4TH CONCERT 超夜",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2028/beyond-night/beyond-night-005.webp\" alt=\"NIGHT 4TH CONCERT 超夜 공식 비주얼\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2028.05.05–2028.05.06 · OFFICIAL ARCHIVE</span><h2>{{title}}</h2><p>NIGHT SKY에서 THE NIGHT BEYOND까지. 초야의 포스터와 티켓, 무대의 흐름을 담은 콘서트 아카이브.</p><a href=\"beyond-night-2028.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "beyond-night-2028.html"
+  },
+  {
+    "id": "gallery-10",
+    "category": "music",
+    "title": "WINGS",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2028/wings/wings-009.webp\" alt=\"WINGS 공식 비주얼\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2028.02.01 · OFFICIAL ARCHIVE</span><h2>{{title}}</h2><p>ANGEL과 FALLEN, 빛과 상흔 사이의 경계를 따라가는 WINGS의 공식 기록.</p><a href=\"wings-2028.html\">VIEW ARCHIVE ↗</a></div>",
+    "href": "wings-2028.html"
+  },
+  {
+    "id": "gallery-11",
+    "category": "luna",
+    "title": "FIVE YEARS. ONE NIGHT.",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/fifth-anniversary/fifthann-001.webp\" alt=\"NIGHT 5주년 팝업스토어 입구\" loading=\"lazy\"/><div><span>2027.11.15 · 5TH ANNIVERSARY</span><h2>{{title}}</h2><p>NIGHT의 다섯 해를 따라 걷는 여덟 공간과 공식 단체 비주얼.</p><a href=\"fifth-anniversary-2027.html\">ENTER THE POP-UP ↗</a></div>",
+    "href": "fifth-anniversary-2027.html"
+  },
+  {
+    "id": "gallery-12",
+    "category": "music",
+    "title": "SENSATIONAL",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/sensational/sensatio-016.webp\" alt=\"SENSATIONAL 범 콘셉트의 NIGHT\" loading=\"lazy\"/><div><span>2027.10.01 · MINI ALBUM ARCHIVE</span><h2>{{title}}</h2><p>달빛 아래 흑호의 기운으로 완성한 범(虎)의 콘셉트와 앨범, 무대 기록.</p><a href=\"sensational-2027.html\">VIEW SENSATIONAL ↗</a></div>",
+    "href": "sensational-2027.html"
+  },
+  {
+    "id": "gallery-13",
+    "category": "music",
+    "title": "INFINITY",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/infinity/infinity-033.webp\" alt=\"INFINITY LOOP 버전 NIGHT\" loading=\"lazy\"/><div><span>2027.08.01 · MINI ALBUM ARCHIVE</span><h2>{{title}}</h2><p>LOOP와 EXPANSION, 두 방향으로 이어지는 RESTART의 공식 기록.</p><a href=\"infinity-2027.html\">VIEW INFINITY ↗</a></div>",
+    "href": "infinity-2027.html"
+  },
+  {
+    "id": "gallery-14",
+    "category": "luna",
+    "title": "BIRTHDAY CAFÉ ARCHIVE",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/birthday-cafes/jiwoo/jiwoo-008.webp\" alt=\"NIGHT 멤버 생일카페 아카이브\" loading=\"lazy\"/><div><span>2026.09.22 — 2027.06.21 · MEMBER EVENTS</span><h2>{{title}}</h2><p>다섯 멤버의 고유한 콘셉트로 완성된 생일카페 공간과 오브제 68점.</p><a href=\"birthday-cafes-2026-2027.html\">VIEW FIVE STORIES ↗</a></div>",
+    "href": "birthday-cafes-2026-2027.html"
+  },
+  {
+    "id": "gallery-15",
+    "category": "stories",
+    "title": "NIGHT 관찰 예능",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/observation/observat-007.webp\" alt=\"NIGHT 관찰 예능 촬영 현장\" loading=\"lazy\"/><div><span>2027.06.01 · OFFICIAL CONTENT</span><h2>{{title}}</h2><p>이동과 준비, 연습과 촬영까지 하루를 따라가는 여덟 장면.</p><a href=\"observation-2027.html\">VIEW OFFICIAL STILLS ↗</a></div>",
+    "href": "observation-2027.html"
+  },
+  {
+    "id": "gallery-16",
+    "category": "music",
+    "title": "COMPLETE",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/complete/complete-026.webp\" alt=\"COMPLETE ORBIT 버전 NIGHT\" loading=\"lazy\"/><div><span>2027.05.01 · FULL ALBUM ARCHIVE</span><h2>{{title}}</h2><p>ORBIT와 CONVERGENCE, 컴백 쇼케이스와 3주간의 무대 기록.</p><a href=\"complete-2027.html\">VIEW COMPLETE ↗</a></div>",
+    "href": "complete-2027.html"
+  },
+  {
+    "id": "gallery-17",
+    "category": "stage",
+    "title": "夢夜",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/2027/dream-night/dreamnig-002.webp\" alt=\"NIGHT 3rd Concert 夢夜 포스터\" loading=\"lazy\"/><div><span>2027.01.29 · 3RD CONCERT</span><h2>{{title}}</h2><p>공연과 VCR, 콘서트 굿즈 및 비하인드 포토북으로 다시 만나는 꿈의 밤.</p><a href=\"dream-night-2027.html\">ENTER 夢夜 ↗</a></div>",
+    "href": "dream-night-2027.html"
+  },
+  {
+    "id": "gallery-18",
+    "category": "stage",
+    "title": "YEAR-END AWARDS",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "\n<img src=\"assets/images/2026/year-end-awards/red-carpet-02.webp\" alt=\"2026 연말 시상식 레드카펫의 NIGHT\" loading=\"lazy\"/>\n<div><span>2026.12.15 · OFFICIAL EVENT ARCHIVE</span><h2>{{title}}</h2><p>레드카펫부터 시상식과 백스테이지까지, NIGHT의 연말 시상식 열두 장면.</p><a href=\"year-end-awards-2026.html\">VIEW EVENT ARCHIVE ↗</a></div>\n",
+    "href": "year-end-awards-2026.html"
+  },
+  {
+    "id": "gallery-19",
+    "category": "music",
+    "title": "AFTER HOURS",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "\n<img src=\"assets/images/2026/after-hours/concept-group.webp\" alt=\"AFTER HOURS 콘셉트의 NIGHT\" loading=\"lazy\"/>\n<div><span>2026.12.10 · WINTER SPECIAL ALBUM</span><h2>{{title}}</h2><p>새벽의 도시와 고요한 오피스에서 이어지는 프로모션·앨범·무대 공식 아카이브.</p><a href=\"after-hours.html\">ENTER AFTER HOURS ↗</a></div>\n",
+    "href": "after-hours.html"
+  },
+  {
+    "id": "gallery-20",
+    "category": "luna",
+    "title": "PHANTOM FANSIGN",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "\n<img src=\"assets/images/fansign/2026-09-19/group-05.webp\" alt=\"PHANTOM 발매 기념 팬사인회 NIGHT\" loading=\"lazy\"/>\n<div><span>2026.09.19 · OFFICIAL EVENT ARCHIVE</span><h2>{{title}}</h2><p>앨범 발매 후 LUNA와 마주한 NIGHT. 팬사인회 현장의 열여섯 장면을 기록했습니다.</p><a href=\"fansign-20260919.html\">VIEW FANSIGN ARCHIVE ↗</a></div>\n",
+    "href": "fansign-20260919.html"
+  },
+  {
+    "id": "gallery-21",
+    "category": "stories",
+    "title": "IF : NIGHT",
+    "attributesHtml": " class=\"gallery-archive-entry\"",
+    "bodyTemplateHtml": "\n<img src=\"assets/images/collections/thumbs/if/royal-jiwoo.webp\" alt=\"IF : ROYAL · JIWOO\" loading=\"lazy\"/>\n<div><span>SPECIAL CONCEPT ARCHIVE</span><h2>{{title}}</h2><p>학교, 조선, 신화와 꿈속까지. 11개의 상상 속에서 만나는 NIGHT의 또 다른 모습.</p><a href=\"if-night.html\">EXPLORE IF : NIGHT ↗</a></div>\n",
+    "href": "if-night.html"
+  },
+  {
+    "id": "gallery-season-2027",
+    "category": "luna",
+    "title": "LUNA ACADEMY",
+    "attributesHtml": " class=\"gallery-archive-entry\" id=\"season-2027\"",
+    "bodyTemplateHtml": "<img src=\"assets/images/season-2027/academy-19.webp\" alt=\"2027 LUNA ACADEMY 시즌그리팅\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>2027 SEASON’S GREETINGS</span><h2>{{title}}</h2><p>키트 구성품, 학생기록부와 시간표, 멤버 Q&amp;A와 계절별 사진으로 만나는 NIGHT의 2027 시즌그리팅.</p><a href=\"season-greetings-2027.html\">ENTER THE ACADEMY ↗</a></div>",
+    "href": "season-greetings-2027.html"
+  }
+]
