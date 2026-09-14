@@ -43,11 +43,12 @@ export async function buildReactPages() {
   await build({entryPoints:[join(root,'src/react/server.jsx')],outfile:serverFile,bundle:true,jsx:'automatic',platform:'node',format:'esm',packages:'external'});
   const {renderPage}=await import(pathToFileURL(serverFile).href);
   const homeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/home-fashion.css'))).digest('hex').slice(0,12);
+  const discographyStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/discography-fashion.css'))).digest('hex').slice(0,12);
   for(const route of routes) {
     const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));
     const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products,updates:homeUpdates(collections.notices)});
     const markup=renderPage(route,pageData);
-    const homeTheme=route==='index.html'?'<link rel="stylesheet" href="assets/css/home-fashion.css?v='+homeStyleVersion+'">':'';
+    const homeTheme=route==='index.html'?'<link rel="stylesheet" href="assets/css/home-fashion.css?v='+homeStyleVersion+'">':route==='discography.html'?'<link rel="stylesheet" href="assets/css/discography-fashion.css?v='+discographyStyleVersion+'">':'';
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
 await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+'</head><body '+page.bodyAttributes+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');

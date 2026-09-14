@@ -1,0 +1,47 @@
+body:has(.discography-section){--bg:#151412;--text:#eeeae1;--muted:#beb9b0;--purple-soft:#d0c8ba;--line:rgba(238,234,225,.22);background:#151412;color:#eeeae1}
+body:has(.discography-section)::before{display:none}
+body:has(.discography-section) .site-header{background:#151412;border-bottom:1px solid var(--line);backdrop-filter:none}
+body:has(.discography-section) .brand{color:var(--text);text-shadow:none}
+body:has(.discography-section) .nav-links a{min-height:44px;display:inline-flex;align-items:center}
+body:has(.discography-section) .nav-links a:hover,body:has(.discography-section) .nav-links a.active{color:var(--text);text-shadow:none}
+body:has(.discography-section) .container{width:calc(100% - 96px);max-width:1440px}
+body:has(.discography-section) .discography-hero{padding:100px 0 72px;background:none}
+body:has(.discography-section) .section-kicker{color:var(--muted);letter-spacing:.2em}
+body:has(.discography-section) .discography-hero .section-title{font:400 clamp(48px,7vw,100px)/1.1 Georgia,serif;letter-spacing:-.035em}
+body:has(.discography-section) .section-desc{color:var(--muted);font-size:14px;line-height:1.9;max-width:650px}
+body:has(.discography-section) .discography-era-link{display:inline-flex;align-items:center;min-height:44px;color:var(--text);border-bottom:1px solid var(--line);margin-top:20px}
+body:has(.discography-section) .discography-section{padding:0 0 100px}
+body:has(.discography-section) .discography-list{display:block}
+body:has(.discography-section) .discography-year-section{display:grid;grid-template-columns:150px minmax(0,1fr);gap:48px;padding:44px 0 70px;border-top:1px solid var(--line)}
+body:has(.discography-section) .collection-year{font:400 34px/1.2 Georgia,serif;margin:0;color:var(--muted)}
+body:has(.discography-section) .discography-card{background:none;border:0;border-radius:0;box-shadow:none;padding:0 0 44px;margin:0 0 40px;border-bottom:1px solid var(--line);opacity:1;transform:none;scroll-margin-top:110px}
+body:has(.discography-section) .discography-card:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+body:has(.discography-section) .discography-head{gap:24px;align-items:start}
+body:has(.discography-section) .discography-head h2{font:400 clamp(28px,3.5vw,48px)/1.2 Georgia,serif;letter-spacing:-.02em;margin:12px 0;color:var(--text);overflow-wrap:anywhere}
+body:has(.discography-section) .discography-type,body:has(.discography-section) .discography-year{color:var(--muted);font-size:11px;letter-spacing:.12em}
+body:has(.discography-section) .album-tagline{font-size:13px;color:var(--muted);line-height:1.9;max-width:650px}
+body:has(.discography-section) .discography-meta{display:block;padding:0;border:0;margin-top:22px}
+body:has(.discography-section) .collection-title-track{font-size:13px;color:var(--text);line-height:1.8;overflow-wrap:anywhere}
+body:has(.discography-section) .collection-track-details{margin-top:14px;color:var(--muted)}
+body:has(.discography-section) .collection-track-details summary{cursor:pointer;padding:14px 0;font-size:12px;min-height:44px}
+body:has(.discography-section) .collection-track-body{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:20px 0}
+body:has(.discography-section) .collection-track-body strong{color:var(--text);line-height:1.8;overflow-wrap:anywhere}
+body:has(.discography-section) .phantom-tracklist li strong{font-size:13px;color:var(--text)}
+body:has(.discography-section) .phantom-tracklist li em{color:var(--text);border-color:var(--line);border-radius:0}
+body:has(.discography-section) .phantom-package-preview{padding:0;border:0;margin-top:20px}
+body:has(.discography-section) .phantom-package-preview p{font-size:13px;line-height:1.9;color:var(--muted)}
+body:has(.discography-section) .btn{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;color:var(--text);box-shadow:none;padding:12px 0;display:inline-flex;min-height:44px;font-size:11px;letter-spacing:.1em}
+body:has(.discography-section) .btn:hover{background:none;border-color:var(--text);transform:none;box-shadow:none}
+body:has(.discography-section) a:focus-visible,body:has(.discography-section) summary:focus-visible{outline:2px solid var(--text);outline-offset:5px}
+body:has(.discography-section) .site-footer{background:none;border-top:1px solid var(--line);color:var(--muted)}
+body:has(.discography-section) .album-card{display:block;background:none;border:0;border-radius:0;box-shadow:none;padding:0 0 44px;margin:0 0 40px;border-bottom:1px solid var(--line);opacity:1;transform:none;scroll-margin-top:110px}
+body:has(.discography-section) .album-card:last-child{margin-bottom:0;padding-bottom:0;border-bottom:0}
+body:has(.discography-section) .album-index{display:none}
+body:has(.discography-section) .album-topline{color:var(--muted);font-size:11px}
+body:has(.discography-section) .album-main h2{font:400 clamp(28px,3.5vw,48px)/1.2 Georgia,serif;color:var(--text);margin:12px 0}
+body:has(.discography-section) .album-concept,body:has(.discography-section) .era-note{color:var(--muted);font-size:13px;line-height:1.9;background:none;border-color:var(--line)}
+body:has(.discography-section) .album-meta{gap:20px;border-color:var(--line)}
+body:has(.discography-section) .album-meta strong{color:var(--text);font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+body:has(.discography-section) .track-list{color:var(--text);font-size:13px}
+@media(max-width:860px){body:has(.discography-section) .container{width:calc(100% - 40px)}body:has(.discography-section) .discography-year-section{grid-template-columns:1fr;gap:28px}body:has(.discography-section) .discography-hero{padding:60px 0 50px}body:has(.discography-section) .nav-links{max-height:calc(100dvh - 76px);overflow-y:auto;background:#151412}}
+@media(max-width:600px){body:has(.discography-section) .discography-head{flex-direction:column;gap:12px}body:has(.discography-section) .collection-track-body{grid-template-columns:1fr}body:has(.discography-section) .discography-year-section{padding:30px 0 50px}}

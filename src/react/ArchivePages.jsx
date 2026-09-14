@@ -92,6 +92,23 @@ export function ArchivePage({route,nodes}) {
     const props={...node.props,key};
     const cls=classes(node);
     let children=node.children.map((child,i)=>render(child,i));
+    if(route==='discography.html'&&cls.has('discography-list')){
+      const cards=node.children.filter(n=>typeof n!=='string'&&(classes(n).has('discography-card')||classes(n).has('album-card')));
+      const releaseDate=card=>{const date=descendants(card,n=>classes(n).has('discography-year'))[0];if(date)return nodeText(date);const release=descendants(card,n=>n.tag==='div'&&n.children.some(c=>typeof c!=='string'&&nodeText(c)==='RELEASE'))[0];return nodeText(descendants(release,n=>n.tag==='strong')[0]);};
+      const groups=new Map();
+      cards.sort((a,b)=>releaseDate(b).localeCompare(releaseDate(a))).forEach(card=>{
+        const year=releaseDate(card).slice(0,4);
+        if(!groups.has(year))groups.set(year,[]);
+        groups.get(year).push(card);
+      });
+      children=[...groups].map(([year,items])=><section className="discography-year-section" key={year} aria-labelledby={'releases-'+year}><h2 className="collection-year" id={'releases-'+year}>{year}</h2><div className="collection-releases">{items.map((item,i)=>render(item,i))}</div></section>);
+    }
+    if(route==='discography.html'&&cls.has('discography-meta')){
+      const title=node.children.find(n=>typeof n!=='string'&&nodeText(n).includes('TITLE TRACK'));
+      children=<><p className="collection-title-track">{title?nodeText(title).replace('TITLE TRACK','TITLE TRACK · '):''}</p><details className="collection-track-details"><summary>트랙리스트 · 앨범 정보</summary><div className="collection-track-body">{children}</div></details></>;
+    }
+    if(route==='discography.html'&&cls.has('phantom-package-copy'))return <details key={key} className="collection-track-details"><summary>아카이브 안내 · 관련 링크</summary>{children}</details>;
+    if(route==='discography.html'&&cls.has('track-list'))return <details key={key} className="collection-track-details"><summary>트랙리스트</summary>{createElement(node.tag,props,...children)}</details>;
     if(node.tag==='option')delete props.selected;
     if(medley&&node.tag==='audio'){
       const source=descendants(node,n=>n.tag==='source')[0].props.src;
