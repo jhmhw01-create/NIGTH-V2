@@ -1,0 +1,54 @@
+body.archive-explorer{--bg:#151412;--bg-soft:#1b1a17;--text:#eeeae1;--silver:#eeeae1;--muted:#beb9b0;--purple-soft:#d0c8ba;--line:rgba(238,234,225,.22);background:#151412;color:#eeeae1}
+body.archive-explorer::before{display:none}
+body.archive-explorer .site-header{background:#151412;border-bottom:1px solid var(--line);backdrop-filter:none}
+body.archive-explorer .brand{color:var(--text);text-shadow:none}
+body.archive-explorer .nav-links{font-size:11px;letter-spacing:.13em}
+body.archive-explorer .nav-links a{min-height:44px;display:inline-flex;align-items:center}
+body.archive-explorer .nav-links a:hover,body.archive-explorer .nav-links a.active{color:var(--text);text-shadow:none}
+body.archive-explorer .container{width:calc(100% - 96px);max-width:1440px}
+body.archive-explorer .archive-intro{padding:100px 0 56px;background:none}
+body.archive-explorer .archive-intro .section-title{font:400 clamp(48px,7vw,100px)/1.1 Georgia,serif;letter-spacing:-.035em;margin:18px 0 26px}
+body.archive-explorer .section-kicker{font-size:10px;letter-spacing:.2em;color:var(--muted)}
+body.archive-explorer .section-desc,body.archive-explorer .search-scope{font-size:14px;line-height:1.9;color:var(--muted);max-width:740px}
+body.archive-explorer .search-scope{font-size:12px}
+body.archive-explorer .archive-shortcuts{gap:12px 28px;margin-top:26px}
+body.archive-explorer .archive-shortcuts a{color:var(--text);font-size:11px;border-bottom:1px solid var(--line)}
+body.archive-explorer #archive-search-form{padding-top:32px;border-top:1px solid var(--line)}
+body.archive-explorer #archive-search-form>label{color:var(--muted);font-size:12px;letter-spacing:.04em;margin-bottom:14px}
+body.archive-explorer .archive-search-row{gap:24px}
+body.archive-explorer .archive-search-row input{background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;color:var(--text);font-size:18px;min-height:56px;padding:12px 0}
+body.archive-explorer .archive-search-row input::placeholder{color:var(--muted);opacity:1}
+body.archive-explorer.archive-explorer button{background:none;border:0;border-bottom:1px solid transparent;border-radius:0;color:var(--muted);font:inherit;font-size:12px;padding:12px 0;min-height:44px;box-shadow:none;cursor:pointer;transition:none}
+body.archive-explorer button:hover{background:none;color:var(--text);box-shadow:none}
+body.archive-explorer button:disabled{opacity:.5;cursor:default}
+body.archive-explorer .archive-search-row button{border-bottom:1px solid var(--line);color:var(--text);min-width:56px}
+body.archive-explorer .search-suggestions{gap:4px 22px;margin:20px 0 30px}
+body.archive-explorer .search-suggestions>span{font-size:11px;color:var(--muted);margin-right:10px}
+body.archive-explorer .search-suggestions button{font-size:11px;letter-spacing:.08em}
+body.archive-explorer .search-conditions{font-size:12px;gap:12px 24px;color:var(--muted);line-height:1.8;overflow-wrap:anywhere}
+body.archive-explorer .search-conditions button{color:var(--text);border-bottom-color:var(--line)}
+body.archive-explorer #archive-filters{gap:4px 28px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:26px 0}
+body.archive-explorer #archive-filters button[aria-pressed=true]{background:none;border-bottom-color:var(--text);color:var(--text)}
+body.archive-explorer .archive-results-head{margin:28px 0 38px;color:var(--muted);font-size:12px;gap:24px}
+body.archive-explorer .archive-results-head label{display:flex;align-items:center;gap:16px}
+body.archive-explorer #archive-sort{background:#151412;border:0;border-bottom:1px solid var(--line);border-radius:0;color:var(--text);min-height:44px;padding:10px 20px 10px 4px;font-size:12px}
+body.archive-explorer #archive-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 48px}
+body.archive-explorer .archive-result-card{display:grid;grid-template-columns:120px minmax(0,1fr);gap:24px;align-items:start;background:none;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;padding:0 0 28px;min-width:0}
+body.archive-explorer .archive-result-card:hover{background:none;box-shadow:none;border-color:var(--text)}
+body.archive-explorer .archive-result-image{aspect-ratio:3/4;background:#10100f;border:0}
+body.archive-explorer .archive-result-image img{object-fit:contain;filter:none;opacity:1;transform:none;transition:none}
+body.archive-explorer .archive-result-placeholder{font:400 16px/1.3 Georgia,serif;letter-spacing:.15em;color:var(--muted)}
+body.archive-explorer .archive-result-copy{padding:0;min-width:0}
+body.archive-explorer .archive-result-copy small{color:var(--muted);font-size:10px;letter-spacing:.08em;line-height:1.8}
+body.archive-explorer .archive-result-copy h2{font:400 clamp(23px,2.5vw,30px)/1.3 Georgia,serif;letter-spacing:-.015em;color:var(--text);margin:12px 0;overflow-wrap:anywhere}
+body.archive-explorer .archive-result-copy p{color:var(--muted);font-size:13px;line-height:1.9;margin:0 0 18px;overflow-wrap:anywhere}
+body.archive-explorer .archive-result-copy>span{color:var(--text);font-size:10px;letter-spacing:.1em;line-height:1.8}
+body.archive-explorer #archive-more{border-bottom:1px solid var(--line);color:var(--text);margin:40px auto}
+body.archive-explorer #archive-empty{font-size:14px;line-height:1.9;color:var(--muted);margin:32px 0 12px}
+body.archive-explorer .search-empty-actions{display:flex;gap:12px 28px;flex-wrap:wrap}
+body.archive-explorer .search-empty-actions button{margin:0;color:var(--text);border-bottom-color:var(--line)}
+body.archive-explorer a:focus-visible,body.archive-explorer button:focus-visible,body.archive-explorer input:focus-visible,body.archive-explorer select:focus-visible{outline:2px solid var(--text);outline-offset:5px}
+body.archive-explorer .site-footer{background:none;border-top:1px solid var(--line);color:var(--muted)}
+@media(max-width:1000px){body.archive-explorer #archive-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:860px){body.archive-explorer .container{width:calc(100% - 40px)}body.archive-explorer .archive-intro{padding:60px 0 44px}body.archive-explorer .nav-links{max-height:calc(100dvh - 76px);overflow-y:auto;background:#151412}}
+@media(max-width:600px){body.archive-explorer .archive-result-card{grid-template-columns:88px minmax(0,1fr);gap:18px}body.archive-explorer .archive-result-copy h2{font-size:24px}body.archive-explorer .archive-search-row{gap:18px}body.archive-explorer #archive-filters{gap:4px 20px}body.archive-explorer .archive-results-head{align-items:start;flex-direction:column}body.archive-explorer .search-suggestions{gap:4px 18px}}
