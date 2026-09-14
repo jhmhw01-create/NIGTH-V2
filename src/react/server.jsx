@@ -1,3 +1,3 @@
 import {renderToString} from 'react-dom/server';
 import {App} from './App.jsx';
-export function renderHome() {return renderToString(<App />);}
+export function renderPage(route) {return renderToString(<App route={route} />);}

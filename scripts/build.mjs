@@ -3,7 +3,7 @@ import {fileURLToPath} from 'node:url';
 import {resolve, join, basename} from 'node:path';
 import {PageLayout} from '../src/components/layout.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
-import {buildReactHome} from './build-react.mjs';
+import {buildReactPages} from './build-react.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'dist');
 await mkdir(output, {recursive:true});
@@ -26,7 +26,7 @@ await cp(join(root,'public'),output,{recursive:true});
 const catalog = JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
 await mkdir(join(output,'assets/data'),{recursive:true});
 await writeFile(join(output,'assets/data/archive-catalog.js'),'window.NightArchiveCatalog = ' + JSON.stringify(catalog) + ';\n');
-await buildReactHome();
+await buildReactPages();
 let hasOriginalAssets = false;
 try { hasOriginalAssets = (await stat(join(output,'assets/css/style.css'))).isFile(); } catch {}
 console.log('Built ' + routes.size + ' routes with shared Header/Footer.');
