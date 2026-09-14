@@ -26,6 +26,9 @@ body:has(.discography-section) .collection-track-details{margin-top:14px;color:v
 body:has(.discography-section) .collection-track-details summary{cursor:pointer;padding:14px 0;font-size:12px;min-height:44px}
 body:has(.discography-section) .collection-track-body{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:20px 0}
 body:has(.discography-section) .collection-track-body strong{color:var(--text);line-height:1.8;overflow-wrap:anywhere}
+body:has(.discography-section) .collection-track-body>div>span{display:block;font-size:10px;letter-spacing:.13em;color:var(--muted);margin-bottom:8px}
+body:has(.discography-section) .collection-track-body>div>strong{display:block;font-size:13px;font-weight:400}
+body:has(.discography-section) .album-tagline{border:0;padding-left:0;font-style:normal}
 body:has(.discography-section) .phantom-tracklist li strong{font-size:13px;color:var(--text)}
 body:has(.discography-section) .phantom-tracklist li em{color:var(--text);border-color:var(--line);border-radius:0}
 body:has(.discography-section) .phantom-package-preview{padding:0;border:0;margin-top:20px}
@@ -41,6 +44,8 @@ body:has(.discography-section) .album-topline{color:var(--muted);font-size:11px}
 body:has(.discography-section) .album-main h2{font:400 clamp(28px,3.5vw,48px)/1.2 Georgia,serif;color:var(--text);margin:12px 0}
 body:has(.discography-section) .album-concept,body:has(.discography-section) .era-note{color:var(--muted);font-size:13px;line-height:1.9;background:none;border-color:var(--line)}
 body:has(.discography-section) .album-meta{gap:20px;border-color:var(--line)}
+body:has(.discography-section) .album-meta>div{background:none;border:0;padding:0}
+body:has(.discography-section) .album-card::before,body:has(.discography-section) .album-card::after{display:none}
 body:has(.discography-section) .album-meta strong{color:var(--text);font-size:13px;line-height:1.8;overflow-wrap:anywhere}
 body:has(.discography-section) .track-list{color:var(--text);font-size:13px}
 @media(max-width:860px){body:has(.discography-section) .container{width:calc(100% - 40px)}body:has(.discography-section) .discography-year-section{grid-template-columns:1fr;gap:28px}body:has(.discography-section) .discography-hero{padding:60px 0 50px}body:has(.discography-section) .nav-links{max-height:calc(100dvh - 76px);overflow-y:auto;background:#151412}}
