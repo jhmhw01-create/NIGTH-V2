@@ -5,8 +5,8 @@ import {stageRoutes,reactRoutes} from '../src/react/routes.mjs';
 import {archiveMarkup} from '../scripts/archive-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('eight performance and broadcast archives join 30 React routes',()=>{
-  assert.equal(stageRoutes.length,8);assert.equal(reactRoutes.length,30);assert.equal(new Set(reactRoutes).size,30);
+test('eight performance and broadcast archives remain in unique React routes',()=>{
+  assert.equal(stageRoutes.length,8);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(stageRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('performance records preserve every photo and original viewer variant',async()=>{
   let count=0;

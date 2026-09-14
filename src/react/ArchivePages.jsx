@@ -3,7 +3,7 @@ import trees from '../../.react-build/page-trees.json';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
 import {AlbumLightbox} from './AlbumLightbox.jsx';
-import {albumRoutes,stageRoutes} from './routes.mjs';
+import {albumRoutes,stageRoutes,fanclubDetailRoutes} from './routes.mjs';
 import {StageLightbox} from './StageLightbox.jsx';
 const classes=node => new Set((node.props?.className ?? '').split(/\s+/));
 function descendants(node,predicate) {
@@ -23,6 +23,7 @@ export function ArchivePage({route}) {
   const contents=route==='contents.html';
   const notice=route==='notice.html';
   const gallery=route==='gallery.html';
+  const imageArchive=stageRoutes.includes(route)||fanclubDetailRoutes.includes(route);
   const album=albumRoutes.includes(route)||stageRoutes.includes(route);
   const albumItems=album?nodes.flatMap(n=>descendants(n,n=>classes(n).has('archive26-photo')&&n.props['data-full'])):[];
   const albumIndex=albumItems.findIndex(n=>n.props['data-full']===activePhoto);
@@ -30,7 +31,7 @@ export function ArchivePage({route}) {
   const albumImage=albumItem?descendants(albumItem,n=>n.tag==='img')[0]:null;
   const albumPhoto=albumItem?{full:albumItem.props['data-full'],thumb:albumImage?.props.src,alt:albumImage?.props.alt??'',title:albumItem.props['data-title']??''}:null;
   const moveAlbum=step=>{const next=nextPhotoIndex(albumIndex,step,albumItems.length);if(next>=0)setActivePhoto(albumItems[next].props['data-full']);};
-  const stageItems=stageRoutes.includes(route)?nodes.flatMap(n=>descendants(n,n=>(classes(n).has('fm-photo')||classes(n).has('sg-photo'))&&n.props['data-full'])):[];
+  const stageItems=imageArchive?nodes.flatMap(n=>descendants(n,n=>(classes(n).has('fm-photo')||classes(n).has('sg-photo'))&&n.props['data-full'])):[];
   const stageIndex=stageItems.findIndex(n=>n.props['data-full']===activePhoto);
   const stageItem=stageItems[stageIndex];
   const stageImage=stageItem?descendants(stageItem,n=>n.tag==='img')[0]:null;
@@ -78,13 +79,13 @@ export function ArchivePage({route}) {
     if(typeof node==='string')return node;
     if(gallery && node.props.id==='galleryLightbox')return <GalleryLightbox key={key} photo={photo} index={photoIndex} total={lightboxItems.length} onClose={()=>setActivePhoto(null)} onMove={movePhoto} />;
     if(album && node.props.id==='archive26Lightbox')return <AlbumLightbox key={key} photo={albumPhoto} index={albumIndex} total={albumItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveAlbum} />;
-    if(stageRoutes.includes(route)&&['fmLightbox','sg-viewer'].includes(node.props.id))return <StageLightbox key={key} variant={node.props.id==='sg-viewer'?'sg':'fm'} photo={stagePhoto} index={stageIndex} total={stageItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveStage}/>;
+    if(imageArchive&&['fmLightbox','sg-viewer'].includes(node.props.id))return <StageLightbox key={key} variant={node.props.id==='sg-viewer'?'sg':'fm'} photo={stagePhoto} index={stageIndex} total={stageItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveStage}/>;
     const props={...node.props,key};
     const cls=classes(node);
     let children=node.children.map((child,i)=>render(child,i));
     if(node.tag==='option')delete props.selected;
     if(album && cls.has('archive26-photo') && props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
-    if(stageRoutes.includes(route)&&(cls.has('fm-photo')||cls.has('sg-photo'))&&props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
+    if(imageArchive&&(cls.has('fm-photo')||cls.has('sg-photo'))&&props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(props[filterKey]!==undefined) {
       props['aria-pressed']=props[filterKey]===category;
       props.disabled=!ready;
