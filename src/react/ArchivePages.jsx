@@ -2,7 +2,7 @@ import {createElement,useEffect,useRef,useState} from 'react';
 import {medleyClassName} from './medley.mjs';
 import {NativeAudio} from './NativeAudio.jsx';
 import {releaseOrder} from './release-order.mjs';
-import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
+import {matchesContents,matchesNotice,matchesPhoto,matchesGalleryPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
 import {AlbumLightbox} from './AlbumLightbox.jsx';
 import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,eventRoutes,visualRoutes} from './routes.mjs';
@@ -21,6 +21,7 @@ export function ArchivePage({route,nodes}) {
   const [ready,setReady]=useState(false);
   const [collectionFilter,setCollectionFilter]=useState('all');
   const [photoFilter,setPhotoFilter]=useState('all');
+  const [galleryMember,setGalleryMember]=useState('all');
   const [activePhoto,setActivePhoto]=useState(null);
   const [playingTrack,setPlayingTrack]=useState(null);
   const medleyPlayers=useRef(new Map());
@@ -48,7 +49,7 @@ export function ArchivePage({route,nodes}) {
   const stagePhoto=stageItem?{full:stageItem.props['data-full'],thumb:stageImage?.props.src,alt:classes(stageItem).has('fansign-photo')?(stageImage?.props.alt??''):stageTitle,title:stageTitle}:null;
   const moveStage=step=>{const next=nextPhotoIndex(stageIndex,step,stageItems.length);if(next>=0)setActivePhoto(stageItems[next].props['data-full']);};
   const galleryItems=gallery ? nodes.flatMap(n=>descendants(n,n=>classes(n).has('gallery-item'))) : [];
-  const filteredItems=galleryItems.filter(n=>matchesPhoto(n.props['data-category'] ?? '',photoFilter));
+  const filteredItems=galleryItems.filter(n=>matchesGalleryPhoto(n.props['data-category'] ?? '',photoFilter,galleryMember));
   const lightboxItems=filteredItems.filter(n=>n.props['data-full']);
   const photoIndex=lightboxItems.findIndex(n=>n.props['data-full']===activePhoto);
   const activeItem=lightboxItems[photoIndex];
@@ -72,7 +73,7 @@ export function ArchivePage({route,nodes}) {
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:0.12});
     elements.forEach(el=>observer.observe(el));
     return ()=>observer.disconnect();
-  },[category,year,collectionFilter,photoFilter]);
+  },[category,year,collectionFilter,photoFilter,galleryMember]);
   useEffect(()=>{
     const reveal=()=>{
       let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
@@ -142,11 +143,14 @@ export function ArchivePage({route,nodes}) {
       if(cls.has('notice-empty'))props.hidden=count!==0;
     }
     if(gallery) {
+      if(props['data-member-filter']!==undefined){props.disabled=!ready;props['aria-pressed']=props['data-member-filter']===galleryMember;props.onClick=()=>{setActivePhoto(null);setGalleryMember(props['data-member-filter']);};}
+      if(props['data-gallery-reset']!==undefined){props.disabled=!ready;props.onClick=()=>{setActivePhoto(null);setPhotoFilter('all');setGalleryMember('all');};}
+      if(cls.has('gallery-empty'))props.hidden=filteredItems.length!==0;
       if(props['data-collection-filter']!==undefined){props.disabled=!ready;props['aria-pressed']=props['data-collection-filter']===collectionFilter;props.onClick=()=>setCollectionFilter(props['data-collection-filter']);}
       if(props['data-collection-group'])props.hidden=collectionFilter!=='all'&&props['data-collection-group']!==collectionFilter;
       if(cls.has('gallery-collection-status'))children=`${collectionFilter==='all'?'전체':nodeText(descendants(collectionGroups.find(n=>n.props['data-collection-group']===collectionFilter),n=>n.tag==='h2')[0])} · ${collectionCount}개 아카이브`;
       if(cls.has('gallery-filter')){props.disabled=!ready;props['aria-pressed']=props['data-filter']===photoFilter;props.className='gallery-filter'+(props['data-filter']===photoFilter?' is-active':'');props.onClick=()=>{setActivePhoto(null);setPhotoFilter(props['data-filter']);};}
-      if(cls.has('gallery-item')){props.hidden=!matchesPhoto(props['data-category'] ?? '',photoFilter);if(props['data-full'])props.onClick=()=>setActivePhoto(props['data-full']);}
+      if(cls.has('gallery-item')){props.hidden=!matchesGalleryPhoto(props['data-category'] ?? '',photoFilter,galleryMember);if(props['data-full'])props.onClick=()=>setActivePhoto(props['data-full']);}
       if(cls.has('gallery-count'))children=`${filteredItems.length} PHOTOS`;
     }
     return createElement(node.tag==='audio'?NativeAudio:node.tag,props,...(Array.isArray(children)?children:[children]));
