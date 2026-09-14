@@ -1,5 +1,7 @@
 import {useEffect} from 'react';
 
+function EditorialFeature(){return <section className="section home-editorial"><div className="container home-editorial-inner"><div><span className="section-kicker">NIGHT EDITORIAL</span><h2>FIVE VOICES</h2></div><div><p>다섯 멤버가 말하는 지금의 NIGHT. 무대 위의 정체성과 무대 밖의 시간을 인터뷰에서 만나보세요.</p><a className="btn" href="five-voices.html">READ THE INTERVIEW →</a></div></div></section>;}
+
 function Hero() { return (<section className={"hero"}>{"\n"}<img alt={"NIGHT 단체 이미지"} className={"hero-image"} src={"assets/images/night-group-main.png"} />{"\n"}<div className={"hero-content"}>{"\n"}<p className={"eyebrow"}>{"Castle Entertainment · 5 Member Group"}</p>{"\n"}<h1 className={"hero-title"}>{"NIGHT"}</h1>{"\n"}<p className={"hero-debut"}>{"DEBUT · 2022.11.15"}</p>{"\n"}<p className={"hero-copy"}>{"무대 위의 밤을 지배하는 대체불가 5인조 아이돌 그룹. 강렬한 퍼포먼스와 독보적인 존재감으로 데뷔 이후 정상의 자리를 이어가고 있다."}</p>{"\n"}<p className={"hero-slogan"}>{"WHEN THE NIGHT FALLS, WE SHINE."}</p>{"\n"}<div className={"cta-row"}>{"\n"}<a className={"btn"} href={"#members"}>{"MEET THE MEMBERS"}</a>{"\n"}<a className={"btn secondary"} href={"fanclub.html"}>{"OFFICIAL FANCLUB"}</a>{"\n"}</div>{"\n"}</div>{"\n"}</section>); }
 
 function About() { return (<section className={"section"}>{"\n"}<div className={"container about-grid reveal"}>{"\n"}<div className={"about-visual"}><img alt={"NIGHT 멤버 프로필 이미지"} src={"assets/images/night-group-profile.png"} /></div>{"\n"}<div className={"about-copy"}>{"\n"}<span className={"section-kicker"}>{"About NIGHT"}</span>{"\n"}<h2 className={"section-title"}>{"The irreplaceable idols."}</h2>{"\n"}<p>{"NIGHT는 CASTLE Entertainment 소속의 5인조 아이돌 그룹이다. 섹시 콘셉트와 강렬한 무대 장악력으로 데뷔 약 10일 만에 Billboard Global Excl. U.S.에 처음 진입하며 빠르게 주목받았다."}</p>{"\n"}<p>{"앨범과 공연, 다양한 공식 콘텐츠를 통해 활동 영역을 넓혀 왔다. 멤버 각자의 뚜렷한 개성과 무대 위 시너지가 NIGHT만의 색을 만든다."}</p>{"\n"}<div className={"stats"}><div className={"stat"}><strong>{"5"}</strong><span>{"CURRENT MEMBERS"}</span></div><div className={"stat"}><strong>{"10D"}</strong><span>{"TO BILLBOARD ENTRY"}</span></div><div className={"stat"}><strong>{"6Y"}</strong><span>{"CAREER"}</span></div></div>{"\n"}</div></div></section>); }
@@ -23,5 +25,5 @@ export function HomePage({updates=[]}) {
     if (anchor) document.getElementById(anchor)?.scrollIntoView();
     return () => observer.disconnect();
   }, []);
-  return <main><Hero /><HomeGuide updates={updates}/><About /><Members /><Anniversary /><ArchiveLinks /><Fanclub /></main>;
+  return <main><Hero /><About /><Members /><EditorialFeature /><Anniversary /><ArchiveLinks /><HomeGuide updates={updates}/><Fanclub /></main>;
 }
