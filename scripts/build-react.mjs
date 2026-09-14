@@ -11,12 +11,16 @@ import {readStoreProducts} from './store-products.mjs';
 import {albumMarkup} from './album-markup.mjs';
 import {archiveMarkup} from './archive-markup.mjs';
 import {detailNavigation} from './detail-navigation.mjs';
+import {routeData,serializeRouteData} from './route-data.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
-  await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(await readPhotoEpisodes(new URL('../',import.meta.url))));
-  await writeFile(join(temporary,'store-products.json'),JSON.stringify(await readStoreProducts(new URL('../',import.meta.url))));
+  const photos=await readPhotoEpisodes(new URL('../',import.meta.url));
+  const products=await readStoreProducts(new URL('../',import.meta.url));
+  const catalog=JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
+  await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(photos));
+  await writeFile(join(temporary,'store-products.json'),JSON.stringify(products));
   const routes=reactRoutes;
   const detailMap={};
   for(const route of routes){const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));detailMap[route]=detailNavigation(page);}
@@ -39,9 +43,10 @@ export async function buildReactPages() {
   const {renderPage}=await import(pathToFileURL(serverFile).href);
   for(const route of routes) {
     const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));
-    const markup=renderPage(route);
+    const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products});
+    const markup=renderPage(route,pageData);
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
-    const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script type="module" src="assets/js/'+clientFile+'"></script>';
+    const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
     await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"></head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
   }
   console.log('All 52 routes pre-rendered with React; existing page URLs preserved.');

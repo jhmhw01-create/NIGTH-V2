@@ -1,12 +1,10 @@
 import {useEffect,useRef,useState} from 'react';
-import originalData from '../../.react-build/photo-episodes.json';
-import {clock,expandVlog,secondsPerScene,vlogEpisodes,vlogReaction} from './photo-data.mjs';
+import {clock,secondsPerScene,vlogReaction} from './photo-data.mjs';
 import {usePhotoPlayer} from './usePhotoPlayer.jsx';
 import {CollectionPhotoDialog} from './CollectionPhotoDialog.jsx';
 import {CollectionPhotoCard as PhotoCard} from './CollectionPhotoCard.jsx';
-const expandedVlogs=vlogEpisodes.map(expandVlog);
-export function PhotoEpisodePage({route}){
-  const episodes=route==='vlog.html'?expandedVlogs:originalData.originals;
+export function PhotoEpisodePage({route,originalData}){
+  const episodes=route==='vlog.html'?originalData.vlogs:originalData.originals;
   const [selected,setSelected]=useState(episodes[0].id);
   const restoreFocus=useRef(false);
   useEffect(()=>{
@@ -22,9 +20,9 @@ export function PhotoEpisodePage({route}){
     return ()=>cancelAnimationFrame(raf);
   },[selected]);
   const episode=episodes.find(item=>item.id===selected);
-  return <EpisodeExperience key={route+selected} vlog={route==='vlog.html'} episodes={episodes} episode={episode} onSelect={id=>{restoreFocus.current=true;setSelected(id);}}/>;
+  return <EpisodeExperience key={route+selected} vlog={route==='vlog.html'} episodes={episodes} episode={episode} originalData={originalData} onSelect={id=>{restoreFocus.current=true;setSelected(id);}}/>;
 }
-function EpisodeExperience({vlog,episodes,episode,onSelect}){
+function EpisodeExperience({vlog,episodes,episode,originalData,onSelect}){
   const player=usePhotoPlayer(episode);
   const [expanded,setExpanded]=useState(null);
   const id=vlog?'vlog':'original';

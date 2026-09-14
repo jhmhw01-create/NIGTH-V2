@@ -1,8 +1,7 @@
 import {useEffect,useMemo,useRef,useState} from 'react';
-import catalog from '../data/archive.json';
 import {archiveState,searchRecords} from './search.mjs';
 
-export function SearchArchive() {
+export function SearchArchive({catalog}) {
   const [state,setState]=useState({query:'',category:'all',sort:'category'});
   const [limit,setLimit]=useState(18);
   const [ready,setReady]=useState(false);

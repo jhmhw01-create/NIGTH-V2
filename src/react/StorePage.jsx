@@ -1,8 +1,7 @@
 import {useEffect,useRef,useState} from 'react';
-import products from '../../.react-build/store-products.json';
 import {addCartItem,cartKey,money,productList,quantityValue,readCart,thumbPath} from './store.mjs';
 const filters=[['all','ALL'],['featured','FEATURED'],['collectible','COLLECTIBLE'],['fashion','FASHION'],['travel','TRAVEL'],['tech','TECH & DESK']];
-export function StorePage(){
+export function StorePage({products}){
   const [ready,setReady]=useState(false),[filter,setFilter]=useState('all'),[cart,setCart]=useState([]),[overlay,setOverlay]=useState(null);
   const [product,setProduct]=useState(null),[picture,setPicture]=useState(0),[option,setOption]=useState(''),[quantity,setQuantity]=useState(1),[toast,setToast]=useState('');
   const modal=useRef(null),drawer=useRef(null),timer=useRef(null);

@@ -1,7 +1,6 @@
 import {createElement,useEffect,useRef,useState} from 'react';
 import {medleyClassName} from './medley.mjs';
 import {NativeAudio} from './NativeAudio.jsx';
-import trees from '../../.react-build/page-trees.json';
 import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
 import {GalleryLightbox} from './GalleryLightbox.jsx';
 import {AlbumLightbox} from './AlbumLightbox.jsx';
@@ -15,8 +14,7 @@ function descendants(node,predicate) {
 }
 function nodeText(node) {return typeof node==='string' ? node : node.children.map(nodeText).join('');}
 
-export function ArchivePage({route}) {
-  const nodes=trees[route];
+export function ArchivePage({route,nodes}) {
   const [category,setCategory]=useState('all');
   const [year,setYear]=useState('all');
   const [ready,setReady]=useState(false);

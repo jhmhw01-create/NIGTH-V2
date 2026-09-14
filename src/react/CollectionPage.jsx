@@ -1,9 +1,8 @@
 import {useEffect,useState} from 'react';
-import data from '../../.react-build/photo-episodes.json';
 import {CollectionPhotoCard} from './CollectionPhotoCard.jsx';
 import {CollectionPhotoDialog} from './CollectionPhotoDialog.jsx';
 const lunaCopy=['함께 걷고, 마주 앉아 이야기를 나누는 시간.','조금 더 같이 있고 싶은 하루의 마지막.','헤어진 뒤에도 계속되는 둘만의 안부.'];
-export function CollectionPage({route}){
+export function CollectionPage({route,data}){
   const luna=route==='with-luna.html';
   const items=luna?data.luna:data.gallery;
   const [selected,setSelected]=useState(items[0].id),[expanded,setExpanded]=useState(null),[ready,setReady]=useState(false);
