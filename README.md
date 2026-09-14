@@ -8,9 +8,10 @@ HOME 정리, 텍스트형 DISCOGRAPHY/CONTENTS, GALLERY 분류 및 2027·2028 �
 
 ## 실행
 
-Node.js 18 이상에서 프로젝트 폴더를 열고 실행합니다. 외부 패키지 설치는 필요하지 않습니다.
+Node.js 22 이상에서 프로젝트 폴더를 열고 실행합니다. React와 빌드 도구를 먼저 설치합니다.
 
 ```sh
+npm ci
 npm run build
 npm test
 npm run preview
@@ -41,4 +42,4 @@ GitHub Pages를 쓸 경우에는 빌드·배포 설정이 별도로 필요합니
 
 52개 페이지 빌드와 데이터 테스트, 로컬 링크·미디어 파일 검증을 진행했습니다.
 실제 브라우저 화면·음원 재생 검수는 별도로 필요합니다.
-현재 구조는 공통 구성요소와 데이터로 HTML을 생성하는 멀티페이지 웹사이트이며, React SPA는 아닙니다.
+React 전환 1단계: HOME과 HOME의 메뉴·푸터는 React 구성요소이며, 빌드 시 미리 렌더링한 HTML에 React를 연결합니다. 다른 51개 페이지는 기존 HTML 생성 방식을 유지합니다. 전체 React SPA 전환은 아직 아닙니다.

@@ -2,7 +2,20 @@
   "name": "night-archive",
   "private": true,
   "type": "module",
-  "scripts": {"build": "node scripts/build.mjs", "test": "node --test tests/*.test.mjs", "preview": "node scripts/preview.mjs"},
-  "engines": {"node": ">=18"},
-  "description": "NIGHT shared-component static web project; no external dependencies."
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "description": "NIGHT phased React migration: React Home and shared layout, existing detail pages preserved.",
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
 }
