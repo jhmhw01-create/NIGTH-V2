@@ -3,8 +3,8 @@ import originalData from '../../.react-build/photo-episodes.json';
 import {clock,expandVlog,secondsPerScene,vlogEpisodes,vlogReaction} from './photo-data.mjs';
 import {usePhotoPlayer} from './usePhotoPlayer.jsx';
 import {CollectionPhotoDialog} from './CollectionPhotoDialog.jsx';
+import {CollectionPhotoCard as PhotoCard} from './CollectionPhotoCard.jsx';
 const expandedVlogs=vlogEpisodes.map(expandVlog);
-function PhotoCard({photo,onOpen}){return <button className="nc-photo" type="button" aria-label={photo.label+' 크게 보기'} onClick={()=>onOpen(photo)}><img src={photo.thumb} alt={photo.label} loading="lazy"/><span><b>{photo.label}</b><small>확대 ↗</small></span></button>;}
 export function PhotoEpisodePage({route}){
   const episodes=route==='vlog.html'?expandedVlogs:originalData.originals;
   const [selected,setSelected]=useState(episodes[0].id);

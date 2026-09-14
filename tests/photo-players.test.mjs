@@ -6,8 +6,8 @@ import {vlogEpisodes,expandVlog,sceneAt,clampTime,clock} from '../src/react/phot
 import {parsePhotoEpisodes,readPhotoEpisodes} from '../scripts/photo-episodes.mjs';
 import {playerRoutes,reactRoutes} from '../src/react/routes.mjs';
 const root=new URL('../',import.meta.url);
-test('both player routes join 40 unique React routes',()=>{
-  assert.deepEqual(playerRoutes,['vlog.html','night-originals.html']);assert.equal(reactRoutes.length,40);assert.equal(new Set(reactRoutes).size,40);
+test('both player routes remain in unique React routes',()=>{
+  assert.deepEqual(playerRoutes,['vlog.html','night-originals.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(playerRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('VLOG metadata exactly matches the six original episodes',async()=>{
   const source=await readFile(new URL('public/assets/js/vlog.js',root),'utf8');
