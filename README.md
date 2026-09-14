@@ -42,7 +42,11 @@ main에 반영하면 GitHub Actions가 테스트와 빌드를 실행하고 Pages
 
 52개 페이지 빌드와 데이터 테스트, 로컬 링크·미디어 파일 검증을 진행했습니다.
 실제 브라우저 화면·음원 재생 검수는 별도로 필요합니다.
-React 전환 9단계: HOME·DISCOGRAPHY·CONTENTS·NOTICE·FANCLUB·GALLERY·HISTORY·LISTEN·ARCHIVE와 멤버 5명 상세 페이지, 앨범 상세 7개 및 ERA ARCHIVE, 공연·방송·수상 기록 8개, 팬클럽 상세 5개, BEHIND·TRAVEL·OBSERVATION 3개, 해당 페이지의 메뉴·푸터는 React로 동작합니다. BEHIND·TRAVEL·OBSERVATION의 문구·사진 80장·기존 주소를 보존하며 각 확대창 디자인, 이전·다음, 키보드 이동 및 닫기 후 포커스 복원을 유지합니다. VLOG·NIGHT ORIGINALS 등 재생형 콘텐츠는 아직 기존 스크립트로 동작합니다.
+React 전환 10단계: HOME·DISCOGRAPHY·CONTENTS·NOTICE·FANCLUB·GALLERY·HISTORY·LISTEN·ARCHIVE와 멤버 5명 상세 페이지, 앨범 상세 7개 및 ERA ARCHIVE, 공연·방송·수상 기록 8개, 팬클럽 상세 5개, BEHIND·TRAVEL·OBSERVATION 3개, VLOG·NIGHT ORIGINALS 2개, 해당 페이지의 메뉴·푸터는 React로 동작합니다.
+
+VLOG 6편·55장면과 NIGHT ORIGINALS 5편·34장면은 음성 없는 사진 슬라이드로, 장면당 6초이며 자동재생하지 않습니다. 기존 에피소드·장면·캡션·추가 사진·팬 반응·꽃다발 사진·주소를 보존합니다. 재생·일시정지·탐색·다시 재생, 로딩 실패 재시도, 로딩 중 시간 정지와 비활성 탭 일시정지를 유지하며, ORIGINALS 사진 확대창과 키보드·포커스 복원도 제공합니다. 플레이어 본문과 목록은 빌드 시 미리 렌더링됩니다. ORIGINALS 데이터는 기존 night-collections-data.js의 JSON에서 빌드 시 가져오며 원본 이미지는 변환하지 않습니다.
+
+BEHIND·TRAVEL·OBSERVATION의 문구·사진 80장·기존 주소를 보존하며 각 확대창 디자인, 이전·다음, 키보드 이동 및 닫기 후 포커스 복원을 유지합니다.
 
 팬클럽 상세는 LUNA 4~6기와 2027·2028 시즌그리팅입니다. 구성 안내·사진 93장·기존 주소를 유지하며 시즌그리팅의 사진 36장 확대 동작과 기본 dialog 디자인을 보존합니다. LUNA 키트는 기존처럼 본문에서 사진을 확인합니다.
 
@@ -52,4 +56,4 @@ React 전환 9단계: HOME·DISCOGRAPHY·CONTENTS·NOTICE·FANCLUB·GALLERY·HIS
 
 ARCHIVE의 65개 기록, 검색·분류·정렬·더 보기·검색 조건 URL과 JavaScript 미사용 시 전체 링크를 유지합니다. 멤버 소개 내용과 이미지 및 기존 주소도 보존합니다.
 
-기존 필터와 갤러리 확대, 연혁 및 링크를 유지합니다. LISTEN은 기존 13개 브라우저 기본 음원 플레이어와 NIGHTMARE의 음원 미제공 안내를 보존하며 자동재생은 하지 않습니다. 팬클럽 1~6기와 2027·2028 시즌그리팅의 기존 링크 및 미디어도 유지합니다. 빌드 시 본문을 미리 렌더링하며, 다른 14개 페이지는 기존 HTML 생성 방식을 유지합니다. React 스크립트는 내용 기반 파일명으로 이전 캐시와 구분됩니다. 전체 React SPA 전환은 아직 아닙니다.
+기존 필터와 갤러리 확대, 연혁 및 링크를 유지합니다. LISTEN은 기존 13개 브라우저 기본 음원 플레이어와 NIGHTMARE의 음원 미제공 안내를 보존하며 자동재생은 하지 않습니다. 팬클럽 1~6기와 2027·2028 시즌그리팅의 기존 링크 및 미디어도 유지합니다. 빌드 시 본문을 미리 렌더링하며, 다른 12개 페이지는 기존 HTML 생성 방식을 유지합니다. React 스크립트는 내용 기반 파일명으로 이전 캐시와 구분됩니다. 전체 React SPA 전환은 아직 아닙니다.

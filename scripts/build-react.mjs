@@ -5,19 +5,21 @@ import {join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {pageTree} from './page-tree.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
-import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,reactRoutes} from '../src/react/routes.mjs';
+import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,playerRoutes,reactRoutes} from '../src/react/routes.mjs';
+import {readPhotoEpisodes} from './photo-episodes.mjs';
 import {albumMarkup} from './album-markup.mjs';
 import {archiveMarkup} from './archive-markup.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
+  await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(await readPhotoEpisodes(new URL('../',import.meta.url))));
   const routes=reactRoutes;
   const collections={};
   for(const name of ['albums','notices','contentsEntries','memberships','galleryCards'])collections[name]=JSON.parse(await readFile(join(root,'src/data',name+'.json'),'utf8'));
   const trees={};
   for(const route of routes.slice(1)) {
-    if(route==='archive.html')continue;
+    if(route==='archive.html'||playerRoutes.includes(route))continue;
     const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));
     trees[route]=pageTree(renderCollections(albumRoutes.includes(route)?albumMarkup(page):stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)?archiveMarkup(page):page.contentHtml,collections));
   }
@@ -32,9 +34,9 @@ export async function buildReactPages() {
   for(const route of routes) {
     const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));
     const markup=renderPage(route);
-    const fallback=route==='archive.html'?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
+    const fallback=route==='archive.html'||playerRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script type="module" src="assets/js/'+clientFile+'"></script>';
     await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'</head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
   }
-  console.log('38 React routes pre-rendered; other 14 routes unchanged.');
+  console.log('40 React routes pre-rendered; other 12 routes unchanged.');
 }

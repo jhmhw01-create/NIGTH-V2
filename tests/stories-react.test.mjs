@@ -5,9 +5,9 @@ import {storyRoutes,reactRoutes} from '../src/react/routes.mjs';
 import {archiveMarkup} from '../scripts/archive-markup.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
-test('three story archives join 38 unique React routes',()=>{
+test('three story archives remain in unique React routes',()=>{
   assert.deepEqual(storyRoutes,['behind.html','travel.html','observation-2027.html']);
-  assert.equal(reactRoutes.length,38);assert.equal(new Set(reactRoutes).size,38);
+  assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(storyRoutes.every(route=>reactRoutes.includes(route)));
 });
 test('all 80 story photos keep their full and thumbnail paths and viewer styles',async()=>{
   let count=0;
