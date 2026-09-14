@@ -10,6 +10,7 @@ import {readPhotoEpisodes} from './photo-episodes.mjs';
 import {readStoreProducts} from './store-products.mjs';
 import {albumMarkup} from './album-markup.mjs';
 import {archiveMarkup} from './archive-markup.mjs';
+import {detailNavigation} from './detail-navigation.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
@@ -17,6 +18,9 @@ export async function buildReactPages() {
   await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(await readPhotoEpisodes(new URL('../',import.meta.url))));
   await writeFile(join(temporary,'store-products.json'),JSON.stringify(await readStoreProducts(new URL('../',import.meta.url))));
   const routes=reactRoutes;
+  const detailMap={};
+  for(const route of routes){const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));detailMap[route]=detailNavigation(page);}
+  await writeFile(join(temporary,'detail-navigation.json'),JSON.stringify(detailMap));
   const collections={};
   for(const name of ['albums','notices','contentsEntries','memberships','galleryCards'])collections[name]=JSON.parse(await readFile(join(root,'src/data',name+'.json'),'utf8'));
   const trees={};
@@ -38,7 +42,7 @@ export async function buildReactPages() {
     const markup=renderPage(route);
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script type="module" src="assets/js/'+clientFile+'"></script>';
-    await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'</head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
+    await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"></head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
   }
   console.log('All 52 routes pre-rendered with React; existing page URLs preserved.');
 }
