@@ -8,7 +8,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
-  const routes=['index.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html'];
+  const routes=['index.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html'];
   const collections={};
   for(const name of ['albums','notices','contentsEntries','memberships','galleryCards'])collections[name]=JSON.parse(await readFile(join(root,'src/data',name+'.json'),'utf8'));
   const trees={};
@@ -27,5 +27,5 @@ export async function buildReactPages() {
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div><noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script type="module" src="assets/js/react-site.js"></script>';
     await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'</head><body '+page.bodyAttributes+'>'+body+'</body></html>\n');
   }
-  console.log('Six React hub routes pre-rendered; other 46 routes unchanged.');
+  console.log('Eight React hub routes pre-rendered; other 44 routes unchanged.');
 }
