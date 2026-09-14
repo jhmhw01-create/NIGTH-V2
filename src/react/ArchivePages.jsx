@@ -1,6 +1,7 @@
 import {createElement,useEffect,useState} from 'react';
 import trees from '../../.react-build/page-trees.json';
-import {matchesContents,matchesNotice} from './filters.mjs';
+import {matchesContents,matchesNotice,matchesPhoto,nextPhotoIndex} from './filters.mjs';
+import {GalleryLightbox} from './GalleryLightbox.jsx';
 const classes=node => new Set((node.props?.className ?? '').split(/\s+/));
 function descendants(node,predicate) {
   if (typeof node==='string') return [];
@@ -13,8 +14,21 @@ export function ArchivePage({route}) {
   const [category,setCategory]=useState('all');
   const [year,setYear]=useState('all');
   const [ready,setReady]=useState(false);
+  const [collectionFilter,setCollectionFilter]=useState('all');
+  const [photoFilter,setPhotoFilter]=useState('all');
+  const [activePhoto,setActivePhoto]=useState(null);
   const contents=route==='contents.html';
   const notice=route==='notice.html';
+  const gallery=route==='gallery.html';
+  const galleryItems=gallery ? nodes.flatMap(n=>descendants(n,n=>classes(n).has('gallery-item'))) : [];
+  const filteredItems=galleryItems.filter(n=>matchesPhoto(n.props['data-category'] ?? '',photoFilter));
+  const lightboxItems=filteredItems.filter(n=>n.props['data-full']);
+  const photoIndex=lightboxItems.findIndex(n=>n.props['data-full']===activePhoto);
+  const activeItem=lightboxItems[photoIndex];
+  const photo=activeItem ? {full:activeItem.props['data-full'],thumb:descendants(activeItem,n=>n.tag==='img')[0]?.props.src,alt:activeItem.props['aria-label'],title:activeItem.props['data-title']} : null;
+  const movePhoto=step=>{const next=nextPhotoIndex(photoIndex,step,lightboxItems.length);if(next>=0)setActivePhoto(lightboxItems[next].props['data-full']);};
+  const collectionGroups=gallery ? nodes.flatMap(n=>descendants(n,n=>n.props['data-collection-group'])) : [];
+  const collectionCount=collectionGroups.filter(n=>collectionFilter==='all'||n.props['data-collection-group']===collectionFilter).reduce((sum,n)=>sum+descendants(n,item=>classes(item).has('gallery-archive-entry')).length,0);
   const contentCards=contents ? nodes.flatMap(n=>descendants(n,n=>classes(n).has('content-card'))) : [];
   const notices=notice ? nodes.flatMap(n=>descendants(n,n=>classes(n).has('notice-item'))) : [];
   const noticeRecord=node => ({category:node.props['data-notice-category'],year:nodeText(descendants(node,n=>n.tag==='time')[0]).slice(0,4)});
@@ -31,7 +45,7 @@ export function ArchivePage({route}) {
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:0.12});
     elements.forEach(el=>observer.observe(el));
     return ()=>observer.disconnect();
-  },[category,year]);
+  },[category,year,collectionFilter,photoFilter]);
   useEffect(()=>{
     const reveal=()=>{
       let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
@@ -45,6 +59,7 @@ export function ArchivePage({route}) {
   },[contents]);
   function render(node,key) {
     if(typeof node==='string')return node;
+    if(gallery && node.props.id==='galleryLightbox')return <GalleryLightbox key={key} photo={photo} index={photoIndex} total={lightboxItems.length} onClose={()=>setActivePhoto(null)} onMove={movePhoto} />;
     const props={...node.props,key};
     const cls=classes(node);
     let children=node.children.map((child,i)=>render(child,i));
@@ -66,6 +81,14 @@ export function ArchivePage({route}) {
       if(cls.has('notice-year-group'))props.hidden=!descendants(node,n=>classes(n).has('notice-item')).some(visibleNotice);
       if(cls.has('notice-results'))children=`${label} · ${year==='all'?'전체 연도':year} · 공지 ${count}건`;
       if(cls.has('notice-empty'))props.hidden=count!==0;
+    }
+    if(gallery) {
+      if(props['data-collection-filter']!==undefined){props.disabled=!ready;props['aria-pressed']=props['data-collection-filter']===collectionFilter;props.onClick=()=>setCollectionFilter(props['data-collection-filter']);}
+      if(props['data-collection-group'])props.hidden=collectionFilter!=='all'&&props['data-collection-group']!==collectionFilter;
+      if(cls.has('gallery-collection-status'))children=`${collectionFilter==='all'?'전체':nodeText(descendants(collectionGroups.find(n=>n.props['data-collection-group']===collectionFilter),n=>n.tag==='h2')[0])} · ${collectionCount}개 아카이브`;
+      if(cls.has('gallery-filter')){props.disabled=!ready;props['aria-pressed']=props['data-filter']===photoFilter;props.className='gallery-filter'+(props['data-filter']===photoFilter?' is-active':'');props.onClick=()=>{setActivePhoto(null);setPhotoFilter(props['data-filter']);};}
+      if(cls.has('gallery-item')){props.hidden=!matchesPhoto(props['data-category'] ?? '',photoFilter);if(props['data-full'])props.onClick=()=>setActivePhoto(props['data-full']);}
+      if(cls.has('gallery-count'))children=`${filteredItems.length} PHOTOS`;
     }
     return createElement(node.tag,props,...(Array.isArray(children)?children:[children]));
   }
