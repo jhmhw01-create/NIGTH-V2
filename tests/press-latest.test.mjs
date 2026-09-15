@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 
-test('PRESS archive includes the latest three missing releases in date order', async () => {
+test('PRESS archive includes the latest three missing releases in newest-first order', async () => {
   const page=JSON.parse(await readFile(new URL('../src/pages/press.json',import.meta.url),'utf8'));
   const section=page.contentHtml.split('id="post-phantom-heading"')[1]?.split('<h2 class="archive-heading">ARCHIVE</h2>')[0];
   assert.ok(section,'post-PHANTOM section should exist');
@@ -16,7 +16,8 @@ test('PRESS archive includes the latest three missing releases in date order', a
     assert.ok(section.includes(track));
   }
   const dates=[...section.matchAll(/<time class="press-year" datetime="([^"]+)"/g)].map(match=>match[1]);
-  assert.deepEqual(dates,[...dates].sort());
+  assert.deepEqual(dates,[...dates].sort().reverse());
+  assert.equal(dates[0],'2029-11-02');
   const archive=JSON.parse(await readFile(new URL('../src/data/archive.json',import.meta.url),'utf8'));
   const record=archive.records.find(row=>row.href==='press.html');
   assert.ok(record);
