@@ -1,0 +1,31 @@
+/* Shared Castle editorial foundation for every secondary route. */
+body[data-night-subpage]{--bg:#151412;--bg-soft:#1c1b18;--text:#eeeae1;--silver:#eeeae1;--muted:#beb9b0;--purple-soft:#d0c8ba;--line:rgba(238,234,225,.22);background:#151412;color:var(--text)}
+body[data-night-subpage]::before{display:none}
+body[data-night-subpage] .site-header{background:#151412;border-bottom:1px solid var(--line);backdrop-filter:none}
+body[data-night-subpage] .brand{color:var(--text);text-shadow:none}
+body[data-night-subpage] .nav-links{font-size:11px;letter-spacing:.13em}
+body[data-night-subpage] .nav-links a{display:inline-flex;align-items:center;min-height:44px}
+body[data-night-subpage] .nav-links a:hover,body[data-night-subpage] .nav-links a[aria-current="page"]{color:var(--text);text-shadow:none}
+body[data-night-subpage] .container{width:calc(100% - 96px);max-width:1440px}
+body[data-night-subpage] main{color:var(--text)}
+body[data-night-subpage] main :is(.section-kicker,.eyebrow){color:var(--muted);font-size:10px;line-height:1.8;letter-spacing:.18em}
+body[data-night-subpage] main h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(48px,7vw,96px);font-weight:400;line-height:1.08;letter-spacing:-.025em;overflow-wrap:anywhere;color:var(--text)}
+body[data-night-subpage] main :is(h2,.section-title){font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.018em;overflow-wrap:anywhere;color:var(--text)}
+body[data-night-subpage] main :is(.section-desc,.archive-new-lead){color:var(--muted);font-size:14px;line-height:1.9}
+body[data-night-subpage] main img{filter:none;opacity:1}
+body[data-night-subpage] main :is(.btn,a.btn){display:inline-flex;align-items:center;min-height:44px;padding:10px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;box-shadow:none;color:var(--text);font-size:10px;letter-spacing:.1em}
+body[data-night-subpage] main :is(.btn,a.btn):hover{background:none;color:var(--text);box-shadow:none;transform:none}
+body[data-night-subpage] .detail-navigation{padding-top:24px}
+body[data-night-subpage] .detail-breadcrumb{color:var(--muted);font-size:11px;line-height:1.8}
+body[data-night-subpage] .detail-breadcrumb [aria-current]{color:var(--text)}
+body[data-night-subpage] .detail-toc{margin-top:16px;padding:14px 0;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:none}
+body[data-night-subpage] .detail-toc summary{display:list-item;min-height:44px;color:var(--text);font-size:12px}
+body[data-night-subpage] .detail-toc nav{gap:4px 24px;padding-top:8px}
+body[data-night-subpage] .detail-toc a{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;color:var(--muted);font-size:12px}
+body[data-night-subpage] .detail-return{padding-top:28px;padding-bottom:28px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+body[data-night-subpage] .detail-return a{display:inline-flex;align-items:center;min-height:44px;color:var(--text)}
+body[data-night-subpage] :is(a,button,input,select,summary):focus-visible{outline:2px solid var(--text);outline-offset:5px}
+body[data-night-subpage] .site-footer{background:none;border-top:1px solid var(--line);color:var(--muted)}
+body[data-night-subpage] .site-footer a{display:inline-flex;align-items:center;min-height:44px;color:var(--text)}
+@media(max-width:860px){body[data-night-subpage] .container{width:calc(100% - 40px)}body[data-night-subpage] .nav-links{max-height:calc(100dvh - 76px);overflow-y:auto;background:#151412}body[data-night-subpage] .detail-toc nav{flex-direction:column;gap:0}}
+@media(max-width:540px){body[data-night-subpage] main h1{font-size:clamp(42px,14vw,68px)}body[data-night-subpage] .detail-return{align-items:flex-start;flex-direction:column;gap:8px}}
