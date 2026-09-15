@@ -17,7 +17,7 @@ body:has(.history-section) .history-year-nav{display:flex;gap:8px 28px;flex-wrap
 body:has(.history-section) .history-year-nav a{display:inline-flex;align-items:center;min-height:44px;color:var(--muted);font-size:13px}
 body:has(.history-section) .history-year-nav a:hover{color:var(--text)}
 body:has(.history-section) .history-timeline{display:block}
-body:has(.history-section) .history-year{display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px;background:none;border:0;border-top:1px solid var(--line);padding:44px 0 64px;box-shadow:none;scroll-margin-top:100px}
+body:has(.history-section) .history-year{display:grid;grid-template-columns:180px minmax(0,1fr);gap:48px;background:linear-gradient(180deg,#201e1b 0%,#191816 120px,#151412 240px);border:0;border-top:1px solid var(--line);padding:44px 0 64px;box-shadow:none;scroll-margin-top:100px}
 body:has(.history-section) .history-year-label{position:static}
 body:has(.history-section) .history-year-label h2{font:400 34px/1.25 Georgia,serif;color:var(--text);margin:0 0 14px}
 body:has(.history-section) .history-year-label small{display:block;line-height:1.8;font-size:9px;color:var(--muted);overflow-wrap:anywhere}
