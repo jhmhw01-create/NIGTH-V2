@@ -5,7 +5,7 @@ body:has(.discography-section) .brand{color:var(--text);text-shadow:none}
 body:has(.discography-section) .nav-links a{min-height:44px;display:inline-flex;align-items:center}
 body:has(.discography-section) .nav-links a:hover,body:has(.discography-section) .nav-links a.active{color:var(--text);text-shadow:none}
 body:has(.discography-section) .container{width:calc(100% - 96px);max-width:1440px}
-body:has(.discography-section) .discography-hero{padding:100px 0 72px;background:none}
+body:has(.discography-section) .discography-hero{padding:100px 0 72px;background:linear-gradient(135deg,#24221f 0%,#1b1a18 58%,#151412 100%);border-bottom:1px solid rgba(238,234,225,.08)}
 body:has(.discography-section) .section-kicker{color:var(--muted);letter-spacing:.2em}
 body:has(.discography-section) .discography-hero .section-title{font:400 clamp(48px,7vw,100px)/1.1 Georgia,serif;letter-spacing:-.035em}
 body:has(.discography-section) .section-desc{color:var(--muted);font-size:14px;line-height:1.9;max-width:650px}
