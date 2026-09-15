@@ -25,3 +25,14 @@ test('album footer conversion fails on unexpected markup',()=>{
 test('album hero loading priority uses the React attribute name',()=>{
   assert.equal(pageTree('<img fetchpriority="high">')[0].props.fetchPriority,'high');
 });
+
+test('all album detail routes receive the shared editorial stylesheet without replacing media',async()=>{
+  const build=await readFile(new URL('../scripts/build-react.mjs',import.meta.url),'utf8');
+  const css=await readFile(new URL('../public/assets/css/album-detail-fashion.css',import.meta.url),'utf8');
+  assert.match(build,/albumRoutes\.includes\(route\).*album-detail-fashion\.css/);
+  assert.match(build,/data-night-album-detail/);
+  assert.match(css,/body\[data-night-album-detail\]/);
+  assert.ok(!css.includes('url('));
+  assert.match(css,/object-fit:contain/);
+  assert.match(css,/@media\(max-width:600px\)/);
+});
