@@ -11,9 +11,9 @@ test('fashion theme is strictly scoped to home, with no unscoped root or informa
   assert.match(css,/max-height:calc\(100dvh - 76px\)/);assert.match(css,/grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   assert.match(css,/aspect-ratio:3\/4;object-fit:contain/);
 });
-test('all original home photographs and functional destinations remain present',async()=>{
+test('current home photographs and functional destinations remain present',async()=>{
  const home=await readFile(new URL('../src/react/HomePage.jsx',import.meta.url),'utf8');
- for(const image of ['night-group-main.png','night-group-profile.png','doha.png','ihwan.png','jiwoo.png','taehun.png','woohyun.png','fifthann-001.webp','night-luna.png'])assert(home.includes(image));
+ for(const image of ['home-night.webp','home-profile-doha.webp','home-profile-ihwan.webp','home-profile-jiwoo.webp','home-profile-taehoon.webp','home-profile-woohyun.webp','fifthann-001.webp','night-luna.png'])assert(home.includes(image));
  for(const href of ['discography.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html','five-voices.html','#members'])assert(home.includes(href));
  assert(home.indexOf('<Hero />')<home.indexOf('<About />'));assert(home.indexOf('<About />')<home.indexOf('<HomeGuide updates='));
  assert.match(home,/action="archive.html" role="search"/);assert.match(home,/name="q"/);assert.match(home,/2022\.11\.15/);
