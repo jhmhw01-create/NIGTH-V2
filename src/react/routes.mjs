@@ -1,7 +1,7 @@
 export const albumRoutes=['after-hours.html','complete-2027.html','infinity-2027.html','sensational-2027.html','wings-2028.html','persona-2028.html','nightmare-2029.html','paradox-2029.html','era-archive.html'];
 export const stageRoutes=['concert-archive.html','dream-night-2027.html','beyond-night-2028.html','fanmeeting.html','special-mc.html','year-end-awards-2026.html','daesang-moments.html','awards.html'];
 export const fanclubDetailRoutes=['luna4.html','luna5.html','luna6.html','season-greetings-2027.html','season-greetings-2028.html'];
-export const storyRoutes=['behind.html','travel.html','observation-2027.html'];
+export const storyRoutes=['behind.html','travel.html','observation-2027.html','night-off-summer.html'];
 export const playerRoutes=['vlog.html','night-originals.html'];
 export const collectionRoutes=['with-luna.html','if-night.html'];
 export const editorialRoutes=['press.html','five-voices.html'];

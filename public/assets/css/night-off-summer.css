@@ -1,0 +1,7 @@
+.nightoff-page .archive26-hero>img{object-position:center 35%;filter:saturate(.88) brightness(.76)}
+.nightoff-page .archive26-photo{aspect-ratio:4/3;background:#10141a}
+.nightoff-page .archive26-photo img{object-fit:contain}
+.nightoff-page .archive26-photo:hover img{transform:none}
+.nightoff-page .archive26-chapter{scroll-margin-top:130px;border-bottom:1px solid var(--line)}
+.nightoff-page .archive26-head p{font-size:10px;letter-spacing:.15em}
+@media(max-width:720px){.nightoff-page .archive26-photo{aspect-ratio:1/1}.nightoff-page .archive26-chapter{scroll-margin-top:115px}}
