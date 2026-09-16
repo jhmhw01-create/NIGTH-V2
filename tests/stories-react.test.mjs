@@ -9,7 +9,7 @@ test('four story archives remain in unique React routes',()=>{
   assert.deepEqual(storyRoutes,['behind.html','travel.html','observation-2027.html','night-off-summer.html']);
   assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(storyRoutes.every(route=>reactRoutes.includes(route)));
 });
-test('all 101 story photos keep their full and thumbnail paths and viewer styles',async()=>{
+test('all 111 story photos keep their full and thumbnail paths and viewer styles',async()=>{
   let count=0;
   for(const route of storyRoutes){
     const page=JSON.parse(await readFile(new URL('../src/pages/'+route.replace('.html','.json'),import.meta.url),'utf8'));
@@ -20,5 +20,5 @@ test('all 101 story photos keep their full and thumbnail paths and viewer styles
     assert.deepEqual(images(converted),images(original));
     assert.equal(converted.filter(node=>['behindLightbox','travelLightbox','archive26Lightbox'].includes(node.props.id)).length,1);
   }
-  assert.equal(count,101);
+  assert.equal(count,111);
 });

@@ -4,4 +4,20 @@
 .nightoff-page .archive26-photo:hover img{transform:none}
 .nightoff-page .archive26-chapter{scroll-margin-top:130px;border-bottom:1px solid var(--line)}
 .nightoff-page .archive26-head p{font-size:10px;letter-spacing:.15em}
-@media(max-width:720px){.nightoff-page .archive26-photo{aspect-ratio:1/1}.nightoff-page .archive26-chapter{scroll-margin-top:115px}}
+.nightoff-live{scroll-margin-top:130px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#080a0e,#06070a)}
+.nightoff-live-intro{display:grid;grid-template-columns:.55fr 1.45fr;gap:40px;margin:-4px 0 34px;padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.nightoff-live-intro p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+.nightoff-live-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 18px}
+.nightoff-live-episode{min-width:0}
+.nightoff-live-still{width:100%;aspect-ratio:4/3}
+.nightoff-live-dialogue{margin-top:10px;border:1px solid var(--line);background:rgba(255,255,255,.018)}
+.nightoff-live-dialogue summary{display:grid;grid-template-columns:38px 1fr auto;align-items:center;gap:10px;min-height:64px;padding:11px 15px;color:#e3e7ec;cursor:pointer;list-style:none}
+.nightoff-live-dialogue summary::-webkit-details-marker{display:none}
+.nightoff-live-dialogue summary::after{content:"＋";color:#8e9bad;font-size:16px}
+.nightoff-live-dialogue[open] summary::after{content:"－"}
+.nightoff-live-dialogue summary small{color:#99a8ba;font-size:9px;letter-spacing:.16em}
+.nightoff-live-dialogue summary span{font-family:Georgia,"Times New Roman",serif;font-size:16px;line-height:1.4}
+.nightoff-live-dialogue>div{padding:4px 15px 18px;border-top:1px solid var(--line)}
+.nightoff-live-dialogue p{display:grid;grid-template-columns:82px 1fr;gap:12px;margin:14px 0 0;color:#c8ced7;font-size:13px;line-height:1.7}
+.nightoff-live-dialogue strong{color:#91a4bb;font-size:9px;letter-spacing:.12em}
+@media(max-width:720px){.nightoff-page .archive26-photo{aspect-ratio:1/1}.nightoff-page .archive26-chapter,.nightoff-live{scroll-margin-top:115px}.nightoff-live-intro,.nightoff-live-grid{grid-template-columns:1fr}.nightoff-live-intro{gap:8px}.nightoff-live-dialogue p{grid-template-columns:68px 1fr}}
