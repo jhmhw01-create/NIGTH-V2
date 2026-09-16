@@ -21,14 +21,14 @@ test('all 54 existing routes are covered exactly once by React',async()=>{
   assert.equal(reactRoutes.length,54);assert.equal(new Set(reactRoutes).size,54);
   assert.deepEqual([...reactRoutes].sort(),pages.filter(file=>file.endsWith('.json')).map(file=>file.replace('.json','.html')).sort());
 });
-test('all 36 original products and their full/thumbnail images survive catalog conversion',async()=>{
-  assert.equal(products.length,36);assert.equal(productList(products,'all').length,36);
+test('all 37 products and their full/thumbnail images survive catalog conversion',async()=>{
+  assert.equal(products.length,37);assert.equal(productList(products,'all').length,37);
   for(const filter of ['featured','collectible','fashion','travel','tech'])assert.ok(productList(products,filter).every(product=>product.category.split(' ').includes(filter)));
   await Promise.all(products.flatMap(product=>product.images.flatMap(path=>[path,path.replace('/full/','/thumbs/')])).map(path=>access(new URL('public/'+path,root))));
   assert.throws(()=>parseStoreProducts('unknown'),/boundary/);
 });
 test('existing cart key, option merging, subtotal and invalid-storage handling',()=>{
-  assert.equal(cartKey,'nightMdCart');const product=products[1];
+  assert.equal(cartKey,'nightMdCart');const product=products.find(item=>item.id==='night-cushion');assert.ok(product);
   const first=addCartItem([],product,product.options[0],2);const merged=addCartItem(first,product,product.options[0],9);
   assert.equal(first[0].quantity,2);assert.equal(merged[0].quantity,11);assert.equal(merged[0].price*merged[0].quantity,product.price*11);
   const separate=addCartItem(merged,product,product.options[1],1);assert.equal(separate.length,2);assert.deepEqual(readCart(JSON.stringify(separate),products),separate);
