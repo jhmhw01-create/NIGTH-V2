@@ -7,35 +7,33 @@ const oldRoute = 'member-taehun.html';
 const newRoute = 'member-taehoon.html';
 const oldSource = join(root, 'src/pages/member-taehun.json');
 const newSource = join(root, 'src/pages/member-taehoon.json');
+const replacements = [
+  [oldRoute, newRoute],
+  ['assets/images/taehun.webp', 'assets/images/member-taehoon.webp'],
+  ['TAEHUN', 'TAEHOON']
+];
 
 const textExtensions = new Set(['.html', '.js', '.jsx', '.json', '.md', '.mjs', '.ts', '.tsx', '.txt']);
 
-async function replaceInTree(dir, replacements) {
+async function replaceInTree(dir, pairs) {
   for (const entry of await readdir(dir, {withFileTypes: true})) {
     const path = join(dir, entry.name);
     if (entry.isDirectory()) {
-      await replaceInTree(path, replacements);
+      await replaceInTree(path, pairs);
       continue;
     }
     if (!textExtensions.has(extname(entry.name))) continue;
     let text = await readFile(path, 'utf8');
     const before = text;
-    for (const [from, to] of replacements) text = text.replaceAll(from, to);
+    for (const [from, to] of pairs) text = text.replaceAll(from, to);
     if (text !== before) await writeFile(path, text, 'utf8');
   }
 }
 
-// Move all authored/internal references to the canonical spelling first.
-await replaceInTree(join(root, 'src'), [
-  [oldRoute, newRoute],
-  ['assets/images/taehun.webp', 'assets/images/member-taehoon.webp'],
-  ['TAEHUN', 'TAEHOON']
-]);
-await replaceInTree(join(root, 'tests'), [
-  [oldRoute, newRoute],
-  ['assets/images/taehun.webp', 'assets/images/member-taehoon.webp'],
-  ['TAEHUN', 'TAEHOON']
-]);
+// Move all authored/internal references, including build mirrors, to canonical spelling.
+await replaceInTree(join(root, 'src'), replacements);
+await replaceInTree(join(root, 'scripts/src'), replacements);
+await replaceInTree(join(root, 'tests'), replacements);
 
 // Canonicalize TAEHOON's authored profile instead of patching it at build time.
 let profileText = await readFile(oldSource, 'utf8');
