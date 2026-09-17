@@ -24,7 +24,7 @@ test('TAEHOON profile is canonical in authored source', async () => {
   const source = JSON.parse(await readFile(root + 'src/pages/member-taehoon.json', 'utf8'));
   assert.equal(source.route, 'member-taehoon.html');
   assert.match(source.contentHtml, /assets\/images\/member-taehoon\.webp/);
-  assert.match(source.contentHtml, /외동 \(어릴 때부터 옆집 누나와 함께 자람\)/);
+  assert.match(source.contentHtml, /<dt>FAMILY<\/dt><dd>부모님 · 외동<\/dd>/);
   assert.match(source.contentHtml, /옆집 누나와 자주 어울려 자라/);
   assert.doesNotMatch(source.contentHtml, /특정한 성장 배경 때문에 만들어진 것이 아니라/);
 });
