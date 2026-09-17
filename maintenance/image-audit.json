@@ -1,10 +1,10 @@
 {
   "schemaVersion": 2,
   "summary": {
-    "images": 1810,
-    "bytes": 162626406,
+    "images": 1811,
+    "bytes": 162632106,
     "exactDuplicateGroups": 1,
-    "literalReferenceFound": 1529,
+    "literalReferenceFound": 1530,
     "dynamicReviewRequired": 281,
     "emptyFiles": 4
   },
@@ -27,8 +27,8 @@
   ],
   "folders": {
     "assets/images": {
-      "files": 31,
-      "bytes": 3582760
+      "files": 32,
+      "bytes": 3588460
     },
     "assets/images/2026/after-hours": {
       "files": 44,
