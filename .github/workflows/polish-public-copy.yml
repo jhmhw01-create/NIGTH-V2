@@ -1,0 +1,203 @@
+name: Polish Fan-Facing Copy
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/polish-public-copy.yml'
+permissions:
+  contents: write
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Polish public copy and update era archive
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const writeJson = (path, data) => fs.writeFileSync(path, JSON.stringify(data, null, 2) + '\n');
+          const replaceRequired = (text, oldText, newText, label) => {
+            if (!text.includes(oldText)) throw new Error(`Missing copy target: ${label}`);
+            return text.replace(oldText, newText);
+          };
+
+          // HOME — preserve NIGHT's actual dark-sexy debut identity, but remove self-congratulatory copy.
+          {
+            const path = 'src/react/HomePage.jsx';
+            let s = fs.readFileSync(path, 'utf8');
+            s = replaceRequired(s,
+              '무대 위의 밤을 지배하는 대체불가 5인조 아이돌 그룹. 강렬한 퍼포먼스와 독보적인 존재감으로 데뷔 이후 정상의 자리를 이어가고 있다.',
+              '다크 섹시를 기반으로 한 강렬한 퍼포먼스와 도시적인 비주얼로 시작해, 음악과 콘셉트의 경계를 넓혀온 5인조 아이돌 그룹.',
+              'home hero copy');
+            s = replaceRequired(s,
+              '데뷔 초반 섹시 콘셉트와 강렬한 무대 장악력을 앞세워, 데뷔 약 10일 만에 Billboard Global Excl. U.S.에 처음 진입하며 빠르게 주목받았다.',
+              '데뷔 초반 다크 섹시를 기반으로 한 음악과 키 비주얼, 강렬한 무대 장악력으로 주목받았으며, 데뷔 약 10일 만에 Billboard Global Excl. U.S.에 처음 진입했다.',
+              'home about debut copy');
+            s = replaceRequired(s,
+              '현재 NIGHT를 구성하는 다섯 멤버. 카드를 선택하면 각 멤버의 소개 페이지로 이동한다.',
+              '서로 다른 매력으로 NIGHT를 완성하는 다섯 멤버를 만나보세요.',
+              'home member intro');
+            s = replaceRequired(s,
+              '음악과 활동 기록, 공식 콘텐츠와 최신 소식까지 NIGHT의 모든 아카이브를 한곳에서 확인할 수 있다.',
+              '음악과 활동 기록, 공식 콘텐츠와 최신 소식까지 NIGHT의 모든 아카이브를 한곳에서 만나보세요.',
+              'home archive intro');
+            s = replaceRequired(s,
+              'NIGHT와 팬이 같은 밤을 공유하는 공간. 공식 팬클럽 LUNA와 응원봉 MOONLIGHT의 콘셉트 및 디테일을 확인할 수 있다.',
+              'NIGHT와 LUNA가 같은 밤을 공유하는 공간. 공식 팬클럽과 응원봉 MOONLIGHT의 이야기와 디테일을 만나보세요.',
+              'home fanclub intro');
+            fs.writeFileSync(path, s);
+          }
+
+          // HISTORY — remove data-maintenance language from fan-facing copy.
+          {
+            const path = 'src/pages/history.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '<h1 class="section-title">History</h1><p class="history-reading-note">최신 연도부터 확인할 수 있습니다. 정확한 날짜가 없는 기록은 기존 활동 시기 표기를 유지합니다.</p>',
+              '<h1 class="section-title">History</h1>',
+              'history maintenance note');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '디지털 싱글 REST 발표. 타이틀곡은 NEXT TIME. 별도 앨범 페이지 없이 디스코그래피와 공식 공지에서 확인할 수 있다.',
+              '잔잔한 위로와 휴식을 담은 디지털 싱글 REST 발표. 타이틀곡은 NEXT TIME.',
+              'history REST copy');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '<small>LIVE · 2026.05.02–05.03</small><h3>Second Solo Concert</h3><p>NIGHT 두 번째 단독 콘서트 개최. 이틀간의 공연으로 LUNA와 다시 만난 NIGHT의 두 번째 단독 공연.</p>',
+              '<small>LIVE · 2026.05.02–05.03</small><h3>NIGHT 2ND CONCERT — BEYOND THE NIGHT</h3><p>THE NIGHT HAS NO END. 이틀간의 공연으로 NIGHT와 LUNA가 다시 만난 두 번째 단독 콘서트.</p>',
+              'history second concert copy');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              'CONCEPT PHOTO A / B 공개와 음악방송·프로모션 활동으로 PHANTOM 시대를 전개.',
+              '몽환적인 환영과 반사의 이미지를 무대와 비주얼로 확장하며 PHANTOM의 밤을 이어갔다.',
+              'history PHANTOM era copy');
+            writeJson(path, page);
+          }
+
+          // LISTEN — distinguish archive size from playable tracks and avoid implying production trouble.
+          {
+            const path = 'src/pages/listen.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.headHtml = replaceRequired(page.headHtml,
+              'NIGHT 타이틀곡 13곡과 AFTER MIDNIGHT부터 REST까지 이어지는 앨범 아카이브.',
+              'AFTER MIDNIGHT부터 REST까지 이어지는 NIGHT의 타이틀 트랙 16곡 아카이브. 공식 사이트에서 13곡을 직접 감상할 수 있습니다.',
+              'listen meta description');
+            page.contentHtml = page.contentHtml.replaceAll(
+              '제작사의 사정으로 해당 앨범부터는 음원이 제공되지 않습니다.',
+              '이 곡은 공식 사이트 내 스트리밍을 지원하지 않습니다. 앨범 정보는 ALBUM ARCHIVE에서 확인하세요.');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '<span>PHANTOM</span><span>4TH MINI ALBUM</span>',
+              '<span>PHANTOM</span><span>2026.09.14 · MINI ALBUM</span>',
+              'listen PHANTOM date');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '13곡의 음원을 직접 재생할 수 있습니다. 음원 미제공 앨범은 앨범 아카이브에서 확인하세요.',
+              '16곡의 타이틀 트랙을 한곳에서 만나보세요. 이 중 13곡은 공식 사이트에서 직접 재생할 수 있으며, 나머지 곡은 앨범 아카이브에서 자세히 확인할 수 있습니다.',
+              'listen footer note');
+            writeJson(path, page);
+          }
+
+          // FANCLUB — remove project/demo wording while keeping the store link natural.
+          {
+            const path = 'src/pages/fanclub.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.contentHtml = replaceRequired(page.contentHtml,
+              'NIGHT와 LUNA가 함께 지나온 공식 멤버십의 기록. 각 기수의 콘셉트와 구성품을 아카이브 형태로 정리한다.',
+              'NIGHT와 LUNA가 함께해 온 역대 멤버십의 콘셉트와 공식 키트를 만나보세요.',
+              'fanclub membership intro');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '응원봉 무드등부터 캐릭터 굿즈와 라이프스타일 MD까지. NIGHT의 공식 상품 아카이브를 가상 스토어에서 만나보세요.',
+              '응원봉 무드등부터 캐릭터 굿즈와 라이프스타일 MD까지. NIGHT의 공식 MD 컬렉션을 둘러보세요.',
+              'fanclub store intro');
+            writeJson(path, page);
+          }
+
+          // STORE — keep the no-payment notice, but present the shop as an official merchandise archive.
+          {
+            const path = 'src/pages/store.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.headHtml = replaceRequired(page.headHtml,
+              'NIGHT OFFICIAL MD STORE — NIGHT 공식 MD를 쇼핑몰 형식으로 둘러보는 가상 스토어.',
+              'NIGHT OFFICIAL MD STORE — NIGHT 공식 MD와 라이프스타일 컬렉션을 둘러보는 merchandise archive.',
+              'store meta description');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '이 페이지는 NIGHT 프로젝트의 공식 MD 아카이브를 판매 페이지 형식으로 구성한 가상 스토어입니다. 표시된 가격과 장바구니 기능은 연출용이며 실제 구매 및 결제는 이루어지지 않습니다.',
+              'NIGHT의 공식 MD와 라이프스타일 컬렉션을 상품 페이지 형식으로 소개합니다. 표시된 가격과 장바구니 기능은 상품 확인을 위한 인터랙션이며, 이 페이지에서는 실제 주문·구매·결제가 진행되지 않습니다.',
+              'store information');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '실제 판매 및 결제가 이루어지지 않는 가상 스토어입니다.',
+              '안내 · 이 페이지에서는 실제 주문 및 결제가 진행되지 않습니다.',
+              'store cart disclaimer');
+            writeJson(path, page);
+          }
+
+          // PRESS — turn an internal clarification into editorial copy.
+          {
+            const path = 'src/pages/press.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.contentHtml = replaceRequired(page.contentHtml,
+              'DOHA—CONTROL, WOOHYUN—PLEASURE, JIWOO—NARCISSISM, IHWAN—DECEPTION, TAEHOON—GREED는 각 솔로곡의 배정이 아닌 NIGHTMARE 전체를 구성하는 테마 속성이다.',
+              'CONTROL, PLEASURE, NARCISSISM, DECEPTION, GREED의 다섯 속성은 멤버별 이미지와 서사를 관통하며 NIGHTMARE 전체의 구조를 완성한다.',
+              'press NIGHTMARE attributes');
+            page.contentHtml = page.contentHtml.replace('<h3 id="reactions-heading">REACTIONS</h3>', '<h3 id="reactions-heading">ONLINE REACTIONS</h3>');
+            writeJson(path, page);
+          }
+
+          // AWARDS — remove review-state wording and align the 5th anniversary naming.
+          {
+            const path = 'src/pages/awards.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.contentHtml = replaceRequired(page.contentHtml, '<small>GRAND PRIZE</small><strong>2 CONFIRMED</strong>', '<small>GRAND PRIZE</small><strong>2 DAESANGS</strong>', 'awards grand prize stat');
+            page.contentHtml = replaceRequired(page.contentHtml, '<span>2028 YEAR-END · CONFIRMED STATUS</span>', '<span>2028 YEAR-END · CAREER RECORD</span>', 'awards status label');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '첫 대상은 2027년 COMPLETE의 Album of the Year, 두 번째 대상은 2028년 NIGHT의 Artist of the Year입니다. 2029년 연말 수상 기록은 포함하지 않습니다.',
+              '첫 대상은 2027년 COMPLETE의 Album of the Year, 두 번째 대상은 2028년 NIGHT의 Artist of the Year입니다. 현재 기록은 2028년 연말 시상식까지를 기준으로 합니다.',
+              'awards status copy');
+            page.contentHtml = replaceRequired(page.contentHtml, 'NIGHT 5TH ANNIVERSARY — FIVE NIGHTS', 'NIGHT 5TH ANNIVERSARY — FIVE YEARS. ONE NIGHT.', 'awards anniversary title');
+            page.contentHtml = replaceRequired(page.contentHtml, 'Jamsil Olympic Stadium / Jamsil Main Stadium에서 열린', 'Jamsil Olympic Stadium에서 열린', 'awards venue wording');
+            writeJson(path, page);
+          }
+
+          // ERA ARCHIVE — extend the complete index through 2029.
+          {
+            const path = 'src/pages/era-archive.json';
+            const page = JSON.parse(fs.readFileSync(path, 'utf8'));
+            page.headHtml = replaceRequired(page.headHtml,
+              '데뷔부터 PERSONA까지, 음악과 멤버 구성의 변화로 이어지는 NIGHT의 시대별 아카이브.',
+              '데뷔부터 REST까지, 음악과 멤버 구성, 콘셉트의 변화로 이어지는 NIGHT의 시대별 아카이브.',
+              'era meta');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '2022년의 첫 자정부터 2028년 낮과 밤의 두 얼굴까지. 음악, 멤버 구성과 세계관의 변화로 이어지는 NIGHT의 열세 시대.',
+              '2022년의 첫 자정부터 2029년 잠시 숨을 고르는 밤까지. 음악, 멤버 구성과 콘셉트의 변화로 이어지는 NIGHT의 열여섯 시대.',
+              'era hero copy');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              '<a href="#persona">13 PERSONA</a></div>',
+              '<a href="#persona">13 PERSONA</a><a href="#nightmare">14 NIGHTMARE</a><a href="#paradox">15 PARADOX</a><a href="#rest">16 REST</a></div>',
+              'era quick nav');
+            page.contentHtml = replaceRequired(page.contentHtml,
+              'class="era-card era-card-current reveal" href="persona-2028.html" id="persona"',
+              'class="era-card reveal" href="persona-2028.html" id="persona"',
+              'era old current marker');
+
+            const footerMarker = '<section class="section-tight era-footer-link">';
+            const footerIndex = page.contentHtml.indexOf(footerMarker);
+            if (footerIndex < 0) throw new Error('Missing era footer marker');
+            const closeIndex = page.contentHtml.lastIndexOf('</div>\n</section>', footerIndex);
+            if (closeIndex < 0) throw new Error('Missing era list closing marker');
+            const cards = `\n<a class="era-card reveal" href="nightmare-2029.html" id="nightmare"><span class="era-line" aria-hidden="true"></span><span class="era-index">14</span><span class="era-image"><img alt="NIGHTMARE 시대 NIGHT" loading="lazy" src="assets/images/2029/nightmare/nightmare-release.webp"/></span><span class="era-copy"><small>2029.02.23 · ALBUM</small><strong>NIGHTMARE</strong><em>도망치던 악몽의 끝에서, NIGHT 자신들이 악몽의 실체였음이 드러난다.</em><span class="era-facts"><b>CURRENT FIVE</b><b>TITLE · BLACK NIGHT</b><b>CONTROL / PLEASURE / NARCISSISM / DECEPTION / GREED</b></span><i>OPEN ERA RECORD →</i></span></a>\n<a class="era-card reveal" href="paradox-2029.html" id="paradox"><span class="era-line" aria-hidden="true"></span><span class="era-index">15</span><span class="era-image"><img alt="PARADOX 시대 NIGHT" loading="lazy" src="assets/images/2029/paradox/comeback/15.webp"/></span><span class="era-copy"><small>2029.08.27 · ALBUM</small><strong>PARADOX</strong><em>완벽하게 아름다운 낙원 앞에서, 완벽함이 정말 행복인지 질문한다.</em><span class="era-facts"><b>CURRENT FIVE</b><b>TITLE · PARADISE</b><b>PERFECT PARADISE / CONTRADICTION</b></span><i>OPEN ERA RECORD →</i></span></a>\n<a class="era-card era-card-current reveal" href="discography.html#rest" id="rest"><span class="era-line" aria-hidden="true"></span><span class="era-index">16</span><span class="era-image"><img alt="REST 시대 NIGHT" loading="lazy" src="assets/images/2029/rest/release.webp"/></span><span class="era-copy"><small>2029.11.02 · DIGITAL SINGLE</small><strong>REST</strong><em>긴 밤의 끝에서 잠시 숨을 고르고, 다음 시간을 향해 조용히 나아간다.</em><span class="era-facts"><b>CURRENT FIVE</b><b>TITLE · NEXT TIME</b><b>REST / HEALING</b></span><i>OPEN ERA RECORD →</i></span></a>\n`;
+            page.contentHtml = page.contentHtml.slice(0, closeIndex) + cards + page.contentHtml.slice(closeIndex);
+            writeJson(path, page);
+          }
+          NODE
+      - run: npm run audit:media:update
+      - run: npm test
+      - run: npm run audit:media
+      - run: npm run build
+      - name: Commit polished fan-facing copy
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add src/react/HomePage.jsx src/pages/history.json src/pages/listen.json src/pages/fanclub.json src/pages/store.json src/pages/press.json src/pages/awards.json src/pages/era-archive.json maintenance/web-media-manifest.json maintenance/image-audit.json
+          git commit -m 'Polish fan-facing site copy' || exit 0
+          git push
