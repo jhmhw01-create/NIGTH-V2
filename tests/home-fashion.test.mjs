@@ -13,7 +13,7 @@ test('fashion theme is strictly scoped to home, with no unscoped root or informa
 });
 test('current home photographs and functional destinations remain present',async()=>{
  const home=await readFile(new URL('../src/react/HomePage.jsx',import.meta.url),'utf8');
- for(const image of ['home-night.webp','home-profile-doha.webp','home-profile-ihwan.webp','home-profile-jiwoo.webp','home-profile-taehoon.webp','home-profile-woohyun.webp','fifthann-001.webp','night-luna.webp'])assert(home.includes(image));
+ for(const image of ['home-hero-night.webp','night-group-profile.webp','home-profile-doha.webp','home-profile-ihwan.webp','home-profile-jiwoo.webp','home-profile-taehoon.webp','home-profile-woohyun.webp','fifthann-001.webp','night-luna.webp'])assert(home.includes(image));
  for(const href of ['discography.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html','five-voices.html','#members'])assert(home.includes(href));
  assert(home.includes('function Hero()'));
  assert(home.includes('function About()'));
