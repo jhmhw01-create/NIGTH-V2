@@ -43,7 +43,7 @@ function withMemberProfile(nodes,route){
   const walk=node=>{
     if(typeof node==='string')return node;
     const props={...node.props};
-    if(node.tag==='img'&&props.src===portrait.from)props.src=portrait.to;
+    if(node.tag==='img'&&props.src===portrait.from){props.src=portrait.to;delete props.width;delete props.height;}
     let children=node.children.map(walk);
     const classes=(props.className??'').split(/\s+/);
     if(classes.includes('member-meta'))children=children.map(child=>typeof child==='string'?child.replace(/\s*·\s*\d+\s*$/,''):child);
