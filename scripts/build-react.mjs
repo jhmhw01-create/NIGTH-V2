@@ -5,6 +5,7 @@ import {join} from 'node:path';
 import {createHash} from 'node:crypto';
 import {pageTree} from './page-tree.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
+import {enhanceHead} from '../src/components/layout.mjs';
 import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,playerRoutes,collectionRoutes,editorialRoutes,eventRoutes,visualRoutes,reactRoutes} from '../src/react/routes.mjs';
 import {readPhotoEpisodes} from './photo-episodes.mjs';
 import {readStoreProducts} from './store-products.mjs';
@@ -70,7 +71,7 @@ export async function buildReactPages() {
     const storeTheme=route==='store.html'?'<link rel="stylesheet" href="assets/css/store-fashion.css?v='+storeStyleVersion+'">':'';
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
-await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+page.headHtml+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+subpageTheme+fanclubDetailTheme+listenTheme+albumDetailTheme+stageTheme+storeTheme+'</head><body '+page.bodyAttributes+(fanclubDetailRoutes.includes(route)?' data-night-fanclub-detail="true"':'')+(route==='listen.html'?' data-night-listen="true"':'')+(albumRoutes.includes(route)?' data-night-album-detail="true"':'')+(!indexRoutes.has(route)?' data-night-subpage="true"':'')+(stageRoutes.includes(route)||eventRoutes.includes(route)?' data-night-stage-detail="true"':'')+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');
+await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+enhanceHead(page)+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+subpageTheme+fanclubDetailTheme+listenTheme+albumDetailTheme+stageTheme+storeTheme+'</head><body '+page.bodyAttributes+(fanclubDetailRoutes.includes(route)?' data-night-fanclub-detail="true"':'')+(route==='listen.html'?' data-night-listen="true"':'')+(albumRoutes.includes(route)?' data-night-album-detail="true"':'')+(!indexRoutes.has(route)?' data-night-subpage="true"':'')+(stageRoutes.includes(route)||eventRoutes.includes(route)?' data-night-stage-detail="true"':'')+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');
   }
   console.log(`All ${routes.length} routes pre-rendered with React; existing page URLs preserved.`);
 }
