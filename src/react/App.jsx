@@ -10,11 +10,11 @@ import {DetailNavigation} from './DetailNavigation.jsx';
 import {ErrorBoundary} from './ErrorBoundary.jsx';
 const active={'index.html':'HOME','discography.html':'DISCOGRAPHY','contents.html':'CONTENTS','notice.html':'NOTICE','fanclub.html':'FANCLUB','gallery.html':'GALLERY','history.html':'HISTORY','listen.html':'LISTEN'};
 const memberPortraits={
-  'member-doha.html':{from:'assets/images/doha.png',to:'assets/images/member-doha.webp'},
-  'member-ihwan.html':{from:'assets/images/ihwan.png',to:'assets/images/member-ihwan.webp'},
-  'member-jiwoo.html':{from:'assets/images/jiwoo.png',to:'assets/images/member-jiwoo.webp'},
-  'member-taehun.html':{from:'assets/images/taehun.png',to:'assets/images/member-taehoon.webp'},
-  'member-woohyun.html':{from:'assets/images/woohyun.png',to:'assets/images/member-woohyun.webp'}
+  'member-doha.html':{from:'assets/images/doha.png',to:'assets/images/member-doha.webp',width:1122,height:1402},
+  'member-ihwan.html':{from:'assets/images/ihwan.png',to:'assets/images/member-ihwan.webp',width:1122,height:1402},
+  'member-jiwoo.html':{from:'assets/images/jiwoo.png',to:'assets/images/member-jiwoo.webp',width:1122,height:1402},
+  'member-taehun.html':{from:'assets/images/taehun.png',to:'assets/images/member-taehoon.webp',width:1122,height:1402},
+  'member-woohyun.html':{from:'assets/images/woohyun.png',to:'assets/images/member-woohyun.webp',width:1122,height:1402}
 };
 function nodeText(node){return typeof node==='string'?node:node.children.map(nodeText).join('');}
 function stripAgeRow(children){
@@ -43,7 +43,7 @@ function withMemberProfile(nodes,route){
   const walk=node=>{
     if(typeof node==='string')return node;
     const props={...node.props};
-    if(node.tag==='img'&&props.src===portrait.from){props.src=portrait.to;delete props.width;delete props.height;}
+    if(node.tag==='img'&&props.src===portrait.from){props.src=portrait.to;props.width=String(portrait.width);props.height=String(portrait.height);}
     let children=node.children.map(walk);
     const classes=(props.className??'').split(/\s+/);
     if(classes.includes('member-meta'))children=children.map(child=>typeof child==='string'?child.replace(/\s*·\s*\d+\s*$/,''):child);
