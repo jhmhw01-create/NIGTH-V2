@@ -1,7 +1,7 @@
 import {parseFragment} from 'parse5';
 const names={class:'className',for:'htmlFor',tabindex:'tabIndex',readonly:'readOnly',colspan:'colSpan',rowspan:'rowSpan',srcset:'srcSet',crossorigin:'crossOrigin',datetime:'dateTime',autoplay:'autoPlay',autofocus:'autoFocus',fetchpriority:'fetchPriority'};
 const booleans=new Set(['hidden','open','disabled','checked','multiple','required','autofocus','selected','controls','loop','muted','autoplay']);
-export function pageTree(markup) {
+export function pageTree(markup,imageDimensions={}) {
   let imageCount=0;
   const convert=node => {
     if (node.nodeName === '#text') return node.value;
@@ -25,6 +25,16 @@ export function pageTree(markup) {
     if (node.tagName === 'img') {
       if (props.decoding === undefined) props.decoding='async';
       if (imageCount > 0 && props.loading === undefined && props.fetchPriority !== 'high') props.loading='lazy';
+      const source=props.src?.split(/[?#]/,1)[0] ?? '';
+      if (!/^(?:[a-z]+:|\/\/)/i.test(source)) {
+        let key=source.replace(/^\.\//,'').replace(/^\/+/,'').replace(/^NIGTH-V2\//,'');
+        try{key=decodeURIComponent(key);}catch{}
+        const dimensions=imageDimensions[key];
+        if (dimensions) {
+          if (props.width === undefined) props.width=String(dimensions.width);
+          if (props.height === undefined) props.height=String(dimensions.height);
+        }
+      }
       imageCount+=1;
     }
     return {tag:node.tagName,props,children:(node.childNodes ?? []).map(convert).filter(node=>node!==null)};
