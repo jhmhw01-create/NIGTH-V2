@@ -14,6 +14,7 @@ test('25 notices and six membership cards render',async()=>{
     for(const record of data)assert(!renderer(record).includes('{{title}}'));
   }
 });
+// PHANTOM NOTICE intentionally keeps only the album release announcement.
 test('PHANTOM notice keeps only the album release announcement',async()=>{
   const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
   const phantom=data.filter(record=>(record.title+'\n'+record.bodyTemplateHtml).includes('PHANTOM'));
