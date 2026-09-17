@@ -72,42 +72,6 @@
     "bodyTemplateHtml": "<summary><time>2026.12.10</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 WINTER SPECIAL ALBUM <strong>AFTER HOURS</strong>와 타이틀곡 <strong>NO SUNRISE</strong>가 공개되었습니다. 아침이 오지 않는 새벽의 도시를 담은 전체 아카이브를 확인하세요.</p><a class=\"notice-feature-image\" href=\"after-hours.html\" aria-label=\"AFTER HOURS 공식 아카이브 열기\"><img src=\"assets/images/2026/after-hours/release.webp\" alt=\"NIGHT AFTER HOURS NO SUNRISE 발매 포스터\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"after-hours.html\">ENTER AFTER HOURS →</a></div>"
   },
   {
-    "id": "notices-13",
-    "title": "NO SUNRISE D-1 POSTER 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2026.12.09</time><span class=\"notice-category\">COMEBACK</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>WINTER SPECIAL ALBUM <strong>AFTER HOURS</strong> 발매를 하루 앞둔 <strong>NO SUNRISE</strong> D-1 포스터가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2026/after-hours/d1-poster.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"NO SUNRISE D-1 포스터 크게 보기\"><img src=\"assets/images/2026/after-hours/d1-poster.webp\" alt=\"NO SUNRISE D-1 포스터\" loading=\"lazy\"></a></div>"
-  },
-  {
-    "id": "notices-14",
-    "title": "NO SUNRISE M/V TEASER 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2026.12.08</time><span class=\"notice-category\">COMEBACK</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p><strong>AFTER HOURS</strong> 타이틀곡 <strong>NO SUNRISE</strong>의 M/V 티저가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2026/after-hours/mv-teaser.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"NO SUNRISE M/V 티저 크게 보기\"><img src=\"assets/images/2026/after-hours/mv-teaser.webp\" alt=\"NO SUNRISE M/V 티저\" loading=\"lazy\"></a></div>"
-  },
-  {
-    "id": "notices-15",
-    "title": "AFTER HOURS HIGHLIGHT MEDLEY 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2026.12.07</time><span class=\"notice-category\">COMEBACK</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p><strong>AFTER HOURS</strong>의 네 트랙을 미리 만나는 하이라이트 메들리가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2026/after-hours/highlight-medley.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"AFTER HOURS 하이라이트 메들리 이미지 크게 보기\"><img src=\"assets/images/2026/after-hours/highlight-medley.webp\" alt=\"AFTER HOURS 하이라이트 메들리\" loading=\"lazy\"></a></div>"
-  },
-  {
-    "id": "notices-16",
-    "title": "AFTER HOURS TRACKLIST 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2026.12.05</time><span class=\"notice-category\">COMEBACK</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p><strong>NIGHT REMAINS</strong>, 타이틀곡 <strong>NO SUNRISE</strong>, <strong>STILL NIGHT</strong>, <strong>4AM</strong>까지 AFTER HOURS의 네 트랙이 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2026/after-hours/tracklist.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"AFTER HOURS 트랙리스트 크게 보기\"><img src=\"assets/images/2026/after-hours/tracklist.webp\" alt=\"AFTER HOURS 트랙리스트\" loading=\"lazy\"></a></div>"
-  },
-  {
-    "id": "notices-17",
-    "title": "AFTER HOURS CONCEPT PHOTO 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2026.12.02</time><span class=\"notice-category\">COMEBACK</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>새벽의 고층 공간과 차가운 푸른 도시를 배경으로 한 NIGHT의 <strong>AFTER HOURS</strong> 단체 및 개인 콘셉트 포토가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"after-hours.html#promotion\" aria-label=\"AFTER HOURS 콘셉트 포토 아카이브 열기\"><img src=\"assets/images/2026/after-hours/concept-group.webp\" alt=\"AFTER HOURS NIGHT 단체 콘셉트 포토\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"after-hours.html#promotion\">VIEW CONCEPT PHOTOS →</a></div>"
-  },
-  {
-    "id": "notices-18",
-    "title": "AFTER HOURS COMEBACK SCHEDULER 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2026.11.30</time><span class=\"notice-category\">COMEBACK</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 WINTER SPECIAL ALBUM <strong>AFTER HOURS</strong> 컴백 스케줄러가 공개되었습니다. 앨범과 타이틀곡 <strong>NO SUNRISE</strong>는 <strong>2026.12.10</strong> 공개됩니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2026/after-hours/scheduler.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"AFTER HOURS 컴백 스케줄러 크게 보기\"><img src=\"assets/images/2026/after-hours/scheduler.webp\" alt=\"AFTER HOURS 컴백 스케줄러\" loading=\"lazy\"></a></div>"
-  },
-  {
     "id": "notices-19",
     "title": "LUNA 4th Generation 멤버십 키트 공개 안내",
     "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
