@@ -17,6 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/polish-member-profiles.mjs
+      - run: node scripts/polish-member-profiles-v2.mjs
       - run: npm run audit:media:update
       - run: npm test
       - run: npm run audit:media
@@ -25,6 +26,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/pages/member-*.json maintenance
+          git add src/pages/member-*.json maintenance tests/member-page-normalization.test.mjs
           git commit -m "Polish member profile copy" || exit 0
           git push
