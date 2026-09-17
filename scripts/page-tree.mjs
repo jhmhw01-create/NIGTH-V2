@@ -2,6 +2,7 @@ import {parseFragment} from 'parse5';
 const names={class:'className',for:'htmlFor',tabindex:'tabIndex',readonly:'readOnly',colspan:'colSpan',rowspan:'rowSpan',srcset:'srcSet',crossorigin:'crossOrigin',datetime:'dateTime',autoplay:'autoPlay',autofocus:'autoFocus',fetchpriority:'fetchPriority'};
 const booleans=new Set(['hidden','open','disabled','checked','multiple','required','autofocus','selected','controls','loop','muted','autoplay']);
 export function pageTree(markup) {
+  let imageCount=0;
   const convert=node => {
     if (node.nodeName === '#text') return node.value;
     if (!node.tagName) return null;
@@ -20,6 +21,11 @@ export function pageTree(markup) {
         continue;
       }
       props[names[name] ?? name]=booleans.has(name) ? true : value;
+    }
+    if (node.tagName === 'img') {
+      if (props.decoding === undefined) props.decoding='async';
+      if (imageCount > 0 && props.loading === undefined && props.fetchPriority !== 'high') props.loading='lazy';
+      imageCount+=1;
     }
     return {tag:node.tagName,props,children:(node.childNodes ?? []).map(convert).filter(node=>node!==null)};
   };
