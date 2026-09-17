@@ -3,13 +3,13 @@
     "id": "memberships-1",
     "title": "AFTERIMAGE",
     "attributesHtml": " class=\"luna-archive-card reveal\"",
-    "bodyTemplateHtml": "<a href=\"luna6.html\"><img src=\"assets/images/luna6/01-box.png\" alt=\"LUNA 6기 AFTERIMAGE\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 6th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Even after the light fades, you remain.</p><p class=\"luna-period\"><time datetime=\"2028-11-20\">2028.11.20</time> · KIT ARCHIVE</p><p>빛이 사라진 뒤에도 남는 잔상처럼 이어지는 NIGHT와 LUNA의 여섯 번째 기록.</p><a class=\"btn\" href=\"luna6.html\">EXPLORE THE KIT →</a></div>"
+    "bodyTemplateHtml": "<a href=\"luna6.html\"><img src=\"assets/images/luna6/01-box.webp\" alt=\"LUNA 6기 AFTERIMAGE\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 6th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Even after the light fades, you remain.</p><p class=\"luna-period\"><time datetime=\"2028-11-20\">2028.11.20</time> · KIT ARCHIVE</p><p>빛이 사라진 뒤에도 남는 잔상처럼 이어지는 NIGHT와 LUNA의 여섯 번째 기록.</p><a class=\"btn\" href=\"luna6.html\">EXPLORE THE KIT →</a></div>"
   },
   {
     "id": "memberships-2",
     "title": "EVERNIGHT",
     "attributesHtml": " class=\"luna-archive-card reveal\"",
-    "bodyTemplateHtml": "<a href=\"luna5.html\"><img src=\"assets/images/luna5/03-membership-box.png\" alt=\"LUNA 5기 EVERNIGHT\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 5th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Stay with us. After every night.</p><p class=\"luna-period\"><time datetime=\"2027-11-20\">2027.11.20</time> · KIT ARCHIVE</p><p>모든 밤이 지난 뒤에도 함께 머무는 NIGHT와 LUNA의 다섯 번째 멤버십 기록.</p><a class=\"btn\" href=\"luna5.html\">EXPLORE THE KIT →</a></div>"
+    "bodyTemplateHtml": "<a href=\"luna5.html\"><img src=\"assets/images/luna5/03-membership-box.webp\" alt=\"LUNA 5기 EVERNIGHT\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 5th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Stay with us. After every night.</p><p class=\"luna-period\"><time datetime=\"2027-11-20\">2027.11.20</time> · KIT ARCHIVE</p><p>모든 밤이 지난 뒤에도 함께 머무는 NIGHT와 LUNA의 다섯 번째 멤버십 기록.</p><a class=\"btn\" href=\"luna5.html\">EXPLORE THE KIT →</a></div>"
   },
   {
     "id": "luna-fourth",

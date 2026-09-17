@@ -7888,7 +7888,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/doha.png",
+      "path": "assets/images/doha.webp",
       "bytes": 574776,
       "sha256": "a9c4434a58c835e0d80a2dc9ce7644c2191b86fd8a260ac0943c88ed872e29e2",
       "folder": "assets/images",
@@ -10032,7 +10032,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/ihwan.png",
+      "path": "assets/images/ihwan.webp",
       "bytes": 871933,
       "sha256": "672129087d3a55908b16878f68970331f27148a3a7306caed927f7c399361364",
       "folder": "assets/images",
@@ -10040,7 +10040,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/jiwoo.png",
+      "path": "assets/images/jiwoo.webp",
       "bytes": 903800,
       "sha256": "8b9cf61dbf792766f3c4e230eea92af9ccc7ec7dd95c1a8d34ec6466ece1b998",
       "folder": "assets/images",
@@ -10312,7 +10312,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/luna5/01-bookmark.png",
+      "path": "assets/images/luna5/01-bookmark.webp",
       "bytes": 1835784,
       "sha256": "0e40421e7a0ba6856a4118dfeea172d87cdf1de7a92f4ae0230f512ad42cd1c9",
       "folder": "assets/images/luna5",
@@ -10328,7 +10328,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/02-folded-poster.png",
+      "path": "assets/images/luna5/02-folded-poster.webp",
       "bytes": 2128232,
       "sha256": "cd0cc0630e7f66e9d7cc7dc38dc127978c74e4aefd81901f00db8548c20c8453",
       "folder": "assets/images/luna5",
@@ -10344,7 +10344,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/03-membership-box.png",
+      "path": "assets/images/luna5/03-membership-box.webp",
       "bytes": 2110348,
       "sha256": "87ecb18fa7afc64a1a6d55ba4d368ed600fa0c4a374f6be7bba9cc827f53cbc9",
       "folder": "assets/images/luna5",
@@ -10360,7 +10360,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/04-membership-card.png",
+      "path": "assets/images/luna5/04-membership-card.webp",
       "bytes": 2234141,
       "sha256": "b43271c4e41c4d37820c0016e533144466d1c349f1aa177cd09e8c001c401972",
       "folder": "assets/images/luna5",
@@ -10376,7 +10376,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/05-message-card-set.png",
+      "path": "assets/images/luna5/05-message-card-set.webp",
       "bytes": 2338309,
       "sha256": "5fc54279e8e5eb6a2942b5e92776283d15d0d62b547e6d19f8f57db00e5457e0",
       "folder": "assets/images/luna5",
@@ -10392,7 +10392,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/06-mini-photo-envelope.png",
+      "path": "assets/images/luna5/06-mini-photo-envelope.webp",
       "bytes": 2426396,
       "sha256": "ba67dcc4fbd4130b3e03641284d41808986c4b50570463a8fa7eeb4c21bd8cf8",
       "folder": "assets/images/luna5",
@@ -10408,7 +10408,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/07-night-pass.png",
+      "path": "assets/images/luna5/07-night-pass.webp",
       "bytes": 2114476,
       "sha256": "16693c6212f7e39eeddce09f49478a950f5f82416c3413578cf8eb1e4d70fe69",
       "folder": "assets/images/luna5",
@@ -10424,7 +10424,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/08-photobook.png",
+      "path": "assets/images/luna5/08-photobook.webp",
       "bytes": 2234297,
       "sha256": "4a7ac75e7ba12e7da321d92996e62fc928ccf474418cae891a057ad864100fec",
       "folder": "assets/images/luna5",
@@ -10440,7 +10440,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/09-photocard-set.png",
+      "path": "assets/images/luna5/09-photocard-set.webp",
       "bytes": 2267898,
       "sha256": "15b61d5c2df71e3e23d1d4004e3169562182a782f27f7ed3e0683fa96321117c",
       "folder": "assets/images/luna5",
@@ -10456,7 +10456,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna5/10-sticker.png",
+      "path": "assets/images/luna5/10-sticker.webp",
       "bytes": 1998522,
       "sha256": "665c9071cf9c64eca1a03a2d610344310b33279739a798176f84faa0955d678f",
       "folder": "assets/images/luna5",
@@ -10472,7 +10472,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/01-box.png",
+      "path": "assets/images/luna6/01-box.webp",
       "bytes": 2189384,
       "sha256": "fa78f43e741aa7b4b09f1d7aeeb778d90174df058c99dc27b9bfd4f1c63bcefc",
       "folder": "assets/images/luna6",
@@ -10488,7 +10488,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/02-folded-poster.png",
+      "path": "assets/images/luna6/02-folded-poster.webp",
       "bytes": 2044830,
       "sha256": "2152fad66509762522389ffaee72704e9618868d2f87d405f344ee83d33cd86d",
       "folder": "assets/images/luna6",
@@ -10504,7 +10504,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/03-graphic-transparency-sheet.png",
+      "path": "assets/images/luna6/03-graphic-transparency-sheet.webp",
       "bytes": 1240431,
       "sha256": "c27acdf41be7e5de57213a444723c7a01a484eaf147bb531e731010b280bdf99",
       "folder": "assets/images/luna6",
@@ -10520,7 +10520,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/04-light-trace-photo-set.png",
+      "path": "assets/images/luna6/04-light-trace-photo-set.webp",
       "bytes": 2363819,
       "sha256": "09565ecdeb956cc3ec52a9e2047292e36bae39611783b97dca3cea7bc7418e5e",
       "folder": "assets/images/luna6",
@@ -10536,7 +10536,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/05-member-note-set.png",
+      "path": "assets/images/luna6/05-member-note-set.webp",
       "bytes": 2048383,
       "sha256": "e0035b4ae2f48aadbdb4ed8197cc6c981c396476bf2d808ffc2f07940cd2395e",
       "folder": "assets/images/luna6",
@@ -10552,7 +10552,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/06-membership-card.png",
+      "path": "assets/images/luna6/06-membership-card.webp",
       "bytes": 2228139,
       "sha256": "9efcfffa99b4563e41b96c00614b3e1a160dae00e370618b4b18d213b0e0aaf0",
       "folder": "assets/images/luna6",
@@ -10568,7 +10568,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/07-photobook.png",
+      "path": "assets/images/luna6/07-photobook.webp",
       "bytes": 2208782,
       "sha256": "3c0dbd445983573f9c5a7cd7ce14d2f5531be512954de761182c944aedb801b1",
       "folder": "assets/images/luna6",
@@ -10584,7 +10584,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/08-physical-film-card.png",
+      "path": "assets/images/luna6/08-physical-film-card.webp",
       "bytes": 1164863,
       "sha256": "fe00aadb01be62b844b2d5226cbd08840232e743f446726a40db93f481c37f26",
       "folder": "assets/images/luna6",
@@ -10600,7 +10600,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/09-photocard-set.png",
+      "path": "assets/images/luna6/09-photocard-set.webp",
       "bytes": 2646594,
       "sha256": "a35e8fefe8273193c35f03eba467d23b9b857c2ed1fe6f8b87d4330c95517268",
       "folder": "assets/images/luna6",
@@ -10616,7 +10616,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/luna6/10-sticker.png",
+      "path": "assets/images/luna6/10-sticker.webp",
       "bytes": 2158023,
       "sha256": "036ea27bfd367b46e09eb882874144c0f1f2c21732dc07c98aa97e1a65e49814",
       "folder": "assets/images/luna6",
@@ -11784,7 +11784,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/night-group-main.png",
+      "path": "assets/images/night-group-main.webp",
       "bytes": 887127,
       "sha256": "748941c86b77d1e5ea2710d97e8b96cf1f5133aff55b7bf547e519e46ed62497",
       "folder": "assets/images",
@@ -11792,7 +11792,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/night-group-profile.png",
+      "path": "assets/images/night-group-profile.webp",
       "bytes": 950813,
       "sha256": "63718f43d18615bcad82f254efb1a8242e0ac448de1042e93e8934165421f361",
       "folder": "assets/images",
@@ -11800,7 +11800,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/night-luna.png",
+      "path": "assets/images/night-luna.webp",
       "bytes": 1201377,
       "sha256": "726acc28b413d1387acaa2e6ab1e6ffb8d223c476aee8cfc8bfdc0bb2c0e1ba0",
       "folder": "assets/images",
@@ -11856,7 +11856,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-between-the-illusion-0905.png",
+      "path": "assets/images/phantom-between-the-illusion-0905.webp",
       "bytes": 5040291,
       "sha256": "e387e38c06cce87d03969d8d886665f2d73a93cdda3a033871c15d47a5f8dda8",
       "folder": "assets/images",
@@ -11864,7 +11864,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-comeback-scheduler.png",
+      "path": "assets/images/phantom-comeback-scheduler.webp",
       "bytes": 3922016,
       "sha256": "10443b0a92af6fc6f8b3b7d102f26c95da9664b0b8822150e5a68ca10cabe64f",
       "folder": "assets/images",
@@ -11872,7 +11872,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-comeback-stage-a-ver-0917.png",
+      "path": "assets/images/phantom-comeback-stage-a-ver-0917.webp",
       "bytes": 3936897,
       "sha256": "c922de5d367fbe4d6fdbaada14cb5b7630cce5563d9ccee626569cedfa8a8323",
       "folder": "assets/images",
@@ -11880,7 +11880,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-highlight-medley.png",
+      "path": "assets/images/phantom-highlight-medley.webp",
       "bytes": 5008116,
       "sha256": "f53258b78b14a791487a37ea65bf1eb09ae18bbbe98a47521e061b6ebe0a88b7",
       "folder": "assets/images",
@@ -11888,7 +11888,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-illusion-lyric-spoiler-0909.png",
+      "path": "assets/images/phantom-illusion-lyric-spoiler-0909.webp",
       "bytes": 4994978,
       "sha256": "5de99aa41cf33f2980c857460c7c9162120e5f4eaca963348d05587af653891c",
       "folder": "assets/images",
@@ -11896,7 +11896,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-illusion-mv-teaser-01-0911.png",
+      "path": "assets/images/phantom-illusion-mv-teaser-01-0911.webp",
       "bytes": 3141326,
       "sha256": "96168c3ab5ec371c5f566545425d4d76c661368a0b2cf11e10a51ff62ca52b38",
       "folder": "assets/images",
@@ -11904,7 +11904,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-illusion-mv-teaser-02-0913.png",
+      "path": "assets/images/phantom-illusion-mv-teaser-02-0913.webp",
       "bytes": 3261905,
       "sha256": "426afa3d025b374fd0e011bdc6866f1950a7152bef5f7466cb791add747c1024",
       "folder": "assets/images",
@@ -11912,7 +11912,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-illusion-official-mv-0914.png",
+      "path": "assets/images/phantom-illusion-official-mv-0914.webp",
       "bytes": 3344352,
       "sha256": "7544497607f44e5c3b49855f051fdfb730f9ee7d80e97417f4fb9cab0eae1812",
       "folder": "assets/images",
@@ -11920,7 +11920,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-mood-teaser-0826.png",
+      "path": "assets/images/phantom-mood-teaser-0826.webp",
       "bytes": 2926701,
       "sha256": "cf7ceeee6ffdbe14eb5eb6365c83caa09d602bb01f50af0fcf057550d36c5813",
       "folder": "assets/images",
@@ -11928,7 +11928,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-music-show-stage-b-ver-0924.png",
+      "path": "assets/images/phantom-music-show-stage-b-ver-0924.webp",
       "bytes": 2991797,
       "sha256": "76afc8d63dbe45e1b8c0fcbf11c7f4166395d73f2160b254d3660d4ec8fa8517",
       "folder": "assets/images",
@@ -11936,7 +11936,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-package-preview-0908.png",
+      "path": "assets/images/phantom-package-preview-0908.webp",
       "bytes": 1823972,
       "sha256": "e8877df30fe628d01aa029beba98c34ed33d9cade344983217a9c2b981f71a55",
       "folder": "assets/images",
@@ -11944,7 +11944,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-special-stage-ab-mix-ver-1001.png",
+      "path": "assets/images/phantom-special-stage-ab-mix-ver-1001.webp",
       "bytes": 4074912,
       "sha256": "4357b9f4da61b06e3914cddd95051800e891dd35442e9b59ad33494859caa605",
       "folder": "assets/images",
@@ -11952,7 +11952,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/phantom-tracklist-0907.png",
+      "path": "assets/images/phantom-tracklist-0907.webp",
       "bytes": 2844497,
       "sha256": "920628a241f7e370bf8599de0952db77bab08d85c48b280af73e58e007ef08b4",
       "folder": "assets/images",
@@ -12200,7 +12200,7 @@
       "status": "referenced"
     },
     {
-      "path": "assets/images/taehun.png",
+      "path": "assets/images/taehun.webp",
       "bytes": 1027400,
       "sha256": "cb1f273b834cc0903bd2a8205bbe97b968aeb0bc59e982e2f3b38e1c4d87769b",
       "folder": "assets/images",
@@ -13832,7 +13832,7 @@
       "status": "needs-dynamic-reference-review"
     },
     {
-      "path": "assets/images/woohyun.png",
+      "path": "assets/images/woohyun.webp",
       "bytes": 995628,
       "sha256": "6e49f3cb9176fb026ea9c61cbd315b4927c51e1b2e1475ffc5966f7bdb874848",
       "folder": "assets/images",

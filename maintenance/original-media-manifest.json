@@ -6525,7 +6525,7 @@
     "sha256": "ef649fa192f6edb19b5c24a960cb1f053c4cbd50a0e0145687f42b89f30f84c5"
   },
   {
-    "path": "assets/images/luna5/01-bookmark.png",
+    "path": "assets/images/luna5/01-bookmark.webp",
     "bytes": 1835784,
     "sha256": "0e40421e7a0ba6856a4118dfeea172d87cdf1de7a92f4ae0230f512ad42cd1c9"
   },
@@ -6535,7 +6535,7 @@
     "sha256": "94d583f70043ac9026f6f85d7d8c276b1a49dccb1ffc5d531600262ed363291f"
   },
   {
-    "path": "assets/images/luna5/02-folded-poster.png",
+    "path": "assets/images/luna5/02-folded-poster.webp",
     "bytes": 2128232,
     "sha256": "cd0cc0630e7f66e9d7cc7dc38dc127978c74e4aefd81901f00db8548c20c8453"
   },
@@ -6545,7 +6545,7 @@
     "sha256": "547f606609575d140201b3dbf14189b3c337a62f7298e7e4a1554eabdbb9ab22"
   },
   {
-    "path": "assets/images/luna5/03-membership-box.png",
+    "path": "assets/images/luna5/03-membership-box.webp",
     "bytes": 2110348,
     "sha256": "87ecb18fa7afc64a1a6d55ba4d368ed600fa0c4a374f6be7bba9cc827f53cbc9"
   },
@@ -6555,7 +6555,7 @@
     "sha256": "611d8c0436342e74960ade9305a0b86c56f1cc2820494e06ac699cd4fd0a7b87"
   },
   {
-    "path": "assets/images/luna5/04-membership-card.png",
+    "path": "assets/images/luna5/04-membership-card.webp",
     "bytes": 2234141,
     "sha256": "b43271c4e41c4d37820c0016e533144466d1c349f1aa177cd09e8c001c401972"
   },
@@ -6565,7 +6565,7 @@
     "sha256": "a91b99c6a3193df4786ced356d7e76e83663fb19509b4e56df37d4dd82fa18d0"
   },
   {
-    "path": "assets/images/luna5/05-message-card-set.png",
+    "path": "assets/images/luna5/05-message-card-set.webp",
     "bytes": 2338309,
     "sha256": "5fc54279e8e5eb6a2942b5e92776283d15d0d62b547e6d19f8f57db00e5457e0"
   },
@@ -6575,7 +6575,7 @@
     "sha256": "48fbecb66a3e55bb019580ab4896b3aee67802fe1c3b13cc13122f7b7076eea2"
   },
   {
-    "path": "assets/images/luna5/06-mini-photo-envelope.png",
+    "path": "assets/images/luna5/06-mini-photo-envelope.webp",
     "bytes": 2426396,
     "sha256": "ba67dcc4fbd4130b3e03641284d41808986c4b50570463a8fa7eeb4c21bd8cf8"
   },
@@ -6585,7 +6585,7 @@
     "sha256": "dd3be7dd9ee52878c558d6661b06f478d74112cad94c75bb1219960dac49c278"
   },
   {
-    "path": "assets/images/luna5/07-night-pass.png",
+    "path": "assets/images/luna5/07-night-pass.webp",
     "bytes": 2114476,
     "sha256": "16693c6212f7e39eeddce09f49478a950f5f82416c3413578cf8eb1e4d70fe69"
   },
@@ -6595,7 +6595,7 @@
     "sha256": "f29e92a62b31e1cf1a9d597428f9280237d5780d8225daacbef7a100acdcc9c7"
   },
   {
-    "path": "assets/images/luna5/08-photobook.png",
+    "path": "assets/images/luna5/08-photobook.webp",
     "bytes": 2234297,
     "sha256": "4a7ac75e7ba12e7da321d92996e62fc928ccf474418cae891a057ad864100fec"
   },
@@ -6605,7 +6605,7 @@
     "sha256": "2d0e3d283d81c6e80c9fab0d09b8037d0ef51a0f2c5f224df9d18a5a62dd5a7c"
   },
   {
-    "path": "assets/images/luna5/09-photocard-set.png",
+    "path": "assets/images/luna5/09-photocard-set.webp",
     "bytes": 2267898,
     "sha256": "15b61d5c2df71e3e23d1d4004e3169562182a782f27f7ed3e0683fa96321117c"
   },
@@ -6615,7 +6615,7 @@
     "sha256": "6ebaab14aefed8ad53f51ceae57901e954e851bb5ab8b421d2fb15bd2e8ba498"
   },
   {
-    "path": "assets/images/luna5/10-sticker.png",
+    "path": "assets/images/luna5/10-sticker.webp",
     "bytes": 1998522,
     "sha256": "665c9071cf9c64eca1a03a2d610344310b33279739a798176f84faa0955d678f"
   },
@@ -6625,7 +6625,7 @@
     "sha256": "63578a33b5a5015923d6b2fc151abf6f198ab4e29051d72c791b5838acca83d1"
   },
   {
-    "path": "assets/images/luna6/01-box.png",
+    "path": "assets/images/luna6/01-box.webp",
     "bytes": 2189384,
     "sha256": "fa78f43e741aa7b4b09f1d7aeeb778d90174df058c99dc27b9bfd4f1c63bcefc"
   },
@@ -6635,7 +6635,7 @@
     "sha256": "b00b885f2e7635e075cde0fd7b87ed85224c78174e84efef9eb6843c88671b90"
   },
   {
-    "path": "assets/images/luna6/02-folded-poster.png",
+    "path": "assets/images/luna6/02-folded-poster.webp",
     "bytes": 2044830,
     "sha256": "2152fad66509762522389ffaee72704e9618868d2f87d405f344ee83d33cd86d"
   },
@@ -6645,7 +6645,7 @@
     "sha256": "5fe330c37bfaf31c7515a26a0fa817fa338b549165db459df4d53dba0f073d3f"
   },
   {
-    "path": "assets/images/luna6/03-graphic-transparency-sheet.png",
+    "path": "assets/images/luna6/03-graphic-transparency-sheet.webp",
     "bytes": 1240431,
     "sha256": "c27acdf41be7e5de57213a444723c7a01a484eaf147bb531e731010b280bdf99"
   },
@@ -6655,7 +6655,7 @@
     "sha256": "2f6669a654bdbfca9391e7c5a570a45d8ff300ef2ebf669406130fb91abb2208"
   },
   {
-    "path": "assets/images/luna6/04-light-trace-photo-set.png",
+    "path": "assets/images/luna6/04-light-trace-photo-set.webp",
     "bytes": 2363819,
     "sha256": "09565ecdeb956cc3ec52a9e2047292e36bae39611783b97dca3cea7bc7418e5e"
   },
@@ -6665,7 +6665,7 @@
     "sha256": "f51412136bc7262578040e87b369318acd79c41736df00c23f71c8004fce60f8"
   },
   {
-    "path": "assets/images/luna6/05-member-note-set.png",
+    "path": "assets/images/luna6/05-member-note-set.webp",
     "bytes": 2048383,
     "sha256": "e0035b4ae2f48aadbdb4ed8197cc6c981c396476bf2d808ffc2f07940cd2395e"
   },
@@ -6675,7 +6675,7 @@
     "sha256": "7074b18604acb41759991d774d09364ee4b568135c12235418a6180f06711eb0"
   },
   {
-    "path": "assets/images/luna6/06-membership-card.png",
+    "path": "assets/images/luna6/06-membership-card.webp",
     "bytes": 2228139,
     "sha256": "9efcfffa99b4563e41b96c00614b3e1a160dae00e370618b4b18d213b0e0aaf0"
   },
@@ -6685,7 +6685,7 @@
     "sha256": "b5caf08a40cd35d3a0b5b8bcdb94df205267eb734cdfa852cf65255084b6c741"
   },
   {
-    "path": "assets/images/luna6/07-photobook.png",
+    "path": "assets/images/luna6/07-photobook.webp",
     "bytes": 2208782,
     "sha256": "3c0dbd445983573f9c5a7cd7ce14d2f5531be512954de761182c944aedb801b1"
   },
@@ -6695,7 +6695,7 @@
     "sha256": "3be106359c249a3eefb418094af2988e36354fa1f74e0802fd67b742fa6aee6f"
   },
   {
-    "path": "assets/images/luna6/08-physical-film-card.png",
+    "path": "assets/images/luna6/08-physical-film-card.webp",
     "bytes": 1164863,
     "sha256": "fe00aadb01be62b844b2d5226cbd08840232e743f446726a40db93f481c37f26"
   },
@@ -6705,7 +6705,7 @@
     "sha256": "84cd90275bbe93bec24c39bf59c90b88ede552825bb495df9e580ed6e09d8704"
   },
   {
-    "path": "assets/images/luna6/09-photocard-set.png",
+    "path": "assets/images/luna6/09-photocard-set.webp",
     "bytes": 2646594,
     "sha256": "a35e8fefe8273193c35f03eba467d23b9b857c2ed1fe6f8b87d4330c95517268"
   },
@@ -6715,7 +6715,7 @@
     "sha256": "c31ac7eddfdf3738706a6ff7881b5d5c419c3f5ce1dd34f44e1b4fedada88bef"
   },
   {
-    "path": "assets/images/luna6/10-sticker.png",
+    "path": "assets/images/luna6/10-sticker.webp",
     "bytes": 2158023,
     "sha256": "036ea27bfd367b46e09eb882874144c0f1f2c21732dc07c98aa97e1a65e49814"
   },
@@ -8640,107 +8640,107 @@
     "sha256": "3a0415b60ee2122cb19979451298bf3bd65e5c9e4a55e902a7cffeaf6d5feaa0"
   },
   {
-    "path": "assets/images/doha.png",
+    "path": "assets/images/doha.webp",
     "bytes": 574776,
     "sha256": "a9c4434a58c835e0d80a2dc9ce7644c2191b86fd8a260ac0943c88ed872e29e2"
   },
   {
-    "path": "assets/images/ihwan.png",
+    "path": "assets/images/ihwan.webp",
     "bytes": 871933,
     "sha256": "672129087d3a55908b16878f68970331f27148a3a7306caed927f7c399361364"
   },
   {
-    "path": "assets/images/jiwoo.png",
+    "path": "assets/images/jiwoo.webp",
     "bytes": 903800,
     "sha256": "8b9cf61dbf792766f3c4e230eea92af9ccc7ec7dd95c1a8d34ec6466ece1b998"
   },
   {
-    "path": "assets/images/night-group-main.png",
+    "path": "assets/images/night-group-main.webp",
     "bytes": 887127,
     "sha256": "748941c86b77d1e5ea2710d97e8b96cf1f5133aff55b7bf547e519e46ed62497"
   },
   {
-    "path": "assets/images/night-group-profile.png",
+    "path": "assets/images/night-group-profile.webp",
     "bytes": 950813,
     "sha256": "63718f43d18615bcad82f254efb1a8242e0ac448de1042e93e8934165421f361"
   },
   {
-    "path": "assets/images/night-luna.png",
+    "path": "assets/images/night-luna.webp",
     "bytes": 1201377,
     "sha256": "726acc28b413d1387acaa2e6ab1e6ffb8d223c476aee8cfc8bfdc0bb2c0e1ba0"
   },
   {
-    "path": "assets/images/phantom-between-the-illusion-0905.png",
+    "path": "assets/images/phantom-between-the-illusion-0905.webp",
     "bytes": 5040291,
     "sha256": "e387e38c06cce87d03969d8d886665f2d73a93cdda3a033871c15d47a5f8dda8"
   },
   {
-    "path": "assets/images/phantom-comeback-scheduler.png",
+    "path": "assets/images/phantom-comeback-scheduler.webp",
     "bytes": 3922016,
     "sha256": "10443b0a92af6fc6f8b3b7d102f26c95da9664b0b8822150e5a68ca10cabe64f"
   },
   {
-    "path": "assets/images/phantom-comeback-stage-a-ver-0917.png",
+    "path": "assets/images/phantom-comeback-stage-a-ver-0917.webp",
     "bytes": 3936897,
     "sha256": "c922de5d367fbe4d6fdbaada14cb5b7630cce5563d9ccee626569cedfa8a8323"
   },
   {
-    "path": "assets/images/phantom-highlight-medley.png",
+    "path": "assets/images/phantom-highlight-medley.webp",
     "bytes": 5008116,
     "sha256": "f53258b78b14a791487a37ea65bf1eb09ae18bbbe98a47521e061b6ebe0a88b7"
   },
   {
-    "path": "assets/images/phantom-illusion-lyric-spoiler-0909.png",
+    "path": "assets/images/phantom-illusion-lyric-spoiler-0909.webp",
     "bytes": 4994978,
     "sha256": "5de99aa41cf33f2980c857460c7c9162120e5f4eaca963348d05587af653891c"
   },
   {
-    "path": "assets/images/phantom-illusion-mv-teaser-01-0911.png",
+    "path": "assets/images/phantom-illusion-mv-teaser-01-0911.webp",
     "bytes": 3141326,
     "sha256": "96168c3ab5ec371c5f566545425d4d76c661368a0b2cf11e10a51ff62ca52b38"
   },
   {
-    "path": "assets/images/phantom-illusion-mv-teaser-02-0913.png",
+    "path": "assets/images/phantom-illusion-mv-teaser-02-0913.webp",
     "bytes": 3261905,
     "sha256": "426afa3d025b374fd0e011bdc6866f1950a7152bef5f7466cb791add747c1024"
   },
   {
-    "path": "assets/images/phantom-illusion-official-mv-0914.png",
+    "path": "assets/images/phantom-illusion-official-mv-0914.webp",
     "bytes": 3344352,
     "sha256": "7544497607f44e5c3b49855f051fdfb730f9ee7d80e97417f4fb9cab0eae1812"
   },
   {
-    "path": "assets/images/phantom-mood-teaser-0826.png",
+    "path": "assets/images/phantom-mood-teaser-0826.webp",
     "bytes": 2926701,
     "sha256": "cf7ceeee6ffdbe14eb5eb6365c83caa09d602bb01f50af0fcf057550d36c5813"
   },
   {
-    "path": "assets/images/phantom-music-show-stage-b-ver-0924.png",
+    "path": "assets/images/phantom-music-show-stage-b-ver-0924.webp",
     "bytes": 2991797,
     "sha256": "76afc8d63dbe45e1b8c0fcbf11c7f4166395d73f2160b254d3660d4ec8fa8517"
   },
   {
-    "path": "assets/images/phantom-package-preview-0908.png",
+    "path": "assets/images/phantom-package-preview-0908.webp",
     "bytes": 1823972,
     "sha256": "e8877df30fe628d01aa029beba98c34ed33d9cade344983217a9c2b981f71a55"
   },
   {
-    "path": "assets/images/phantom-special-stage-ab-mix-ver-1001.png",
+    "path": "assets/images/phantom-special-stage-ab-mix-ver-1001.webp",
     "bytes": 4074912,
     "sha256": "4357b9f4da61b06e3914cddd95051800e891dd35442e9b59ad33494859caa605"
   },
   {
-    "path": "assets/images/phantom-tracklist-0907.png",
+    "path": "assets/images/phantom-tracklist-0907.webp",
     "bytes": 2844497,
     "sha256": "920628a241f7e370bf8599de0952db77bab08d85c48b280af73e58e007ef08b4"
   },
   {
-    "path": "assets/images/taehun.png",
+    "path": "assets/images/taehun.webp",
     "bytes": 1027400,
     "sha256": "cb1f273b834cc0903bd2a8205bbe97b968aeb0bc59e982e2f3b38e1c4d87769b"
   },
   {
-    "path": "assets/images/woohyun.png",
+    "path": "assets/images/woohyun.webp",
     "bytes": 995628,
     "sha256": "6e49f3cb9176fb026ea9c61cbd315b4927c51e1b2e1475ffc5966f7bdb874848"
   }

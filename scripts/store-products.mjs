@@ -11,7 +11,7 @@ export function parseStoreProducts(source){
       name:'MOONLIGHT',
       category:'featured collectible',
       price:49000,
-      images:['assets/images/night-luna.png'],
+      images:['assets/images/night-luna.webp'],
       options:['ONE SIZE'],
       desc:'NIGHT와 LUNA의 밤을 밝히는 공식 응원봉 MOONLIGHT. 투명한 구형 헤드 안의 초승달과 별, 보랏빛 광원이 NIGHT의 밤하늘 아이덴티티를 표현한다.'
     });
