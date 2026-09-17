@@ -21,5 +21,5 @@ test('fanclub details preserve existing photos and all season viewers',async()=>
     assert.equal(after.filter(node=>node.props.id==='sg-viewer').length,route.startsWith('season-')?1:0);
     assert.ok(!after.some(node=>node.tag==='script'));
   }
-  assert.equal(images,93);assert.equal(photos,36);
+  assert.equal(images,116);assert.equal(photos,58);
 });
