@@ -16,7 +16,9 @@ import {routeData,serializeRouteData} from './route-data.mjs';
 import {homeUpdates} from './home-updates.mjs';
 import {readImageDimensions} from './image-dimensions.mjs';
 import {normalizeMemberPage} from './member-page-normalization.mjs';
+import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
+const normalizePage=page=>normalizeSeasonGreetingsPage(normalizeMemberPage(page));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
@@ -28,14 +30,14 @@ export async function buildReactPages() {
   await writeFile(join(temporary,'store-products.json'),JSON.stringify(products));
   const routes=reactRoutes;
   const detailMap={};
-  for(const route of routes){const page=normalizeMemberPage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));detailMap[route]=detailNavigation(page);}
+  for(const route of routes){const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));detailMap[route]=detailNavigation(page);}
   await writeFile(join(temporary,'detail-navigation.json'),JSON.stringify(detailMap));
   const collections={};
   for(const name of ['albums','notices','contentsEntries','memberships','galleryCards'])collections[name]=JSON.parse(await readFile(join(root,'src/data',name+'.json'),'utf8'));
   const trees={};
   for(const route of routes.slice(1)) {
     if(route==='store.html'||route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route))continue;
-    const page=normalizeMemberPage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
+    const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
     trees[route]=pageTree(renderCollections(albumRoutes.includes(route)?albumMarkup(page):stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||editorialRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route)?archiveMarkup(page):page.contentHtml,collections),imageDimensions);
   }
   await writeFile(join(temporary,'page-trees.json'),JSON.stringify(trees));
@@ -62,7 +64,7 @@ export async function buildReactPages() {
   const storeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/store-fashion.css'))).digest('hex').slice(0,12);
   const indexRoutes=new Set(['index.html','discography.html','history.html','listen.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html']);
   for(const route of routes) {
-    const page=normalizeMemberPage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
+    const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
     const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products,imageDimensions,updates:homeUpdates(collections.notices)});
     const markup=renderPage(route,pageData);
     const homeTheme=route==='index.html'?'<link rel="stylesheet" href="assets/css/home-fashion.css?v='+homeStyleVersion+'">':route==='discography.html'?'<link rel="stylesheet" href="assets/css/discography-fashion.css?v='+discographyStyleVersion+'">':route==='history.html'?'<link rel="stylesheet" href="assets/css/history-fashion.css?v='+historyStyleVersion+'">':route==='gallery.html'?'<link rel="stylesheet" href="assets/css/gallery-fashion.css?v='+galleryStyleVersion+'">':route==='contents.html'?'<link rel="stylesheet" href="assets/css/contents-fashion.css?v='+contentsStyleVersion+'">':route==='archive.html'?'<link rel="stylesheet" href="assets/css/archive-fashion.css?v='+archiveStyleVersion+'">':route==='notice.html'?'<link rel="stylesheet" href="assets/css/notice-fashion.css?v='+noticeStyleVersion+'">':route==='fanclub.html'?'<link rel="stylesheet" href="assets/css/fanclub-fashion.css?v='+fanclubStyleVersion+'">':'';
