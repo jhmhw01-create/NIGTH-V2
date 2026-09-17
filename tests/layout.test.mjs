@@ -11,7 +11,7 @@ test('shared navigation has ten unique entries and one active item',()=>{
 });
 test('all page content and overlays survive layout rendering',async()=>{
   const pages=await readdir(new URL('src/pages/',root));
-  assert.equal(pages.filter(x=>x.endsWith('.json')).length,54);
+  assert.equal(pages.filter(x=>x.endsWith('.json')).length,55);
   for(const name of pages){
     const page=JSON.parse(await readFile(new URL('src/pages/'+name,root),'utf8'));
     const output=PageLayout(page);
