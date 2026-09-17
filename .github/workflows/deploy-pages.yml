@@ -26,6 +26,8 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
+      - name: Report root unreferenced media
+        run: node scripts/list-root-unreferenced-media.mjs
       - name: Test
         run: npm test
       - name: Verify media manifests
