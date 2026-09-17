@@ -25,6 +25,17 @@ for (const file of pages.filter(file => file.endsWith('.json')).sort()) {
   routes.add(page.route);
   await writeFile(join(output,page.route),PageLayout(page),'utf8');
 }
+const legacyMemberRedirects = {
+  'member-taehun.html': 'member-taehoon.html'
+};
+for (const [legacyRoute, canonicalRoute] of Object.entries(legacyMemberRedirects)) {
+  if (routes.has(legacyRoute)) throw Error('Legacy redirect conflicts with route: ' + legacyRoute);
+  await writeFile(
+    join(output, legacyRoute),
+    `<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>TAEHOON — NIGHT</title><link rel="canonical" href="${canonicalRoute}"/><meta http-equiv="refresh" content="0; url=${canonicalRoute}"/></head><body><p><a href="${canonicalRoute}">TAEHOON profile</a></p></body></html>`,
+    'utf8'
+  );
+}
 await cp(join(root,'public'),output,{recursive:true});
 const catalog = JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
 await mkdir(join(output,'assets/data'),{recursive:true});

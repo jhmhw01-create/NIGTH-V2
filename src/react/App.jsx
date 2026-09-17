@@ -13,7 +13,7 @@ const memberPortraits={
   'member-doha.html':{from:'assets/images/doha.webp',to:'assets/images/member-doha.webp',width:1122,height:1402},
   'member-ihwan.html':{from:'assets/images/ihwan.webp',to:'assets/images/member-ihwan.webp',width:1122,height:1402},
   'member-jiwoo.html':{from:'assets/images/jiwoo.webp',to:'assets/images/member-jiwoo.webp',width:1122,height:1402},
-  'member-taehun.html':{from:'assets/images/taehun.webp',to:'assets/images/member-taehoon.webp',width:1122,height:1402},
+  'member-taehoon.html':{from:'assets/images/member-taehoon.webp',to:'assets/images/member-taehoon.webp',width:1122,height:1402},
   'member-woohyun.html':{from:'assets/images/woohyun.webp',to:'assets/images/member-woohyun.webp',width:1122,height:1402}
 };
 function nodeText(node){return typeof node==='string'?node:node.children.map(nodeText).join('');}

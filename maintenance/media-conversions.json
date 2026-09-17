@@ -12,12 +12,12 @@
     "originalsDeployed": false
   },
   "summary": {
-    "files": 72,
-    "originalBytes": 170427032,
-    "webBytes": 8530778,
-    "newWebp": 52,
+    "files": 71,
+    "originalBytes": 169399632,
+    "webBytes": 8479430,
+    "newWebp": 51,
     "reusedWebp": 20,
-    "resolutionPreserved": 70
+    "resolutionPreserved": 69
   },
   "files": [
     {
@@ -1207,23 +1207,6 @@
         "sha256": "0e52340ae84a9e1fbf218a50e530f80c1c87d7c441347707d8ae19014fc8926c",
         "width": 1122,
         "height": 1402
-      },
-      "method": "png-to-webp"
-    },
-    {
-      "original": {
-        "path": "assets/images/taehun.png",
-        "bytes": 1027400,
-        "sha256": "cb1f273b834cc0903bd2a8205bbe97b968aeb0bc59e982e2f3b38e1c4d87769b",
-        "width": 675,
-        "height": 900
-      },
-      "web": {
-        "path": "assets/images/taehun.webp",
-        "bytes": 51348,
-        "sha256": "0a3bb3cb5ea4495f324e1151e8f78c0221de3da2f7ccdfaaaf8efc77f8db44ab",
-        "width": 675,
-        "height": 900
       },
       "method": "png-to-webp"
     },
