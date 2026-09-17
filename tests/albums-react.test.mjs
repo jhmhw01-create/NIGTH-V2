@@ -25,6 +25,14 @@ test('album footer conversion fails on unexpected markup',()=>{
 test('album hero loading priority uses the React attribute name',()=>{
   assert.equal(pageTree('<img fetchpriority="high">')[0].props.fetchPriority,'high');
 });
+test('first eager image is high priority while authored lazy images remain lazy',()=>{
+  const eager=pageTree('<img src="hero.webp"><img src="detail.webp">');
+  assert.equal(eager[0].props.fetchPriority,'high');
+  assert.equal(eager[1].props.loading,'lazy');
+  const lazy=pageTree('<img src="card.webp" loading="lazy">');
+  assert.equal(lazy[0].props.fetchPriority,undefined);
+  assert.equal(lazy[0].props.loading,'lazy');
+});
 
 test('all album detail routes receive the shared editorial stylesheet without replacing media',async()=>{
   const build=await readFile(new URL('../scripts/build-react.mjs',import.meta.url),'utf8');

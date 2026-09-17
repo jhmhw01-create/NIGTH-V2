@@ -24,6 +24,7 @@ export function pageTree(markup,imageDimensions={}) {
     }
     if (node.tagName === 'img') {
       if (props.decoding === undefined) props.decoding='async';
+      if (imageCount === 0 && props.loading !== 'lazy' && props.fetchPriority === undefined) props.fetchPriority='high';
       if (imageCount > 0 && props.loading === undefined && props.fetchPriority !== 'high') props.loading='lazy';
       const source=props.src?.split(/[?#]/,1)[0] ?? '';
       if (!/^(?:[a-z]+:|\/\/)/i.test(source)) {
