@@ -124,6 +124,9 @@ body[data-night-surface="home"] .footer-inner{padding:40px 0;font-size:10px;lett
   body[data-night-surface="home"] .hero-debut{margin:0 0 16px}
   body[data-night-surface="home"] .section{padding:72px 0}
   body[data-night-surface="home"] .section-tight{padding:56px 0}
+  body[data-night-surface="home"] .stats{gap:12px}
+  body[data-night-surface="home"] .stat strong{font-size:clamp(20px,7vw,28px)}
+  body[data-night-surface="home"] .stat span{font-size:8px;overflow-wrap:anywhere}
   body[data-night-surface="home"] .member-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px}
   body[data-night-surface="home"] .member-name{font-size:16px}
   body[data-night-surface="home"] .member-role,body[data-night-surface="home"] .member-eng{font-size:9px;overflow-wrap:anywhere}
