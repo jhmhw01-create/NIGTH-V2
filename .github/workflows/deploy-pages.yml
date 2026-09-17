@@ -1,4 +1,4 @@
-name: Deploy NIGHT V2
+name: Migrate TAEHOON and Deploy
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: github-pages
@@ -16,8 +16,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout migration commit
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
@@ -26,14 +28,39 @@ jobs:
         uses: actions/configure-pages@v6
       - name: Install dependencies
         run: npm ci
-      - name: Report root unreferenced media
-        run: node scripts/list-root-unreferenced-media.mjs
+      - name: Apply canonical TAEHOON migration
+        run: node scripts/migrate-taehoon.mjs
+      - name: Restore normal workflow and remove migration helper
+        run: |
+          git show HEAD^:.github/workflows/deploy-pages.yml > .github/workflows/deploy-pages.yml
+          rm scripts/migrate-taehoon.mjs
+      - name: Refresh media audit
+        run: npm run audit:media:update
       - name: Test
         run: npm test
-      - name: Verify media manifests
-        run: npm run audit:media
       - name: Build
         run: npm run build
+      - name: Verify TAEHOON canonical route and legacy redirect
+        run: |
+          test -s src/pages/member-taehoon.json
+          test ! -e src/pages/member-taehun.json
+          test ! -e public/assets/images/taehun.webp
+          test -s dist/member-taehoon.html
+          test -s dist/member-taehun.html
+          grep -q 'member-taehoon.html' dist/member-taehun.html
+          grep -q 'member-taehoon.html' src/react/HomePage.jsx
+          if grep -RIn --exclude='build.mjs' --exclude-dir='.git' -E 'TAEHUN|member-taehun\.html|assets/images/taehun\.webp' src scripts tests; then
+            echo 'Unexpected legacy TAEHUN reference remains outside compatibility redirect.'
+            exit 1
+          fi
+      - name: Commit canonical migration
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m 'Migrate TAEHUN routes to TAEHOON'
+          git push
       - name: Verify site output
         run: |
           test -s dist/index.html
