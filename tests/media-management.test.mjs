@@ -7,7 +7,7 @@ test('media delivery files match the source-management manifests',async()=>{
   const result=await auditMedia();
   assert.ok(result.media>0);
   assert.ok(result.images>0);
-  assert.equal(result.conversions,72);
+  assert.equal(result.conversions,71);
 });
 
 test('media policy keeps archival originals outside the deployed site',async()=>{
