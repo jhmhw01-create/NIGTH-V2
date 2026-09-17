@@ -1,0 +1,88 @@
+name: Cleanup AFTER HOURS Notices
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/cleanup-after-hours-notices.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Keep only AFTER HOURS release notice
+        shell: bash
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const noticePath = 'src/data/notices.json';
+          const pagePath = 'src/pages/notice.json';
+          const collectionsTestPath = 'tests/collections.test.mjs';
+          const noticeFashionTestPath = 'tests/notice-fashion.test.mjs';
+          const keepTitle = 'AFTER HOURS 발매 및 NO SUNRISE 공개';
+
+          const notices = JSON.parse(fs.readFileSync(noticePath, 'utf8'));
+          if (notices.length !== 25) throw new Error(`Expected 25 notices before cleanup, found ${notices.length}`);
+          const related = notices.filter(r => `${r.title}\n${r.bodyTemplateHtml}`.includes('AFTER HOURS'));
+          if (related.length !== 7) throw new Error(`Expected 7 AFTER HOURS notices, found ${related.length}`);
+          if (!related.some(r => r.title === keepTitle)) throw new Error('Canonical AFTER HOURS release notice not found');
+
+          const next = notices.filter(r => !`${r.title}\n${r.bodyTemplateHtml}`.includes('AFTER HOURS') || r.title === keepTitle);
+          if (next.length !== 19) throw new Error(`Expected 19 notices after cleanup, found ${next.length}`);
+          fs.writeFileSync(noticePath, JSON.stringify(next, null, 2) + '\n');
+
+          const page = JSON.parse(fs.readFileSync(pagePath, 'utf8'));
+          page.contentHtml = page.contentHtml.replace('전체 공지 25건', '전체 공지 19건');
+          const start = page.contentHtml.indexOf('<section class="notice-year-group"');
+          const end = page.contentHtml.indexOf('<p class="notice-empty"', start);
+          if (start < 0 || end < 0) throw new Error('Notice year groups not found');
+          const years = ['2029','2028','2027','2026'];
+          const groups = years.map(year => {
+            const indices = next.map((r, i) => ({r, i})).filter(({r}) => {
+              const m = r.bodyTemplateHtml.match(/<time>(\d{4})/);
+              return m && m[1] === year;
+            }).map(({i}) => i);
+            if (!indices.length) return '';
+            const refs = indices.map(i => `{{notices:${i}}}`).join('\n');
+            return `<section class="notice-year-group" aria-labelledby="notice-year-${year}"><h2 class="notice-year-title" id="notice-year-${year}">${year}</h2><div class="notice-list">\n${refs}\n</div></section>\n`;
+          }).join('');
+          page.contentHtml = page.contentHtml.slice(0, start) + groups + page.contentHtml.slice(end);
+          fs.writeFileSync(pagePath, JSON.stringify(page, null, 2) + '\n');
+
+          let collectionsTest = fs.readFileSync(collectionsTestPath, 'utf8');
+          collectionsTest = collectionsTest.replace("test('25 notices and six membership cards render'", "test('19 notices and six membership cards render'");
+          collectionsTest = collectionsTest.replace("['notices',25,NoticeItem]", "['notices',19,NoticeItem]");
+          if (!collectionsTest.includes('AFTER HOURS notice keeps only the album release announcement')) {
+            const marker = "test('title fields are escaped; missing collection records fail the build'";
+            const guard = `// AFTER HOURS NOTICE intentionally keeps only the album release announcement.\ntest('AFTER HOURS notice keeps only the album release announcement',async()=>{\n  const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));\n  const afterHours=data.filter(record=>(record.title+'\\n'+record.bodyTemplateHtml).includes('AFTER HOURS'));\n  assert.deepEqual(afterHours.map(record=>record.title),['${keepTitle}']);\n});\n`;
+            if (!collectionsTest.includes(marker)) throw new Error('Collection test marker not found');
+            collectionsTest = collectionsTest.replace(marker, guard + marker);
+          }
+          fs.writeFileSync(collectionsTestPath, collectionsTest);
+
+          let noticeFashionTest = fs.readFileSync(noticeFashionTestPath, 'utf8');
+          noticeFashionTest = noticeFashionTest.replace(').length,25);', ').length,19);');
+          noticeFashionTest = noticeFashionTest.replace('assert.equal(notices.length,25);', 'assert.equal(notices.length,19);');
+          fs.writeFileSync(noticeFashionTestPath, noticeFashionTest);
+          NODE
+      - run: npm run audit:media:update
+      - run: npm test
+      - run: npm run audit:media
+      - run: npm run build
+      - name: Commit cleanup and remove one-time workflow
+        shell: bash
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git rm .github/workflows/cleanup-after-hours-notices.yml
+          git add src/data/notices.json src/pages/notice.json tests/collections.test.mjs tests/notice-fashion.test.mjs maintenance/image-audit.json maintenance/web-media-manifest.json maintenance/original-media-manifest.json maintenance/media-conversions.json || true
+          git commit -m 'Trim AFTER HOURS notice campaign'
+          git push
