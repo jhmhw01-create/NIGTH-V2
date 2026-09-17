@@ -14,6 +14,7 @@ import {archiveMarkup} from './archive-markup.mjs';
 import {detailNavigation} from './detail-navigation.mjs';
 import {routeData,serializeRouteData} from './route-data.mjs';
 import {homeUpdates} from './home-updates.mjs';
+import {readImageDimensions} from './image-dimensions.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
@@ -21,6 +22,7 @@ export async function buildReactPages() {
   const photos=await readPhotoEpisodes(new URL('../',import.meta.url));
   const products=await readStoreProducts(new URL('../',import.meta.url));
   const catalog=JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
+  const imageDimensions=await readImageDimensions(join(root,'public'));
   await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(photos));
   await writeFile(join(temporary,'store-products.json'),JSON.stringify(products));
   const routes=reactRoutes;
@@ -33,7 +35,7 @@ export async function buildReactPages() {
   for(const route of routes.slice(1)) {
     if(route==='store.html'||route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route))continue;
     const page=JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8'));
-    trees[route]=pageTree(renderCollections(albumRoutes.includes(route)?albumMarkup(page):stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||editorialRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route)?archiveMarkup(page):page.contentHtml,collections));
+    trees[route]=pageTree(renderCollections(albumRoutes.includes(route)?albumMarkup(page):stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||editorialRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route)?archiveMarkup(page):page.contentHtml,collections),imageDimensions);
   }
   await writeFile(join(temporary,'page-trees.json'),JSON.stringify(trees));
   const clientBuild=await build({entryPoints:[join(root,'src/react/client.jsx')],outfile:join(root,'dist/assets/js/react-site.js'),write:false,bundle:true,minify:true,jsx:'automatic',platform:'browser',format:'esm',target:['es2020'],define:{'process.env.NODE_ENV':'"production"'}});
