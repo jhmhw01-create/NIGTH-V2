@@ -114,88 +114,10 @@
     "bodyTemplateHtml": "\n            <summary>\n              <time>2026.10.15</time>\n              <span class=\"notice-category\">FANCLUB</span>\n              <strong>{{title}}</strong>\n            </summary>\n            <div class=\"notice-body\">\n              <p>공식 팬클럽 LUNA 4기 멤버십 키트 <strong>MOONLIT ILLUSION</strong>이 공개되었습니다.</p>\n              <a class=\"notice-link-btn\" href=\"luna4.html\">VIEW LUNA 4TH KIT →</a>\n            </div>\n          "
   },
   {
-    "id": "notices-20",
-    "title": "PHANTOM SPECIAL STAGE — A/B MIX VER. 공개",
-    "attributesHtml": " data-notice-category=\"stage\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.10.01</time>\n    <span class=\"notice-category\">SPECIAL STAGE</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 타이틀곡 <strong>ILLUSION</strong> SPECIAL STAGE A/B MIX VER. 무대가 공개되었습니다. A와 B 두 버전의 실루엣과 디테일을 하나의 무대로 연결하며 PHANTOM 공식 프로모션 일정을 마무리합니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-special-stage-ab-mix-ver-1001.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM SPECIAL STAGE A/B MIX VER. 이미지 크게 보기\">\n      <img src=\"assets/images/phantom-special-stage-ab-mix-ver-1001.webp\" alt=\"NIGHT PHANTOM SPECIAL STAGE A/B MIX VER.\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-21",
-    "title": "PHANTOM MUSIC SHOW STAGE — B VER. 공개",
-    "attributesHtml": " data-notice-category=\"stage\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.24</time>\n    <span class=\"notice-category\">MUSIC SHOW</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 타이틀곡 <strong>ILLUSION</strong> MUSIC SHOW STAGE B VER. 무대가 공개되었습니다. 더 짙어진 블랙 실루엣과 차가운 도시의 빛으로 PHANTOM의 두 번째 음악방송 버전을 선보입니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-music-show-stage-b-ver-0924.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM MUSIC SHOW STAGE B VER. 이미지 크게 보기\">\n      <img src=\"assets/images/phantom-music-show-stage-b-ver-0924.webp\" alt=\"NIGHT PHANTOM MUSIC SHOW STAGE B VER.\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-22",
-    "title": "PHANTOM 발매 기념 팬사인회 현장 공개",
-    "attributesHtml": " data-notice-category=\"event\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.19</time>\n    <span class=\"notice-category\">EVENT</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 발매 기념 팬사인회 현장이 공개되었습니다. NIGHT와 LUNA가 함께한 열여섯 장면을 공식 아카이브에서 확인하세요.</p>\n    <a class=\"notice-link-btn\" href=\"fansign-20260919.html\">VIEW FANSIGN ARCHIVE →</a>\n  </div>\n"
-  },
-  {
-    "id": "notices-23",
-    "title": "PHANTOM COMEBACK STAGE — A VER. 공개",
-    "attributesHtml": " data-notice-category=\"stage\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.17</time>\n    <span class=\"notice-category\">MUSIC SHOW</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 타이틀곡 <strong>ILLUSION</strong> 컴백 스테이지 A VER. 무대가 공개되었습니다. 초승달과 검은 수면을 배경으로 PHANTOM의 첫 음악방송 무대를 선보입니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-comeback-stage-a-ver-0917.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM COMEBACK STAGE A VER. 이미지 크게 보기\">\n      <img src=\"assets/images/phantom-comeback-stage-a-ver-0917.webp\" alt=\"NIGHT PHANTOM COMEBACK STAGE A VER.\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
     "id": "notices-24",
     "title": "PHANTOM 발매 및 ILLUSION Official M/V 공개",
     "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.14</time>\n    <span class=\"notice-category\">RELEASE</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong>과 타이틀곡 <strong>ILLUSION</strong> Official M/V가 공개되었습니다. 현실과 환상의 경계를 가르는 PHANTOM의 새로운 밤을 지금 만나보세요.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-illusion-official-mv-0914.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"ILLUSION Official M/V 공개 이미지 크게 보기\">\n      <img src=\"assets/images/phantom-illusion-official-mv-0914.webp\" alt=\"NIGHT PHANTOM ILLUSION Official M/V\" loading=\"lazy\">\n    </a>\n    <a class=\"notice-link-btn\" href=\"listen.html#illusion\">LISTEN TO ILLUSION →</a>\n  </div>\n"
-  },
-  {
-    "id": "notices-25",
-    "title": "ILLUSION M/V TEASER 02 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.13</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 타이틀곡 <strong>ILLUSION</strong>의 두 번째 M/V 티저가 공개되었습니다. 비에 젖은 도시 위 다섯 멤버와 수면 속 반전된 잔상이 서로를 마주하며, 환상이 되돌아보는 순간을 담았습니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-illusion-mv-teaser-02-0913.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"ILLUSION M/V TEASER 02 이미지 크게 보기\">\n      <img src=\"assets/images/phantom-illusion-mv-teaser-02-0913.webp\" alt=\"NIGHT PHANTOM ILLUSION M/V TEASER 02\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-26",
-    "title": "ILLUSION M/V TEASER 01 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.11</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 타이틀곡 <strong>ILLUSION</strong>의 첫 번째 M/V 티저가 공개되었습니다. 비에 잠긴 도시와 갈라지는 달빛 속에서 현실과 환상의 경계가 더욱 흐려집니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-illusion-mv-teaser-01-0911.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"ILLUSION M/V TEASER 01 이미지 크게 보기\">\n      <img src=\"assets/images/phantom-illusion-mv-teaser-01-0911.webp\" alt=\"NIGHT PHANTOM ILLUSION M/V TEASER 01\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-27",
-    "title": "PHANTOM HIGHLIGHT MEDLEY 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.10</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 전곡 하이라이트 메들리가 공개되었습니다. 전체 메들리와 여섯 트랙의 개별 프리뷰를 전용 페이지에서 확인하세요.</p>\n    <a class=\"notice-feature-image\" href=\"highlight-medley.html\" aria-label=\"PHANTOM 하이라이트 메들리 듣기\">\n      <img src=\"assets/images/phantom-highlight-medley.webp\" alt=\"NIGHT PHANTOM HIGHLIGHT MEDLEY\" loading=\"lazy\">\n    </a>\n    <a class=\"notice-link-btn\" href=\"highlight-medley.html\">LISTEN TO HIGHLIGHT MEDLEY →</a>\n  </div>\n"
-  },
-  {
-    "id": "notices-28",
-    "title": "ILLUSION LYRIC SPOILER 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.09</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>PHANTOM의 타이틀곡 <strong>ILLUSION</strong>의 리릭 스포일러가 공개되었습니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-illusion-lyric-spoiler-0909.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"ILLUSION 리릭 스포일러 크게 보기\">\n      <img src=\"assets/images/phantom-illusion-lyric-spoiler-0909.webp\" alt=\"NIGHT ILLUSION LYRIC SPOILER\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-29",
-    "title": "PHANTOM ALBUM PACKAGE PREVIEW 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.08</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 4th Mini Album <strong>PHANTOM</strong> 앨범 패키지 프리뷰가 공개되었습니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-package-preview-0908.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM 앨범 패키지 프리뷰 크게 보기\">\n      <img src=\"assets/images/phantom-package-preview-0908.webp\" alt=\"NIGHT PHANTOM ALBUM PACKAGE PREVIEW\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-30",
-    "title": "PHANTOM TRACK LIST 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.07</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p><strong>VEIL</strong>, <strong>ILLUSION</strong>, <strong>MOONWATER</strong>, <strong>AFTERIMAGE</strong>, <strong>NEON RAIN</strong>, <strong>REFLECTION</strong>까지 PHANTOM의 여섯 트랙이 공개되었습니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-tracklist-0907.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM 트랙리스트 크게 보기\">\n      <img src=\"assets/images/phantom-tracklist-0907.webp\" alt=\"NIGHT PHANTOM TRACK LIST\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-31",
-    "title": "A × B : BETWEEN THE ILLUSION 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.09.05</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>A와 B, 두 개의 시선 사이에서 <strong>PHANTOM</strong>의 경계가 더욱 흐려집니다.</p>\n    <a class=\"notice-feature-image\" href=\"assets/images/phantom-between-the-illusion-0905.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"BETWEEN THE ILLUSION 크게 보기\">\n      <img src=\"assets/images/phantom-between-the-illusion-0905.webp\" alt=\"NIGHT A × B BETWEEN THE ILLUSION\" loading=\"lazy\">\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-32",
-    "title": "PHANTOM MOOD TEASER 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.08.26</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 새 앨범 <strong>PHANTOM</strong>의 MOOD TEASER가 공개되었습니다. 달빛, 수면, 뒤집힌 도시가 교차하며 현실과 허상의 경계를 암시합니다.</p>\n    <a class=\"notice-mood-image\" href=\"assets/images/phantom-mood-teaser-0826.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM MOOD TEASER 크게 보기\">\n      <img src=\"assets/images/phantom-mood-teaser-0826.webp\" alt=\"NIGHT PHANTOM MOOD TEASER\" loading=\"lazy\"/>\n    </a>\n  </div>\n"
-  },
-  {
-    "id": "notices-33",
-    "title": "PHANTOM COMEBACK SCHEDULER 공개",
-    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item\"",
-    "bodyTemplateHtml": "\n  <summary>\n    <time>2026.08.24</time>\n    <span class=\"notice-category\">COMEBACK</span>\n    <strong>{{title}}</strong>\n  </summary>\n  <div class=\"notice-body\">\n    <p>NIGHT의 새 앨범 <strong>PHANTOM</strong> 컴백 스케줄러가 공개되었습니다. 타이틀곡은 <strong>ILLUSION</strong>이며, 앨범과 뮤직비디오는 <strong>2026.09.14 18:00 KST</strong> 공개됩니다.</p>\n    <a class=\"notice-scheduler-image\" href=\"assets/images/phantom-comeback-scheduler.webp\" target=\"_blank\" rel=\"noopener noreferrer\" aria-label=\"PHANTOM 컴백 스케줄러 크게 보기\">\n      <img src=\"assets/images/phantom-comeback-scheduler.webp\" alt=\"NIGHT PHANTOM COMEBACK SCHEDULER\" loading=\"lazy\"/>\n    </a>\n  </div>\n"
   },
   {
     "id": "notices-34",
