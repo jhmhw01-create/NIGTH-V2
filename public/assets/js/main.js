@@ -50,8 +50,23 @@ if (memberGrid) {
 const homeHero = document.querySelector('.hero > .hero-image');
 if (homeHero) homeHero.src = 'assets/images/home-hero-night.webp';
 
+// Use current member-detail portraits while preserving legacy page URLs.
+const memberDetailImages = {
+  '윤도하': 'assets/images/member-doha.webp',
+  '성우현': 'assets/images/member-woohyun.webp',
+  '천지우': 'assets/images/member-jiwoo.webp',
+  '박이환': 'assets/images/member-ihwan.webp',
+  '유태훈': 'assets/images/member-taehoon.webp'
+};
+
+const currentMemberTitle = document.querySelector('.member-title')?.textContent.trim();
+const memberPortrait = document.querySelector('.member-profile-hero .portrait img');
+if (currentMemberTitle && memberPortrait && memberDetailImages[currentMemberTitle]) {
+  memberPortrait.src = memberDetailImages[currentMemberTitle];
+}
+
 // TAEHOON current profile note: only-child family record + childhood context.
-if (document.querySelector('.member-title')?.textContent.trim() === '유태훈') {
+if (currentMemberTitle === '유태훈') {
   const profileRows = [...document.querySelectorAll('.profile-lines dt')];
   const familyLabel = profileRows.find(dt => dt.textContent.trim() === 'FAMILY');
   if (familyLabel?.nextElementSibling) {
