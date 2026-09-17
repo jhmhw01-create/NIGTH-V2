@@ -126,7 +126,21 @@ if (!buildText.includes('legacyMemberRedirects')) {
   await writeFile(buildPath, buildText, 'utf8');
 }
 
-// Remove the obsolete generic TAEHUN portrait after all authored refs have moved.
+// Retire the obsolete conversion record together with the obsolete generic portrait.
+const conversionPath = join(root, 'maintenance/media-conversions.json');
+const conversionManifest = JSON.parse(await readFile(conversionPath, 'utf8'));
+const conversionCountBefore = conversionManifest.files.length;
+conversionManifest.files = conversionManifest.files.filter(file => file?.web?.path !== 'assets/images/taehun.webp');
+if (conversionManifest.files.length !== conversionCountBefore) {
+  conversionManifest.summary.files = conversionManifest.files.length;
+  conversionManifest.summary.originalBytes = conversionManifest.files.reduce((sum, file) => sum + file.original.bytes, 0);
+  conversionManifest.summary.webBytes = conversionManifest.files.reduce((sum, file) => sum + file.web.bytes, 0);
+  conversionManifest.summary.newWebp = conversionManifest.files.filter(file => file.method === 'png-to-webp').length;
+  conversionManifest.summary.reusedWebp = conversionManifest.files.filter(file => file.method === 'existing-webp-reused').length;
+  conversionManifest.summary.resolutionPreserved = conversionManifest.files.filter(file => file.original.width === file.web.width && file.original.height === file.web.height).length;
+  await writeFile(conversionPath, JSON.stringify(conversionManifest, null, 2) + '\n', 'utf8');
+}
+
 try {
   const legacyImage = join(root, 'public/assets/images/taehun.webp');
   if ((await stat(legacyImage)).isFile()) await unlink(legacyImage);
