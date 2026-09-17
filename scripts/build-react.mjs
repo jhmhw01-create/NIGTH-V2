@@ -22,7 +22,7 @@ export async function buildReactPages() {
   const photos=await readPhotoEpisodes(new URL('../',import.meta.url));
   const products=await readStoreProducts(new URL('../',import.meta.url));
   const catalog=JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
-  const imageDimensions=await readImageDimensions(join(root,'public'));
+  const imageDimensions=await readImageDimensions(join(root,'dist'));
   await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(photos));
   await writeFile(join(temporary,'store-products.json'),JSON.stringify(products));
   const routes=reactRoutes;
