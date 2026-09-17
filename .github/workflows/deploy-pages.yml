@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: github-pages
@@ -26,17 +26,6 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
-      - name: Refresh media audit summary
-        run: npm run audit:media:update
-      - name: Commit refreshed media audit manifests
-        run: |
-          if ! git diff --quiet -- maintenance/image-audit.json maintenance/web-media-manifest.json; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add maintenance/image-audit.json maintenance/web-media-manifest.json
-            git commit -m "Refresh media audit manifests"
-            git push
-          fi
       - name: Test
         run: npm test
       - name: Verify media manifests
