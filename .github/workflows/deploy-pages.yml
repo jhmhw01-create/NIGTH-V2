@@ -18,8 +18,6 @@ jobs:
     steps:
       - name: Checkout migration commit
         uses: actions/checkout@v6
-        with:
-          fetch-depth: 4
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
@@ -32,7 +30,7 @@ jobs:
         run: node scripts/migrate-taehoon.mjs
       - name: Restore normal workflow and remove migration helper
         run: |
-          git show 66660d4046fe0102eb35145fa57d310db22a2c6e:.github/workflows/deploy-pages.yml > .github/workflows/deploy-pages.yml
+          printf '%s' 'bmFtZTogRGVwbG95IE5JR0hUIFYyCgpvbjoKICBwdXNoOgogICAgYnJhbmNoZXM6IFttYWluXQogIHdvcmtmbG93X2Rpc3BhdGNoOgoKcGVybWlzc2lvbnM6CiAgY29udGVudHM6IHJlYWQKCmNvbmN1cnJlbmN5OgogIGdyb3VwOiBnaXRodWItcGFnZXMKICBjYW5jZWwtaW4tcHJvZ3Jlc3M6IGZhbHNlCgpqb2JzOgogIGJ1aWxkOgogICAgcnVucy1vbjogdWJ1bnR1LWxhdGVzdAogICAgc3RlcHM6CiAgICAgIC0gbmFtZTogQ2hlY2tvdXQKICAgICAgICB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY2CiAgICAgIC0gbmFtZTogU2V0IHVwIE5vZGUuanMKICAgICAgICB1c2VzOiBhY3Rpb25zL3NldHVwLW5vZGVAdjcKICAgICAgICB3aXRoOgogICAgICAgICAgbm9kZS12ZXJzaW9uOiAnMjInCiAgICAgIC0gbmFtZTogQ29uZmlndXJlIFBhZ2VzCiAgICAgICAgdXNlczogYWN0aW9ucy9jb25maWd1cmUtcGFnZXNAdjYKICAgICAgLSBuYW1lOiBJbnN0YWxsIGRlcGVuZGVuY2llcwogICAgICAgIHJ1bjogbnBtIGNpCiAgICAgIC0gbmFtZTogUmVwb3J0IHJvb3QgdW5yZWZlcmVuY2VkIG1lZGlhCiAgICAgICAgcnVuOiBub2RlIHNjcmlwdHMvbGlzdC1yb290LXVucmVmZXJlbmNlZC1tZWRpYS5tanMKICAgICAgLSBuYW1lOiBUZXN0CiAgICAgICAgcnVuOiBucG0gdGVzdAogICAgICAtIG5hbWU6IFZlcmlmeSBtZWRpYSBtYW5pZmVzdHMKICAgICAgICBydW46IG5wbSBydW4gYXVkaXQ6bWVkaWEKICAgICAgLSBuYW1lOiBCdWlsZAogICAgICAgIHJ1bjogbnBtIHJ1biBidWlsZAogICAgICAtIG5hbWU6IFZlcmlmeSBzaXRlIG91dHB1dAogICAgICAgIHJ1bjogfAogICAgICAgICAgdGVzdCAtcyBkaXN0L2luZGV4Lmh0bWwKICAgICAgICAgIHRlc3QgLXMgZGlzdC9jb250ZW50cy5odG1sCiAgICAgICAgICB0ZXN0IC1zIGRpc3QvYXNzZXRzL2Nzcy9zdHlsZS5jc3MKICAgICAgLSBuYW1lOiBVcGxvYWQgc2l0ZQogICAgICAgIHVzZXM6IGFjdGlvbnMvdXBsb2FkLXBhZ2VzLWFydGlmYWN0QHY1CiAgICAgICAgd2l0aDoKICAgICAgICAgIHBhdGg6IGRpc3QKCiAgZGVwbG95OgogICAgbmVlZHM6IGJ1aWxkCiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBwZXJtaXNzaW9uczoKICAgICAgcGFnZXM6IHdyaXRlCiAgICAgIGlkLXRva2VuOiB3cml0ZQogICAgZW52aXJvbm1lbnQ6CiAgICAgIG5hbWU6IGdpdGh1Yi1wYWdlcwogICAgICB1cmw6ICR7eyBzdGVwcy5kZXBsb3ltZW50Lm91dHB1dHMucGFnZV91cmwgfX0KICAgIHN0ZXBzOgogICAgICAtIG5hbWU6IERlcGxveQogICAgICAgIGlkOiBkZXBsb3ltZW50CiAgICAgICAgdXNlczogYWN0aW9ucy9kZXBsb3ktcGFnZXNAdjUK' | base64 -d > .github/workflows/deploy-pages.yml
           rm scripts/migrate-taehoon.mjs
       - name: Refresh media audit
         run: npm run audit:media:update
