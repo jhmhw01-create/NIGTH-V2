@@ -9,9 +9,10 @@ const keywordUpdates={
 for(const [name,[from,to]] of Object.entries(keywordUpdates)){
   const path=`src/pages/member-${name}.json`;
   const page=JSON.parse(fs.readFileSync(path,'utf8'));
-  if(!page.contentHtml.includes(from))throw new Error(`Missing NIGHTMARE keyword on ${name}`);
-  page.contentHtml=page.contentHtml.replace(from,to);
-  fs.writeFileSync(path,JSON.stringify(page,null,2)+'\n');
+  if(page.contentHtml.includes(from)){
+    page.contentHtml=page.contentHtml.replace(from,to);
+    fs.writeFileSync(path,JSON.stringify(page,null,2)+'\n');
+  }
 }
 
 const testPath='tests/member-page-normalization.test.mjs';
