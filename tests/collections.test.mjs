@@ -14,13 +14,12 @@ test('19 notices and six membership cards render',async()=>{
     for(const record of data)assert(!renderer(record).includes('{{title}}'));
   }
 });
-// PHANTOM NOTICE intentionally keeps only the album release announcement.
+// Campaign NOTICE policy: PHANTOM and AFTER HOURS keep only their album release announcements.
 test('PHANTOM notice keeps only the album release announcement',async()=>{
   const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
   const phantom=data.filter(record=>(record.title+'\n'+record.bodyTemplateHtml).includes('PHANTOM'));
   assert.deepEqual(phantom.map(record=>record.title),['PHANTOM 발매 및 ILLUSION Official M/V 공개']);
 });
-// AFTER HOURS NOTICE intentionally keeps only the album release announcement.
 test('AFTER HOURS notice keeps only the album release announcement',async()=>{
   const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
   const afterHours=data.filter(record=>(record.title+'\n'+record.bodyTemplateHtml).includes('AFTER HOURS'));
