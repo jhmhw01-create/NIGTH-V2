@@ -9,7 +9,7 @@ const publicRoot=join(repositoryRoot,'public');
 const mediaRoot=join(publicRoot,'assets');
 const maintenanceRoot=join(repositoryRoot,'maintenance');
 const mediaExtensions=new Set(['.gif','.jpeg','.jpg','.m4a','.mp3','.ogg','.png','.wav','.webp']);
-const textExtensions=new Set(['.css','.html','.js','.json','.md','.mjs','.txt']);
+const textExtensions=new Set(['.css','.html','.js','.jsx','.json','.md','.mjs','.ts','.tsx','.txt']);
 
 const slash=path=>path.split(sep).join('/');
 const comparePath=(a,b)=>Buffer.from(a).compare(Buffer.from(b));
