@@ -1,7 +1,8 @@
 import {useEffect,useMemo,useRef,useState} from 'react';
 import {archiveState,searchRecords} from './search.mjs';
+import {imageProps} from './image-props.mjs';
 
-export function SearchArchive({catalog}) {
+export function SearchArchive({catalog,dimensions={}}) {
   const [state,setState]=useState({query:'',category:'all',sort:'category'});
   const [limit,setLimit]=useState(18);
   const [ready,setReady]=useState(false);
@@ -44,7 +45,7 @@ export function SearchArchive({catalog}) {
       {(state.query.trim()||state.category!=='all')&&<div className="search-conditions" aria-label="선택한 검색 조건"><span>검색어: {state.query.trim()||'없음'}</span><span>분류: {state.category==='all'?'전체':catalog.labels[state.category]}</span><button type="button" onClick={()=>change({query:'',category:'all',sort:'category'})}>조건 모두 해제</button></div>}
       <div id="archive-filters" role="group" aria-label="아카이브 분류">{['all',...Object.keys(catalog.labels)].map(category=><button key={category} type="button" data-category={category} aria-pressed={state.category===category} disabled={!ready} onClick={()=>change({category})}>{category==='all'?'전체':catalog.labels[category]} · {catalog.records.filter(record=>category==='all'||record.category===category).length}</button>)}</div>
       <div className="archive-results-head"><p id="archive-status" role="status" aria-live="polite">{state.category==='all'?'전체':catalog.labels[state.category]} · {results.length}개 기록 · {visible.length}개 표시</p><label>정렬<select id="archive-sort" value={state.sort} disabled={!ready} onChange={event=>change({sort:event.target.value})}><option value="category">분류순</option><option value="title">이름순</option></select></label></div>
-      <div id="archive-grid" ref={grid}>{visible.map(record=><a key={record.id} className="archive-result-card" href={record.href}><div className="archive-result-image">{record.image?<img src={record.image} alt={record.title} loading="lazy" decoding="async"/>:<span className="archive-result-placeholder">NIGHT</span>}</div><div className="archive-result-copy"><small>{catalog.labels[record.category]}</small><h2>{record.title}</h2><p>{record.summary}</p><span>OPEN ARCHIVE →</span></div></a>)}</div>
+      <div id="archive-grid" ref={grid}>{visible.map(record=><a key={record.id} className="archive-result-card" href={record.href}><div className="archive-result-image">{record.image?<img src={record.image} alt={record.title} loading="lazy" decoding="async" {...imageProps(dimensions,record.image)}/>:<span className="archive-result-placeholder">NIGHT</span>}</div><div className="archive-result-copy"><small>{catalog.labels[record.category]}</small><h2>{record.title}</h2><p>{record.summary}</p><span>OPEN ARCHIVE →</span></div></a>)}</div>
       <button id="archive-more" type="button" hidden={visible.length===results.length} disabled={!ready} onClick={()=>{focusIndex.current=visible.length;setLimit(previous=>previous+18);}}>더 보기 · 남은 {results.length-visible.length}개</button>
       <p id="archive-empty" hidden={results.length!==0}>검색 결과가 없습니다. 다른 검색어나 분류를 선택해 주세요.</p>
       {results.length===0&&<div className="search-empty-actions">{state.category!=='all'&&<button type="button" onClick={()=>change({category:'all'})}>전체 분류에서 검색</button>}<button type="button" onClick={()=>change({query:'',category:'all',sort:'category'})}>전체 기록 보기</button></div>}
