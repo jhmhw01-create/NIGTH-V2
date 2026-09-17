@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: github-pages
@@ -26,6 +26,17 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Install dependencies
         run: npm ci
+      - name: Migrate HOME About source
+        run: node scripts/fix-home-about-source.mjs
+      - name: Commit HOME About source fix
+        run: |
+          if ! git diff --quiet -- src/react/HomePage.jsx; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add src/react/HomePage.jsx
+            git commit -m "Use original About image in React HOME"
+            git push
+          fi
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
       - name: Test
