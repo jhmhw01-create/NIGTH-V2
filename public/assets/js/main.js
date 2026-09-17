@@ -13,43 +13,6 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Current NIGHT line-up normalization.
-// Legacy page routes remain unchanged for backward compatibility.
-const currentMemberOrder = [
-  'member-doha.html',
-  'member-woohyun.html',
-  'member-jiwoo.html',
-  'member-ihwan.html',
-  'member-taehun.html'
-];
-
-const homeMemberImages = {
-  'member-doha.html': 'assets/images/home-profile-doha.webp',
-  'member-woohyun.html': 'assets/images/home-profile-woohyun.webp',
-  'member-jiwoo.html': 'assets/images/home-profile-jiwoo.webp',
-  'member-ihwan.html': 'assets/images/home-profile-ihwan.webp',
-  'member-taehun.html': 'assets/images/home-profile-taehoon.webp'
-};
-
-const memberGrid = document.querySelector('#members .member-grid');
-if (memberGrid) {
-  const cards = [...memberGrid.querySelectorAll('.member-card')];
-  const byHref = new Map(cards.map(card => [card.getAttribute('href'), card]));
-
-  currentMemberOrder.forEach((href) => {
-    const card = byHref.get(href);
-    if (!card) return;
-
-    const image = card.querySelector('img');
-    if (image && homeMemberImages[href]) image.src = homeMemberImages[href];
-    memberGrid.appendChild(card);
-  });
-}
-
-// Keep HOME hero and About imagery independent.
-const homeHero = document.querySelector('.hero > .hero-image');
-if (homeHero) homeHero.src = 'assets/images/home-hero-night.webp';
-
 // Use current member-detail portraits while preserving legacy page URLs.
 const memberDetailImages = {
   '윤도하': 'assets/images/member-doha.webp',
