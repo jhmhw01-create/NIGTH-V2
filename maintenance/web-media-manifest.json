@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "root": "public",
+  "summary": {
+    "files": 1832,
+    "bytes": 242120390,
+    "sha256": "14925099771d781a9bd5f25ab098da127e6dd818448a67835de68da210dea380",
+    "extensions": {
+      ".mp3": 20,
+      ".webp": 1812
+    }
+  }
+}

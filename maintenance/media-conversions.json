@@ -1,0 +1,1248 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotCommit": "2038b2ca0c9d7b9c61850c94d75287c3aceab7b0",
+  "policy": {
+    "contentChanges": "none",
+    "protectedFeatures": [
+      "faces",
+      "hair",
+      "person identity",
+      "composition"
+    ],
+    "originalsDeployed": false
+  },
+  "summary": {
+    "files": 72,
+    "originalBytes": 170427032,
+    "webBytes": 8530778,
+    "newWebp": 52,
+    "reusedWebp": 20,
+    "resolutionPreserved": 70
+  },
+  "files": [
+    {
+      "original": {
+        "path": "assets/images/doha.png",
+        "bytes": 574776,
+        "sha256": "a9c4434a58c835e0d80a2dc9ce7644c2191b86fd8a260ac0943c88ed872e29e2",
+        "width": 523,
+        "height": 709
+      },
+      "web": {
+        "path": "assets/images/doha.webp",
+        "bytes": 32182,
+        "sha256": "28ecdfbcf0655967d963fa7a9761f0a1c68d86dabe65738841254f83fb967ef7",
+        "width": 523,
+        "height": 709
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/ihwan.png",
+        "bytes": 871933,
+        "sha256": "672129087d3a55908b16878f68970331f27148a3a7306caed927f7c399361364",
+        "width": 746,
+        "height": 900
+      },
+      "web": {
+        "path": "assets/images/ihwan.webp",
+        "bytes": 20916,
+        "sha256": "477a8d4bce6c6987f45fb76fd8bd364e4ad1a39a4f6b246ac69f32f71fd379b9",
+        "width": 746,
+        "height": 900
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/jiwoo.png",
+        "bytes": 903800,
+        "sha256": "8b9cf61dbf792766f3c4e230eea92af9ccc7ec7dd95c1a8d34ec6466ece1b998",
+        "width": 662,
+        "height": 900
+      },
+      "web": {
+        "path": "assets/images/jiwoo.webp",
+        "bytes": 39248,
+        "sha256": "fffb327a5dc4b7a99a81cb0e89ca1385237af2490f8933ce7bf6cf97ca1e7a93",
+        "width": 662,
+        "height": 900
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/01-bookmark.png",
+        "bytes": 1835784,
+        "sha256": "0e40421e7a0ba6856a4118dfeea172d87cdf1de7a92f4ae0230f512ad42cd1c9",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/01-bookmark.webp",
+        "bytes": 40750,
+        "sha256": "94d583f70043ac9026f6f85d7d8c276b1a49dccb1ffc5d531600262ed363291f",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/02-folded-poster.png",
+        "bytes": 2128232,
+        "sha256": "cd0cc0630e7f66e9d7cc7dc38dc127978c74e4aefd81901f00db8548c20c8453",
+        "width": 1055,
+        "height": 1491
+      },
+      "web": {
+        "path": "assets/images/luna5/02-folded-poster.webp",
+        "bytes": 135312,
+        "sha256": "547f606609575d140201b3dbf14189b3c337a62f7298e7e4a1554eabdbb9ab22",
+        "width": 1055,
+        "height": 1491
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/03-membership-box.png",
+        "bytes": 2110348,
+        "sha256": "87ecb18fa7afc64a1a6d55ba4d368ed600fa0c4a374f6be7bba9cc827f53cbc9",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/03-membership-box.webp",
+        "bytes": 89676,
+        "sha256": "611d8c0436342e74960ade9305a0b86c56f1cc2820494e06ac699cd4fd0a7b87",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/04-membership-card.png",
+        "bytes": 2234141,
+        "sha256": "b43271c4e41c4d37820c0016e533144466d1c349f1aa177cd09e8c001c401972",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/04-membership-card.webp",
+        "bytes": 118196,
+        "sha256": "a91b99c6a3193df4786ced356d7e76e83663fb19509b4e56df37d4dd82fa18d0",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/05-message-card-set.png",
+        "bytes": 2338309,
+        "sha256": "5fc54279e8e5eb6a2942b5e92776283d15d0d62b547e6d19f8f57db00e5457e0",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/05-message-card-set.webp",
+        "bytes": 147408,
+        "sha256": "48fbecb66a3e55bb019580ab4896b3aee67802fe1c3b13cc13122f7b7076eea2",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/06-mini-photo-envelope.png",
+        "bytes": 2426396,
+        "sha256": "ba67dcc4fbd4130b3e03641284d41808986c4b50570463a8fa7eeb4c21bd8cf8",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/06-mini-photo-envelope.webp",
+        "bytes": 176096,
+        "sha256": "dd3be7dd9ee52878c558d6661b06f478d74112cad94c75bb1219960dac49c278",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/07-night-pass.png",
+        "bytes": 2114476,
+        "sha256": "16693c6212f7e39eeddce09f49478a950f5f82416c3413578cf8eb1e4d70fe69",
+        "width": 1918,
+        "height": 820
+      },
+      "web": {
+        "path": "assets/images/luna5/07-night-pass.webp",
+        "bytes": 105058,
+        "sha256": "f29e92a62b31e1cf1a9d597428f9280237d5780d8225daacbef7a100acdcc9c7",
+        "width": 1600,
+        "height": 684
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/08-photobook.png",
+        "bytes": 2234297,
+        "sha256": "4a7ac75e7ba12e7da321d92996e62fc928ccf474418cae891a057ad864100fec",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/08-photobook.webp",
+        "bytes": 119758,
+        "sha256": "2d0e3d283d81c6e80c9fab0d09b8037d0ef51a0f2c5f224df9d18a5a62dd5a7c",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/09-photocard-set.png",
+        "bytes": 2267898,
+        "sha256": "15b61d5c2df71e3e23d1d4004e3169562182a782f27f7ed3e0683fa96321117c",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna5/09-photocard-set.webp",
+        "bytes": 145566,
+        "sha256": "6ebaab14aefed8ad53f51ceae57901e954e851bb5ab8b421d2fb15bd2e8ba498",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna5/10-sticker.png",
+        "bytes": 1998522,
+        "sha256": "665c9071cf9c64eca1a03a2d610344310b33279739a798176f84faa0955d678f",
+        "width": 1055,
+        "height": 1491
+      },
+      "web": {
+        "path": "assets/images/luna5/10-sticker.webp",
+        "bytes": 96550,
+        "sha256": "63578a33b5a5015923d6b2fc151abf6f198ab4e29051d72c791b5838acca83d1",
+        "width": 1055,
+        "height": 1491
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/01-box.png",
+        "bytes": 2189384,
+        "sha256": "fa78f43e741aa7b4b09f1d7aeeb778d90174df058c99dc27b9bfd4f1c63bcefc",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna6/01-box.webp",
+        "bytes": 94934,
+        "sha256": "b00b885f2e7635e075cde0fd7b87ed85224c78174e84efef9eb6843c88671b90",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/02-folded-poster.png",
+        "bytes": 2044830,
+        "sha256": "2152fad66509762522389ffaee72704e9618868d2f87d405f344ee83d33cd86d",
+        "width": 1055,
+        "height": 1491
+      },
+      "web": {
+        "path": "assets/images/luna6/02-folded-poster.webp",
+        "bytes": 142652,
+        "sha256": "5fe330c37bfaf31c7515a26a0fa817fa338b549165db459df4d53dba0f073d3f",
+        "width": 1055,
+        "height": 1491
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/03-graphic-transparency-sheet.png",
+        "bytes": 1240431,
+        "sha256": "c27acdf41be7e5de57213a444723c7a01a484eaf147bb531e731010b280bdf99",
+        "width": 1122,
+        "height": 1402
+      },
+      "web": {
+        "path": "assets/images/luna6/03-graphic-transparency-sheet.webp",
+        "bytes": 65170,
+        "sha256": "2f6669a654bdbfca9391e7c5a570a45d8ff300ef2ebf669406130fb91abb2208",
+        "width": 1122,
+        "height": 1402
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/04-light-trace-photo-set.png",
+        "bytes": 2363819,
+        "sha256": "09565ecdeb956cc3ec52a9e2047292e36bae39611783b97dca3cea7bc7418e5e",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna6/04-light-trace-photo-set.webp",
+        "bytes": 121608,
+        "sha256": "f51412136bc7262578040e87b369318acd79c41736df00c23f71c8004fce60f8",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/05-member-note-set.png",
+        "bytes": 2048383,
+        "sha256": "e0035b4ae2f48aadbdb4ed8197cc6c981c396476bf2d808ffc2f07940cd2395e",
+        "width": 1748,
+        "height": 900
+      },
+      "web": {
+        "path": "assets/images/luna6/05-member-note-set.webp",
+        "bytes": 68894,
+        "sha256": "7074b18604acb41759991d774d09364ee4b568135c12235418a6180f06711eb0",
+        "width": 1600,
+        "height": 824
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/06-membership-card.png",
+        "bytes": 2228139,
+        "sha256": "9efcfffa99b4563e41b96c00614b3e1a160dae00e370618b4b18d213b0e0aaf0",
+        "width": 1579,
+        "height": 996
+      },
+      "web": {
+        "path": "assets/images/luna6/06-membership-card.webp",
+        "bytes": 176844,
+        "sha256": "b5caf08a40cd35d3a0b5b8bcdb94df205267eb734cdfa852cf65255084b6c741",
+        "width": 1579,
+        "height": 996
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/07-photobook.png",
+        "bytes": 2208782,
+        "sha256": "3c0dbd445983573f9c5a7cd7ce14d2f5531be512954de761182c944aedb801b1",
+        "width": 1150,
+        "height": 1368
+      },
+      "web": {
+        "path": "assets/images/luna6/07-photobook.webp",
+        "bytes": 157032,
+        "sha256": "3be106359c249a3eefb418094af2988e36354fa1f74e0802fd67b742fa6aee6f",
+        "width": 1150,
+        "height": 1368
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/08-physical-film-card.png",
+        "bytes": 1164863,
+        "sha256": "fe00aadb01be62b844b2d5226cbd08840232e743f446726a40db93f481c37f26",
+        "width": 1001,
+        "height": 1572
+      },
+      "web": {
+        "path": "assets/images/luna6/08-physical-film-card.webp",
+        "bytes": 78310,
+        "sha256": "84cd90275bbe93bec24c39bf59c90b88ede552825bb495df9e580ed6e09d8704",
+        "width": 1001,
+        "height": 1572
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/09-photocard-set.png",
+        "bytes": 2646594,
+        "sha256": "a35e8fefe8273193c35f03eba467d23b9b857c2ed1fe6f8b87d4330c95517268",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/luna6/09-photocard-set.webp",
+        "bytes": 186404,
+        "sha256": "c31ac7eddfdf3738706a6ff7881b5d5c419c3f5ce1dd34f44e1b4fedada88bef",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/luna6/10-sticker.png",
+        "bytes": 2158023,
+        "sha256": "036ea27bfd367b46e09eb882874144c0f1f2c21732dc07c98aa97e1a65e49814",
+        "width": 1054,
+        "height": 1492
+      },
+      "web": {
+        "path": "assets/images/luna6/10-sticker.webp",
+        "bytes": 140040,
+        "sha256": "02191010c68f5a809c22c9d183ac18a33fcaf629bf74bf2fb5eef74604383058",
+        "width": 1054,
+        "height": 1492
+      },
+      "method": "existing-webp-reused"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-group-main.png",
+        "bytes": 887127,
+        "sha256": "748941c86b77d1e5ea2710d97e8b96cf1f5133aff55b7bf547e519e46ed62497",
+        "width": 900,
+        "height": 600
+      },
+      "web": {
+        "path": "assets/images/night-group-main.webp",
+        "bytes": 46432,
+        "sha256": "7d8a66b2c0caf4dc7655b77858931450f8030873686b400f1e973db01a85a088",
+        "width": 900,
+        "height": 600
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-group-profile.png",
+        "bytes": 950813,
+        "sha256": "63718f43d18615bcad82f254efb1a8242e0ac448de1042e93e8934165421f361",
+        "width": 900,
+        "height": 600
+      },
+      "web": {
+        "path": "assets/images/night-group-profile.webp",
+        "bytes": 59896,
+        "sha256": "1ade8517cc4e9f325d4be72155bf5d2c5809316dcea141fb35cc07926f870860",
+        "width": 900,
+        "height": 600
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-luna.png",
+        "bytes": 1201377,
+        "sha256": "726acc28b413d1387acaa2e6ab1e6ffb8d223c476aee8cfc8bfdc0bb2c0e1ba0",
+        "width": 900,
+        "height": 900
+      },
+      "web": {
+        "path": "assets/images/night-luna.webp",
+        "bytes": 62718,
+        "sha256": "d20e8455f01aefe6481eb81c050fca8d34e7e7c178883b9c2831be4420467151",
+        "width": 900,
+        "height": 900
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-ARRIVAL.png",
+        "bytes": 2538452,
+        "sha256": "aaed05ae2e7cf43811e0b67a0a9dccb07260a359a34e4fee83e26c1cd64e534b",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-ARRIVAL.webp",
+        "bytes": 164398,
+        "sha256": "0b6f4f0002017064915122d51acdf0e3e4aae0ef48842449f4f913bddea12492",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-DINNER.png",
+        "bytes": 2649984,
+        "sha256": "b884745d11852c86900d9205895ccb78ad11ddde1978e899efbf26872e2d211d",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-DINNER.webp",
+        "bytes": 189010,
+        "sha256": "5a1da9f34cc61432d4a544e9f555dc8fbc73353a5af387232bb85ad80cf0d9c1",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-INCHEON AIRPORT.png",
+        "bytes": 2376508,
+        "sha256": "ef1ecc52fffbeb796ba0fc6dce2459e1bf444d77837e976d800e99501ed732b8",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-INCHEON AIRPORT.webp",
+        "bytes": 136498,
+        "sha256": "f1ec4012f7f123d8eb91287be7b04881b0b9474e99051d37fc835c4a4a4720e6",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-POOL.png",
+        "bytes": 2681019,
+        "sha256": "0140b38cb8e79b0e32084ad3251b45dcc06886e3d4f43e2ca46c1419dab73d84",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-POOL.webp",
+        "bytes": 199824,
+        "sha256": "9fe697e7b706246bd19c7309a85afaabb4aab37ac9272f720cec347da26d9d8f",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-REST.png",
+        "bytes": 2364615,
+        "sha256": "41e3cf4c14421ed83c1f5d45c28eb72d34757ec9cdd387772a32b975b90b2748",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-REST.webp",
+        "bytes": 128116,
+        "sha256": "0666ce196f2b593cf475e32db9f18b45fd8abbb116aaed52e96e906ac47cae5a",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.png",
+        "bytes": 2194960,
+        "sha256": "0edbe1a40a6556741f4252124efa7b87c79cea1c5becf7860920824461fff0e3",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp",
+        "bytes": 99770,
+        "sha256": "515ada90c06a52901db351869dbe1921e56e2504925e98015b1e39141778b946",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-DOHA&TAEHOON.png",
+        "bytes": 2063362,
+        "sha256": "d6dbeffd545914f3042cdb0668ba275684e46bc5b23a3b890a85e1519a47f0e0",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-DOHA&TAEHOON.webp",
+        "bytes": 98780,
+        "sha256": "c40423795647a2a85076330f010a5030d1b92bdce62bad7007b23aa2c0124f3a",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-MORNING BRUNCH.png",
+        "bytes": 2408434,
+        "sha256": "4ef270fa3b378db3852af771d3c5313bf6445c1fa9f48ea4f6ebc6c28a3127e0",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-MORNING BRUNCH.webp",
+        "bytes": 149372,
+        "sha256": "5ed707dadd73585d008c01edcd426eef89826bcb6e11f0ef48d1518d27bf7820",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-PRIVATE BARBECUE PARTY.png",
+        "bytes": 2548880,
+        "sha256": "0468dcc928205a3b0d0feba1bdba24e34e1cef5273d578b63c8c625f18d52cf0",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-PRIVATE BARBECUE PARTY.webp",
+        "bytes": 180974,
+        "sha256": "34268afe1e7ddc673370195e3cea4b7b66eab223e83622c0b48ca2bab0bb1b68",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-PRIVATE YACHT DEPARTURE.png",
+        "bytes": 2513968,
+        "sha256": "a3dc14f869e31c5e3a87a54fecb130669cb0ca4551a9298db01a1b2b6971ce81",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-PRIVATE YACHT DEPARTURE.webp",
+        "bytes": 161724,
+        "sha256": "b16ad49898364dcd82d445ce73c462dd527f49b670645ce8a2631d5a09d7f5a5",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-SUNSET BEACH WALK.png",
+        "bytes": 2513313,
+        "sha256": "0760c831463f3bb046772a25f6735aa6158375fba7b26da2f31e949c94786127",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-SUNSET BEACH WALK.webp",
+        "bytes": 166302,
+        "sha256": "463f39ec7f74c26572a9f5c628ea411b106c857850fedbf26674fab9c2352f3e",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-YACHT OCEAN SWIM.png",
+        "bytes": 2792437,
+        "sha256": "bfec1d842045f06f1b59da66a8aa390aa55751cb364126534fb50c19cbb1a279",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-YACHT OCEAN SWIM.webp",
+        "bytes": 236326,
+        "sha256": "52450e1a55f90a15d82a55f82bf5b03c9af4811ed0ba763c536bfe40024b899c",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-AFTERNOON POOLSIDE BREAK.png",
+        "bytes": 2690515,
+        "sha256": "082988a9f5d48069a1bd801bc1affc6c3a5bbc8e5063f0dba4175ca81f9c5363",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-AFTERNOON POOLSIDE BREAK.webp",
+        "bytes": 176730,
+        "sha256": "8e88e298ea47aff74b0843cf539df09a5c18d7bf20520aa1f9de0fe76918ba38",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-DOHA&TAEHOON.png",
+        "bytes": 2284977,
+        "sha256": "801f4c8ad92ed0e4ddcb72216b81eb0f78992442efca364d332129450dcee783",
+        "width": 1122,
+        "height": 1402
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-DOHA&TAEHOON.webp",
+        "bytes": 115002,
+        "sha256": "f2b49468453d62e189689ef483c5fac0d7ae06be230a4c533795603125b8be2d",
+        "width": 1122,
+        "height": 1402
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-FAILED ROOM INVASION.png",
+        "bytes": 2035283,
+        "sha256": "bc18c395ba1b112d1039b3968c73efe176eba6a3b4e7536bb2741a90b390d48c",
+        "width": 1122,
+        "height": 1402
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-FAILED ROOM INVASION.webp",
+        "bytes": 74442,
+        "sha256": "9ab9d39086d9523f521135d00c7f1e5bbeef99b2eff8217d8f019c38278f10de",
+        "width": 1122,
+        "height": 1402
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-JIWOO&TAEHOON.png",
+        "bytes": 1938456,
+        "sha256": "95e3b185043dffdad345a6066da1e44bb1a8e3039eec55bb148b4aa15efec71b",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-JIWOO&TAEHOON.webp",
+        "bytes": 76326,
+        "sha256": "f2f42cb4c69a3668196c194a0520b7f19f592f9add65e418f89a3927fff99c4b",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-TENNIS.png",
+        "bytes": 2645142,
+        "sha256": "ddf0d26f994321df57e3b58f60bbb64e251dc01c753dc378b3c23f9b57037d6c",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-TENNIS.webp",
+        "bytes": 190212,
+        "sha256": "1d83e9846543636c4b9ffa4b851c79a80a79d558a8b1f5e9ceb1a2ba177e1c69",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-BREALFAST.png",
+        "bytes": 2648521,
+        "sha256": "e7920a0ee006c2b60ee6c9c4421f24e7fe8522773cbb80f5ca12943506b754f4",
+        "width": 1536,
+        "height": 1024
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-BREALFAST.webp",
+        "bytes": 170884,
+        "sha256": "58007ee7958d761c93779995e4ece904ff27b92c7211cd83b7219d3600cea5c4",
+        "width": 1536,
+        "height": 1024
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-DRIVING.png",
+        "bytes": 2659219,
+        "sha256": "26f50c37a99b0bc8c1e30d15fc64c589bf099dc5a24c7c85b46690ea52b3ac7f",
+        "width": 1672,
+        "height": 941
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-DRIVING.webp",
+        "bytes": 187952,
+        "sha256": "ead7f327a5635f375f9a7af62a6512c31038bd089036bf90bc4a6f8c756c3769",
+        "width": 1672,
+        "height": 941
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-DUTYFREE SHOPPING.png",
+        "bytes": 2340797,
+        "sha256": "fad533e01a4dc45b5d68879c1eb8313b4eab0b117f09a2a98bebe854b6534768",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-DUTYFREE SHOPPING.webp",
+        "bytes": 138704,
+        "sha256": "7cfd42878b8aa20e1fa2015cd6e982654fefd71f758a2daccef4ba3f29ef5135",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-PACK UP.png",
+        "bytes": 2670651,
+        "sha256": "3e5f3f34a860440d4dd5c6f927a228e63ccb7f1e6294ea5a332556ea1fcb75a2",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 4-PACK UP.webp",
+        "bytes": 189850,
+        "sha256": "16ff4bf98fc4c54b101892b8e0fd82d7c2e70f58e278a80f0de18e1d8944b1ef",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-01.png",
+        "bytes": 2182324,
+        "sha256": "44e7bd48b31df712f7a5ab7b679b67c20b913163507f81961d59842333e204f9",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-01.webp",
+        "bytes": 102714,
+        "sha256": "ba0f835ed5aec969da0c17edbbbb4f4754fb0fe4757bd85a1c9a311d0d4dd155",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-02.png",
+        "bytes": 2163228,
+        "sha256": "b86e376d38897d4001ff58187aaf5b3bc524800563c684341788510f4acc9b34",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-02.webp",
+        "bytes": 99160,
+        "sha256": "16ad5309cda8d9460542cac7bb775e74d090aaca87a34e0adf52fac83f7911ec",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-03.png",
+        "bytes": 2181793,
+        "sha256": "cf3e2b635d67ae967b45ddc3e3187d4e520a18e713cb3ee0aa013bf69320d362",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-03.webp",
+        "bytes": 100276,
+        "sha256": "dffba2ff5cf419d3486a906221fd00319fb5311685f2d28b13e995eea6dd9fdf",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-04.png",
+        "bytes": 2129714,
+        "sha256": "b28a45166d214a5630624f8a32c1eb56fef95421ef603f19bce7207582c31e4f",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-04.webp",
+        "bytes": 92602,
+        "sha256": "4f00ef7abb048128792a9912f2f82acaa3a9acc877811534084f9dd212d5f2ec",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-05.png",
+        "bytes": 2134590,
+        "sha256": "90f2a8f254632ec108aea17292f25c8f6f6838688801ebd7f931e6fe6b106f8f",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-05.webp",
+        "bytes": 95060,
+        "sha256": "2e91ab19183662b30e490e1dc895eca1e7b659a4600f520af3738204afec4679",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-06.png",
+        "bytes": 2172475,
+        "sha256": "5cd4bc638a6311630d94875d2c6dc4ea16629e7f11b0422c58429a845cc43de6",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-06.webp",
+        "bytes": 101194,
+        "sha256": "c3a33981ae3e1b0fd405659c001aece3d26f2e518ae21613d6155621ff2b1baf",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-07.png",
+        "bytes": 2343798,
+        "sha256": "6fbeca6a665ccf97ea71b1d7a4dd5dbc551295e6ca62ba89624b5b9df4a8feef",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-07.webp",
+        "bytes": 127702,
+        "sha256": "b2cae15fd178b5ebe22a99adc6a9484ff4a9f4861c5d2a5b63d42a143504c7c1",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-08.png",
+        "bytes": 2404309,
+        "sha256": "ac78e385baca2aba9fa2519a79f8c7eae26912d3fb9e11afe5a2c011391e5b73",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-08.webp",
+        "bytes": 131128,
+        "sha256": "a21a7cffdd451f9def40dbece1b49ff4e3342fa46a6d1abac08df258042c0560",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-09.png",
+        "bytes": 2242664,
+        "sha256": "59e7aa4090c4806572b8bb35b2d4e91260320c18c3016615540841927cf85e6a",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-09.webp",
+        "bytes": 112892,
+        "sha256": "e565b01b260332192aea30d74cc3efd7a456062363b29e39281481835695fc88",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/night-off-summer/live/live-10.png",
+        "bytes": 2206379,
+        "sha256": "1080d42c7fd3f4d77b62484f9389c427d28618b87385846d28ee9fff43eea897",
+        "width": 1448,
+        "height": 1086
+      },
+      "web": {
+        "path": "assets/images/night-off-summer/live/live-10.webp",
+        "bytes": 104824,
+        "sha256": "94bb1907596be505c389a7b8348a5f233527791588d0079f002d12a9c8a1b411",
+        "width": 1448,
+        "height": 1086
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-between-the-illusion-0905.png",
+        "bytes": 5040291,
+        "sha256": "e387e38c06cce87d03969d8d886665f2d73a93cdda3a033871c15d47a5f8dda8",
+        "width": 1600,
+        "height": 2000
+      },
+      "web": {
+        "path": "assets/images/phantom-between-the-illusion-0905.webp",
+        "bytes": 115058,
+        "sha256": "303b6f16b94e26e94f4c8891906c4b9c452c6d46cccf034db2eb4b37685aa538",
+        "width": 1600,
+        "height": 2000
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-comeback-scheduler.png",
+        "bytes": 3922016,
+        "sha256": "10443b0a92af6fc6f8b3b7d102f26c95da9664b0b8822150e5a68ca10cabe64f",
+        "width": 1365,
+        "height": 2048
+      },
+      "web": {
+        "path": "assets/images/phantom-comeback-scheduler.webp",
+        "bytes": 108324,
+        "sha256": "6dee2374223365b8b15784c357d1a78674df5b875c98c496458b26c3a2975886",
+        "width": 1365,
+        "height": 2048
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-comeback-stage-a-ver-0917.png",
+        "bytes": 3936897,
+        "sha256": "c922de5d367fbe4d6fdbaada14cb5b7630cce5563d9ccee626569cedfa8a8323",
+        "width": 1200,
+        "height": 1800
+      },
+      "web": {
+        "path": "assets/images/phantom-comeback-stage-a-ver-0917.webp",
+        "bytes": 118566,
+        "sha256": "00a1fed1a907a9a304a243a05f56245c44f481b1867df0d02c1b458f03fcecaa",
+        "width": 1200,
+        "height": 1800
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-highlight-medley.png",
+        "bytes": 5008116,
+        "sha256": "f53258b78b14a791487a37ea65bf1eb09ae18bbbe98a47521e061b6ebe0a88b7",
+        "width": 1200,
+        "height": 2000
+      },
+      "web": {
+        "path": "assets/images/phantom-highlight-medley.webp",
+        "bytes": 221628,
+        "sha256": "560afe30d6880f5624b0e9361bc25508dc819091fc4eff7d1589c8478c3d1abc",
+        "width": 1200,
+        "height": 2000
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-illusion-lyric-spoiler-0909.png",
+        "bytes": 4994978,
+        "sha256": "5de99aa41cf33f2980c857460c7c9162120e5f4eaca963348d05587af653891c",
+        "width": 1600,
+        "height": 2000
+      },
+      "web": {
+        "path": "assets/images/phantom-illusion-lyric-spoiler-0909.webp",
+        "bytes": 110912,
+        "sha256": "4639f64f80f3fe175ba0d2f13c9f40e097a4ce6259aadf23d6c8a9a761d0d960",
+        "width": 1600,
+        "height": 2000
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-illusion-mv-teaser-01-0911.png",
+        "bytes": 3141326,
+        "sha256": "96168c3ab5ec371c5f566545425d4d76c661368a0b2cf11e10a51ff62ca52b38",
+        "width": 1024,
+        "height": 1536
+      },
+      "web": {
+        "path": "assets/images/phantom-illusion-mv-teaser-01-0911.webp",
+        "bytes": 90998,
+        "sha256": "f436b52aeefae97d08220bdab14853a5b2a29a2ba5fb8f86ec014152b91b79b4",
+        "width": 1024,
+        "height": 1536
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-illusion-mv-teaser-02-0913.png",
+        "bytes": 3261905,
+        "sha256": "426afa3d025b374fd0e011bdc6866f1950a7152bef5f7466cb791add747c1024",
+        "width": 1023,
+        "height": 1537
+      },
+      "web": {
+        "path": "assets/images/phantom-illusion-mv-teaser-02-0913.webp",
+        "bytes": 132224,
+        "sha256": "224a59baac32b5c7b1adcfa354c6d860334ea2a0767a36e0ac6225e5dc3a3bb7",
+        "width": 1023,
+        "height": 1537
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-illusion-official-mv-0914.png",
+        "bytes": 3344352,
+        "sha256": "7544497607f44e5c3b49855f051fdfb730f9ee7d80e97417f4fb9cab0eae1812",
+        "width": 1024,
+        "height": 1536
+      },
+      "web": {
+        "path": "assets/images/phantom-illusion-official-mv-0914.webp",
+        "bytes": 138054,
+        "sha256": "3435de0737862c8e4e757fd04f42a56c3e99f81dd8f17ae29d8b2b19c25d6169",
+        "width": 1024,
+        "height": 1536
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-mood-teaser-0826.png",
+        "bytes": 2926701,
+        "sha256": "cf7ceeee6ffdbe14eb5eb6365c83caa09d602bb01f50af0fcf057550d36c5813",
+        "width": 1122,
+        "height": 1402
+      },
+      "web": {
+        "path": "assets/images/phantom-mood-teaser-0826.webp",
+        "bytes": 79240,
+        "sha256": "4a8bd452c397fe7364aeecb83131887d07ef374e7a9aee33343e74291f697b1f",
+        "width": 1122,
+        "height": 1402
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-music-show-stage-b-ver-0924.png",
+        "bytes": 2991797,
+        "sha256": "76afc8d63dbe45e1b8c0fcbf11c7f4166395d73f2160b254d3660d4ec8fa8517",
+        "width": 1024,
+        "height": 1536
+      },
+      "web": {
+        "path": "assets/images/phantom-music-show-stage-b-ver-0924.webp",
+        "bytes": 103604,
+        "sha256": "48ccfdcd4fbf167175768ea580c6e11b804f5bc4c570fa965abcf8463995bd0f",
+        "width": 1024,
+        "height": 1536
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-package-preview-0908.png",
+        "bytes": 1823972,
+        "sha256": "e8877df30fe628d01aa029beba98c34ed33d9cade344983217a9c2b981f71a55",
+        "width": 1672,
+        "height": 941
+      },
+      "web": {
+        "path": "assets/images/phantom-package-preview-0908.webp",
+        "bytes": 43972,
+        "sha256": "1aa49c3ee3950ee9c5394072ce6d0217c58b2740fa23cc359d33a27df6624423",
+        "width": 1672,
+        "height": 941
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-special-stage-ab-mix-ver-1001.png",
+        "bytes": 4074912,
+        "sha256": "4357b9f4da61b06e3914cddd95051800e891dd35442e9b59ad33494859caa605",
+        "width": 1200,
+        "height": 1800
+      },
+      "web": {
+        "path": "assets/images/phantom-special-stage-ab-mix-ver-1001.webp",
+        "bytes": 141212,
+        "sha256": "7baac4214df3dd8c52e007a0aaea612f5abd00903d6a1383abcabb3a35787f4a",
+        "width": 1200,
+        "height": 1800
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/phantom-tracklist-0907.png",
+        "bytes": 2844497,
+        "sha256": "920628a241f7e370bf8599de0952db77bab08d85c48b280af73e58e007ef08b4",
+        "width": 1122,
+        "height": 1402
+      },
+      "web": {
+        "path": "assets/images/phantom-tracklist-0907.webp",
+        "bytes": 63292,
+        "sha256": "0e52340ae84a9e1fbf218a50e530f80c1c87d7c441347707d8ae19014fc8926c",
+        "width": 1122,
+        "height": 1402
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/taehun.png",
+        "bytes": 1027400,
+        "sha256": "cb1f273b834cc0903bd2a8205bbe97b968aeb0bc59e982e2f3b38e1c4d87769b",
+        "width": 675,
+        "height": 900
+      },
+      "web": {
+        "path": "assets/images/taehun.webp",
+        "bytes": 51348,
+        "sha256": "0a3bb3cb5ea4495f324e1151e8f78c0221de3da2f7ccdfaaaf8efc77f8db44ab",
+        "width": 675,
+        "height": 900
+      },
+      "method": "png-to-webp"
+    },
+    {
+      "original": {
+        "path": "assets/images/woohyun.png",
+        "bytes": 995628,
+        "sha256": "6e49f3cb9176fb026ea9c61cbd315b4927c51e1b2e1475ffc5966f7bdb874848",
+        "width": 675,
+        "height": 900
+      },
+      "web": {
+        "path": "assets/images/woohyun.webp",
+        "bytes": 45948,
+        "sha256": "e24174f587e9b79bb2c3c7bf3f2cd146e69afd13a247e77e56515ab3df1f5532",
+        "width": 675,
+        "height": 900
+      },
+      "method": "png-to-webp"
+    }
+  ]
+}

@@ -28,6 +28,8 @@ jobs:
         run: npm ci
       - name: Test
         run: npm test
+      - name: Verify media manifests
+        run: npm run audit:media
       - name: Build
         run: npm run build
       - name: Verify site output
@@ -53,4 +55,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
