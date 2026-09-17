@@ -13,40 +13,6 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Use current member-detail portraits while preserving legacy page URLs.
-const memberDetailImages = {
-  '윤도하': 'assets/images/member-doha.webp',
-  '성우현': 'assets/images/member-woohyun.webp',
-  '천지우': 'assets/images/member-jiwoo.webp',
-  '박이환': 'assets/images/member-ihwan.webp',
-  '유태훈': 'assets/images/member-taehoon.webp'
-};
-
-const currentMemberTitle = document.querySelector('.member-title')?.textContent.trim();
-const memberPortrait = document.querySelector('.member-profile-hero .portrait img');
-if (currentMemberTitle && memberPortrait && memberDetailImages[currentMemberTitle]) {
-  memberPortrait.src = memberDetailImages[currentMemberTitle];
-}
-
-// TAEHOON current profile note: only-child family record + childhood context.
-if (currentMemberTitle === '유태훈') {
-  const profileRows = [...document.querySelectorAll('.profile-lines dt')];
-  const familyLabel = profileRows.find(dt => dt.textContent.trim() === 'FAMILY');
-  if (familyLabel?.nextElementSibling) {
-    familyLabel.nextElementSibling.textContent = '부모님 · 외동 (어릴 때부터 옆집 누나와 함께 자람)';
-  }
-
-  const personalitySection = [...document.querySelectorAll('.member-about-section')]
-    .find(section => section.querySelector('.section-label')?.textContent.trim() === 'PERSONALITY');
-  const personalityArticle = personalitySection?.querySelector('.member-intro');
-  if (personalityArticle && !personalityArticle.querySelector('[data-current-profile-note]')) {
-    const note = document.createElement('p');
-    note.dataset.currentProfileNote = 'taehoon-childhood';
-    note.textContent = '외동이지만 어릴 때부터 옆집 누나와 자주 어울려 자라 혼자 지내는 데 익숙한 외동 스타일은 아니며, 이런 성장 배경은 NIGHT 형들에게 자연스럽게 붙고 함께 시간을 보내는 친밀한 성향과도 이어진다.';
-    personalityArticle.appendChild(note);
-  }
-}
-
 // Gallery v03
 const galleryItems = [...document.querySelectorAll('.gallery-item')];
 const galleryFilters = [...document.querySelectorAll('.gallery-filter')];
