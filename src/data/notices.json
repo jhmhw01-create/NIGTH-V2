@@ -1,5 +1,41 @@
 [
   {
+    "id": "rest-release",
+    "title": "REST 디지털 싱글 · NEXT TIME 공개",
+    "attributesHtml": " id=\"rest-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.11.02</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 디지털 싱글 REST와 타이틀곡 NEXT TIME이 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/next-time.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/next-time.webp\" alt=\"REST · NEXT TIME\" loading=\"lazy\"></a><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/release.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/release.webp\" alt=\"REST RELEASE · 2029.11.02\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"discography.html#rest\">VIEW DISCOGRAPHY →</a></div>"
+  },
+  {
+    "id": "paradox-release",
+    "title": "PARADOX 발매 및 PARADISE 공개",
+    "attributesHtml": " id=\"paradox-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.08.27</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 PARADOX와 타이틀곡 PARADISE가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"paradox-2029.html\"><img src=\"assets/images/2029/paradox/comeback/15.webp\" alt=\"PARADOX RELEASE · 2029.08.27\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"paradox-2029.html\">VIEW ALBUM ARCHIVE →</a></div>"
+  },
+  {
+    "id": "out-of-frame-2029",
+    "title": "OUT OF FRAME 공식 전시 아카이브 공개",
+    "attributesHtml": " data-notice-category=\"event\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.05.18–2029.06.03</time><span class=\"notice-category\">EXHIBITION</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT OFF-CAMERA ARCHIVE <strong>OUT OF FRAME</strong>. 다섯 전시 공간과 공식 티켓으로 구성된 전시 아카이브가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"out-of-frame.html\"><img src=\"assets/images/out-of-frame/space-01.webp\" alt=\"OUT OF FRAME 공식 전시\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"out-of-frame.html\">ENTER EXHIBITION →</a></div>"
+  },
+  {
+    "id": "nightmare-release",
+    "title": "NIGHTMARE 발매 및 BLACK NIGHT 공개",
+    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.02.23</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 <strong>NIGHTMARE</strong>와 타이틀곡 <strong>BLACK NIGHT</strong>가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"nightmare-2029.html\"><img src=\"assets/images/2029/nightmare/nightmare-release.webp\" alt=\"NIGHTMARE BLACK NIGHT 발매 이미지\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"nightmare-2029.html\">VIEW ALBUM ARCHIVE →</a></div>"
+  },
+  {
+    "id": "season-greetings-2029",
+    "title": "2029 SEASON’S GREETINGS SUNDAY CLUB 공개",
+    "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.01.02</time><span class=\"notice-category\">SEASON’S GREETINGS</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 2029 시즌그리팅 <strong>SUNDAY CLUB</strong> 공식 아카이브가 공개되었습니다. 13장의 콘셉트 비주얼과 9장의 패키지 이미지를 확인하세요.</p><a class=\"notice-feature-image\" href=\"season-greetings-2029.html\"><img src=\"assets/images/2029/season-greetings/sunday-club-01-main.webp\" alt=\"2029 SUNDAY CLUB 시즌그리팅\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"season-greetings-2029.html\">EXPLORE SUNDAY CLUB →</a></div>"
+  },
+  {
+    "id": "luna6-release",
+    "title": "LUNA 6th Generation AFTERIMAGE 멤버십 키트 공개",
+    "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2028.11.20</time><span class=\"notice-category\">FANCLUB</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>공식 팬클럽 LUNA 6기 멤버십 키트 <strong>AFTERIMAGE</strong>가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"luna6.html\"><img src=\"assets/images/luna6/01-box.webp\" alt=\"LUNA 6기 AFTERIMAGE\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"luna6.html\">VIEW LUNA 6TH KIT →</a></div>"
+  },
+  {
     "id": "notices-1",
     "title": "PERSONA 발매 및 탈환 (TAKE IT BACK) 공개",
     "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
@@ -16,6 +52,18 @@
     "title": "WINGS 발매 및 경계 (BETWEEN) 공개",
     "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "<summary><time>2028.02.01</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>ANGEL과 FALLEN, 빛과 상흔 사이의 경계를 따라가는 WINGS의 공식 기록.</p><a class=\"notice-feature-image\" href=\"wings-2028.html\"><img src=\"assets/images/2028/wings/wings-009.webp\" alt=\"WINGS 공식 이미지\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"wings-2028.html\">VIEW ARCHIVE →</a></div>"
+  },
+  {
+    "id": "season-greetings-2028",
+    "title": "2028 SEASON’S GREETINGS OFF DUTY 공개",
+    "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2028.01.02</time><span class=\"notice-category\">SEASON’S GREETINGS</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 2028 시즌그리팅 <strong>OFF DUTY</strong> 공식 아카이브가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"season-greetings-2028.html\"><img src=\"assets/images/final-additions/season/season-06.webp\" alt=\"2028 OFF DUTY 시즌그리팅\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"season-greetings-2028.html\">EXPLORE OFF DUTY →</a></div>"
+  },
+  {
+    "id": "luna5-release",
+    "title": "LUNA 5th Generation EVERNIGHT 멤버십 키트 공개",
+    "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2027.11.20</time><span class=\"notice-category\">FANCLUB</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>공식 팬클럽 LUNA 5기 멤버십 키트 <strong>EVERNIGHT</strong>가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"luna5.html\"><img src=\"assets/images/luna5/03-membership-box.webp\" alt=\"LUNA 5기 EVERNIGHT\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"luna5.html\">VIEW LUNA 5TH KIT →</a></div>"
   },
   {
     "id": "notices-4",
@@ -60,6 +108,12 @@
     "bodyTemplateHtml": "<summary><time>2027.01.29</time><span class=\"notice-category\">CONCERT</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>공연과 VCR, 콘서트 굿즈 및 비하인드 포토북으로 구성된 NIGHT의 세 번째 콘서트 <strong>夢夜</strong> 공식 아카이브가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"dream-night-2027.html\" aria-label=\"NIGHT 3rd Concert 夢夜 아카이브 열기\"><img src=\"assets/images/2027/dream-night/dreamnig-002.webp\" alt=\"NIGHT 3rd Concert 夢夜 공식 포스터\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"dream-night-2027.html\">ENTER 夢夜 →</a></div>"
   },
   {
+    "id": "season-greetings-2027",
+    "title": "2027 SEASON’S GREETINGS LUNA ACADEMY 공개",
+    "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2027.01.02</time><span class=\"notice-category\">SEASON’S GREETINGS</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 2027 시즌그리팅 <strong>LUNA ACADEMY</strong> 공식 아카이브가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"season-greetings-2027.html\"><img src=\"assets/images/season-2027/academy-19.webp\" alt=\"2027 LUNA ACADEMY 시즌그리팅\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"season-greetings-2027.html\">ENTER THE ACADEMY →</a></div>"
+  },
+  {
     "id": "notices-11",
     "title": "2026 YEAR-END AWARDS 현장 공개",
     "attributesHtml": " data-notice-category=\"event\" class=\"notice-item reveal\"",
@@ -96,21 +150,15 @@
     "bodyTemplateHtml": "\n            <summary>\n              <time>2026.05.26</time>\n              <span class=\"notice-category\">MAGAZINE</span>\n              <strong>{{title}}</strong>\n            </summary>\n            <div class=\"notice-body\">\n              <p>NIGHT의 공식 잡지 화보 및 인터뷰 특집이 2026년 5월 26일 발간되었습니다. 일부 화보 이미지는 GALLERY 아카이브에서 확인할 수 있습니다.</p>\n              <a class=\"notice-link-btn\" href=\"https://jhmhw01-create.github.io/NIGHT_MAGAZINE/\" target=\"_blank\" rel=\"noopener noreferrer\">VIEW MAGAZINE SITE →</a>\n            </div>\n          "
   },
   {
+    "id": "second-concert-2026",
+    "title": "NIGHT 2ND CONCERT BEYOND THE NIGHT 공식 아카이브",
+    "attributesHtml": " data-notice-category=\"event\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2026.05.02–2026.05.03</time><span class=\"notice-category\">CONCERT</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 두 번째 단독 콘서트 <strong>BEYOND THE NIGHT</strong> 공식 기록을 공개합니다.</p><a class=\"notice-feature-image\" href=\"concert-archive.html\"><img src=\"assets/images/visual-archive/concert-02.webp\" alt=\"2ND CONCERT BEYOND THE NIGHT\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"concert-archive.html\">VIEW CONCERT ARCHIVE →</a></div>"
+  },
+  {
     "id": "notices-36",
     "title": "NIGHT OFFICIAL PHOTO BOOK 발간 안내",
     "attributesHtml": " data-notice-category=\"contents\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "\n            <summary>\n              <time>2026.04.01</time>\n              <span class=\"notice-category\">EDITORIAL</span>\n              <strong>{{title}}</strong>\n            </summary>\n            <div class=\"notice-body\">\n              <p>NIGHT의 공식 화보가 2026년 4월 1일 발간되었습니다. 관련 이미지 일부는 GALLERY의 EDITORIAL 아카이브에서 확인할 수 있습니다.</p>\n              <a class=\"notice-link-btn\" href=\"https://jhmhw01-create.github.io/NIGHT_EDITORIAL/\" target=\"_blank\" rel=\"noopener noreferrer\">VIEW EDITORIAL SITE →</a>\n            </div>\n          "
-  },
-  {
-    "id": "rest-release",
-    "title": "REST 디지털 싱글 · NEXT TIME 공개",
-    "attributesHtml": " id=\"rest-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2029.11.02</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 디지털 싱글 REST와 타이틀곡 NEXT TIME이 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/next-time.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/next-time.webp\" alt=\"REST · NEXT TIME\" loading=\"lazy\"></a><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/release.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/release.webp\" alt=\"REST RELEASE · 2029.11.02\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"discography.html#rest\">VIEW DISCOGRAPHY →</a></div>"
-  },
-  {
-    "id": "paradox-release",
-    "title": "PARADOX 발매 및 PARADISE 공개",
-    "attributesHtml": " id=\"paradox-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
-    "bodyTemplateHtml": "<summary><time>2029.08.27</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 PARADOX와 타이틀곡 PARADISE가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"paradox-2029.html\"><img src=\"assets/images/2029/paradox/comeback/15.webp\" alt=\"PARADOX RELEASE · 2029.08.27\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"paradox-2029.html\">VIEW ALBUM ARCHIVE →</a></div>"
   }
 ]

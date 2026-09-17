@@ -7,8 +7,8 @@ test('all sixteen releases are text only',async()=>{
   assert.equal(data.length,16);
   for(const record of data){const output=AlbumCard(record);assert(!/<img\b/.test(output));assert(output.includes('id="'+record.id+'"'));}
 });
-test('19 notices and six membership cards render',async()=>{
-  for(const [name,count,renderer] of [['notices',19,NoticeItem],['memberships',6,MembershipCard]]){
+test('27 notices and six membership cards render',async()=>{
+  for(const [name,count,renderer] of [['notices',27,NoticeItem],['memberships',6,MembershipCard]]){
     const data=JSON.parse(await readFile(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
     assert.equal(data.length,count);
     for(const record of data)assert(!renderer(record).includes('{{title}}'));
