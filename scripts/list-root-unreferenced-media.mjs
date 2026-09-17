@@ -4,7 +4,7 @@ import {extname, join, relative, resolve, sep} from 'node:path';
 const repositoryRoot = resolve(new URL('..', import.meta.url).pathname);
 const publicRoot = join(repositoryRoot, 'public');
 const rootImages = join(publicRoot, 'assets', 'images');
-const textExtensions = new Set(['.css', '.html', '.js', '.json', '.md', '.mjs', '.txt']);
+const textExtensions = new Set(['.css', '.html', '.js', '.jsx', '.json', '.md', '.mjs', '.ts', '.tsx', '.txt']);
 
 const slash = (path) => path.split(sep).join('/');
 
