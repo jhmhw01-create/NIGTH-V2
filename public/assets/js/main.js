@@ -13,13 +13,61 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// PHANTOM release state · 2026.09.14
-const phantomReleaseCard = document.querySelector('.discography-card.upcoming-album');
-if (phantomReleaseCard) {
-  const phantomReleaseType = phantomReleaseCard.querySelector('.discography-type');
-  if (phantomReleaseType) phantomReleaseType.textContent = '4TH MINI ALBUM · RELEASED';
+// Current NIGHT line-up normalization.
+// Legacy page routes remain unchanged for backward compatibility.
+const currentMemberOrder = [
+  'member-doha.html',
+  'member-woohyun.html',
+  'member-jiwoo.html',
+  'member-ihwan.html',
+  'member-taehun.html'
+];
+
+const homeMemberImages = {
+  'member-doha.html': 'assets/images/home-profile-doha.webp',
+  'member-woohyun.html': 'assets/images/home-profile-woohyun.webp',
+  'member-jiwoo.html': 'assets/images/home-profile-jiwoo.webp',
+  'member-ihwan.html': 'assets/images/home-profile-ihwan.webp',
+  'member-taehun.html': 'assets/images/home-profile-taehoon.webp'
+};
+
+const memberGrid = document.querySelector('#members .member-grid');
+if (memberGrid) {
+  const cards = [...memberGrid.querySelectorAll('.member-card')];
+  const byHref = new Map(cards.map(card => [card.getAttribute('href'), card]));
+
+  currentMemberOrder.forEach((href) => {
+    const card = byHref.get(href);
+    if (!card) return;
+
+    const image = card.querySelector('img');
+    if (image && homeMemberImages[href]) image.src = homeMemberImages[href];
+    memberGrid.appendChild(card);
+  });
 }
 
+// Keep HOME hero and About imagery independent.
+const homeHero = document.querySelector('.hero > .hero-image');
+if (homeHero) homeHero.src = 'assets/images/home-hero-night.webp';
+
+// TAEHOON current profile note: only-child family record + childhood context.
+if (document.querySelector('.member-title')?.textContent.trim() === '유태훈') {
+  const profileRows = [...document.querySelectorAll('.profile-lines dt')];
+  const familyLabel = profileRows.find(dt => dt.textContent.trim() === 'FAMILY');
+  if (familyLabel?.nextElementSibling) {
+    familyLabel.nextElementSibling.textContent = '부모님 · 외동 (어릴 때부터 옆집 누나와 함께 자람)';
+  }
+
+  const personalitySection = [...document.querySelectorAll('.member-about-section')]
+    .find(section => section.querySelector('.section-label')?.textContent.trim() === 'PERSONALITY');
+  const personalityArticle = personalitySection?.querySelector('.member-intro');
+  if (personalityArticle && !personalityArticle.querySelector('[data-current-profile-note]')) {
+    const note = document.createElement('p');
+    note.dataset.currentProfileNote = 'taehoon-childhood';
+    note.textContent = '외동이지만 어릴 때부터 옆집 누나와 자주 어울려 자라 혼자 지내는 데 익숙한 외동 스타일은 아니며, 이런 성장 배경은 NIGHT 형들에게 자연스럽게 붙고 함께 시간을 보내는 친밀한 성향과도 이어진다.';
+    personalityArticle.appendChild(note);
+  }
+}
 
 // Gallery v03
 const galleryItems = [...document.querySelectorAll('.gallery-item')];
