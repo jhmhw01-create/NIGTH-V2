@@ -6,7 +6,7 @@ const indexRoutes=new Set(['index.html','discography.html','history.html','liste
 test('every secondary route receives the shared Castle editorial foundation',async()=>{
   const build=await readFile(new URL('../scripts/build-react.mjs',import.meta.url),'utf8');
   const css=await readFile(new URL('../public/assets/css/subpage-fashion.css',import.meta.url),'utf8');
-  assert.equal(reactRoutes.filter(route=>!indexRoutes.has(route)).length,45);
+  assert.equal(reactRoutes.filter(route=>!indexRoutes.has(route)).length,46);
   assert.match(build,/subpage-fashion\.css/);
   assert.match(build,/data-night-subpage/);
   assert.match(css,/body\[data-night-subpage\]/);
