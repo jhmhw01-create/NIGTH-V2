@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version: '22'
+      - name: Install dependencies
+        run: npm ci
       - name: Keep only PHANTOM release notice
         shell: bash
         run: |
@@ -26,7 +28,8 @@ jobs:
           const fs = require('fs');
           const noticePath = 'src/data/notices.json';
           const pagePath = 'src/pages/notice.json';
-          const testPath = 'tests/collections.test.mjs';
+          const collectionTestPath = 'tests/collections.test.mjs';
+          const noticeTestPath = 'tests/notice-fashion.test.mjs';
           const keepTitle = 'PHANTOM 발매 및 ILLUSION Official M/V 공개';
 
           const notices = JSON.parse(fs.readFileSync(noticePath, 'utf8'));
@@ -56,15 +59,21 @@ jobs:
           page.contentHtml = page.contentHtml.slice(0, start) + groups + page.contentHtml.slice(end);
           fs.writeFileSync(pagePath, JSON.stringify(page, null, 2) + '\n');
 
-          let test = fs.readFileSync(testPath, 'utf8');
-          test = test.replace("test('38 notices and six membership cards render'", "test('25 notices and six membership cards render'");
-          test = test.replace("['notices',38,NoticeItem]", "['notices',25,NoticeItem]");
+          let collectionTest = fs.readFileSync(collectionTestPath, 'utf8');
+          collectionTest = collectionTest.replace("test('38 notices and six membership cards render'", "test('25 notices and six membership cards render'");
+          collectionTest = collectionTest.replace("['notices',38,NoticeItem]", "['notices',25,NoticeItem]");
           const marker = "test('title fields are escaped; missing collection records fail the build'";
           const guard = `test('PHANTOM notice keeps only the album release announcement',async()=>{\n  const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));\n  const phantom=data.filter(record=>(record.title+'\\n'+record.bodyTemplateHtml).includes('PHANTOM'));\n  assert.deepEqual(phantom.map(record=>record.title),['${keepTitle}']);\n});\n`;
-          if (!test.includes(marker)) throw new Error('Collection test marker not found');
-          test = test.replace(marker, guard + marker);
-          fs.writeFileSync(testPath, test);
+          if (!collectionTest.includes(marker)) throw new Error('Collection test marker not found');
+          collectionTest = collectionTest.replace(marker, guard + marker);
+          fs.writeFileSync(collectionTestPath, collectionTest);
+
+          let noticeTest = fs.readFileSync(noticeTestPath, 'utf8');
+          noticeTest = noticeTest.replace(').length,38);', ').length,25);').replace('assert.equal(notices.length,38);', 'assert.equal(notices.length,25);');
+          fs.writeFileSync(noticeTestPath, noticeTest);
           NODE
+      - name: Refresh media audit
+        run: npm run audit:media:update
       - name: Verify cleanup
         run: npm test
       - name: Commit cleanup
@@ -72,6 +81,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git rm .github/workflows/cleanup-phantom-notices.yml
-          git add src/data/notices.json src/pages/notice.json tests/collections.test.mjs
+          git add src/data/notices.json src/pages/notice.json tests/collections.test.mjs tests/notice-fashion.test.mjs maintenance/*.json
           git commit -m "Keep only PHANTOM release notice"
           git push
