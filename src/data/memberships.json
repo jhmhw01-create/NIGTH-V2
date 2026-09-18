@@ -34,5 +34,11 @@
     "title": "AFTER MIDNIGHT",
     "attributesHtml": " class=\"luna-archive-card luna-first reveal\"",
     "bodyTemplateHtml": "\n<a class=\"luna-archive-poster\" href=\"assets/images/visual-archive/luna-01.webp\" target=\"_blank\" rel=\"noopener\"><img src=\"assets/images/visual-archive/luna-01.webp\" alt=\"LUNA 1기 공식 포스터\" loading=\"lazy\"/></a>\n<div class=\"luna-archive-glow\" aria-hidden=\"true\"></div>\n<div class=\"luna-archive-header\"><div><span class=\"luna-generation\">LUNA 1st Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Meet Us After Midnight.</p></div><span class=\"luna-period\">NIGHT 데뷔 1년 차</span></div>\n<div class=\"luna-archive-grid\">\n<div class=\"luna-archive-copy\">\n<div class=\"luna-meta-block\"><span>MEMBERS</span><p>윤도하 / 박이환 / 천지우 / 성우현 / ANGELO</p></div>\n<div class=\"luna-meta-block\"><span>CONCEPT</span><p>NIGHT와 LUNA가 처음 만난 시기. 데뷔 초기 NIGHT의 도시적인 밤, 자정, 네온과 세련된 다크 무드를 담은 첫 공식 팬클럽 키트.</p></div>\n<div class=\"luna-meta-block\"><span>MAIN COLORS</span><p>Black / Midnight Navy / Silver / Cool Blue</p></div>\n</div>\n<div class=\"luna-kit-block\"><span class=\"luna-kit-label\">KIT CONTENTS</span><ul class=\"luna-kit-list\">\n<li>Official Kit Box</li><li>Membership Card</li><li>Welcome Book / Profile Book</li><li>Photocard Set (5EA)</li><li>Member Message Card Set (5EA)</li><li>Postcard Set</li><li>Photo Strip Set</li><li>Group Poster</li><li>Sticker Set</li><li>Letter from NIGHT</li>\n</ul></div>\n</div>\n"
+  },
+  {
+    "id": "memberships-7",
+    "title": "MIDNIGHT OBSERVATORY",
+    "attributesHtml": " class=\"luna-archive-card reveal\"",
+    "bodyTemplateHtml": "<a href=\"luna7.html\"><img src=\"assets/images/7TH LUNA/luna7-kit-complete-archive.webp\" alt=\"LUNA 7기 MIDNIGHT OBSERVATORY\" loading=\"lazy\" style=\"object-fit:contain\"></a><div><span class=\"luna-generation\">LUNA 7th Membership</span><h3>{{title}}</h3><p class=\"luna-tagline\">Same orbit, another night.</p><p class=\"luna-period\"><time datetime=\"2029-11-20\">2029.11.20</time> · KIT ARCHIVE</p><p>같은 밤을 바라보며 다시 같은 궤도에서 만나는 NIGHT와 LUNA의 일곱 번째 멤버십 기록.</p><a class=\"btn\" href=\"luna7.html\">EXPLORE THE KIT →</a></div>"
   }
 ]
