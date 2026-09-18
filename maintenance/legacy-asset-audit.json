@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 64,
+    "assets": 48,
     "css": 46,
-    "js": 18,
+    "js": 2,
     "runtime": 46,
     "buildInput": 2,
-    "unresolved": 16
+    "unresolved": 0
   },
   "groups": {
     "runtime": [
@@ -61,24 +61,7 @@
       "assets/js/md-store.js",
       "assets/js/night-collections-data.js"
     ],
-    "unresolved": [
-      "assets/js/archive-2026.js",
-      "assets/js/archive-explorer.js",
-      "assets/js/behind.js",
-      "assets/js/contents-categories.js",
-      "assets/js/fanmeeting.js",
-      "assets/js/fansign.js",
-      "assets/js/final-additions.js",
-      "assets/js/five-voices.js",
-      "assets/js/gallery-collections.js",
-      "assets/js/highlight-medley.js",
-      "assets/js/main.js",
-      "assets/js/night-collections.js",
-      "assets/js/notice-archive.js",
-      "assets/js/season-2027.js",
-      "assets/js/travel.js",
-      "assets/js/vlog.js"
-    ]
+    "unresolved": []
   },
   "records": [
     {
@@ -1057,83 +1040,6 @@
       ]
     },
     {
-      "path": "assets/js/archive-2026.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/archive-explorer.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/behind.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/contents-categories.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/fanmeeting.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/fansign.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/final-additions.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/five-voices.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/gallery-collections.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/highlight-medley.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/main.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
       "path": "assets/js/md-store.js",
       "type": "js",
       "status": "build-input",
@@ -1150,41 +1056,6 @@
       "buildReferences": [
         "scripts/photo-episodes.mjs"
       ]
-    },
-    {
-      "path": "assets/js/night-collections.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/notice-archive.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/season-2027.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/travel.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
-    },
-    {
-      "path": "assets/js/vlog.js",
-      "type": "js",
-      "status": "unresolved",
-      "runtimeReferences": [],
-      "buildReferences": []
     }
   ],
   "policy": "public CSS/JS is classified by generated HTML runtime references first, then src/scripts build-source references. Tests and copied legacy files do not count as usage evidence. unresolved means no current runtime or build-input evidence and is a review candidate, not automatic deletion permission."
