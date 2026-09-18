@@ -53,17 +53,67 @@ function createWebManifest(files){
   return {schemaVersion:1,root:'public',summary:{files:files.length,bytes:files.reduce((sum,file)=>sum+file.bytes,0),sha256:fingerprint,extensions}};
 }
 
+function pairedImageCandidates(path){
+  const candidates=[];
+  if(path.includes('/thumbs/'))candidates.push(path.replace('/thumbs/','/full/'));
+  if(path.includes('/full/'))candidates.push(path.replace('/full/','/thumbs/'));
+  const collectionsThumb='assets/images/collections/thumbs/';
+  const collectionsBase='assets/images/collections/';
+  if(path.startsWith(collectionsThumb))candidates.push(collectionsBase+path.slice(collectionsThumb.length));
+  else if(path.startsWith(collectionsBase)&&!path.startsWith(collectionsThumb))candidates.push(collectionsThumb+path.slice(collectionsBase.length));
+  return [...new Set(candidates)];
+}
+
+function dynamicReference(path,corpus,imagePaths){
+  if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/(full|thumbs)\/scene-\d{2}\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/${kind}/scene-${')){
+    return {reason:'vlog-scene-generator'};
+  }
+  if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/full\/reactions\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/full/reactions.webp')){
+    return {reason:'vlog-reaction-generator'};
+  }
+  for(const candidate of pairedImageCandidates(path)){
+    if(imagePaths.has(candidate)&&corpus.includes(candidate))return {reason:'paired-delivery-variant',evidence:candidate};
+  }
+  return null;
+}
+
 async function createImageAudit(files){
   const dimensions=await readImageDimensions(publicRoot);
   const corpus=await sourceCorpus();
   const images=files.filter(file=>file.path.startsWith('assets/images/'));
+  const imagePaths=new Set(images.map(file=>file.path));
   const byHash=new Map();
   for(const file of images){const group=byHash.get(file.sha256)??[];group.push(file.path);byHash.set(file.sha256,group);}
   const duplicates=[...byHash.entries()].filter(([,paths])=>paths.length>1).map(([sha256,paths])=>({sha256,paths}));
-  const records=images.map(file=>{const literalReferenceFound=corpus.includes(file.path);return {...file,...dimensions[file.path],folder:file.path.slice(0,file.path.lastIndexOf('/')),literalReferenceFound,status:literalReferenceFound?'referenced':'needs-dynamic-reference-review'};});
+  const records=images.map(file=>{
+    const literalReferenceFound=corpus.includes(file.path);
+    const dynamic=literalReferenceFound?null:dynamicReference(file.path,corpus,imagePaths);
+    return {...file,...dimensions[file.path],folder:file.path.slice(0,file.path.lastIndexOf('/')),literalReferenceFound,dynamicReference:dynamic,status:literalReferenceFound?'referenced':dynamic?'known-dynamic':'unresolved'};
+  });
+  const knownDynamic=records.filter(file=>file.status==='known-dynamic');
+  const unresolved=records.filter(file=>file.status==='unresolved');
   const folders={};
   for(const file of records){const item=folders[file.folder]??{files:0,bytes:0};item.files+=1;item.bytes+=file.bytes;folders[file.folder]=item;}
-  return {schemaVersion:2,summary:{images:images.length,bytes:images.reduce((sum,file)=>sum+file.bytes,0),exactDuplicateGroups:duplicates.length,literalReferenceFound:records.filter(file=>file.literalReferenceFound).length,dynamicReviewRequired:records.filter(file=>!file.literalReferenceFound).length,emptyFiles:records.filter(file=>file.bytes===0).length},duplicates,emptyFiles:records.filter(file=>file.bytes===0).map(file=>file.path),folders:Object.fromEntries(Object.entries(folders).sort(([a],[b])=>comparePath(a,b))),policy:'public/assets/images contains web-delivery assets. A missing literal reference is not deletion permission; dynamic path conventions require review.'};
+  return {
+    schemaVersion:3,
+    summary:{
+      images:images.length,
+      bytes:images.reduce((sum,file)=>sum+file.bytes,0),
+      exactDuplicateGroups:duplicates.length,
+      literalReferenceFound:records.filter(file=>file.literalReferenceFound).length,
+      knownDynamic:knownDynamic.length,
+      dynamicReviewRequired:unresolved.length,
+      emptyFiles:records.filter(file=>file.bytes===0).length
+    },
+    duplicates,
+    emptyFiles:records.filter(file=>file.bytes===0).map(file=>file.path),
+    dynamicReferences:{
+      known:knownDynamic.map(file=>({path:file.path,reason:file.dynamicReference.reason,...(file.dynamicReference.evidence?{evidence:file.dynamicReference.evidence}:{})})),
+      unresolved:unresolved.map(file=>file.path)
+    },
+    folders:Object.fromEntries(Object.entries(folders).sort(([a],[b])=>comparePath(a,b))),
+    policy:'public/assets/images contains web-delivery assets. Literal references are direct evidence; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission.'
+  };
 }
 
 function sameJson(a,b){return JSON.stringify(a)===JSON.stringify(b);}
@@ -122,10 +172,10 @@ export async function auditMedia({write=false}={}){
   }
   if(conversionManifest.summary.files!==conversionManifest.files.length)failures.push('media conversion summary count is stale');
   if(failures.length)throw Error('Media source-management audit failed:\n'+failures.join('\n'));
-  return {media:files.length,images:imageAudit.summary.images,conversions:conversionManifest.files.length,retired:retired.size,bytes:webManifest.summary.bytes};
+  return {media:files.length,images:imageAudit.summary.images,conversions:conversionManifest.files.length,retired:retired.size,knownDynamic:imageAudit.summary.knownDynamic,unresolved:imageAudit.summary.dynamicReviewRequired,bytes:webManifest.summary.bytes};
 }
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
   const result=await auditMedia({write:process.argv.includes('--write')});
-  console.log(`Media audit passed: ${result.media} deployed files, ${result.images} images, ${result.conversions} recorded conversions (${result.retired} retired), ${result.bytes} bytes.`);
+  console.log(`Media audit passed: ${result.media} deployed files, ${result.images} images, ${result.conversions} recorded conversions (${result.retired} retired), ${result.knownDynamic} known dynamic, ${result.unresolved} unresolved, ${result.bytes} bytes.`);
 }
