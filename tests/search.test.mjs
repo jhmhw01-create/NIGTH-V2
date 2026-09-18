@@ -33,7 +33,8 @@ test('home and member search records use current profile sources',()=>{
   assert.match(records['member-doha'].searchText,/3남 2녀의 장남/);
   assert.match(records['member-woohyun'].searchText,/‘야하다’, ‘위험하다’/);
   assert.match(records['member-jiwoo'].searchText,/가까워지는 것과 선을 넘는 것은 전혀 다른 일이다/);
-  assert.match(records['member-ihwan'].searchText,/부모님의 권유로 어린 시절부터 성악을 배웠다/);
+  assert.match(records['member-ihwan'].searchText,/어린 시절의 음악은 좋아해서 하는 것이 아니었다/);
+  assert.match(records['member-ihwan'].searchText,/지금은 누구보다 음악을 재미있어한다/);
   assert.match(records['member-taehun'].searchText,/NIGHT 안에서 자신의 자리를 만들고 싶었다/);
 });
 test('archive URL state validates category and sort',()=>{
