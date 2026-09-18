@@ -12,10 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Install image benchmark tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq webp ffmpeg
       - name: Benchmark WebP re-encoding
         run: |
-          command -v ffmpeg
-          command -v ffprobe
           mkdir -p /tmp/webp-test
           python3 - <<'PY'
           import os, subprocess
@@ -27,12 +29,13 @@ jobs:
           ]
           for p in paths:
             base=os.path.basename(p)
-            print(f'\nSOURCE\t{os.path.getsize(p)}\t{p}')
+            source=os.path.getsize(p)
+            print(f'\nSOURCE\t{source}\t{p}')
             for q in (90,92,95):
               out=f'/tmp/webp-test/{base}.q{q}.webp'
-              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',p,'-c:v','libwebp','-quality',str(q),'-compression_level','6',out],check=True)
+              subprocess.run(['cwebp','-quiet','-q',str(q),'-m','6','-af',p,'-o',out],check=True)
               size=os.path.getsize(out)
               proc=subprocess.run(['ffmpeg','-hide_banner','-i',p,'-i',out,'-lavfi','ssim','-f','null','-'],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
               line=next((x.strip() for x in proc.stderr.splitlines() if 'All:' in x and 'SSIM' in x),'SSIM unavailable')
-              print(f'Q{q}\t{size}\t{size/os.path.getsize(p):.3f}\t{line}')
+              print(f'Q{q}\t{size}\t{size/source:.3f}\t{line}')
           PY
