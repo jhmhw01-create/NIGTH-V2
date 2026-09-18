@@ -43,12 +43,12 @@ const mdProducts = [
   {id:'lunch-set',name:'Thermal Lunch Box Set',category:'travel',price:46000,images:[mdPath('보온도시락+수저세트'),mdPath('보온도시락+수저세트 특전 포카')],options:allOption,benefit:'구매 특전 포토카드 1종 증정',desc:'보온 도시락과 전용 수저로 구성된 NIGHT 런치 세트.'},
   {id:'umbrella-raincoat',name:'Umbrella + Raincoat Set',category:'featured travel',price:59000,images:[mdPath('양우산+우비'),mdPath('양우산 구매 특전 포카'),mdPath('우비 구매 특전 포카')],options:['BLACK / FREE'],benefit:'양우산·우비 구매 특전 포토카드 각 1종 증정',desc:'비 오는 밤을 위한 양우산과 우비 구성의 트래블 세트.'},
   {id:'passport-case',name:'NIGHT Passport Case',category:'travel',price:23000,images:[mdPath('여권케이스')],options:allOption,desc:'여권과 탑승권을 정리하는 NIGHT 트래블 케이스.'},
-  {id:'carrier-cover',name:'NIGHT Carrier Cover',category:'travel',price:39000,images:[mdPath('캐리어커버')],options:['20 INCH','24 INCH','28 INCH'],desc:'여행 캐리어를 보호하는 NIGHT 그래픽 커버.'},
+  {id:'carrier-cover',name:'NIGHT Carrier Cover',category:'travel',price:39000,images:[mdPath('캐리어커버')],optionGroups:[{label:'MEMBER',values:members},{label:'SIZE',values:['20 INCH','24 INCH','28 INCH']}],options:members.flatMap(member=>['20 INCH','24 INCH','28 INCH'].map(size=>`${member} / ${size}`)),desc:'멤버별 NIGHT 그래픽을 선택할 수 있는 캐리어 보호 커버. 멤버와 캐리어 사이즈를 각각 선택한다.'},
   {id:'tumbler',name:'NIGHT Tumbler',category:'travel',price:34000,images:[mdPath('텀블러'),mdPath('텀블러 구매 특전 포카')],options:allOption,benefit:'구매 특전 포토카드 1종 증정',desc:'일상과 여행에 함께하는 보온·보냉 텀블러.'},
   {id:'toothbrush-sterilizer',name:'Portable Toothbrush Sterilizer',category:'travel tech',price:32000,images:[mdPath('휴대용 칫솔 살균기')],options:allOption,desc:'출장과 여행에 유용한 휴대용 칫솔 살균기.'},
   {id:'earbuds-case',name:'Earbuds Case',category:'tech',price:22000,images:[mdPath('버즈, 에어팟 케이스')],options:['AIRPODS','BUDS'],desc:'NIGHT 심볼을 담은 무선 이어폰 보호 케이스.'},
   {id:'mug',name:'NIGHT Mug',category:'tech',price:26000,images:[mdPath('머그컵'),mdPath('머그컵 특전 포카')],options:allOption,benefit:'구매 특전 포토카드 1종 증정',desc:'보랏빛 밤을 담은 NIGHT 세라믹 머그.'},
-  {id:'phone-case',name:'NIGHT Phone Case',category:'tech',price:29000,images:[mdPath('폰케이스'),mdPath('폰케이스 특전 포카')],options:['iPHONE','GALAXY'],benefit:'구매 특전 포토카드 1종 증정',desc:'NIGHT 그래픽을 적용한 투명 하드 폰케이스.'},
+  {id:'phone-case',name:'NIGHT Phone Case',category:'tech',price:29000,images:[mdPath('폰케이스'),mdPath('폰케이스 특전 포카')],optionGroups:[{label:'MEMBER',values:members},{label:'DEVICE',values:['iPHONE','GALAXY']}],options:members.flatMap(member=>['iPHONE','GALAXY'].map(device=>`${member} / ${device}`)),benefit:'구매 특전 포토카드 1종 증정',desc:'멤버별 NIGHT 그래픽을 적용한 투명 하드 폰케이스. 멤버와 기기 타입을 각각 선택한다.'},
   {id:'collect-book',name:'Photocard Collect Book',category:'collectible tech',price:28000,images:[mdPath('콜렉트북'),mdPath('콜렉트북 특전 포카')],options:allOption,benefit:'구매 특전 포토카드 1종 증정',desc:'NIGHT 포토카드를 보관하는 전용 콜렉트북.'},
   {id:'ticket-holder',name:'Ticket Holder',category:'tech',price:16000,images:[mdPath('티켓홀더')],options:allOption,desc:'공연 티켓과 추억을 함께 보관하는 NIGHT 티켓홀더.'},
   {id:'file-holder',name:'File Holder Set',category:'tech',price:12000,images:[mdPath('파일홀더')],options:['5 MEMBER SET'],desc:'멤버별 비주얼로 구성된 A4 파일홀더 세트.'}
@@ -84,8 +84,13 @@ const openProduct = (id) => {
   const benefit = document.querySelector('#detailBenefit');
   benefit.textContent = activeProduct.benefit || '';
   benefit.hidden = !activeProduct.benefit;
+  const groups = activeProduct.optionGroups || [{label:'OPTION',values:activeProduct.options}];
   const option = document.querySelector('#detailOption');
-  option.innerHTML = activeProduct.options.map((item) => `<option>${item}</option>`).join('');
+  const optionLabel = document.querySelector('#detailOptionLabel');
+  const extraOptions = document.querySelector('#detailExtraOptions');
+  optionLabel.textContent = groups[0].label;
+  option.innerHTML = groups[0].values.map((item) => `<option>${item}</option>`).join('');
+  extraOptions.innerHTML = groups.slice(1).map((group,index)=>{const id=`detailOption${index+2}`;return `<label for="${id}">${group.label}</label><select id="${id}" data-detail-option>${group.values.map(item=>`<option>${item}</option>`).join('')}</select>`;}).join('');
   document.querySelector('#detailQuantity').value = 1;
   const image = document.querySelector('#detailImage');
   image.src = activeProduct.images[0]; image.alt = activeProduct.name;
@@ -113,7 +118,7 @@ document.querySelector('#openCart').addEventListener('click',()=>{drawer.classLi
 document.querySelector('#closeCart').addEventListener('click',closeOverlays);
 document.querySelector('#quantityDown').addEventListener('click',()=>{const input=document.querySelector('#detailQuantity');input.value=Math.max(1,Number(input.value)-1);});
 document.querySelector('#quantityUp').addEventListener('click',()=>{const input=document.querySelector('#detailQuantity');input.value=Math.min(9,Number(input.value)+1);});
-document.querySelector('#addToCart').addEventListener('click',()=>{if(!activeProduct)return;const option=document.querySelector('#detailOption').value;const quantity=Math.max(1,Math.min(9,Number(document.querySelector('#detailQuantity').value)||1));const found=cart.find((item)=>item.id===activeProduct.id&&item.option===option);if(found)found.quantity+=quantity;else cart.push({id:activeProduct.id,name:activeProduct.name,option,quantity,price:activeProduct.price,image:activeProduct.images[0]});saveCart();closeOverlays();showToast(`${activeProduct.name} · CART에 담았습니다.`);});
+document.querySelector('#addToCart').addEventListener('click',()=>{if(!activeProduct)return;const option=[document.querySelector('#detailOption').value,...[...document.querySelectorAll('[data-detail-option]')].map(select=>select.value)].join(' / ');const quantity=Math.max(1,Math.min(9,Number(document.querySelector('#detailQuantity').value)||1));const found=cart.find((item)=>item.id===activeProduct.id&&item.option===option);if(found)found.quantity+=quantity;else cart.push({id:activeProduct.id,name:activeProduct.name,option,quantity,price:activeProduct.price,image:activeProduct.images[0]});saveCart();closeOverlays();showToast(`${activeProduct.name} · CART에 담았습니다.`);});
 document.querySelector('#checkoutButton').addEventListener('click',()=>showToast('이 페이지에서는 실제 구매 및 결제가 진행되지 않습니다.'));
 document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeOverlays();});
 renderProducts(); renderCart();

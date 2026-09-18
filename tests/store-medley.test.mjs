@@ -28,6 +28,8 @@ test('all 43 products and their full/thumbnail images survive catalog conversion
   const v2=products.find(product=>product.id==='moonlight-light-stick-v2');assert.ok(v2);assert.equal(v2.price,59000);assert.equal(v2.images.length,5);assert.equal(v2.benefit,'INCLUDED · WRIST STRAP');
   const prices=new Map([['moonlight-v2-carry-case',29000],['moonlight-v2-display-stand',19000],['moonlight-v2-mini-keyring',18000],['moonlight-v2-metal-pin',13000],['moonlight-v2-bag-charm',22000]]);
   for(const [id,price] of prices){const accessory=products.find(product=>product.id===id);assert.ok(accessory);assert.equal(accessory.price,price);}
+  const carrier=products.find(product=>product.id==='carrier-cover');assert.deepEqual(carrier.optionGroups,[{label:'MEMBER',values:['DOHA','WOOHYUN','JIWOO','IHWAN','TAEHOON']},{label:'SIZE',values:['20 INCH','24 INCH','28 INCH']}]);assert.equal(carrier.options.length,15);assert.ok(carrier.options.includes('TAEHOON / 24 INCH'));
+  const phone=products.find(product=>product.id==='phone-case');assert.deepEqual(phone.optionGroups,[{label:'MEMBER',values:['DOHA','WOOHYUN','JIWOO','IHWAN','TAEHOON']},{label:'DEVICE',values:['iPHONE','GALAXY']}]);assert.equal(phone.options.length,10);assert.ok(phone.options.includes('JIWOO / GALAXY'));
   assert.throws(()=>parseStoreProducts('unknown'),/boundary/);
 });
 test('existing cart key, option merging, subtotal and invalid-storage handling',()=>{
@@ -35,6 +37,7 @@ test('existing cart key, option merging, subtotal and invalid-storage handling',
   const first=addCartItem([],product,product.options[0],2);const merged=addCartItem(first,product,product.options[0],9);
   assert.equal(first[0].quantity,2);assert.equal(merged[0].quantity,11);assert.equal(merged[0].price*merged[0].quantity,product.price*11);
   const separate=addCartItem(merged,product,product.options[1],1);assert.equal(separate.length,2);assert.deepEqual(readCart(JSON.stringify(separate),products),separate);
+  const carrier=products.find(item=>item.id==='carrier-cover');const configured=addCartItem([],carrier,'TAEHOON / 24 INCH',1);assert.equal(configured.length,1);assert.equal(configured[0].option,'TAEHOON / 24 INCH');assert.deepEqual(readCart(JSON.stringify(configured),products),configured);
   assert.deepEqual(readCart('broken JSON',products),[]);assert.deepEqual(readCart('{}',products),[]);assert.deepEqual(readCart('[null,{"id":"unknown"}]',products),[]);
   assert.equal(quantityValue(0),1);assert.equal(quantityValue(20),9);assert.equal(quantityValue(''),1);
 });
