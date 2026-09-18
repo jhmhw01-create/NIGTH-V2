@@ -1,0 +1,94 @@
+{
+  "release_date": "2029-11-20",
+  "collection": "NIGHT OFFICIAL FANCLUB LUNA 7TH MEMBERSHIP KIT",
+  "theme": "MIDNIGHT OBSERVATORY",
+  "format": "WebP",
+  "quality": 88,
+  "resolution_policy": "preserved",
+  "files": [
+    {
+      "file": "luna7-kit-complete-archive.webp",
+      "dimensions": "4200×6830",
+      "original_mb": 18.84,
+      "web_mb": 1.2,
+      "reduction_pct": 93.7
+    },
+    {
+      "file": "luna7-welcome-letter.webp",
+      "dimensions": "1055×1491",
+      "original_mb": 2.93,
+      "web_mb": 0.12,
+      "reduction_pct": 96.1
+    },
+    {
+      "file": "luna7-fabric-pouch.webp",
+      "dimensions": "1536×1024",
+      "original_mb": 3.02,
+      "web_mb": 0.23,
+      "reduction_pct": 92.5
+    },
+    {
+      "file": "luna7-graphic-sticker-sheet.webp",
+      "dimensions": "1060×1484",
+      "original_mb": 2.86,
+      "web_mb": 0.12,
+      "reduction_pct": 96.0
+    },
+    {
+      "file": "luna7-observatory-field-notes.webp",
+      "dimensions": "1060×1484",
+      "original_mb": 2.84,
+      "web_mb": 0.14,
+      "reduction_pct": 95.1
+    },
+    {
+      "file": "luna7-photo-prints.webp",
+      "dimensions": "2048×511",
+      "original_mb": 1.93,
+      "web_mb": 0.12,
+      "reduction_pct": 93.6
+    },
+    {
+      "file": "luna7-orbit-bookmarks.webp",
+      "dimensions": "2048×752",
+      "original_mb": 2.09,
+      "web_mb": 0.03,
+      "reduction_pct": 98.6
+    },
+    {
+      "file": "luna7-message-postcards.webp",
+      "dimensions": "2048×1384",
+      "original_mb": 3.29,
+      "web_mb": 0.12,
+      "reduction_pct": 96.4
+    },
+    {
+      "file": "luna7-photocard-set.webp",
+      "dimensions": "1086×1448",
+      "original_mb": 2.64,
+      "web_mb": 0.11,
+      "reduction_pct": 95.8
+    },
+    {
+      "file": "luna7-membership-photobook.webp",
+      "dimensions": "1536×1024",
+      "original_mb": 2.92,
+      "web_mb": 0.17,
+      "reduction_pct": 94.0
+    },
+    {
+      "file": "luna7-membership-card.webp",
+      "dimensions": "1672×941",
+      "original_mb": 2.49,
+      "web_mb": 0.09,
+      "reduction_pct": 96.3
+    },
+    {
+      "file": "luna7-membership-outbox.webp",
+      "dimensions": "1448×1086",
+      "original_mb": 2.48,
+      "web_mb": 0.09,
+      "reduction_pct": 96.6
+    }
+  ]
+}
