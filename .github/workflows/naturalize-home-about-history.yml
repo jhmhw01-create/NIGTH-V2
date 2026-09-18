@@ -27,3 +27,4 @@ jobs:
           git add src/react/HomePage.jsx src/pages/about-night.json src/pages/history.json
           git commit -m "Naturalize HOME ABOUT HISTORY copy" || exit 0
           git push
+# rerun after history copy regression update
