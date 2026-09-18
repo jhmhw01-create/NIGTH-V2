@@ -14,6 +14,7 @@ const textExtensions=new Set(['.css','.html','.js','.jsx','.json','.md','.mjs','
 const slash=path=>path.split(sep).join('/');
 const comparePath=(a,b)=>Buffer.from(a).compare(Buffer.from(b));
 const digest=buffer=>createHash('sha256').update(buffer).digest('hex');
+const decodeReferenceText=text=>text.replaceAll('&amp;','&').replaceAll('&#38;','&').replaceAll('&#x26;','&').replaceAll('&#X26;','&');
 
 async function walk(directory,predicate=()=>true){
   const files=[];
@@ -43,7 +44,7 @@ async function sourceCorpus(){
       return textExtensions.has(extname(path).toLowerCase());
     }))chunks.push(await readFile(path,'utf8'));
   }
-  return chunks.join('\n');
+  return decodeReferenceText(chunks.join('\n'));
 }
 
 function createWebManifest(files){
@@ -139,7 +140,7 @@ async function createImageAudit(files){
       unresolvedGroups:Object.fromEntries(Object.entries(unresolvedGroups).sort(([a],[b])=>comparePath(a,b)))
     },
     folders:Object.fromEntries(Object.entries(folders).sort(([a],[b])=>comparePath(a,b))),
-    policy:'public/assets/images contains web-delivery assets. Literal references are direct evidence; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission.'
+    policy:'public/assets/images contains web-delivery assets. Literal references include normalized HTML entities; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission.'
   };
 }
 
