@@ -12,8 +12,14 @@ export function ContentsEntry(record) {
 }
 export function renderCollections(content, collections) {
   const renderers = {albums:AlbumCard,notices:NoticeItem,memberships:MembershipCard,galleryCards:record=>Record('div',record),contentsEntries:ContentsEntry};
-  return content.replace(/\{\{(albums|notices|memberships|galleryCards|contentsEntries):(\d+)\}\}/g, (_, name, index) => {
+  const membershipSlots=[...content.matchAll(/\{\{memberships:(\d+)\}\}/g)].map(match=>Number(match[1]));
+  const membershipMax=membershipSlots.length?Math.max(...membershipSlots):-1;
+  const newerMemberships=membershipMax>=0?(collections.memberships||[]).slice(membershipMax+1).toReversed():[];
+  return content.replace(/\{\{(albums|notices|memberships|galleryCards|contentsEntries):(\d+)\}\}/g, (_, name, indexText) => {
+    const index=Number(indexText);
     if (!collections[name]?.[index]) throw Error('Unknown record: ' + name + ':' + index);
-    return renderers[name](collections[name][index]);
+    const rendered=renderers[name](collections[name][index]);
+    if(name==='memberships'&&index===0&&newerMemberships.length)return newerMemberships.map(MembershipCard).join('\n')+'\n'+rendered;
+    return rendered;
   });
 }
