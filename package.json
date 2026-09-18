@@ -10,7 +10,7 @@
     "preview": "node scripts/preview.mjs"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=22 <23"
   },
   "description": "NIGHT phased React migration: React Home and shared layout, existing detail pages preserved.",
   "dependencies": {
