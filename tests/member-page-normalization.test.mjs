@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {access,readFile} from 'node:fs/promises';
 
 const root=new URL('../',import.meta.url);
 const members={
@@ -40,4 +40,14 @@ test('home authored fallback does not duplicate the React home',async()=>{
 test('React build has no dependency on removed member normalization',async()=>{
   const source=await readFile(new URL('scripts/build-react.mjs',root),'utf8');
   assert.doesNotMatch(source,/member-page-normalization|normalizeMemberPage/);
+});
+
+test('stale nested source snapshots stay removed',async()=>{
+  for(const path of [
+    'scripts/src/data/archive.json',
+    'scripts/src/data/contentsEntries.json',
+    'scripts/src/pages/contents.json',
+    'scripts/src/pages/night-off-summer.json',
+    'scripts/src/react/routes.mjs'
+  ])await assert.rejects(access(new URL(path,root)));
 });
