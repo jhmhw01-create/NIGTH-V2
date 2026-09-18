@@ -1,23 +1,6 @@
 {
   "schemaVersion": 1,
   "status": "reviewed-unused-candidates",
-  "policy": "These public JavaScript files have no current generated-runtime reference and no repository build-input reference. They are candidates for a separate retirement/removal change, not automatic deletion permission.",
-  "paths": [
-    "assets/js/archive-2026.js",
-    "assets/js/archive-explorer.js",
-    "assets/js/behind.js",
-    "assets/js/contents-categories.js",
-    "assets/js/fanmeeting.js",
-    "assets/js/fansign.js",
-    "assets/js/final-additions.js",
-    "assets/js/five-voices.js",
-    "assets/js/gallery-collections.js",
-    "assets/js/highlight-medley.js",
-    "assets/js/main.js",
-    "assets/js/night-collections.js",
-    "assets/js/notice-archive.js",
-    "assets/js/season-2027.js",
-    "assets/js/travel.js",
-    "assets/js/vlog.js"
-  ]
+  "policy": "These public CSS/JavaScript paths are reviewed candidates only when they appear here. The list is currently empty because all verified unused legacy JavaScript was retired from public delivery.",
+  "paths": []
 }
