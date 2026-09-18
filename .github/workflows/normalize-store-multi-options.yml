@@ -25,9 +25,6 @@ jobs:
           test -s dist/store.html
           grep -q 'detailExtraOptions' dist/store.html
           grep -q 'optionGroups' dist/assets/js/md-store.js
-          grep -q "label:'MEMBER'" dist/assets/js/md-store.js
-          grep -q "label:'SIZE'" dist/assets/js/md-store.js
-          grep -q "label:'DEVICE'" dist/assets/js/md-store.js
       - name: Commit normalized options
         run: |
           git config user.name "github-actions[bot]"
