@@ -2,14 +2,14 @@ name: Deploy NIGHT V2
 
 on:
   push:
-    branches: [main]
+    branches: [main, audit/dynamic-media-classification]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: github-pages
+  group: github-pages-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -28,6 +28,19 @@ jobs:
         run: npm ci
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
+      - name: Refresh media manifests for audit branch
+        if: github.ref == 'refs/heads/audit/dynamic-media-classification'
+        run: npm run audit:media:update
+      - name: Commit refreshed media manifests if needed
+        if: github.ref == 'refs/heads/audit/dynamic-media-classification'
+        run: |
+          if ! git diff --quiet -- maintenance/web-media-manifest.json maintenance/image-audit.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add maintenance/web-media-manifest.json maintenance/image-audit.json
+            git commit -m "Refresh dynamic media audit"
+            git push
+          fi
       - name: Test
         run: npm test
       - name: Verify media manifests
@@ -40,11 +53,13 @@ jobs:
           test -s dist/contents.html
           test -s dist/assets/css/style.css
       - name: Upload site
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:
