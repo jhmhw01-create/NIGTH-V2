@@ -28,16 +28,10 @@ jobs:
         run: npm ci
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
-      - name: Refresh media manifests for cleanup verification
-        run: |
-          npm run audit:media:update
-          npm run audit:media
-          echo '---WEB-MEDIA-MANIFEST---'
-          cat maintenance/web-media-manifest.json
-          echo '---IMAGE-AUDIT---'
-          cat maintenance/image-audit.json
       - name: Test
         run: npm test
+      - name: Verify media manifests
+        run: npm run audit:media
       - name: Build
         run: npm run build
       - name: Verify site output
