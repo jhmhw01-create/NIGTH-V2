@@ -37,13 +37,24 @@ npm run build
 4. `original-media-manifest.json`과 `media-conversions.json`의 원본/변환 이력은 보존합니다.
 5. `npm run audit:media:update`, `npm run audit:media`, `npm test`, `npm run build`를 모두 통과시킵니다.
 
+## 이미지 참조 상태
+
+`image-audit.json`은 배포 이미지를 세 상태로 구분합니다.
+
+- `referenced`: 소스에서 전체 배포 경로가 문자 그대로 확인된 이미지입니다.
+- `known-dynamic`: 전체 경로가 문자 그대로는 없지만, 코드에 명시된 경로 생성식이 있거나 literal로 참조되는 `full`/`thumbs` 대응 자산을 통해 사용 근거를 확인할 수 있는 이미지입니다.
+- `unresolved`: 위 두 근거를 찾지 못한 이미지입니다. 이 목록만 수동 참조 검토 대상이며, **미사용 또는 삭제 허가를 뜻하지 않습니다.**
+
+`summary.dynamicReviewRequired`는 이제 `unresolved` 개수만 의미합니다. 동적 사용 근거가 확인된 이미지는 `summary.knownDynamic`에 별도로 집계되며 `dynamicReferences.known`에 근거 유형과 함께 기록합니다.
+
 ## 검증 원칙
 
 - `npm run audit:media`는 현재 배포 파일의 바이트 수와 SHA-256이 매니페스트와 같은지 확인합니다.
+- 배포 미디어 중 0바이트 파일이 하나라도 있으면 매니페스트 갱신 여부와 관계없이 즉시 실패합니다.
 - 활성 변환 기록의 원본 경로가 `public`에 다시 들어오지 않았는지, 코드가 삭제된 PNG를 참조하지 않는지 확인합니다.
 - `retired-media.json`의 경로는 `public`에 존재하거나 소스에서 다시 참조되면 실패합니다.
 - 신규 변환본은 원본과 WebP의 픽셀 크기가 같은지 확인해 의도하지 않은 리사이즈를 막습니다. 이전부터 있던 WebP를 재사용한 경우에는 원본·배포본 크기를 각각 기록합니다.
-- `image-audit.json`의 `needs-dynamic-reference-review`는 삭제 허가가 아닙니다. JavaScript 경로 조합과 `full`/`thumbs` 규칙을 먼저 확인해야 합니다.
+- `image-audit.json`의 `unresolved`는 삭제 허가가 아닙니다. JavaScript 경로 조합과 `full`/`thumbs` 규칙을 확인한 뒤 상태를 판단합니다.
 - 원본 파일을 교체하거나 새 변환을 추가할 때는 기존 매니페스트 값을 덮어쓰지 말고 새 원본 버전과 변환 이력을 명시적으로 남깁니다.
 
 원본 파일이 필요할 때는 외부 보관소에서 SHA-256을 대조해 가져옵니다. 보관용 PNG를 복구 목적으로 `public`에 복사하지 않습니다.
