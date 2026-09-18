@@ -2,11 +2,11 @@ name: Deploy NIGHT V2
 
 on:
   push:
-    branches: [main]
+    branches: [main, audit/legacy-runtime-assets]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: github-pages
@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
@@ -32,19 +34,31 @@ jobs:
         run: npm test
       - name: Verify media manifests
         run: npm run audit:media
-      - name: Build
+      - name: Build and refresh legacy asset audit
+        env:
+          UPDATE_LEGACY_ASSET_AUDIT: '1'
         run: npm run build
+      - name: Commit legacy asset audit on audit branch
+        if: github.ref_name == 'audit/legacy-runtime-assets'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add maintenance/legacy-asset-audit.json
+          git diff --cached --quiet || git commit -m "Refresh legacy asset audit"
+          git push
       - name: Verify site output
         run: |
           test -s dist/index.html
           test -s dist/contents.html
           test -s dist/assets/css/style.css
       - name: Upload site
+        if: github.ref_name == 'main'
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
+    if: github.ref_name == 'main'
     needs: build
     runs-on: ubuntu-latest
     permissions:
