@@ -17,6 +17,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/compress-member-profiles.mjs
+      - name: Preserve reviewed TAEHOON public trait
+        run: node -e "const fs=require('fs');const p='src/pages/member-taehoon.json';let s=fs.readFileSync(p,'utf8');s=s.replace('사람을 좋아하고 자신이 원하는 것에도 솔직하다.','사람을 좋아하고 친구가 많은 편이며, 자신이 원하는 것에도 솔직하다.');fs.writeFileSync(p,s);"
       - run: npm test
       - run: npm run audit:media
       - run: npm run build
