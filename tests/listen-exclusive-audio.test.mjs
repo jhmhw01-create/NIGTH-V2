@@ -4,14 +4,15 @@ import { readFile } from 'node:fs/promises';
 
 const root = new URL('../', import.meta.url);
 const page = JSON.parse(await readFile(new URL('src/pages/listen.json', root), 'utf8'));
+const nativeAudio = await readFile(new URL('src/react/NativeAudio.jsx', root), 'utf8');
 
-test('LISTEN audio players pause any previously playing track', () => {
-  const html = page.afterFooterHtml;
-  assert.match(html, /document\.querySelectorAll\('\.listen-list audio'\)/);
-  assert.match(html, /player\.addEventListener\('play'/);
-  assert.match(html, /other !== player && !other\.paused/);
-  assert.match(html, /other\.pause\(\)/);
-  assert.doesNotMatch(html, /currentTime\s*=\s*0/);
+test('LISTEN React audio pauses any previously playing track', () => {
+  assert.match(nativeAudio, /event\.currentTarget\.closest\('\.listen-list'\)/);
+  assert.match(nativeAudio, /document\.querySelectorAll\('\.listen-list audio'\)/);
+  assert.match(nativeAudio, /other!==event\.currentTarget&&!other\.paused/);
+  assert.match(nativeAudio, /other\.pause\(\)/);
+  assert.match(nativeAudio, /onPlay\?\.\(event\)/);
+  assert.doesNotMatch(nativeAudio, /currentTime\s*=\s*0/);
 });
 
 test('LISTEN keeps thirteen native audio players', () => {
