@@ -36,3 +36,8 @@ test('home authored fallback does not duplicate the React home',async()=>{
   const source=JSON.parse(await readFile(new URL('src/pages/index.json',root),'utf8'));
   assert.equal(source.contentHtml,'');
 });
+
+test('React build has no dependency on removed member normalization',async()=>{
+  const source=await readFile(new URL('scripts/build-react.mjs',root),'utf8');
+  assert.doesNotMatch(source,/member-page-normalization|normalizeMemberPage/);
+});

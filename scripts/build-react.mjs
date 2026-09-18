@@ -15,10 +15,9 @@ import {detailNavigation} from './detail-navigation.mjs';
 import {routeData,serializeRouteData} from './route-data.mjs';
 import {homeUpdates} from './home-updates.mjs';
 import {readImageDimensions} from './image-dimensions.mjs';
-import {normalizeMemberPage} from './member-page-normalization.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const normalizePage=page=>normalizeSeasonGreetingsPage(normalizeMemberPage(page));
+const normalizePage=page=>normalizeSeasonGreetingsPage(page);
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
