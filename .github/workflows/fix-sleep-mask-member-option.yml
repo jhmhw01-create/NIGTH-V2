@@ -1,0 +1,29 @@
+name: Fix Sleep Mask Member Option
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fix-sleep-mask-member-option.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/fix-sleep-mask-member-option.mjs
+      - run: npm test
+      - run: npm run audit:media
+      - run: npm run build
+      - name: Commit sleep mask option fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/js/md-store.js tests/store-medley.test.mjs
+          git commit -m "Make sleep mask a member-select item" || exit 0
+          git push
