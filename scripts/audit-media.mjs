@@ -71,6 +71,7 @@ async function json(path){return JSON.parse(await readFile(path,'utf8'));}
 
 export async function auditMedia({write=false}={}){
   const files=await currentMedia();
+  // Never allow a manifest refresh to normalize an empty deployed asset into a passing state.
   const emptyMedia=files.filter(file=>file.bytes===0);
   if(emptyMedia.length)throw Error('Media audit failed: empty deployed media:\n'+emptyMedia.map(file=>file.path).join('\n'));
   const webManifest=createWebManifest(files);
