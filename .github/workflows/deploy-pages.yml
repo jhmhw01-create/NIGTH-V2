@@ -1,4 +1,4 @@
-name: Audit image dimensions
+name: Benchmark image optimization
 
 on:
   push:
@@ -12,47 +12,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Report largest WebP images with dimensions
+      - name: Benchmark WebP re-encoding
         run: |
+          command -v ffmpeg
+          command -v ffprobe
+          mkdir -p /tmp/webp-test
           python3 - <<'PY'
-          import os, struct
-
-          def webp_size(path):
-              with open(path,'rb') as f:
-                  data=f.read(64)
-              if len(data)<30 or data[:4]!=b'RIFF' or data[8:12]!=b'WEBP': return (0,0)
-              kind=data[12:16]
-              if kind==b'VP8X' and len(data)>=30:
-                  w=1+int.from_bytes(data[24:27],'little')
-                  h=1+int.from_bytes(data[27:30],'little')
-                  return w,h
-              if kind==b'VP8 ':
-                  pos=data.find(b'\x9d\x01\x2a',20)
-                  if pos!=-1 and len(data)>=pos+7:
-                      w=int.from_bytes(data[pos+3:pos+5],'little') & 0x3fff
-                      h=int.from_bytes(data[pos+5:pos+7],'little') & 0x3fff
-                      return w,h
-              if kind==b'VP8L' and len(data)>=25 and data[20]==0x2f:
-                  bits=int.from_bytes(data[21:25],'little')
-                  w=(bits & 0x3fff)+1
-                  h=((bits>>14)&0x3fff)+1
-                  return w,h
-              return (0,0)
-
-          rows=[]
-          for root,_,files in os.walk('public/assets/images'):
-              for f in files:
-                  if not f.lower().endswith('.webp'): continue
-                  p=os.path.join(root,f)
-                  size=os.path.getsize(p)
-                  w,h=webp_size(p)
-                  rows.append((size,w,h,p))
-          rows.sort(reverse=True)
-          print('TOP 100 BYTES')
-          for size,w,h,p in rows[:100]: print(f'{size}\t{w}x{h}\t{w*h}\t{p}')
-          print('\nTOP 100 PIXELS')
-          for size,w,h,p in sorted(rows,key=lambda x:x[1]*x[2],reverse=True)[:100]: print(f'{w*h}\t{w}x{h}\t{size}\t{p}')
-          print('\nOVERSIZED long-edge > 3000 and size > 150KB')
-          for size,w,h,p in sorted(rows,reverse=True):
-              if max(w,h)>3000 and size>150000: print(f'{size}\t{w}x{h}\t{p}')
+          import os, subprocess
+          paths=[
+            'public/assets/images/home-hero-night.webp',
+            'public/assets/images/2027/complete/complete-033.webp',
+            'public/assets/images/2027/sensational/sensatio-005.webp',
+            'public/assets/images/2028/wings/wings-004.webp'
+          ]
+          for p in paths:
+            base=os.path.basename(p)
+            print(f'\nSOURCE\t{os.path.getsize(p)}\t{p}')
+            for q in (90,92,95):
+              out=f'/tmp/webp-test/{base}.q{q}.webp'
+              subprocess.run(['ffmpeg','-hide_banner','-loglevel','error','-y','-i',p,'-c:v','libwebp','-quality',str(q),'-compression_level','6',out],check=True)
+              size=os.path.getsize(out)
+              proc=subprocess.run(['ffmpeg','-hide_banner','-i',p,'-i',out,'-lavfi','ssim','-f','null','-'],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+              line=next((x.strip() for x in proc.stderr.splitlines() if 'All:' in x and 'SSIM' in x),'SSIM unavailable')
+              print(f'Q{q}\t{size}\t{size/os.path.getsize(p):.3f}\t{line}')
           PY
