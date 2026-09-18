@@ -5,8 +5,8 @@
     "bytes": 164878356,
     "exactDuplicateGroups": 4,
     "literalReferenceFound": 1546,
-    "knownDynamic": 118,
-    "dynamicReviewRequired": 165,
+    "knownDynamic": 260,
+    "dynamicReviewRequired": 23,
     "emptyFiles": 0
   },
   "duplicates": [
@@ -53,9 +53,719 @@
         "evidence": "assets/images/gallery/thumbs/phantom-group-02.webp"
       },
       {
+        "path": "assets/images/md/full/NIGHT 쿠션.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('NIGHT 쿠션')"
+      },
+      {
+        "path": "assets/images/md/full/데스크매트+무선충전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('데스크매트+무선충전')"
+      },
+      {
+        "path": "assets/images/md/full/도하 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('도하 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/러기지 택.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('러기지 택')"
+      },
+      {
+        "path": "assets/images/md/full/머그컵 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('머그컵 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/머그컵.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('머그컵')"
+      },
+      {
+        "path": "assets/images/md/full/모자 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('모자 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/모자.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('모자')"
+      },
+      {
+        "path": "assets/images/md/full/무드등 구매 특전 멤버 손글씨카드.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('무드등 구매 특전 멤버 손글씨카드')"
+      },
+      {
+        "path": "assets/images/md/full/미니등신대.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('미니등신대')"
+      },
+      {
+        "path": "assets/images/md/full/미니선풍기.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('미니선풍기')"
+      },
+      {
+        "path": "assets/images/md/full/버즈, 에어팟 케이스.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('버즈, 에어팟 케이스')"
+      },
+      {
+        "path": "assets/images/md/full/보온도시락+수저세트 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('보온도시락+수저세트 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/보온도시락+수저세트.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('보온도시락+수저세트')"
+      },
+      {
+        "path": "assets/images/md/full/봉제인형 키링.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('봉제인형 키링')"
+      },
+      {
+        "path": "assets/images/md/full/부채.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('부채')"
+      },
+      {
+        "path": "assets/images/md/full/세안밴드.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('세안밴드')"
+      },
+      {
+        "path": "assets/images/md/full/수면안대 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('수면안대 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/수면안대.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('수면안대')"
+      },
+      {
+        "path": "assets/images/md/full/스마트톡 셋트.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스마트톡 셋트')"
+      },
+      {
+        "path": "assets/images/md/full/스쿼시볼.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스쿼시볼')"
+      },
+      {
+        "path": "assets/images/md/full/스쿼시볼1.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스쿼시볼1')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-도하.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-우현.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-이환.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-지우.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-태훈.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커1.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커1')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-도하.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-우현.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-이환.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-지우.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-태훈.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커')"
+      },
+      {
+        "path": "assets/images/md/full/아크릴 스탠드.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('아크릴 스탠드')"
+      },
+      {
+        "path": "assets/images/md/full/아크릴 키링.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('아크릴 키링')"
+      },
+      {
+        "path": "assets/images/md/full/양말.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('양말')"
+      },
+      {
+        "path": "assets/images/md/full/양우산 구매 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('양우산 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/양우산+우비.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('양우산+우비')"
+      },
+      {
+        "path": "assets/images/md/full/여권케이스.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('여권케이스')"
+      },
+      {
+        "path": "assets/images/md/full/우비 구매 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('우비 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/우현 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('우현 페이스타월')"
+      },
+      {
         "path": "assets/images/md/full/응원봉 무드등.webp",
-        "reason": "paired-delivery-variant",
-        "evidence": "assets/images/md/thumbs/응원봉 무드등.webp"
+        "reason": "md-store-generator",
+        "evidence": "mdPath('응원봉 무드등')"
+      },
+      {
+        "path": "assets/images/md/full/이환 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('이환 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/잠옷 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('잠옷 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/잠옷.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('잠옷')"
+      },
+      {
+        "path": "assets/images/md/full/지우 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('지우 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/캐리어커버.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('캐리어커버')"
+      },
+      {
+        "path": "assets/images/md/full/캐릭터 봉제인형 버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('캐릭터 봉제인형 버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-도하-색칠 버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-도하.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-우현-색칠 버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-우현.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-이환-색칠버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-이환.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-지우-색칠버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-지우.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-태훈-색칠버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-태훈.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈')"
+      },
+      {
+        "path": "assets/images/md/full/콜렉트북 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('콜렉트북 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/콜렉트북.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('콜렉트북')"
+      },
+      {
+        "path": "assets/images/md/full/태훈 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('태훈 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/텀블러 구매 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('텀블러 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/텀블러.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('텀블러')"
+      },
+      {
+        "path": "assets/images/md/full/티켓홀더.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('티켓홀더')"
+      },
+      {
+        "path": "assets/images/md/full/파우치.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('파우치')"
+      },
+      {
+        "path": "assets/images/md/full/파일홀더.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('파일홀더')"
+      },
+      {
+        "path": "assets/images/md/full/폰케이스 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('폰케이스 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/폰케이스.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('폰케이스')"
+      },
+      {
+        "path": "assets/images/md/full/핀 뱃지 셋트.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('핀 뱃지 셋트')"
+      },
+      {
+        "path": "assets/images/md/full/휴대용 칫솔 살균기.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('휴대용 칫솔 살균기')"
+      },
+      {
+        "path": "assets/images/md/thumbs/NIGHT 쿠션.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('NIGHT 쿠션')"
+      },
+      {
+        "path": "assets/images/md/thumbs/데스크매트+무선충전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('데스크매트+무선충전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/도하 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('도하 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/러기지 택.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('러기지 택')"
+      },
+      {
+        "path": "assets/images/md/thumbs/머그컵 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('머그컵 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/머그컵.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('머그컵')"
+      },
+      {
+        "path": "assets/images/md/thumbs/모자 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('모자 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/모자.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('모자')"
+      },
+      {
+        "path": "assets/images/md/thumbs/무드등 구매 특전 멤버 손글씨카드.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('무드등 구매 특전 멤버 손글씨카드')"
+      },
+      {
+        "path": "assets/images/md/thumbs/미니등신대.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('미니등신대')"
+      },
+      {
+        "path": "assets/images/md/thumbs/미니선풍기.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('미니선풍기')"
+      },
+      {
+        "path": "assets/images/md/thumbs/버즈, 에어팟 케이스.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('버즈, 에어팟 케이스')"
+      },
+      {
+        "path": "assets/images/md/thumbs/보온도시락+수저세트 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('보온도시락+수저세트 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/보온도시락+수저세트.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('보온도시락+수저세트')"
+      },
+      {
+        "path": "assets/images/md/thumbs/봉제인형 키링.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('봉제인형 키링')"
+      },
+      {
+        "path": "assets/images/md/thumbs/부채.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('부채')"
+      },
+      {
+        "path": "assets/images/md/thumbs/세안밴드.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('세안밴드')"
+      },
+      {
+        "path": "assets/images/md/thumbs/수면안대 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('수면안대 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/수면안대.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('수면안대')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스마트톡 셋트.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스마트톡 셋트')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스쿼시볼.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스쿼시볼')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스쿼시볼1.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스쿼시볼1')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-도하.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-우현.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-이환.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-지우.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-태훈.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커1.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커1')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-도하.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-우현.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-이환.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-지우.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-태훈.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커')"
+      },
+      {
+        "path": "assets/images/md/thumbs/아크릴 스탠드.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('아크릴 스탠드')"
+      },
+      {
+        "path": "assets/images/md/thumbs/아크릴 키링.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('아크릴 키링')"
+      },
+      {
+        "path": "assets/images/md/thumbs/양말.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('양말')"
+      },
+      {
+        "path": "assets/images/md/thumbs/양우산 구매 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('양우산 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/양우산+우비.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('양우산+우비')"
+      },
+      {
+        "path": "assets/images/md/thumbs/여권케이스.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('여권케이스')"
+      },
+      {
+        "path": "assets/images/md/thumbs/우비 구매 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('우비 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/우현 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('우현 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/이환 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('이환 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/잠옷 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('잠옷 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/잠옷.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('잠옷')"
+      },
+      {
+        "path": "assets/images/md/thumbs/지우 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('지우 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/캐리어커버.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('캐리어커버')"
+      },
+      {
+        "path": "assets/images/md/thumbs/캐릭터 봉제인형 버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('캐릭터 봉제인형 버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-도하-색칠 버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-도하.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-우현-색칠 버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-우현.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-이환-색칠버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-이환.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-지우-색칠버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-지우.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-태훈-색칠버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-태훈.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈')"
+      },
+      {
+        "path": "assets/images/md/thumbs/콜렉트북 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('콜렉트북 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/콜렉트북.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('콜렉트북')"
+      },
+      {
+        "path": "assets/images/md/thumbs/태훈 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('태훈 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/텀블러 구매 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('텀블러 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/텀블러.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('텀블러')"
+      },
+      {
+        "path": "assets/images/md/thumbs/티켓홀더.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('티켓홀더')"
+      },
+      {
+        "path": "assets/images/md/thumbs/파우치.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('파우치')"
+      },
+      {
+        "path": "assets/images/md/thumbs/파일홀더.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('파일홀더')"
+      },
+      {
+        "path": "assets/images/md/thumbs/폰케이스 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('폰케이스 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/폰케이스.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('폰케이스')"
+      },
+      {
+        "path": "assets/images/md/thumbs/핀 뱃지 셋트.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('핀 뱃지 셋트')"
+      },
+      {
+        "path": "assets/images/md/thumbs/휴대용 칫솔 살균기.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('휴대용 칫솔 살균기')"
       },
       {
         "path": "assets/images/vlog/doha/full/reactions.webp",
@@ -532,150 +1242,8 @@
       "assets/images/gallery/thumbs/phantom-b-jiwoo.webp",
       "assets/images/gallery/thumbs/phantom-b-taehoon.webp",
       "assets/images/gallery/thumbs/phantom-b-woohyun.webp",
-      "assets/images/md/full/NIGHT 쿠션.webp",
-      "assets/images/md/full/데스크매트+무선충전.webp",
-      "assets/images/md/full/도하 페이스타월.webp",
-      "assets/images/md/full/러기지 택.webp",
-      "assets/images/md/full/머그컵 특전 포카.webp",
-      "assets/images/md/full/머그컵.webp",
-      "assets/images/md/full/모자 특전 포카.webp",
-      "assets/images/md/full/모자.webp",
-      "assets/images/md/full/무드등 구매 특전 멤버 손글씨카드.webp",
-      "assets/images/md/full/미니등신대.webp",
-      "assets/images/md/full/미니선풍기.webp",
-      "assets/images/md/full/버즈, 에어팟 케이스.webp",
-      "assets/images/md/full/보온도시락+수저세트 특전 포카.webp",
-      "assets/images/md/full/보온도시락+수저세트.webp",
-      "assets/images/md/full/봉제인형 키링.webp",
-      "assets/images/md/full/부채.webp",
-      "assets/images/md/full/세안밴드.webp",
-      "assets/images/md/full/수면안대 특전 포카.webp",
-      "assets/images/md/full/수면안대.webp",
-      "assets/images/md/full/스마트톡 셋트.webp",
-      "assets/images/md/full/스쿼시볼.webp",
-      "assets/images/md/full/스쿼시볼1.webp",
-      "assets/images/md/full/스티커/스티커-도하.webp",
-      "assets/images/md/full/스티커/스티커-우현.webp",
-      "assets/images/md/full/스티커/스티커-이환.webp",
-      "assets/images/md/full/스티커/스티커-지우.webp",
-      "assets/images/md/full/스티커/스티커-태훈.webp",
-      "assets/images/md/full/스티커/스티커.webp",
-      "assets/images/md/full/스티커/스티커1.webp",
-      "assets/images/md/full/스티커/치비스티커-도하.webp",
-      "assets/images/md/full/스티커/치비스티커-우현.webp",
-      "assets/images/md/full/스티커/치비스티커-이환.webp",
-      "assets/images/md/full/스티커/치비스티커-지우.webp",
-      "assets/images/md/full/스티커/치비스티커-태훈.webp",
-      "assets/images/md/full/스티커/치비스티커.webp",
-      "assets/images/md/full/아크릴 스탠드.webp",
-      "assets/images/md/full/아크릴 키링.webp",
-      "assets/images/md/full/양말.webp",
-      "assets/images/md/full/양우산 구매 특전 포카.webp",
-      "assets/images/md/full/양우산+우비.webp",
-      "assets/images/md/full/여권케이스.webp",
-      "assets/images/md/full/우비 구매 특전 포카.webp",
-      "assets/images/md/full/우현 페이스타월.webp",
-      "assets/images/md/full/이환 페이스타월.webp",
-      "assets/images/md/full/잠옷 특전 포카.webp",
-      "assets/images/md/full/잠옷.webp",
-      "assets/images/md/full/지우 페이스타월.webp",
-      "assets/images/md/full/캐리어커버.webp",
-      "assets/images/md/full/캐릭터 봉제인형 버전.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-도하-색칠 버전.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-도하.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-우현-색칠 버전.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-우현.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-이환-색칠버전.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-이환.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-지우-색칠버전.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-지우.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-태훈-색칠버전.webp",
-      "assets/images/md/full/컬러링 엽서/컬러링 엽서-태훈.webp",
-      "assets/images/md/full/콜렉트북 특전 포카.webp",
-      "assets/images/md/full/콜렉트북.webp",
-      "assets/images/md/full/태훈 페이스타월.webp",
-      "assets/images/md/full/텀블러 구매 특전 포카.webp",
-      "assets/images/md/full/텀블러.webp",
-      "assets/images/md/full/티켓홀더.webp",
-      "assets/images/md/full/파우치.webp",
-      "assets/images/md/full/파일홀더.webp",
-      "assets/images/md/full/폰케이스 특전 포카.webp",
-      "assets/images/md/full/폰케이스.webp",
-      "assets/images/md/full/핀 뱃지 셋트.webp",
-      "assets/images/md/full/휴대용 칫솔 살균기.webp",
       "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
       "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp",
-      "assets/images/md/thumbs/NIGHT 쿠션.webp",
-      "assets/images/md/thumbs/데스크매트+무선충전.webp",
-      "assets/images/md/thumbs/도하 페이스타월.webp",
-      "assets/images/md/thumbs/러기지 택.webp",
-      "assets/images/md/thumbs/머그컵 특전 포카.webp",
-      "assets/images/md/thumbs/머그컵.webp",
-      "assets/images/md/thumbs/모자 특전 포카.webp",
-      "assets/images/md/thumbs/모자.webp",
-      "assets/images/md/thumbs/무드등 구매 특전 멤버 손글씨카드.webp",
-      "assets/images/md/thumbs/미니등신대.webp",
-      "assets/images/md/thumbs/미니선풍기.webp",
-      "assets/images/md/thumbs/버즈, 에어팟 케이스.webp",
-      "assets/images/md/thumbs/보온도시락+수저세트 특전 포카.webp",
-      "assets/images/md/thumbs/보온도시락+수저세트.webp",
-      "assets/images/md/thumbs/봉제인형 키링.webp",
-      "assets/images/md/thumbs/부채.webp",
-      "assets/images/md/thumbs/세안밴드.webp",
-      "assets/images/md/thumbs/수면안대 특전 포카.webp",
-      "assets/images/md/thumbs/수면안대.webp",
-      "assets/images/md/thumbs/스마트톡 셋트.webp",
-      "assets/images/md/thumbs/스쿼시볼.webp",
-      "assets/images/md/thumbs/스쿼시볼1.webp",
-      "assets/images/md/thumbs/스티커/스티커-도하.webp",
-      "assets/images/md/thumbs/스티커/스티커-우현.webp",
-      "assets/images/md/thumbs/스티커/스티커-이환.webp",
-      "assets/images/md/thumbs/스티커/스티커-지우.webp",
-      "assets/images/md/thumbs/스티커/스티커-태훈.webp",
-      "assets/images/md/thumbs/스티커/스티커.webp",
-      "assets/images/md/thumbs/스티커/스티커1.webp",
-      "assets/images/md/thumbs/스티커/치비스티커-도하.webp",
-      "assets/images/md/thumbs/스티커/치비스티커-우현.webp",
-      "assets/images/md/thumbs/스티커/치비스티커-이환.webp",
-      "assets/images/md/thumbs/스티커/치비스티커-지우.webp",
-      "assets/images/md/thumbs/스티커/치비스티커-태훈.webp",
-      "assets/images/md/thumbs/스티커/치비스티커.webp",
-      "assets/images/md/thumbs/아크릴 스탠드.webp",
-      "assets/images/md/thumbs/아크릴 키링.webp",
-      "assets/images/md/thumbs/양말.webp",
-      "assets/images/md/thumbs/양우산 구매 특전 포카.webp",
-      "assets/images/md/thumbs/양우산+우비.webp",
-      "assets/images/md/thumbs/여권케이스.webp",
-      "assets/images/md/thumbs/우비 구매 특전 포카.webp",
-      "assets/images/md/thumbs/우현 페이스타월.webp",
-      "assets/images/md/thumbs/이환 페이스타월.webp",
-      "assets/images/md/thumbs/잠옷 특전 포카.webp",
-      "assets/images/md/thumbs/잠옷.webp",
-      "assets/images/md/thumbs/지우 페이스타월.webp",
-      "assets/images/md/thumbs/캐리어커버.webp",
-      "assets/images/md/thumbs/캐릭터 봉제인형 버전.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-도하-색칠 버전.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-도하.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-우현-색칠 버전.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-우현.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-이환-색칠버전.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-이환.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-지우-색칠버전.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-지우.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-태훈-색칠버전.webp",
-      "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-태훈.webp",
-      "assets/images/md/thumbs/콜렉트북 특전 포카.webp",
-      "assets/images/md/thumbs/콜렉트북.webp",
-      "assets/images/md/thumbs/태훈 페이스타월.webp",
-      "assets/images/md/thumbs/텀블러 구매 특전 포카.webp",
-      "assets/images/md/thumbs/텀블러.webp",
-      "assets/images/md/thumbs/티켓홀더.webp",
-      "assets/images/md/thumbs/파우치.webp",
-      "assets/images/md/thumbs/파일홀더.webp",
-      "assets/images/md/thumbs/폰케이스 특전 포카.webp",
-      "assets/images/md/thumbs/폰케이스.webp",
-      "assets/images/md/thumbs/핀 뱃지 셋트.webp",
-      "assets/images/md/thumbs/휴대용 칫솔 살균기.webp",
       "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp",
       "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-DOHA&TAEHOON.webp",
       "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-DOHA&TAEHOON.webp",
@@ -685,7 +1253,40 @@
       "assets/images/vlog/jiwoo/thumbs/reactions.webp",
       "assets/images/vlog/taehoon/thumbs/reactions.webp",
       "assets/images/vlog/woohyun/thumbs/reactions.webp"
-    ]
+    ],
+    "unresolvedGroups": {
+      "gallery/phantom-b": [
+        "assets/images/gallery/full/phantom-b-doha.webp",
+        "assets/images/gallery/full/phantom-b-group.webp",
+        "assets/images/gallery/full/phantom-b-ihwan.webp",
+        "assets/images/gallery/full/phantom-b-jiwoo.webp",
+        "assets/images/gallery/full/phantom-b-taehoon.webp",
+        "assets/images/gallery/full/phantom-b-woohyun.webp",
+        "assets/images/gallery/thumbs/phantom-b-doha.webp",
+        "assets/images/gallery/thumbs/phantom-b-group.webp",
+        "assets/images/gallery/thumbs/phantom-b-ihwan.webp",
+        "assets/images/gallery/thumbs/phantom-b-jiwoo.webp",
+        "assets/images/gallery/thumbs/phantom-b-taehoon.webp",
+        "assets/images/gallery/thumbs/phantom-b-woohyun.webp"
+      ],
+      "md/lightstick-v2": [
+        "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
+        "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp"
+      ],
+      "night-off-summer": [
+        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp",
+        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-DOHA&TAEHOON.webp",
+        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-DOHA&TAEHOON.webp",
+        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-JIWOO&TAEHOON.webp"
+      ],
+      "vlog/reaction-thumbnails": [
+        "assets/images/vlog/doha/thumbs/reactions.webp",
+        "assets/images/vlog/ihwan/thumbs/reactions.webp",
+        "assets/images/vlog/jiwoo/thumbs/reactions.webp",
+        "assets/images/vlog/taehoon/thumbs/reactions.webp",
+        "assets/images/vlog/woohyun/thumbs/reactions.webp"
+      ]
+    }
   },
   "folders": {
     "assets/images": {
