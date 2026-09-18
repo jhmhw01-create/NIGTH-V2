@@ -27,3 +27,4 @@ jobs:
           git add src/pages tests/react-source-cleanup.test.mjs
           git commit -m "Remove dead footer scripts from React routes" || exit 0
           git push
+# rerun after preserving authored footer markup
