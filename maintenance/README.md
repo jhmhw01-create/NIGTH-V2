@@ -62,7 +62,7 @@ MD Store는 `public/assets/js/md-store.js`의 `mdPath('...')`가 `assets/images/
 - `build-input`: 생성 HTML에서는 로드하지 않지만 `src` 또는 `scripts`가 현재 빌드 데이터/입력으로 직접 사용하는 자산입니다. 테스트 코드의 문자열 언급만으로는 사용 근거로 인정하지 않습니다.
 - `unresolved`: 생성 HTML 런타임 참조도 없고 현재 빌드 입력 근거도 없는 자산입니다. 삭제 허가가 아니라 별도 검토 후보입니다.
 
-현재 React 구조에서 `md-store.js`, `night-collections-data.js`, `vlog.js`는 브라우저 런타임 스크립트가 아니라 빌드 입력으로 유지됩니다. 반대로 `unused-legacy-assets.json`에는 런타임·빌드 입력 근거가 모두 없는 레거시 JS만 기록합니다.
+현재 React 구조에서 `md-store.js`, `night-collections-data.js`는 브라우저 런타임 스크립트가 아니라 빌드 입력으로 유지됩니다. 반대로 `unused-legacy-assets.json`에는 런타임·빌드 입력 근거가 모두 없는 레거시 JS만 기록합니다.
 
 `npm run build`는 사이트 링크 감사 뒤 `legacy-asset-audit.json`을 현재 생성 결과와 대조합니다. 분류가 달라지면 빌드가 실패하므로, React 전환이나 상세 페이지 정리로 CSS/JS 사용 상태가 변할 때 매니페스트 검토 없이 조용히 상태가 바뀌지 않습니다.
 
