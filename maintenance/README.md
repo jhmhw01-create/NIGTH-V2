@@ -10,6 +10,7 @@
 - `original-media-manifest.json`: WebP로 교체한 PNG 원본의 경로·용량·SHA-256 기록입니다. 원본 파일 자체를 포함하지 않습니다.
 - `media-conversions.json`: PNG 원본과 WebP 배포본의 대응 경로, 양쪽 해시·용량·픽셀 크기, 신규 변환/기존 파일 재사용 여부를 기록하는 **변환 이력**입니다. 과거에 배포되었다가 은퇴한 변환도 이력 보존을 위해 삭제하지 않습니다.
 - `retired-media.json`: 더 이상 페이지에서 사용하지 않아 `public`에서 제거한 웹 배포본 경로를 기록합니다. 이 파일에 있는 경로는 `media-conversions.json`의 과거 변환 이력은 유지하지만 현재 배포 파일로 간주하지 않습니다.
+- `unused-media-candidates.json`: 현재 소스와 인식 가능한 동적 경로에서 사용 근거를 찾지 못해 사람이 재검토한 미사용 후보를 기능별로 기록합니다. 이 목록 자체는 자동 삭제 허가가 아닙니다.
 - `web-media-manifest.json`: 현재 `public/assets`에 배포되는 전체 미디어의 개수·용량·집계 SHA-256 지문입니다.
 - `image-audit.json`: 현재 배포 이미지의 크기·참조 상태·중복 여부를 기록합니다.
 
@@ -37,11 +38,13 @@ npm run build
 4. `original-media-manifest.json`과 `media-conversions.json`의 원본/변환 이력은 보존합니다.
 5. `npm run audit:media:update`, `npm run audit:media`, `npm test`, `npm run build`를 모두 통과시킵니다.
 
+변환 이력이 없는 일반 웹 자산은 `unused-media-candidates.json`에서 먼저 검토 근거를 남긴 뒤 별도 삭제 변경으로 처리합니다. 미사용 후보와 실제 은퇴/삭제는 같은 단계로 간주하지 않습니다.
+
 ## 이미지 참조 상태
 
 `image-audit.json`은 배포 이미지를 세 상태로 구분합니다.
 
-- `referenced`: 소스에서 전체 배포 경로가 문자 그대로 확인된 이미지입니다.
+- `referenced`: 소스에서 전체 배포 경로가 문자 그대로 확인된 이미지입니다. HTML 안에서 `&amp;` 등으로 이스케이프된 파일명도 실제 URL 문자로 정규화해 판정합니다.
 - `known-dynamic`: 전체 경로가 문자 그대로는 없지만, 코드에 명시된 경로 생성식이 있거나 literal로 참조되는 `full`/`thumbs` 대응 자산을 통해 사용 근거를 확인할 수 있는 이미지입니다.
 - `unresolved`: 위 두 근거를 찾지 못한 이미지입니다. 이 목록만 수동 참조 검토 대상이며, **미사용 또는 삭제 허가를 뜻하지 않습니다.**
 
@@ -57,6 +60,7 @@ MD Store는 `public/assets/js/md-store.js`의 `mdPath('...')`가 `assets/images/
 - `retired-media.json`의 경로는 `public`에 존재하거나 소스에서 다시 참조되면 실패합니다.
 - 신규 변환본은 원본과 WebP의 픽셀 크기가 같은지 확인해 의도하지 않은 리사이즈를 막습니다. 이전부터 있던 WebP를 재사용한 경우에는 원본·배포본 크기를 각각 기록합니다.
 - `image-audit.json`의 `unresolved`는 삭제 허가가 아닙니다. JavaScript 경로 조합과 `full`/`thumbs` 규칙을 확인한 뒤 상태를 판단합니다.
+- `unused-media-candidates.json`은 현재 `unresolved`와 일치하도록 테스트합니다. 새 unresolved가 생기면 목록 검토 없이 조용히 섞이지 않도록 합니다.
 - 원본 파일을 교체하거나 새 변환을 추가할 때는 기존 매니페스트 값을 덮어쓰지 말고 새 원본 버전과 변환 이력을 명시적으로 남깁니다.
 
 원본 파일이 필요할 때는 외부 보관소에서 SHA-256을 대조해 가져옵니다. 보관용 PNG를 복구 목적으로 `public`에 복사하지 않습니다.
