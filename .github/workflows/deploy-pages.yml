@@ -1,4 +1,4 @@
-name: Benchmark exact-pixel WebP optimization
+name: Find large lossless WebP assets
 
 on:
   push:
@@ -12,21 +12,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Install WebP tools
+      - name: Find lossless assets over 180KB
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq webp
-      - name: Benchmark exact-pixel re-encoding
-        run: |
-          set -euo pipefail
-          SRC=public/assets/images/home-hero-night.webp
-          mkdir -p /tmp/webp-test
-          dwebp "$SRC" -ppm -o /tmp/webp-test/source.ppm >/dev/null 2>&1
-          cwebp -quiet -lossless -z 9 /tmp/webp-test/source.ppm -o /tmp/webp-test/lossless.webp
-          dwebp /tmp/webp-test/lossless.webp -ppm -o /tmp/webp-test/lossless.ppm >/dev/null 2>&1
-          echo "SOURCE_BYTES=$(stat -c%s "$SRC")"
-          echo "LOSSLESS_BYTES=$(stat -c%s /tmp/webp-test/lossless.webp)"
-          echo "SOURCE_PIXELS=$(sha256sum /tmp/webp-test/source.ppm | cut -d' ' -f1)"
-          echo "LOSSLESS_PIXELS=$(sha256sum /tmp/webp-test/lossless.ppm | cut -d' ' -f1)"
-          cmp /tmp/webp-test/source.ppm /tmp/webp-test/lossless.ppm
-          echo EXACT_PIXEL_MATCH=true
+          python3 - <<'PY'
+          import os, struct
+          def chunks(path):
+              out=[]
+              with open(path,'rb') as f:
+                  data=f.read()
+              if data[:4]!=b'RIFF' or data[8:12]!=b'WEBP': return out
+              pos=12
+              while pos+8<=len(data):
+                  typ=data[pos:pos+4]
+                  n=int.from_bytes(data[pos+4:pos+8],'little')
+                  out.append(typ.decode('ascii','replace'))
+                  pos += 8+n+(n&1)
+              return out
+          rows=[]
+          for root,_,files in os.walk('public/assets/images'):
+              for name in files:
+                  if not name.endswith('.webp'): continue
+                  p=os.path.join(root,name); size=os.path.getsize(p)
+                  if size<180000: continue
+                  cs=chunks(p)
+                  if 'VP8L' in cs:
+                      rows.append((size,p,','.join(cs)))
+          rows.sort(reverse=True)
+          print(f'COUNT={len(rows)}')
+          print(f'TOTAL_BYTES={sum(x[0] for x in rows)}')
+          for size,p,cs in rows: print(f'{size}\t{p}\t{cs}')
+          PY
