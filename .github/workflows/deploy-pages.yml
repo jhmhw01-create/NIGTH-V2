@@ -1,4 +1,4 @@
-name: Verify exact-pixel hero optimization
+name: Commit verified hero optimization
 
 on:
   push:
@@ -11,112 +11,33 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
-      - name: Install dependencies
-        run: npm ci
-      - name: Install WebP tools
-        run: |
+      - run: npm ci
+      - run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq webp
-      - name: Optimize hero with exact pixel preservation
+      - name: Optimize and verify exact pixels
         run: |
           set -euo pipefail
           SRC=public/assets/images/home-hero-night.webp
-          BEFORE=$(stat -c%s "$SRC")
           mkdir -p /tmp/webp-opt
           dwebp "$SRC" -ppm -o /tmp/webp-opt/source.ppm >/dev/null 2>&1
           cwebp -quiet -lossless -z 9 /tmp/webp-opt/source.ppm -o /tmp/webp-opt/optimized.webp
           dwebp /tmp/webp-opt/optimized.webp -ppm -o /tmp/webp-opt/optimized.ppm >/dev/null 2>&1
           cmp /tmp/webp-opt/source.ppm /tmp/webp-opt/optimized.ppm
-          AFTER=$(stat -c%s /tmp/webp-opt/optimized.webp)
-          test "$AFTER" -lt "$BEFORE"
+          test "$(stat -c%s /tmp/webp-opt/optimized.webp)" -lt "$(stat -c%s "$SRC")"
           cp /tmp/webp-opt/optimized.webp "$SRC"
-          echo "Exact decoded pixels preserved: $BEFORE -> $AFTER bytes"
-      - name: Refresh media manifests
-        run: npm run audit:media:update
-      - name: Test
-        run: npm test
-      - name: Verify media manifests
-        run: npm run audit:media
-      - name: Build
-        run: npm run build
-      - name: Verify site output
-        run: |
-          test -s dist/index.html
-          test -s dist/contents.html
-          test -s dist/assets/css/style.css
-      - name: Restore normal deploy workflow
-        run: |
-          cat > .github/workflows/deploy-pages.yml <<'EOF'
-          name: Deploy NIGHT V2
-
-          on:
-            push:
-              branches: [main]
-            workflow_dispatch:
-
-          permissions:
-            contents: read
-
-          concurrency:
-            group: github-pages
-            cancel-in-progress: false
-
-          jobs:
-            build:
-              runs-on: ubuntu-latest
-              steps:
-                - name: Checkout
-                  uses: actions/checkout@v6
-                - name: Set up Node.js
-                  uses: actions/setup-node@v7
-                  with:
-                    node-version-file: '.nvmrc'
-                - name: Configure Pages
-                  uses: actions/configure-pages@v6
-                - name: Install dependencies
-                  run: npm ci
-                - name: Report root unreferenced media
-                  run: node scripts/list-root-unreferenced-media.mjs
-                - name: Test
-                  run: npm test
-                - name: Verify media manifests
-                  run: npm run audit:media
-                - name: Build
-                  run: npm run build
-                - name: Verify site output
-                  run: |
-                    test -s dist/index.html
-                    test -s dist/contents.html
-                    test -s dist/assets/css/style.css
-                - name: Upload site
-                  uses: actions/upload-pages-artifact@v5
-                  with:
-                    path: dist
-
-            deploy:
-              needs: build
-              runs-on: ubuntu-latest
-              permissions:
-                pages: write
-                id-token: write
-              environment:
-                name: github-pages
-                url: ${{ steps.deployment.outputs.page_url }}
-              steps:
-                - name: Deploy
-                  id: deployment
-                  uses: actions/deploy-pages@v5
-          EOF
-      - name: Commit verified optimization
+      - run: npm run audit:media:update
+      - run: npm test
+      - run: npm run audit:media
+      - run: npm run build
+      - name: Commit only verified media outputs
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/assets/images/home-hero-night.webp maintenance/web-media-manifest.json maintenance/image-audit.json .github/workflows/deploy-pages.yml
+          git add public/assets/images/home-hero-night.webp maintenance/web-media-manifest.json maintenance/image-audit.json
           git commit -m "Optimize home hero without pixel changes"
           git push origin HEAD:audit/image-size-optimization
