@@ -7,10 +7,10 @@ const mdProducts = [
     'assets/images/md/lightstick-v2/night-lightstick-v2-11-off-on.webp',
     'assets/images/md/lightstick-v2/night-lightstick-v2-01-light-modes.webp',
     'assets/images/md/lightstick-v2/night-lightstick-v2-12-detail-view.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-07-design-evolution.webp'
-  ],options:allOption,desc:'달과 별의 궤도를 확장한 NIGHT 공식 응원봉 두 번째 버전 LUNA ORBIT. 더블 크리스털 글로브와 NIGHT STAR CORE, CRESCENT ORBIT 구조를 중심으로 VER.1의 NIGHT DNA를 이어간다. 전용 액세서리는 별도 판매된다.'},
+    'assets/images/md/lightstick-v2/night-lightstick-v2-07-design-evolution.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-10-wrist-strap.webp'
+  ],options:allOption,benefit:'INCLUDED · WRIST STRAP',desc:'달과 별의 궤도를 확장한 NIGHT 공식 응원봉 두 번째 버전 LUNA ORBIT. 더블 크리스털 글로브와 NIGHT STAR CORE, CRESCENT ORBIT 구조를 중심으로 VER.1의 NIGHT DNA를 이어간다. Wrist Strap은 본품 구성에 포함되며, 그 외 전용 액세서리는 별도 판매된다.'},
   {id:'moonlight-v2-carry-case',name:'MOONLIGHT VER.2 Carry Case',category:'featured collectible travel',price:29000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-02-carry-case.webp'],options:allOption,desc:'MOONLIGHT VER.2를 보관하고 휴대하기 위한 LUNA ORBIT 전용 캐리 케이스. 응원봉 본품과 별도 판매.'},
-  {id:'moonlight-v2-wrist-strap',name:'MOONLIGHT VER.2 Wrist Strap',category:'collectible fashion',price:12000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-10-wrist-strap.webp'],options:allOption,desc:'NIGHT 로고와 LUNA ORBIT 엠블럼을 적용한 MOONLIGHT VER.2 전용 손목 스트랩. 응원봉 본품과 별도 판매.'},
   {id:'moonlight-v2-display-stand',name:'MOONLIGHT VER.2 Display Stand',category:'featured collectible',price:19000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-05-display-stand.webp'],options:allOption,desc:'MOONLIGHT VER.2를 세워 전시할 수 있는 LUNA ORBIT 전용 디스플레이 스탠드. 응원봉 본품과 별도 판매.'},
   {id:'moonlight-v2-mini-keyring',name:'MOONLIGHT VER.2 Mini Keyring',category:'collectible',price:18000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-06-mini-keyring.webp'],options:allOption,desc:'MOONLIGHT VER.2의 디자인을 미니 사이즈로 재현한 라이트 온·오프 키링. 응원봉 본품과 별도 판매.'},
   {id:'moonlight-v2-metal-pin',name:'LUNA ORBIT Metal Pin',category:'collectible',price:13000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-03-metal-pin.webp'],options:allOption,desc:'초승달과 NIGHT STAR, 궤도 모티프를 결합한 LUNA ORBIT 메탈 핀. 응원봉 본품과 별도 판매.'},
