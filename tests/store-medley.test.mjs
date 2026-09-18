@@ -30,6 +30,7 @@ test('all 43 products and their full/thumbnail images survive catalog conversion
   for(const [id,price] of prices){const accessory=products.find(product=>product.id===id);assert.ok(accessory);assert.equal(accessory.price,price);}
   const carrier=products.find(product=>product.id==='carrier-cover');assert.deepEqual(carrier.optionGroups,[{label:'MEMBER',values:['DOHA','WOOHYUN','JIWOO','IHWAN','TAEHOON']},{label:'SIZE',values:['20 INCH','24 INCH','28 INCH']}]);assert.equal(carrier.options.length,15);assert.ok(carrier.options.includes('TAEHOON / 24 INCH'));
   const phone=products.find(product=>product.id==='phone-case');assert.deepEqual(phone.optionGroups,[{label:'MEMBER',values:['DOHA','WOOHYUN','JIWOO','IHWAN','TAEHOON']},{label:'DEVICE',values:['iPHONE','GALAXY']}]);assert.equal(phone.options.length,10);assert.ok(phone.options.includes('JIWOO / GALAXY'));
+  const sleepMask=products.find(product=>product.id==='sleep-mask');assert.deepEqual(sleepMask.options,['DOHA','WOOHYUN','JIWOO','IHWAN','TAEHOON']);assert.equal(sleepMask.price,24000);assert.match(sleepMask.desc,/멤버별 디자인/);assert.match(sleepMask.desc,/1개 기준/);
   assert.throws(()=>parseStoreProducts('unknown'),/boundary/);
 });
 test('existing cart key, option merging, subtotal and invalid-storage handling',()=>{
