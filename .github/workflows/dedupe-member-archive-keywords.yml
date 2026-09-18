@@ -1,0 +1,29 @@
+name: Dedupe Member Archive Keywords
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/dedupe-member-archive-keywords.yml'
+permissions:
+  contents: write
+jobs:
+  dedupe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/dedupe-member-archive-keywords.mjs
+      - run: npm test
+      - run: npm run audit:media
+      - run: npm run build
+      - name: Commit archive keyword dedupe
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/archive.json
+          git commit -m "Dedupe member archive keywords" || exit 0
+          git push
