@@ -2,7 +2,7 @@
   "schemaVersion": 3,
   "summary": {
     "images": 1806,
-    "bytes": 162184818,
+    "bytes": 162149158,
     "exactDuplicateGroups": 0,
     "literalReferenceFound": 1546,
     "knownDynamic": 260,
@@ -1206,7 +1206,7 @@
   "folders": {
     "assets/images": {
       "files": 16,
-      "bytes": 2280408
+      "bytes": 2244748
     },
     "assets/images/2026/after-hours": {
       "files": 44,
