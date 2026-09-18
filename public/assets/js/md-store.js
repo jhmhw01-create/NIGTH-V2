@@ -3,20 +3,18 @@ const members = ['DOHA', 'WOOHYUN', 'JIWOO', 'IHWAN', 'TAEHOON'];
 const allOption = ['ONE SIZE'];
 
 const mdProducts = [
-  {id:'moonlight-light-stick-v2',name:'MOONLIGHT VER.2 — LUNA ORBIT',category:'featured collectible',price:49000,images:[
+  {id:'moonlight-light-stick-v2',name:'MOONLIGHT VER.2 — LUNA ORBIT',category:'featured collectible',price:59000,images:[
     'assets/images/md/lightstick-v2/night-lightstick-v2-11-off-on.webp',
     'assets/images/md/lightstick-v2/night-lightstick-v2-01-light-modes.webp',
     'assets/images/md/lightstick-v2/night-lightstick-v2-12-detail-view.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-02-carry-case.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-10-wrist-strap.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-05-display-stand.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-06-mini-keyring.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-03-metal-pin.webp',
-    'assets/images/md/lightstick-v2/night-lightstick-v2-04-bag-charm.webp',
     'assets/images/md/lightstick-v2/night-lightstick-v2-07-design-evolution.webp'
-  ],options:allOption,benefit:'VER.2 PACKAGE · WRIST STRAP · USER GUIDE / WARRANTY',desc:'달과 별의 궤도를 확장한 NIGHT 공식 응원봉 두 번째 버전 LUNA ORBIT. 더블 크리스털 글로브와 NIGHT STAR CORE, CRESCENT ORBIT 구조를 중심으로 VER.1의 NIGHT DNA를 이어간다.'},
+  ],options:allOption,desc:'달과 별의 궤도를 확장한 NIGHT 공식 응원봉 두 번째 버전 LUNA ORBIT. 더블 크리스털 글로브와 NIGHT STAR CORE, CRESCENT ORBIT 구조를 중심으로 VER.1의 NIGHT DNA를 이어간다. 전용 액세서리는 별도 판매된다.'},
+  {id:'moonlight-v2-carry-case',name:'MOONLIGHT VER.2 Carry Case',category:'featured collectible travel',price:29000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-02-carry-case.webp'],options:allOption,desc:'MOONLIGHT VER.2를 보관하고 휴대하기 위한 LUNA ORBIT 전용 캐리 케이스. 응원봉 본품과 별도 판매.'},
+  {id:'moonlight-v2-wrist-strap',name:'MOONLIGHT VER.2 Wrist Strap',category:'collectible fashion',price:12000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-10-wrist-strap.webp'],options:allOption,desc:'NIGHT 로고와 LUNA ORBIT 엠블럼을 적용한 MOONLIGHT VER.2 전용 손목 스트랩. 응원봉 본품과 별도 판매.'},
+  {id:'moonlight-v2-display-stand',name:'MOONLIGHT VER.2 Display Stand',category:'featured collectible',price:19000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-05-display-stand.webp'],options:allOption,desc:'MOONLIGHT VER.2를 세워 전시할 수 있는 LUNA ORBIT 전용 디스플레이 스탠드. 응원봉 본품과 별도 판매.'},
+  {id:'moonlight-v2-mini-keyring',name:'MOONLIGHT VER.2 Mini Keyring',category:'collectible',price:18000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-06-mini-keyring.webp'],options:allOption,desc:'MOONLIGHT VER.2의 디자인을 미니 사이즈로 재현한 라이트 온·오프 키링. 응원봉 본품과 별도 판매.'},
+  {id:'moonlight-v2-metal-pin',name:'LUNA ORBIT Metal Pin',category:'collectible',price:13000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-03-metal-pin.webp'],options:allOption,desc:'초승달과 NIGHT STAR, 궤도 모티프를 결합한 LUNA ORBIT 메탈 핀. 응원봉 본품과 별도 판매.'},
+  {id:'moonlight-v2-bag-charm',name:'LUNA ORBIT Bag Charm',category:'collectible fashion',price:22000,images:['assets/images/md/lightstick-v2/night-lightstick-v2-04-bag-charm.webp'],options:allOption,desc:'LUNA ORBIT의 초승달과 별 궤도 디자인을 활용한 공식 백 참. 응원봉 본품과 별도 판매.'},
   {id:'moonlight-light-stick',name:'MOONLIGHT VER.1 — ORIGINAL CELESTIAL FORM',category:'featured collectible',price:49000,images:['assets/images/night-luna.webp'],options:allOption,desc:'NIGHT와 LUNA의 첫 공식 응원봉 MOONLIGHT. 크리스털 글로브 안의 초승달과 별, 보랏빛 광원으로 NIGHT의 밤하늘 아이덴티티를 완성한 오리지널 버전.'},
   {id:'moonlight-lamp',name:'MOONLIGHT Mood Lamp',category:'featured',price:49000,images:[mdPath('응원봉 무드등'),mdPath('무드등 구매 특전 멤버 손글씨카드')],options:allOption,benefit:'멤버 손글씨 카드 1종 랜덤 증정',desc:'MOONLIGHT 응원봉의 보랏빛을 일상 공간에서 즐기는 무드등.'},
   {id:'night-cushion',name:'NIGHT Character Cushion',category:'featured',price:39000,images:[mdPath('NIGHT 쿠션')],options:members,desc:'NIGHT 멤버 비주얼을 담은 포근한 캐릭터 쿠션.'},
@@ -116,6 +114,6 @@ document.querySelector('#closeCart').addEventListener('click',closeOverlays);
 document.querySelector('#quantityDown').addEventListener('click',()=>{const input=document.querySelector('#detailQuantity');input.value=Math.max(1,Number(input.value)-1);});
 document.querySelector('#quantityUp').addEventListener('click',()=>{const input=document.querySelector('#detailQuantity');input.value=Math.min(9,Number(input.value)+1);});
 document.querySelector('#addToCart').addEventListener('click',()=>{if(!activeProduct)return;const option=document.querySelector('#detailOption').value;const quantity=Math.max(1,Math.min(9,Number(document.querySelector('#detailQuantity').value)||1));const found=cart.find((item)=>item.id===activeProduct.id&&item.option===option);if(found)found.quantity+=quantity;else cart.push({id:activeProduct.id,name:activeProduct.name,option,quantity,price:activeProduct.price,image:activeProduct.images[0]});saveCart();closeOverlays();showToast(`${activeProduct.name} · CART에 담았습니다.`);});
-document.querySelector('#checkoutButton').addEventListener('click',()=>showToast('가상 MD 스토어로 실제 구매 및 결제는 진행되지 않습니다.'));
+document.querySelector('#checkoutButton').addEventListener('click',()=>showToast('이 페이지에서는 실제 구매 및 결제가 진행되지 않습니다.'));
 document.addEventListener('keydown',(event)=>{if(event.key==='Escape')closeOverlays();});
 renderProducts(); renderCart();

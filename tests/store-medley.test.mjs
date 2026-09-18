@@ -21,10 +21,13 @@ test('all 56 existing routes are covered exactly once by React',async()=>{
   assert.equal(reactRoutes.length,56);assert.equal(new Set(reactRoutes).size,56);
   assert.deepEqual([...reactRoutes].sort(),pages.filter(file=>file.endsWith('.json')).map(file=>file.replace('.json','.html')).sort());
 });
-test('all 38 products and their full/thumbnail images survive catalog conversion',async()=>{
-  assert.equal(products.length,38);assert.equal(productList(products,'all').length,38);
+test('all 44 products and their full/thumbnail images survive catalog conversion',async()=>{
+  assert.equal(products.length,44);assert.equal(productList(products,'all').length,44);
   for(const filter of ['featured','collectible','fashion','travel','tech'])assert.ok(productList(products,filter).every(product=>product.category.split(' ').includes(filter)));
   await Promise.all(products.flatMap(product=>product.images.flatMap(path=>[path,path.replace('/full/','/thumbs/')])).map(path=>access(new URL('public/'+path,root))));
+  const v2=products.find(product=>product.id==='moonlight-light-stick-v2');assert.ok(v2);assert.equal(v2.price,59000);assert.equal(v2.images.length,4);
+  const prices=new Map([['moonlight-v2-carry-case',29000],['moonlight-v2-wrist-strap',12000],['moonlight-v2-display-stand',19000],['moonlight-v2-mini-keyring',18000],['moonlight-v2-metal-pin',13000],['moonlight-v2-bag-charm',22000]]);
+  for(const [id,price] of prices){const accessory=products.find(product=>product.id===id);assert.ok(accessory);assert.equal(accessory.price,price);}
   assert.throws(()=>parseStoreProducts('unknown'),/boundary/);
 });
 test('existing cart key, option merging, subtotal and invalid-storage handling',()=>{
