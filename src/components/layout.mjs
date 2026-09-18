@@ -1,5 +1,5 @@
 export const navigation = [
-  ['HOME', 'index.html'], ['MEMBERS', 'index.html#members'],
+  ['HOME', 'index.html'], ['ABOUT', 'about-night.html'], ['MEMBERS', 'index.html#members'],
   ['DISCOGRAPHY', 'discography.html'], ['HISTORY', 'history.html'],
   ['LISTEN', 'listen.html'], ['GALLERY', 'gallery.html'],
   ['CONTENTS', 'contents.html'], ['ARCHIVE', 'archive.html'],

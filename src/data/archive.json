@@ -10,6 +10,16 @@
   },
   "records": [
     {
+      "id": "about-night",
+      "href": "about-night.html",
+      "title": "ABOUT NIGHT — Official Group Profile",
+      "category": "group",
+      "summary": "NIGHT의 그룹 프로필, 음악과 퍼포먼스 정체성, 현재 멤버와 변화, 주요 기록을 소개합니다.",
+      "image": "assets/images/home-hero-night.webp",
+      "keywords": "ABOUT NIGHT 그룹 프로필 CASTLE ENTERTAINMENT LUNA DOHA WOOHYUN JIWOO IHWAN TAEHOON 정체성 음악 퍼포먼스 비주얼 현재 5인",
+      "searchText": "NIGHT 2022.11.15 CASTLE ENTERTAINMENT 5인조 아이돌 그룹 다크 섹시 퍼포먼스 비주얼 Billboard Global Excl. U.S. DOHA WOOHYUN JIWOO IHWAN TAEHOON LUNA Original Five Current Five First Daesang Second Daesang"
+    },
+    {
       "id": "paradox-2029",
       "href": "paradox-2029.html",
       "title": "PARADOX — NIGHT",

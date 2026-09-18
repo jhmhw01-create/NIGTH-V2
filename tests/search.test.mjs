@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {archiveState,searchRecords} from '../src/react/search.mjs';
 const catalog=JSON.parse(await readFile(new URL('../src/data/archive.json',import.meta.url),'utf8'));
-test('archive retains all 69 records and seven categories',()=>{
-  assert.equal(catalog.records.length,69);assert.equal(Object.keys(catalog.labels).length,7);
-  assert.equal(searchRecords(catalog,{}).length,69);
+test('archive retains all 70 records and seven categories',()=>{
+  assert.equal(catalog.records.length,70);assert.equal(Object.keys(catalog.labels).length,7);
+  assert.equal(searchRecords(catalog,{}).length,70);
   for(const category of Object.keys(catalog.labels))assert.ok(searchRecords(catalog,{category}).every(record=>record.category===category));
 });
 test('archive normalizes query and matches every term',()=>{
