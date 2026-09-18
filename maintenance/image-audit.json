@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 1806,
-    "bytes": 162149158,
+    "images": 1818,
+    "bytes": 164798974,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 1546,
+    "literalReferenceFound": 1558,
     "knownDynamic": 260,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1299,6 +1299,10 @@
     "assets/images/2029/season-greetings": {
       "files": 22,
       "bytes": 1933314
+    },
+    "assets/images/7TH LUNA": {
+      "files": 12,
+      "bytes": 2649816
     },
     "assets/images/behind/additions/full": {
       "files": 11,
