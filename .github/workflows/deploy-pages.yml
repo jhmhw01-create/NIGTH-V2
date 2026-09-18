@@ -36,8 +36,6 @@ jobs:
           AFTER=$(stat -c%s /tmp/webp-opt/optimized.webp)
           test "$AFTER" -lt "$BEFORE"
           cp /tmp/webp-opt/optimized.webp "$SRC"
-          echo "hero_before=$BEFORE" >> "$GITHUB_ENV"
-          echo "hero_after=$AFTER" >> "$GITHUB_ENV"
           echo "Exact decoded pixels preserved: $BEFORE -> $AFTER bytes"
       - name: Refresh media manifests
         run: npm run audit:media:update
@@ -54,7 +52,67 @@ jobs:
           test -s dist/assets/css/style.css
       - name: Restore normal deploy workflow
         run: |
-          git show 8579abf6ac635f30a280f998355dfaeca27b613e:.github/workflows/deploy-pages.yml > .github/workflows/deploy-pages.yml
+          cat > .github/workflows/deploy-pages.yml <<'EOF'
+          name: Deploy NIGHT V2
+
+          on:
+            push:
+              branches: [main]
+            workflow_dispatch:
+
+          permissions:
+            contents: read
+
+          concurrency:
+            group: github-pages
+            cancel-in-progress: false
+
+          jobs:
+            build:
+              runs-on: ubuntu-latest
+              steps:
+                - name: Checkout
+                  uses: actions/checkout@v6
+                - name: Set up Node.js
+                  uses: actions/setup-node@v7
+                  with:
+                    node-version-file: '.nvmrc'
+                - name: Configure Pages
+                  uses: actions/configure-pages@v6
+                - name: Install dependencies
+                  run: npm ci
+                - name: Report root unreferenced media
+                  run: node scripts/list-root-unreferenced-media.mjs
+                - name: Test
+                  run: npm test
+                - name: Verify media manifests
+                  run: npm run audit:media
+                - name: Build
+                  run: npm run build
+                - name: Verify site output
+                  run: |
+                    test -s dist/index.html
+                    test -s dist/contents.html
+                    test -s dist/assets/css/style.css
+                - name: Upload site
+                  uses: actions/upload-pages-artifact@v5
+                  with:
+                    path: dist
+
+            deploy:
+              needs: build
+              runs-on: ubuntu-latest
+              permissions:
+                pages: write
+                id-token: write
+              environment:
+                name: github-pages
+                url: ${{ steps.deployment.outputs.page_url }}
+              steps:
+                - name: Deploy
+                  id: deployment
+                  uses: actions/deploy-pages@v5
+          EOF
       - name: Commit verified optimization
         run: |
           git config user.name "github-actions[bot]"
