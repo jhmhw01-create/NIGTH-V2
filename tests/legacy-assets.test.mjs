@@ -32,7 +32,6 @@ test('known build-only legacy data sources remain protected',async()=>{
   const audit=await readJson('../maintenance/legacy-asset-audit.json');
   assert.deepEqual(audit.groups.buildInput,[
     'assets/js/md-store.js',
-    'assets/js/night-collections-data.js',
-    'assets/js/vlog.js'
+    'assets/js/night-collections-data.js'
   ]);
 });
