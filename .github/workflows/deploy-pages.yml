@@ -1,59 +1,43 @@
-name: Deploy NIGHT V2
+name: Audit image dimensions
 
 on:
   push:
-    branches: [main]
-  workflow_dispatch:
+    branches: [audit/image-size-optimization]
 
 permissions:
   contents: read
 
-concurrency:
-  group: github-pages
-  cancel-in-progress: false
-
 jobs:
-  build:
+  audit:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version-file: '.nvmrc'
-      - name: Configure Pages
-        uses: actions/configure-pages@v6
-      - name: Install dependencies
-        run: npm ci
-      - name: Report root unreferenced media
-        run: node scripts/list-root-unreferenced-media.mjs
-      - name: Test
-        run: npm test
-      - name: Verify media manifests
-        run: npm run audit:media
-      - name: Build
-        run: npm run build
-      - name: Verify site output
+      - uses: actions/checkout@v6
+      - name: Inspect image tools
         run: |
-          test -s dist/index.html
-          test -s dist/contents.html
-          test -s dist/assets/css/style.css
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v5
+          command -v identify || true
+          command -v magick || true
+          command -v cwebp || true
+          command -v webpmux || true
+      - name: Report largest WebP images
+        run: |
+          python3 - <<'PY'
+          import os, subprocess
+          rows=[]
+          for root,_,files in os.walk('public/assets/images'):
+              for f in files:
+                  if not f.lower().endswith('.webp'): continue
+                  p=os.path.join(root,f)
+                  size=os.path.getsize(p)
+                  try:
+                      out=subprocess.check_output(['identify','-format','%w %h',p],text=True,stderr=subprocess.DEVNULL).strip()
+                      w,h=map(int,out.split())
+                  except Exception:
+                      w=h=0
+                  rows.append((size,w,h,p))
+          rows.sort(reverse=True)
+          print('TOP 80 BYTES')
+          for size,w,h,p in rows[:80]: print(f'{size}\t{w}x{h}\t{p}')
+          print('\nTOP 80 PIXELS')
+          rows2=sorted(rows,key=lambda x:x[1]*x[2],reverse=True)
+          for size,w,h,p in rows2[:80]: print(f'{w*h}\t{w}x{h}\t{size}\t{p}')
+          PY
