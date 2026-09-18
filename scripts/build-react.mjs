@@ -16,6 +16,7 @@ import {routeData,serializeRouteData} from './route-data.mjs';
 import {homeUpdates} from './home-updates.mjs';
 import {readImageDimensions} from './image-dimensions.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
+import {buildSearchCatalog} from './search-catalog.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const normalizePage=page=>normalizeSeasonGreetingsPage(page);
 export async function buildReactPages() {
@@ -23,7 +24,6 @@ export async function buildReactPages() {
   await mkdir(temporary,{recursive:true});
   const photos=await readPhotoEpisodes(new URL('../',import.meta.url));
   const products=await readStoreProducts(new URL('../',import.meta.url));
-  const catalog=JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
   const imageDimensions=await readImageDimensions(join(root,'dist'));
   await writeFile(join(temporary,'photo-episodes.json'),JSON.stringify(photos));
   await writeFile(join(temporary,'store-products.json'),JSON.stringify(products));
@@ -47,6 +47,20 @@ export async function buildReactPages() {
   const serverFile=join(temporary,'home-server.mjs');
   await build({entryPoints:[join(root,'src/react/server.jsx')],outfile:serverFile,bundle:true,jsx:'automatic',platform:'node',format:'esm',packages:'external'});
   const {renderPage}=await import(pathToFileURL(serverFile).href);
+  const pages={};
+  const preliminaryMarkup={};
+  const emptyCatalog={labels:{},records:[]};
+  for(const route of routes){
+    const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
+    pages[route]=page;
+    const data=routeData(route,{trees,navigation:detailMap,catalog:emptyCatalog,photos,products,imageDimensions,updates:homeUpdates(collections.notices)});
+    preliminaryMarkup[route]=renderPage(route,data);
+  }
+  const catalog=buildSearchCatalog({
+    routes,
+    documents:Object.fromEntries(routes.map(route=>[route,{headHtml:pages[route].headHtml,markup:preliminaryMarkup[route]}])),
+    albums:collections.albums
+  });
   const homeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/home-fashion.css'))).digest('hex').slice(0,12);
   const discographyStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/discography-fashion.css'))).digest('hex').slice(0,12);
   const historyStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/history-fashion.css'))).digest('hex').slice(0,12);
@@ -63,9 +77,9 @@ export async function buildReactPages() {
   const storeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/store-fashion.css'))).digest('hex').slice(0,12);
   const indexRoutes=new Set(['index.html','discography.html','history.html','listen.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html']);
   for(const route of routes) {
-    const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
+    const page=pages[route];
     const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products,imageDimensions,updates:homeUpdates(collections.notices)});
-    const markup=renderPage(route,pageData);
+    const markup=route==='archive.html'?renderPage(route,pageData):preliminaryMarkup[route];
     const homeTheme=route==='index.html'?'<link rel="stylesheet" href="assets/css/home-fashion.css?v='+homeStyleVersion+'">':route==='discography.html'?'<link rel="stylesheet" href="assets/css/discography-fashion.css?v='+discographyStyleVersion+'">':route==='history.html'?'<link rel="stylesheet" href="assets/css/history-fashion.css?v='+historyStyleVersion+'">':route==='gallery.html'?'<link rel="stylesheet" href="assets/css/gallery-fashion.css?v='+galleryStyleVersion+'">':route==='contents.html'?'<link rel="stylesheet" href="assets/css/contents-fashion.css?v='+contentsStyleVersion+'">':route==='archive.html'?'<link rel="stylesheet" href="assets/css/archive-fashion.css?v='+archiveStyleVersion+'">':route==='notice.html'?'<link rel="stylesheet" href="assets/css/notice-fashion.css?v='+noticeStyleVersion+'">':route==='fanclub.html'?'<link rel="stylesheet" href="assets/css/fanclub-fashion.css?v='+fanclubStyleVersion+'">':'';
     const stageTheme=stageRoutes.includes(route)||eventRoutes.includes(route)?'<link rel="stylesheet" href="assets/css/stage-detail-fashion.css?v='+stageStyleVersion+'">':'';
     const subpageTheme=!indexRoutes.has(route)?'<link rel="stylesheet" href="assets/css/subpage-fashion.css?v='+subpageStyleVersion+'">':'';
@@ -75,7 +89,7 @@ export async function buildReactPages() {
     const storeTheme=route==='store.html'?'<link rel="stylesheet" href="assets/css/store-fashion.css?v='+storeStyleVersion+'">':'';
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
-await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+enhanceHead(page)+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+subpageTheme+fanclubDetailTheme+listenTheme+albumDetailTheme+stageTheme+storeTheme+'</head><body '+page.bodyAttributes+(fanclubDetailRoutes.includes(route)?' data-night-fanclub-detail="true"':'')+(route==='listen.html'?' data-night-listen="true"':'')+(albumRoutes.includes(route)?' data-night-album-detail="true"':'')+(!indexRoutes.has(route)?' data-night-subpage="true"':'')+(stageRoutes.includes(route)||eventRoutes.includes(route)?' data-night-stage-detail="true"':'')+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');
+    await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+enhanceHead(page)+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+subpageTheme+fanclubDetailTheme+listenTheme+albumDetailTheme+stageTheme+storeTheme+'</head><body '+page.bodyAttributes+(fanclubDetailRoutes.includes(route)?' data-night-fanclub-detail="true"':'')+(route==='listen.html'?' data-night-listen="true"':'')+(albumRoutes.includes(route)?' data-night-album-detail="true"':'')+(!indexRoutes.has(route)?' data-night-subpage="true"':'')+(stageRoutes.includes(route)||eventRoutes.includes(route)?' data-night-stage-detail="true"':'')+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');
   }
-  console.log(`All ${routes.length} routes pre-rendered with React; existing page URLs preserved.`);
+  console.log(`All ${routes.length} routes pre-rendered with React; search catalog generated from current routes and albums.`);
 }

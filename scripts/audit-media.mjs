@@ -14,6 +14,7 @@ const textExtensions=new Set(['.css','.html','.js','.jsx','.json','.md','.mjs','
 const slash=path=>path.split(sep).join('/');
 const comparePath=(a,b)=>Buffer.from(a).compare(Buffer.from(b));
 const digest=buffer=>createHash('sha256').update(buffer).digest('hex');
+const decodeReferenceText=text=>text.replaceAll('&amp;','&').replaceAll('&#38;','&').replaceAll('&#x26;','&').replaceAll('&#X26;','&');
 
 async function walk(directory,predicate=()=>true){
   const files=[];
@@ -43,52 +44,103 @@ async function sourceCorpus(){
       return textExtensions.has(extname(path).toLowerCase());
     }))chunks.push(await readFile(path,'utf8'));
   }
-  return chunks.join('\n');
+  return decodeReferenceText(chunks.join('\n'));
 }
 
 function createWebManifest(files){
   const extensions={};
   for(const file of files){const extension=extname(file.path).toLowerCase();extensions[extension]=(extensions[extension]??0)+1;}
   const fingerprint=digest(Buffer.from(files.map(file=>`${file.path}\0${file.bytes}\0${file.sha256}`).join('\n')));
-  return {
-    schemaVersion:1,
-    root:'public',
-    summary:{files:files.length,bytes:files.reduce((sum,file)=>sum+file.bytes,0),sha256:fingerprint,extensions}
-  };
+  return {schemaVersion:1,root:'public',summary:{files:files.length,bytes:files.reduce((sum,file)=>sum+file.bytes,0),sha256:fingerprint,extensions}};
+}
+
+function pairedImageCandidates(path){
+  const candidates=[];
+  if(path.includes('/thumbs/'))candidates.push(path.replace('/thumbs/','/full/'));
+  if(path.includes('/full/'))candidates.push(path.replace('/full/','/thumbs/'));
+  const collectionsThumb='assets/images/collections/thumbs/';
+  const collectionsBase='assets/images/collections/';
+  if(path.startsWith(collectionsThumb))candidates.push(collectionsBase+path.slice(collectionsThumb.length));
+  else if(path.startsWith(collectionsBase)&&!path.startsWith(collectionsThumb))candidates.push(collectionsThumb+path.slice(collectionsBase.length));
+  return [...new Set(candidates)];
+}
+
+function mdStoreReference(path,corpus){
+  const match=path.match(/^assets\/images\/md\/(full|thumbs)\/(.+)\.webp$/);
+  if(!match)return null;
+  const [,kind,name]=match;
+  const single=`mdPath('${name}')`;
+  const double=`mdPath(\"${name}\")`;
+  if(!corpus.includes(single)&&!corpus.includes(double))return null;
+  if(kind==='thumbs'&&!corpus.includes("path.replace('/full/','/thumbs/')"))return null;
+  return {reason:kind==='full'?'md-store-generator':'md-store-thumbnail-generator',evidence:single};
+}
+
+function dynamicReference(path,corpus,imagePaths){
+  if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/(full|thumbs)\/scene-\d{2}\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/${kind}/scene-${')){
+    return {reason:'vlog-scene-generator'};
+  }
+  if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/full\/reactions\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/full/reactions.webp')){
+    return {reason:'vlog-reaction-generator'};
+  }
+  const mdStore=mdStoreReference(path,corpus);
+  if(mdStore)return mdStore;
+  for(const candidate of pairedImageCandidates(path)){
+    if(imagePaths.has(candidate)&&corpus.includes(candidate))return {reason:'paired-delivery-variant',evidence:candidate};
+  }
+  return null;
+}
+
+function unresolvedGroup(path){
+  if(/^assets\/images\/gallery\/(full|thumbs)\/phantom-b-/.test(path))return 'gallery/phantom-b';
+  if(path.startsWith('assets/images/md/lightstick-v2/'))return 'md/lightstick-v2';
+  if(path.startsWith('assets/images/night-off-summer/'))return 'night-off-summer';
+  if(/^assets\/images\/vlog\/[^/]+\/thumbs\/reactions\.webp$/.test(path))return 'vlog/reaction-thumbnails';
+  return path.slice(0,path.lastIndexOf('/')).replace(/^assets\/images\//,'');
 }
 
 async function createImageAudit(files){
   const dimensions=await readImageDimensions(publicRoot);
   const corpus=await sourceCorpus();
   const images=files.filter(file=>file.path.startsWith('assets/images/'));
+  const imagePaths=new Set(images.map(file=>file.path));
   const byHash=new Map();
-  for(const file of images){
-    const group=byHash.get(file.sha256)??[];
-    group.push(file.path);byHash.set(file.sha256,group);
-  }
+  for(const file of images){const group=byHash.get(file.sha256)??[];group.push(file.path);byHash.set(file.sha256,group);}
   const duplicates=[...byHash.entries()].filter(([,paths])=>paths.length>1).map(([sha256,paths])=>({sha256,paths}));
   const records=images.map(file=>{
     const literalReferenceFound=corpus.includes(file.path);
-    return {...file,...dimensions[file.path],folder:file.path.slice(0,file.path.lastIndexOf('/')),literalReferenceFound,status:literalReferenceFound?'referenced':'needs-dynamic-reference-review'};
+    const dynamic=literalReferenceFound?null:dynamicReference(file.path,corpus,imagePaths);
+    return {...file,...dimensions[file.path],folder:file.path.slice(0,file.path.lastIndexOf('/')),literalReferenceFound,dynamicReference:dynamic,status:literalReferenceFound?'referenced':dynamic?'known-dynamic':'unresolved'};
   });
-  const folders={};
-  for(const file of records){
-    const item=folders[file.folder]??{files:0,bytes:0};item.files+=1;item.bytes+=file.bytes;folders[file.folder]=item;
+  const knownDynamic=records.filter(file=>file.status==='known-dynamic');
+  const unresolved=records.filter(file=>file.status==='unresolved');
+  const unresolvedGroups={};
+  for(const file of unresolved){
+    const group=unresolvedGroup(file.path);
+    (unresolvedGroups[group]??=[]).push(file.path);
   }
+  const folders={};
+  for(const file of records){const item=folders[file.folder]??{files:0,bytes:0};item.files+=1;item.bytes+=file.bytes;folders[file.folder]=item;}
   return {
-    schemaVersion:2,
+    schemaVersion:3,
     summary:{
       images:images.length,
       bytes:images.reduce((sum,file)=>sum+file.bytes,0),
       exactDuplicateGroups:duplicates.length,
       literalReferenceFound:records.filter(file=>file.literalReferenceFound).length,
-      dynamicReviewRequired:records.filter(file=>!file.literalReferenceFound).length,
+      knownDynamic:knownDynamic.length,
+      dynamicReviewRequired:unresolved.length,
       emptyFiles:records.filter(file=>file.bytes===0).length
     },
     duplicates,
     emptyFiles:records.filter(file=>file.bytes===0).map(file=>file.path),
+    dynamicReferences:{
+      known:knownDynamic.map(file=>({path:file.path,reason:file.dynamicReference.reason,...(file.dynamicReference.evidence?{evidence:file.dynamicReference.evidence}:{})})),
+      unresolved:unresolved.map(file=>file.path),
+      unresolvedGroups:Object.fromEntries(Object.entries(unresolvedGroups).sort(([a],[b])=>comparePath(a,b)))
+    },
     folders:Object.fromEntries(Object.entries(folders).sort(([a],[b])=>comparePath(a,b))),
-    policy:'public/assets/images contains web-delivery assets. A missing literal reference is not deletion permission; dynamic path conventions require review.'
+    policy:'public/assets/images contains web-delivery assets. Literal references include normalized HTML entities; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission.'
   };
 }
 
@@ -97,6 +149,9 @@ async function json(path){return JSON.parse(await readFile(path,'utf8'));}
 
 export async function auditMedia({write=false}={}){
   const files=await currentMedia();
+  // Never allow a manifest refresh to normalize an empty deployed asset into a passing state.
+  const emptyMedia=files.filter(file=>file.bytes===0);
+  if(emptyMedia.length)throw Error('Media audit failed: empty deployed media:\n'+emptyMedia.map(file=>file.path).join('\n'));
   const webManifest=createWebManifest(files);
   const imageAudit=await createImageAudit(files);
   const webManifestPath=join(maintenanceRoot,'web-media-manifest.json');
@@ -113,28 +168,42 @@ export async function auditMedia({write=false}={}){
 
   const sourceManifest=await json(join(maintenanceRoot,'original-media-manifest.json'));
   const conversionManifest=await json(join(maintenanceRoot,'media-conversions.json'));
+  const retiredManifest=await json(join(maintenanceRoot,'retired-media.json'));
+  const retired=new Set(retiredManifest.retired??[]);
   const sources=new Map(sourceManifest.files.map(file=>[file.path,file]));
   const deployed=new Map(files.map(file=>[file.path,file]));
+  const conversionsByWeb=new Map(conversionManifest.files.map(file=>[file.web.path,file]));
   const dimensions=await readImageDimensions(publicRoot);
   const corpus=await sourceCorpus();
   const failures=[];
+
+  for(const retiredPath of retired){
+    if(!conversionsByWeb.has(retiredPath))failures.push(`retired path has no conversion history: ${retiredPath}`);
+    if(deployed.has(retiredPath))failures.push(`retired web media is deployed: ${retiredPath}`);
+    if(corpus.includes(retiredPath))failures.push(`source references retired web media: ${retiredPath}`);
+  }
+
   for(const conversion of conversionManifest.files){
     const source=sources.get(conversion.original.path);
     const web=deployed.get(conversion.web.path);
+    const isRetired=retired.has(conversion.web.path);
     if(!source||source.bytes!==conversion.original.bytes||source.sha256!==conversion.original.sha256)failures.push(`invalid original record: ${conversion.original.path}`);
-    if(!web||web.bytes!==conversion.web.bytes||web.sha256!==conversion.web.sha256)failures.push(`invalid web record: ${conversion.web.path}`);
+    if(!isRetired&&(!web||web.bytes!==conversion.web.bytes||web.sha256!==conversion.web.sha256))failures.push(`invalid web record: ${conversion.web.path}`);
+    if(isRetired&&web)failures.push(`retired web media is deployed: ${conversion.web.path}`);
     if(await stat(join(publicRoot,conversion.original.path)).then(()=>true,()=>false))failures.push(`archival original is deployed: ${conversion.original.path}`);
     if(corpus.includes(conversion.original.path))failures.push(`source still references archival original: ${conversion.original.path}`);
-    const size=dimensions[conversion.web.path];
-    if(!size||size.width!==conversion.web.width||size.height!==conversion.web.height)failures.push(`dimension mismatch: ${conversion.web.path}`);
+    if(!isRetired){
+      const size=dimensions[conversion.web.path];
+      if(!size||size.width!==conversion.web.width||size.height!==conversion.web.height)failures.push(`dimension mismatch: ${conversion.web.path}`);
+    }
     if(conversion.method==='png-to-webp'&&(conversion.original.width!==conversion.web.width||conversion.original.height!==conversion.web.height))failures.push(`new conversion changed dimensions: ${conversion.web.path}`);
   }
   if(conversionManifest.summary.files!==conversionManifest.files.length)failures.push('media conversion summary count is stale');
   if(failures.length)throw Error('Media source-management audit failed:\n'+failures.join('\n'));
-  return {media:files.length,images:imageAudit.summary.images,conversions:conversionManifest.files.length,bytes:webManifest.summary.bytes};
+  return {media:files.length,images:imageAudit.summary.images,conversions:conversionManifest.files.length,retired:retired.size,knownDynamic:imageAudit.summary.knownDynamic,unresolved:imageAudit.summary.dynamicReviewRequired,bytes:webManifest.summary.bytes};
 }
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
   const result=await auditMedia({write:process.argv.includes('--write')});
-  console.log(`Media audit passed: ${result.media} deployed files, ${result.images} images, ${result.conversions} recorded conversions, ${result.bytes} bytes.`);
+  console.log(`Media audit passed: ${result.media} deployed files, ${result.images} images, ${result.conversions} recorded conversions (${result.retired} retired), ${result.knownDynamic} known dynamic, ${result.unresolved} unresolved, ${result.bytes} bytes.`);
 }

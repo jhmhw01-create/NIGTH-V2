@@ -1,34 +1,1212 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "summary": {
-    "images": 1845,
-    "bytes": 165995558,
-    "exactDuplicateGroups": 1,
+    "images": 1806,
+    "bytes": 162149158,
+    "exactDuplicateGroups": 0,
     "literalReferenceFound": 1546,
-    "dynamicReviewRequired": 299,
-    "emptyFiles": 4
+    "knownDynamic": 260,
+    "dynamicReviewRequired": 0,
+    "emptyFiles": 0
   },
-  "duplicates": [
-    {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "paths": [
-        "assets/images/travel/full/04-private-flight.webp",
-        "assets/images/travel/full/12-mad-tea-party.webp",
-        "assets/images/travel/full/20-las-vegas-together.webp",
-        "assets/images/travel/full/28-hotel-checkout.webp"
-      ]
-    }
-  ],
-  "emptyFiles": [
-    "assets/images/travel/full/04-private-flight.webp",
-    "assets/images/travel/full/12-mad-tea-party.webp",
-    "assets/images/travel/full/20-las-vegas-together.webp",
-    "assets/images/travel/full/28-hotel-checkout.webp"
-  ],
+  "duplicates": [],
+  "emptyFiles": [],
+  "dynamicReferences": {
+    "known": [
+      {
+        "path": "assets/images/gallery/full/phantom-group-01.webp",
+        "reason": "paired-delivery-variant",
+        "evidence": "assets/images/gallery/thumbs/phantom-group-01.webp"
+      },
+      {
+        "path": "assets/images/gallery/full/phantom-group-02.webp",
+        "reason": "paired-delivery-variant",
+        "evidence": "assets/images/gallery/thumbs/phantom-group-02.webp"
+      },
+      {
+        "path": "assets/images/md/full/NIGHT 쿠션.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('NIGHT 쿠션')"
+      },
+      {
+        "path": "assets/images/md/full/데스크매트+무선충전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('데스크매트+무선충전')"
+      },
+      {
+        "path": "assets/images/md/full/도하 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('도하 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/러기지 택.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('러기지 택')"
+      },
+      {
+        "path": "assets/images/md/full/머그컵 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('머그컵 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/머그컵.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('머그컵')"
+      },
+      {
+        "path": "assets/images/md/full/모자 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('모자 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/모자.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('모자')"
+      },
+      {
+        "path": "assets/images/md/full/무드등 구매 특전 멤버 손글씨카드.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('무드등 구매 특전 멤버 손글씨카드')"
+      },
+      {
+        "path": "assets/images/md/full/미니등신대.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('미니등신대')"
+      },
+      {
+        "path": "assets/images/md/full/미니선풍기.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('미니선풍기')"
+      },
+      {
+        "path": "assets/images/md/full/버즈, 에어팟 케이스.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('버즈, 에어팟 케이스')"
+      },
+      {
+        "path": "assets/images/md/full/보온도시락+수저세트 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('보온도시락+수저세트 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/보온도시락+수저세트.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('보온도시락+수저세트')"
+      },
+      {
+        "path": "assets/images/md/full/봉제인형 키링.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('봉제인형 키링')"
+      },
+      {
+        "path": "assets/images/md/full/부채.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('부채')"
+      },
+      {
+        "path": "assets/images/md/full/세안밴드.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('세안밴드')"
+      },
+      {
+        "path": "assets/images/md/full/수면안대 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('수면안대 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/수면안대.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('수면안대')"
+      },
+      {
+        "path": "assets/images/md/full/스마트톡 셋트.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스마트톡 셋트')"
+      },
+      {
+        "path": "assets/images/md/full/스쿼시볼.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스쿼시볼')"
+      },
+      {
+        "path": "assets/images/md/full/스쿼시볼1.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스쿼시볼1')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-도하.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-우현.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-이환.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-지우.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커-태훈.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/스티커1.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/스티커1')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-도하.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-우현.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-이환.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-지우.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커-태훈.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/full/스티커/치비스티커.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('스티커/치비스티커')"
+      },
+      {
+        "path": "assets/images/md/full/아크릴 스탠드.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('아크릴 스탠드')"
+      },
+      {
+        "path": "assets/images/md/full/아크릴 키링.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('아크릴 키링')"
+      },
+      {
+        "path": "assets/images/md/full/양말.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('양말')"
+      },
+      {
+        "path": "assets/images/md/full/양우산 구매 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('양우산 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/양우산+우비.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('양우산+우비')"
+      },
+      {
+        "path": "assets/images/md/full/여권케이스.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('여권케이스')"
+      },
+      {
+        "path": "assets/images/md/full/우비 구매 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('우비 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/우현 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('우현 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/응원봉 무드등.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('응원봉 무드등')"
+      },
+      {
+        "path": "assets/images/md/full/이환 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('이환 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/잠옷 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('잠옷 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/잠옷.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('잠옷')"
+      },
+      {
+        "path": "assets/images/md/full/지우 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('지우 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/캐리어커버.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('캐리어커버')"
+      },
+      {
+        "path": "assets/images/md/full/캐릭터 봉제인형 버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('캐릭터 봉제인형 버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-도하-색칠 버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-도하.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-우현-색칠 버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-우현.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-이환-색칠버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-이환.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-지우-색칠버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-지우.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-태훈-색칠버전.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/full/컬러링 엽서/컬러링 엽서-태훈.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈')"
+      },
+      {
+        "path": "assets/images/md/full/콜렉트북 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('콜렉트북 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/콜렉트북.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('콜렉트북')"
+      },
+      {
+        "path": "assets/images/md/full/태훈 페이스타월.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('태훈 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/full/텀블러 구매 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('텀블러 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/텀블러.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('텀블러')"
+      },
+      {
+        "path": "assets/images/md/full/티켓홀더.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('티켓홀더')"
+      },
+      {
+        "path": "assets/images/md/full/파우치.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('파우치')"
+      },
+      {
+        "path": "assets/images/md/full/파일홀더.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('파일홀더')"
+      },
+      {
+        "path": "assets/images/md/full/폰케이스 특전 포카.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('폰케이스 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/full/폰케이스.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('폰케이스')"
+      },
+      {
+        "path": "assets/images/md/full/핀 뱃지 셋트.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('핀 뱃지 셋트')"
+      },
+      {
+        "path": "assets/images/md/full/휴대용 칫솔 살균기.webp",
+        "reason": "md-store-generator",
+        "evidence": "mdPath('휴대용 칫솔 살균기')"
+      },
+      {
+        "path": "assets/images/md/thumbs/NIGHT 쿠션.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('NIGHT 쿠션')"
+      },
+      {
+        "path": "assets/images/md/thumbs/데스크매트+무선충전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('데스크매트+무선충전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/도하 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('도하 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/러기지 택.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('러기지 택')"
+      },
+      {
+        "path": "assets/images/md/thumbs/머그컵 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('머그컵 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/머그컵.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('머그컵')"
+      },
+      {
+        "path": "assets/images/md/thumbs/모자 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('모자 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/모자.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('모자')"
+      },
+      {
+        "path": "assets/images/md/thumbs/무드등 구매 특전 멤버 손글씨카드.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('무드등 구매 특전 멤버 손글씨카드')"
+      },
+      {
+        "path": "assets/images/md/thumbs/미니등신대.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('미니등신대')"
+      },
+      {
+        "path": "assets/images/md/thumbs/미니선풍기.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('미니선풍기')"
+      },
+      {
+        "path": "assets/images/md/thumbs/버즈, 에어팟 케이스.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('버즈, 에어팟 케이스')"
+      },
+      {
+        "path": "assets/images/md/thumbs/보온도시락+수저세트 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('보온도시락+수저세트 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/보온도시락+수저세트.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('보온도시락+수저세트')"
+      },
+      {
+        "path": "assets/images/md/thumbs/봉제인형 키링.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('봉제인형 키링')"
+      },
+      {
+        "path": "assets/images/md/thumbs/부채.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('부채')"
+      },
+      {
+        "path": "assets/images/md/thumbs/세안밴드.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('세안밴드')"
+      },
+      {
+        "path": "assets/images/md/thumbs/수면안대 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('수면안대 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/수면안대.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('수면안대')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스마트톡 셋트.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스마트톡 셋트')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스쿼시볼.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스쿼시볼')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스쿼시볼1.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스쿼시볼1')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-도하.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-우현.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-이환.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-지우.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커-태훈.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/스티커1.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/스티커1')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-도하.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-도하')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-우현.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-우현')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-이환.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-이환')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-지우.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-지우')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커-태훈.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커-태훈')"
+      },
+      {
+        "path": "assets/images/md/thumbs/스티커/치비스티커.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('스티커/치비스티커')"
+      },
+      {
+        "path": "assets/images/md/thumbs/아크릴 스탠드.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('아크릴 스탠드')"
+      },
+      {
+        "path": "assets/images/md/thumbs/아크릴 키링.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('아크릴 키링')"
+      },
+      {
+        "path": "assets/images/md/thumbs/양말.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('양말')"
+      },
+      {
+        "path": "assets/images/md/thumbs/양우산 구매 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('양우산 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/양우산+우비.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('양우산+우비')"
+      },
+      {
+        "path": "assets/images/md/thumbs/여권케이스.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('여권케이스')"
+      },
+      {
+        "path": "assets/images/md/thumbs/우비 구매 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('우비 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/우현 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('우현 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/이환 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('이환 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/잠옷 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('잠옷 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/잠옷.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('잠옷')"
+      },
+      {
+        "path": "assets/images/md/thumbs/지우 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('지우 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/캐리어커버.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('캐리어커버')"
+      },
+      {
+        "path": "assets/images/md/thumbs/캐릭터 봉제인형 버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('캐릭터 봉제인형 버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-도하-색칠 버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-도하.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-도하')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-우현-색칠 버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현-색칠 버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-우현.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-우현')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-이환-색칠버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-이환.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-이환')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-지우-색칠버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-지우.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-지우')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-태훈-색칠버전.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈-색칠버전')"
+      },
+      {
+        "path": "assets/images/md/thumbs/컬러링 엽서/컬러링 엽서-태훈.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('컬러링 엽서/컬러링 엽서-태훈')"
+      },
+      {
+        "path": "assets/images/md/thumbs/콜렉트북 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('콜렉트북 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/콜렉트북.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('콜렉트북')"
+      },
+      {
+        "path": "assets/images/md/thumbs/태훈 페이스타월.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('태훈 페이스타월')"
+      },
+      {
+        "path": "assets/images/md/thumbs/텀블러 구매 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('텀블러 구매 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/텀블러.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('텀블러')"
+      },
+      {
+        "path": "assets/images/md/thumbs/티켓홀더.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('티켓홀더')"
+      },
+      {
+        "path": "assets/images/md/thumbs/파우치.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('파우치')"
+      },
+      {
+        "path": "assets/images/md/thumbs/파일홀더.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('파일홀더')"
+      },
+      {
+        "path": "assets/images/md/thumbs/폰케이스 특전 포카.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('폰케이스 특전 포카')"
+      },
+      {
+        "path": "assets/images/md/thumbs/폰케이스.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('폰케이스')"
+      },
+      {
+        "path": "assets/images/md/thumbs/핀 뱃지 셋트.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('핀 뱃지 셋트')"
+      },
+      {
+        "path": "assets/images/md/thumbs/휴대용 칫솔 살균기.webp",
+        "reason": "md-store-thumbnail-generator",
+        "evidence": "mdPath('휴대용 칫솔 살균기')"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/reactions.webp",
+        "reason": "vlog-reaction-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/full/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/doha/thumbs/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/reactions.webp",
+        "reason": "vlog-reaction-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/full/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/ihwan/thumbs/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/reactions.webp",
+        "reason": "vlog-reaction-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/full/scene-09.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/jiwoo/thumbs/scene-09.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-09.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-10.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-11.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/full/scene-12.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/reactions.webp",
+        "reason": "paired-delivery-variant",
+        "evidence": "assets/images/vlog/night/full/reactions.webp"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-09.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-10.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-11.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/night/thumbs/scene-12.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/reactions.webp",
+        "reason": "vlog-reaction-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/full/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-07.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/taehoon/thumbs/scene-08.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/reactions.webp",
+        "reason": "vlog-reaction-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/full/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-00.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-01.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-02.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-03.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-04.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-05.webp",
+        "reason": "vlog-scene-generator"
+      },
+      {
+        "path": "assets/images/vlog/woohyun/thumbs/scene-06.webp",
+        "reason": "vlog-scene-generator"
+      }
+    ],
+    "unresolved": [],
+    "unresolvedGroups": {}
+  },
   "folders": {
     "assets/images": {
-      "files": 32,
-      "bytes": 3588460
+      "files": 16,
+      "bytes": 2244748
     },
     "assets/images/2026/after-hours": {
       "files": 44,
@@ -203,12 +1381,12 @@
       "bytes": 604738
     },
     "assets/images/gallery/full": {
-      "files": 70,
-      "bytes": 7881874
+      "files": 64,
+      "bytes": 6216614
     },
     "assets/images/gallery/thumbs": {
-      "files": 70,
-      "bytes": 3073748
+      "files": 64,
+      "bytes": 2497026
     },
     "assets/images/luna4": {
       "files": 33,
@@ -235,8 +1413,8 @@
       "bytes": 824228
     },
     "assets/images/md/lightstick-v2": {
-      "files": 12,
-      "bytes": 1430138
+      "files": 10,
+      "bytes": 1276704
     },
     "assets/images/md/thumbs": {
       "files": 49,
@@ -271,7 +1449,7 @@
       "bytes": 3301332
     },
     "assets/images/travel/full": {
-      "files": 31,
+      "files": 27,
       "bytes": 4300522
     },
     "assets/images/travel/thumbs": {
@@ -287,24 +1465,24 @@
       "bytes": 930704
     },
     "assets/images/vlog/doha/thumbs": {
-      "files": 8,
-      "bytes": 182772
+      "files": 7,
+      "bytes": 160398
     },
     "assets/images/vlog/ihwan/full": {
       "files": 10,
       "bytes": 1310300
     },
     "assets/images/vlog/ihwan/thumbs": {
-      "files": 10,
-      "bytes": 269194
+      "files": 9,
+      "bytes": 242826
     },
     "assets/images/vlog/jiwoo/full": {
       "files": 11,
       "bytes": 739586
     },
     "assets/images/vlog/jiwoo/thumbs": {
-      "files": 11,
-      "bytes": 148646
+      "files": 10,
+      "bytes": 131118
     },
     "assets/images/vlog/night/full": {
       "files": 14,
@@ -319,17 +1497,17 @@
       "bytes": 1067490
     },
     "assets/images/vlog/taehoon/thumbs": {
-      "files": 10,
-      "bytes": 185092
+      "files": 9,
+      "bytes": 164218
     },
     "assets/images/vlog/woohyun/full": {
       "files": 8,
       "bytes": 844194
     },
     "assets/images/vlog/woohyun/thumbs": {
-      "files": 8,
-      "bytes": 144496
+      "files": 7,
+      "bytes": 124368
     }
   },
-  "policy": "public/assets/images contains web-delivery assets. A missing literal reference is not deletion permission; dynamic path conventions require review."
+  "policy": "public/assets/images contains web-delivery assets. Literal references include normalized HTML entities; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission."
 }

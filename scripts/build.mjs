@@ -1,10 +1,11 @@
 import {readFile, writeFile, mkdir, readdir, cp, stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {resolve, join, basename} from 'node:path';
+import {join, basename} from 'node:path';
 import {PageLayout} from '../src/components/layout.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
 import {buildReactPages} from './build-react.mjs';
 import {auditSite} from './audit-site.mjs';
+import {auditLegacyAssets} from './audit-legacy-assets.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'dist');
@@ -49,9 +50,6 @@ await writeFile(
   `User-agent: *\nAllow: /\nSitemap: ${siteBase}sitemap.xml\n`,
   'utf8'
 );
-const catalog = JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
-await mkdir(join(output,'assets/data'),{recursive:true});
-await writeFile(join(output,'assets/data/archive-catalog.js'),'window.NightArchiveCatalog = ' + JSON.stringify(catalog) + ';\n');
 await buildReactPages();
 let hasOriginalAssets = false;
 try { hasOriginalAssets = (await stat(join(output,'assets/css/style.css'))).isFile(); } catch {}
@@ -60,4 +58,6 @@ if (!hasOriginalAssets) console.log('Asset overlay build: retain original assets
 if (hasOriginalAssets) {
   const audit=await auditSite(output);
   console.log(`Site audit passed: ${audit.pages} pages, ${audit.links} local references, ${audit.files} unique targets.`);
+  const legacy=await auditLegacyAssets(output,{write:process.env.UPDATE_LEGACY_ASSET_AUDIT==='1'});
+  console.log(`Legacy asset audit passed: ${legacy.assets} public CSS/JS (${legacy.runtime} runtime, ${legacy.buildInput} build-input, ${legacy.unresolved} unresolved).`);
 }

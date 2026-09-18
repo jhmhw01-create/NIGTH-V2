@@ -34,7 +34,7 @@ const mdProducts = [
   {id:'ball-cap',name:'NIGHT Ball Cap',category:'fashion',price:35000,images:[mdPath('모자'),mdPath('모자 특전 포카')],options:['BLACK / FREE'],benefit:'구매 특전 포토카드 1종 증정',desc:'NIGHT 로고 디테일을 담은 데일리 볼캡.'},
   {id:'pajama',name:'NIGHT Pajama Set',category:'featured fashion',price:69000,images:[mdPath('잠옷'),mdPath('잠옷 특전 포카')],options:['M','L','XL'],benefit:'구매 특전 포토카드 1종 증정',desc:'편안한 소재와 NIGHT 모티프를 적용한 홈웨어 세트.'},
   {id:'socks',name:'NIGHT Socks Set',category:'fashion',price:15000,images:[mdPath('양말')],options:['M','L'],desc:'NIGHT 컬러를 활용한 데일리 양말 세트.'},
-  {id:'sleep-mask',name:'NIGHT Sleep Mask',category:'fashion',price:24000,images:[mdPath('수면안대'),mdPath('수면안대 특전 포카')],options:allOption,benefit:'구매 특전 포토카드 1종 증정',desc:'밤의 휴식을 위한 부드러운 NIGHT 수면안대.'},
+  {id:'sleep-mask',name:'NIGHT Sleep Mask',category:'fashion',price:24000,images:[mdPath('수면안대'),mdPath('수면안대 특전 포카')],options:members,benefit:'구매 특전 포토카드 1종 증정',desc:'멤버별 디자인 중 하나를 선택하는 부드러운 NIGHT 수면안대 단품. 가격은 1개 기준이며 ONE SIZE로 구성된다.'},
   {id:'wash-band',name:'Character Wash Band',category:'fashion',price:19000,images:[mdPath('세안밴드')],options:members,desc:'멤버별 캐릭터 포인트를 더한 세안용 헤어밴드.'},
   {id:'pouch',name:'NIGHT Multi Pouch',category:'fashion travel',price:24000,images:[mdPath('파우치')],options:allOption,desc:'여행과 일상에서 활용하기 좋은 NIGHT 멀티 파우치.'},
   {id:'luggage-tag',name:'NIGHT Luggage Tag',category:'travel',price:16000,images:[mdPath('러기지 택')],options:allOption,desc:'캐리어에 NIGHT의 흔적을 남기는 NIGHT 러기지 태그.'},

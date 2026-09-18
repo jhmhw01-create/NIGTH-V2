@@ -4,6 +4,7 @@ import {readFile,readdir} from 'node:fs/promises';
 import {renderCollections} from '../src/components/collections.mjs';
 import {pageTree} from '../scripts/page-tree.mjs';
 import {detailNavigation} from '../scripts/detail-navigation.mjs';
+import {buildSourceSearchCatalog} from './search-fixture.mjs';
 const json=async name=>JSON.parse(await readFile(new URL('../src/'+name+'.json',import.meta.url),'utf8'));
 const walk=nodes=>nodes.flatMap(n=>typeof n==='string'?[]:[n,...walk(n.children)]);
 test('REST has one title track, a text-only entry and exactly two notice images without a standalone route',async()=>{
@@ -22,5 +23,5 @@ test('PARADOX retains 58 unique photos, five supplied tracks, date and five sect
 });
 test('2029 notices are reachable through the year filter and REST and PARADOX are searchable',async()=>{
  const p=await json('pages/notice'),notices=await json('data/notices');const html=renderCollections(p.contentHtml,{notices});assert.match(html,/value="2029"/);assert(html.indexOf('id="rest-release"')<html.indexOf('id="paradox-release"'));
- const catalog=await json('data/archive');assert(catalog.records.some(r=>r.href==='discography.html#rest'));assert(catalog.records.some(r=>r.href==='paradox-2029.html'));
+ const catalog=await buildSourceSearchCatalog();assert(catalog.records.some(r=>r.href==='discography.html#rest'));assert(catalog.records.some(r=>r.href==='paradox-2029.html'));
 });

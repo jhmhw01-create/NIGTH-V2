@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {buildSourceSearchCatalog} from './search-fixture.mjs';
 
 test('PRESS archive includes the latest three missing releases in newest-first order', async () => {
   const page=JSON.parse(await readFile(new URL('../src/pages/press.json',import.meta.url),'utf8'));
@@ -22,8 +23,8 @@ test('PRESS archive includes the latest three missing releases in newest-first o
   const css=await readFile(new URL('../public/assets/css/press.css',import.meta.url),'utf8');
   assert.doesNotMatch(css,/#article-\d+\s*\{\s*order\s*:/,'CSS must not override editorial date order');
   assert.equal(dates[0],'2029-11-02');
-  const archive=JSON.parse(await readFile(new URL('../src/data/archive.json',import.meta.url),'utf8'));
-  const record=archive.records.find(row=>row.href==='press.html');
+  const catalog=await buildSourceSearchCatalog();
+  const record=catalog.records.find(row=>row.href==='press.html');
   assert.ok(record);
   for(const album of ['INFINITY','PARADOX','REST'])assert.ok(record.searchText.includes(album));
 });

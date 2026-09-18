@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "status": "reviewed-unused-candidates",
+  "policy": "These public CSS/JavaScript paths are reviewed candidates only when they appear here. The list is currently empty because all verified unused legacy JavaScript was retired from public delivery.",
+  "paths": []
+}

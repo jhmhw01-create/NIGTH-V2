@@ -7,9 +7,28 @@ export const navigation = [
 ];
 const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const siteUrl = 'https://jhmhw01-create.github.io/NIGTH-V2/';
-const defaultDescription = 'NIGHT 공식 홈페이지. 그룹과 멤버, 음악, 공연, LUNA 및 공식 아카이브 정보를 확인하세요.';
+const defaultDescription = 'NIGHT 공식 홈페이지. 그룹과 멤버, 음악, 공연, LUNA 및 공식 콘텐츠를 확인하세요.';
 const defaultImage = siteUrl + 'assets/images/home-hero-night.webp';
 const favicon = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23080812'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-size='42' fill='%23eeeae2'%3EN%3C/text%3E%3C/svg%3E";
+
+const routeDescriptions = {
+  'index.html': 'NIGHT 공식 홈페이지. 최신 음악과 소식, 다섯 멤버의 프로필과 공식 콘텐츠를 만나보세요.',
+  'about-night.html': 'NIGHT의 그룹 프로필, 음악과 퍼포먼스, 현재 멤버와 주요 활동을 소개합니다.',
+  'discography.html': 'NIGHT의 앨범, 발매일, 타이틀곡과 트랙리스트를 발매 순서대로 소개합니다.',
+  'history.html': 'NIGHT의 데뷔부터 현재까지 주요 앨범, 공연, 팬클럽과 활동 기록을 연도별로 확인하세요.',
+  'listen.html': 'NIGHT의 주요 타이틀곡과 공식 음원을 발매 순서대로 들어보세요.',
+  'gallery.html': 'NIGHT의 공식 콘셉트 포토, 공연과 활동 사진을 모아볼 수 있는 갤러리입니다.',
+  'contents.html': 'NIGHT의 공식 영상, 에디토리얼, 비하인드와 다양한 콘텐츠를 확인하세요.',
+  'archive.html': 'NIGHT 공식 사이트의 음악, 공연, 콘텐츠와 활동 페이지를 한곳에서 찾아보세요.',
+  'notice.html': 'NIGHT의 앨범 발매, 공연, 팬클럽과 공식 활동 소식을 확인하세요.',
+  'fanclub.html': 'NIGHT 공식 팬클럽 LUNA의 멤버십, 시즌그리팅, 응원봉과 팬 콘텐츠를 소개합니다.',
+  'store.html': 'NIGHT 공식 MD와 라이프스타일 컬렉션을 둘러보세요.',
+  'member-doha.html': 'NIGHT의 리더이자 서브래퍼 DOHA 윤도하의 공식 프로필을 소개합니다.',
+  'member-woohyun.html': 'NIGHT의 메인댄서 WOOHYUN 성우현의 공식 프로필과 퍼포먼스를 소개합니다.',
+  'member-jiwoo.html': 'NIGHT의 센터이자 메인래퍼 JIWOO 천지우의 공식 프로필을 소개합니다.',
+  'member-ihwan.html': 'NIGHT의 메인보컬 IHWAN 박이환의 공식 프로필과 음악적 특징을 소개합니다.',
+  'member-taehoon.html': 'NIGHT의 리드보컬이자 막내 TAEHOON 유태훈의 공식 프로필을 소개합니다.'
+};
 
 const metaTag = (head, key, attribute = 'name') => {
   const attributeName = String(attribute).toLowerCase();
@@ -24,16 +43,28 @@ const metaContent = (head, key, attribute = 'name') => {
   return match?.[2] || '';
 };
 const hasMeta = (head, key, attribute = 'name') => Boolean(metaTag(head, key, attribute));
+const cleanTitle = title => String(title)
+  .replace(/\s+[—|-]\s+NIGHT(?:\s+Official(?:\s+Website)?)?$/i, '')
+  .replace(/\s+[—|-]\s+NIGHT\s+Official\s+Fanclub$/i, '')
+  .trim();
+const descriptionFor = (page, title) => {
+  const route = page.route || 'index.html';
+  if (routeDescriptions[route]) return routeDescriptions[route];
+  const subject = cleanTitle(title);
+  if (subject && subject.toUpperCase() !== 'NIGHT') return subject + '에 관한 NIGHT 공식 페이지입니다. 관련 정보와 공식 콘텐츠를 확인하세요.';
+  return defaultDescription;
+};
 
 export function enhanceHead(page) {
   const head = page.headHtml || '';
   const route = page.route === 'index.html' ? '' : page.route;
   const canonical = new URL(route, siteUrl).href;
   const title = (head.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || 'NIGHT — Official Website').replace(/<[^>]*>/g, '').trim();
-  const description = metaContent(head, 'description') || defaultDescription;
+  const authoredDescription = metaContent(head, 'description');
+  const description = authoredDescription || descriptionFor(page, title);
   const tags = [];
 
-  if (!metaContent(head, 'description')) tags.push('<meta name="description" content="' + escape(defaultDescription) + '"/>');
+  if (!authoredDescription) tags.push('<meta name="description" content="' + escape(description) + '"/>');
   if (!/<link\b[^>]*rel=["'][^"']*\bcanonical\b[^"']*["']/i.test(head)) tags.push('<link rel="canonical" href="' + escape(canonical) + '"/>');
   if (!hasMeta(head, 'og:type', 'property')) tags.push('<meta property="og:type" content="website"/>');
   if (!hasMeta(head, 'og:locale', 'property')) tags.push('<meta property="og:locale" content="ko_KR"/>');

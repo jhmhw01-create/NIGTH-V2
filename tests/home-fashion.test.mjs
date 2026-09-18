@@ -13,12 +13,17 @@ test('fashion theme is strictly scoped to home, with no unscoped root or informa
 });
 test('current home photographs and functional destinations remain present',async()=>{
  const home=await readFile(new URL('../src/react/HomePage.jsx',import.meta.url),'utf8');
- for(const image of ['home-hero-night.webp','home-about-night.webp','home-profile-doha.webp','home-profile-ihwan.webp','home-profile-jiwoo.webp','home-profile-taehoon.webp','home-profile-woohyun.webp','fifthann-001.webp','night-luna.webp'])assert(home.includes(image));
- for(const href of ['discography.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html','five-voices.html','#members'])assert(home.includes(href));
+ for(const image of ['home-hero-night.webp','home-about-night.webp','home-profile-doha.webp','home-profile-ihwan.webp','home-profile-jiwoo.webp','home-profile-taehoon.webp','home-profile-woohyun.webp','assets/images/2029/rest/next-time.webp','night-luna.webp'])assert(home.includes(image));
+ for(const href of ['discography.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html','five-voices.html','#members','listen.html#next-time','discography.html#rest'])assert(home.includes(href));
  assert(home.includes('function Hero()'));
+ assert(home.includes('function LatestMusic()'));
  assert(home.includes('function About()'));
  assert(home.includes('function Members()'));
  assert.match(home,/action="archive.html" role="search"/);assert.match(home,/name="q"/);assert.match(home,/2022\.11\.15/);
+ assert(home.includes('REST'));
+ assert(home.includes('NEXT TIME · 2029.11.02'));
+ assert(!home.includes('function Anniversary()'));
+ assert(!home.includes('FIVE YEARS. ONE NIGHT.'));
  assert(home.includes('데뷔 초반 섹시 콘셉트와 강렬한 무대 장악력을 앞세워'));
  assert(home.includes('Billboard Global Excl. U.S.에 처음 진입하며 빠르게 주목받았다.'));
  assert(!home.includes('데뷔 초반 다크 섹시를 기반으로 한 음악과 키 비주얼'));
