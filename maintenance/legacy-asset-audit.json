@@ -1,0 +1,1210 @@
+{
+  "schemaVersion": 1,
+  "summary": {
+    "assets": 64,
+    "css": 46,
+    "js": 18,
+    "runtime": 46,
+    "buildInput": 3,
+    "unresolved": 15
+  },
+  "groups": {
+    "runtime": [
+      "assets/css/album-detail-fashion.css",
+      "assets/css/archive-2026.css",
+      "assets/css/archive-2027.css",
+      "assets/css/archive-2028.css",
+      "assets/css/archive-explorer.css",
+      "assets/css/archive-fashion.css",
+      "assets/css/archive-new.css",
+      "assets/css/awards.css",
+      "assets/css/contents-categories.css",
+      "assets/css/contents-fashion.css",
+      "assets/css/contents-text.css",
+      "assets/css/contents.css",
+      "assets/css/detail-navigation.css",
+      "assets/css/discography-fashion.css",
+      "assets/css/discography-text.css",
+      "assets/css/discovery-guide.css",
+      "assets/css/era-archive.css",
+      "assets/css/fanclub-archive.css",
+      "assets/css/fanclub-detail-fashion.css",
+      "assets/css/fanclub-fashion.css",
+      "assets/css/fansign.css",
+      "assets/css/final-additions.css",
+      "assets/css/five-voices.css",
+      "assets/css/gallery-fashion.css",
+      "assets/css/gallery-organized.css",
+      "assets/css/history-fashion.css",
+      "assets/css/home-cleanup.css",
+      "assets/css/home-fashion.css",
+      "assets/css/listen-fashion.css",
+      "assets/css/luna4.css",
+      "assets/css/night-collections.css",
+      "assets/css/night-off-summer.css",
+      "assets/css/notice-archive.css",
+      "assets/css/notice-fashion.css",
+      "assets/css/out-of-frame.css",
+      "assets/css/paradox.css",
+      "assets/css/press.css",
+      "assets/css/readability.css",
+      "assets/css/season-2027.css",
+      "assets/css/site-stability.css",
+      "assets/css/stage-detail-fashion.css",
+      "assets/css/store-fashion.css",
+      "assets/css/style.css",
+      "assets/css/subpage-fashion.css",
+      "assets/css/visual-archive.css",
+      "assets/css/vlog.css"
+    ],
+    "buildInput": [
+      "assets/js/md-store.js",
+      "assets/js/night-collections-data.js",
+      "assets/js/vlog.js"
+    ],
+    "unresolved": [
+      "assets/js/archive-2026.js",
+      "assets/js/archive-explorer.js",
+      "assets/js/behind.js",
+      "assets/js/contents-categories.js",
+      "assets/js/fanmeeting.js",
+      "assets/js/fansign.js",
+      "assets/js/final-additions.js",
+      "assets/js/five-voices.js",
+      "assets/js/gallery-collections.js",
+      "assets/js/highlight-medley.js",
+      "assets/js/main.js",
+      "assets/js/night-collections.js",
+      "assets/js/notice-archive.js",
+      "assets/js/season-2027.js",
+      "assets/js/travel.js"
+    ]
+  },
+  "records": [
+    {
+      "path": "assets/css/album-detail-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "after-hours.html",
+        "complete-2027.html",
+        "era-archive.html",
+        "infinity-2027.html",
+        "nightmare-2029.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "sensational-2027.html",
+        "wings-2028.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/albums-react.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/archive-2026.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "after-hours.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "dream-night-2027.html",
+        "fifth-anniversary-2027.html",
+        "infinity-2027.html",
+        "night-off-summer.html",
+        "observation-2027.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "sensational-2027.html",
+        "wings-2028.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "src/pages/after-hours.json",
+        "src/pages/beyond-night-2028.json",
+        "src/pages/birthday-cafes-2026-2027.json",
+        "src/pages/complete-2027.json",
+        "src/pages/dream-night-2027.json",
+        "src/pages/fifth-anniversary-2027.json",
+        "src/pages/infinity-2027.json",
+        "src/pages/night-off-summer.json",
+        "src/pages/observation-2027.json",
+        "src/pages/paradox-2029.json",
+        "src/pages/persona-2028.json",
+        "src/pages/sensational-2027.json",
+        "src/pages/wings-2028.json",
+        "src/pages/year-end-awards-2026.json"
+      ]
+    },
+    {
+      "path": "assets/css/archive-2027.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "dream-night-2027.html",
+        "fifth-anniversary-2027.html",
+        "infinity-2027.html",
+        "night-off-summer.html",
+        "observation-2027.html",
+        "sensational-2027.html"
+      ],
+      "buildReferences": [
+        "src/pages/birthday-cafes-2026-2027.json",
+        "src/pages/complete-2027.json",
+        "src/pages/dream-night-2027.json",
+        "src/pages/fifth-anniversary-2027.json",
+        "src/pages/infinity-2027.json",
+        "src/pages/night-off-summer.json",
+        "src/pages/observation-2027.json",
+        "src/pages/sensational-2027.json"
+      ]
+    },
+    {
+      "path": "assets/css/archive-2028.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "beyond-night-2028.html",
+        "persona-2028.html",
+        "wings-2028.html"
+      ],
+      "buildReferences": [
+        "src/pages/beyond-night-2028.json",
+        "src/pages/persona-2028.json",
+        "src/pages/wings-2028.json"
+      ]
+    },
+    {
+      "path": "assets/css/archive-explorer.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "archive.html"
+      ],
+      "buildReferences": [
+        "src/pages/archive.json"
+      ]
+    },
+    {
+      "path": "assets/css/archive-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "archive.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/archive-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/archive-new.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "luna5.html",
+        "luna6.html",
+        "nightmare-2029.html"
+      ],
+      "buildReferences": [
+        "src/pages/luna5.json",
+        "src/pages/luna6.json",
+        "src/pages/nightmare-2029.json"
+      ]
+    },
+    {
+      "path": "assets/css/awards.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "awards.html"
+      ],
+      "buildReferences": [
+        "src/pages/awards.json"
+      ]
+    },
+    {
+      "path": "assets/css/contents-categories.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "contents.html"
+      ],
+      "buildReferences": [
+        "src/pages/contents.json"
+      ]
+    },
+    {
+      "path": "assets/css/contents-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "contents.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/contents-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/contents-text.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "contents.html"
+      ],
+      "buildReferences": [
+        "src/pages/contents.json"
+      ]
+    },
+    {
+      "path": "assets/css/contents.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "contents.html"
+      ],
+      "buildReferences": [
+        "src/pages/contents.json"
+      ]
+    },
+    {
+      "path": "assets/css/detail-navigation.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "about-night.html",
+        "after-hours.html",
+        "archive.html",
+        "awards.html",
+        "behind.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "concert-archive.html",
+        "contents.html",
+        "daesang-moments.html",
+        "debut-archive.html",
+        "discography.html",
+        "dream-night-2027.html",
+        "era-archive.html",
+        "fanclub.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "five-voices.html",
+        "gallery.html",
+        "highlight-medley.html",
+        "history.html",
+        "if-night.html",
+        "index.html",
+        "infinity-2027.html",
+        "listen.html",
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html",
+        "night-off-summer.html",
+        "night-originals.html",
+        "nightmare-2029.html",
+        "notice.html",
+        "observation-2027.html",
+        "out-of-frame.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "press.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "sensational-2027.html",
+        "social-archive.html",
+        "special-mc.html",
+        "store.html",
+        "travel.html",
+        "vlog.html",
+        "wings-2028.html",
+        "with-luna.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/discography-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "discography.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/discography-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/discography-text.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "discography.html"
+      ],
+      "buildReferences": [
+        "src/pages/discography.json"
+      ]
+    },
+    {
+      "path": "assets/css/discovery-guide.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "about-night.html",
+        "after-hours.html",
+        "archive.html",
+        "awards.html",
+        "behind.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "concert-archive.html",
+        "contents.html",
+        "daesang-moments.html",
+        "debut-archive.html",
+        "discography.html",
+        "dream-night-2027.html",
+        "era-archive.html",
+        "fanclub.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "five-voices.html",
+        "gallery.html",
+        "highlight-medley.html",
+        "history.html",
+        "if-night.html",
+        "index.html",
+        "infinity-2027.html",
+        "listen.html",
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html",
+        "night-off-summer.html",
+        "night-originals.html",
+        "nightmare-2029.html",
+        "notice.html",
+        "observation-2027.html",
+        "out-of-frame.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "press.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "sensational-2027.html",
+        "social-archive.html",
+        "special-mc.html",
+        "store.html",
+        "travel.html",
+        "vlog.html",
+        "wings-2028.html",
+        "with-luna.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/era-archive.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "era-archive.html"
+      ],
+      "buildReferences": [
+        "src/pages/era-archive.json"
+      ]
+    },
+    {
+      "path": "assets/css/fanclub-archive.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "fanclub.html"
+      ],
+      "buildReferences": [
+        "src/pages/fanclub.json"
+      ]
+    },
+    {
+      "path": "assets/css/fanclub-detail-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/fanclub-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "fanclub.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/fanclub-fashion.test.mjs",
+        "tests/fanclub-md-link.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/fansign.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "fansign-20260919.html"
+      ],
+      "buildReferences": [
+        "src/pages/fansign-20260919.json"
+      ]
+    },
+    {
+      "path": "assets/css/final-additions.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "daesang-moments.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "social-archive.html",
+        "special-mc.html"
+      ],
+      "buildReferences": [
+        "src/pages/daesang-moments.json",
+        "src/pages/season-greetings-2028.json",
+        "src/pages/season-greetings-2029.json",
+        "src/pages/social-archive.json",
+        "src/pages/special-mc.json"
+      ]
+    },
+    {
+      "path": "assets/css/five-voices.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "five-voices.html"
+      ],
+      "buildReferences": [
+        "src/pages/five-voices.json"
+      ]
+    },
+    {
+      "path": "assets/css/gallery-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "gallery.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/gallery-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/gallery-organized.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "gallery.html"
+      ],
+      "buildReferences": [
+        "src/pages/gallery.json"
+      ]
+    },
+    {
+      "path": "assets/css/history-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "history.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/history-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/home-cleanup.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "index.html"
+      ],
+      "buildReferences": [
+        "src/pages/index.json"
+      ]
+    },
+    {
+      "path": "assets/css/home-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "index.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/home-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/listen-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "listen.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/luna4.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "fanclub.html",
+        "luna4.html"
+      ],
+      "buildReferences": [
+        "src/pages/fanclub.json",
+        "src/pages/luna4.json"
+      ]
+    },
+    {
+      "path": "assets/css/night-collections.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "fanclub.html",
+        "gallery.html",
+        "if-night.html",
+        "night-originals.html",
+        "with-luna.html"
+      ],
+      "buildReferences": [
+        "src/pages/fanclub.json",
+        "src/pages/gallery.json",
+        "src/pages/if-night.json",
+        "src/pages/night-originals.json",
+        "src/pages/with-luna.json"
+      ]
+    },
+    {
+      "path": "assets/css/night-off-summer.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "night-off-summer.html"
+      ],
+      "buildReferences": [
+        "src/pages/night-off-summer.json"
+      ]
+    },
+    {
+      "path": "assets/css/notice-archive.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "notice.html"
+      ],
+      "buildReferences": [
+        "src/pages/notice.json"
+      ]
+    },
+    {
+      "path": "assets/css/notice-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "notice.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/notice-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/out-of-frame.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "out-of-frame.html"
+      ],
+      "buildReferences": [
+        "src/pages/out-of-frame.json"
+      ]
+    },
+    {
+      "path": "assets/css/paradox.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "paradox-2029.html"
+      ],
+      "buildReferences": [
+        "src/pages/paradox-2029.json"
+      ]
+    },
+    {
+      "path": "assets/css/press.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "press.html"
+      ],
+      "buildReferences": [
+        "src/pages/press.json",
+        "tests/press-latest.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/readability.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "about-night.html",
+        "after-hours.html",
+        "archive.html",
+        "awards.html",
+        "behind.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "concert-archive.html",
+        "contents.html",
+        "daesang-moments.html",
+        "debut-archive.html",
+        "discography.html",
+        "dream-night-2027.html",
+        "era-archive.html",
+        "fanclub.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "five-voices.html",
+        "gallery.html",
+        "highlight-medley.html",
+        "history.html",
+        "if-night.html",
+        "index.html",
+        "infinity-2027.html",
+        "listen.html",
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html",
+        "night-off-summer.html",
+        "night-originals.html",
+        "nightmare-2029.html",
+        "notice.html",
+        "observation-2027.html",
+        "out-of-frame.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "press.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "sensational-2027.html",
+        "social-archive.html",
+        "special-mc.html",
+        "store.html",
+        "travel.html",
+        "vlog.html",
+        "wings-2028.html",
+        "with-luna.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/readability.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/season-2027.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "season-greetings-2027.html"
+      ],
+      "buildReferences": [
+        "src/pages/season-greetings-2027.json"
+      ]
+    },
+    {
+      "path": "assets/css/site-stability.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "about-night.html",
+        "after-hours.html",
+        "archive.html",
+        "awards.html",
+        "behind.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "concert-archive.html",
+        "contents.html",
+        "daesang-moments.html",
+        "debut-archive.html",
+        "discography.html",
+        "dream-night-2027.html",
+        "era-archive.html",
+        "fanclub.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "five-voices.html",
+        "gallery.html",
+        "highlight-medley.html",
+        "history.html",
+        "if-night.html",
+        "index.html",
+        "infinity-2027.html",
+        "listen.html",
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html",
+        "night-off-summer.html",
+        "night-originals.html",
+        "nightmare-2029.html",
+        "notice.html",
+        "observation-2027.html",
+        "out-of-frame.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "press.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "sensational-2027.html",
+        "social-archive.html",
+        "special-mc.html",
+        "store.html",
+        "travel.html",
+        "vlog.html",
+        "wings-2028.html",
+        "with-luna.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/site-stability.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/stage-detail-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "awards.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "concert-archive.html",
+        "daesang-moments.html",
+        "dream-night-2027.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "special-mc.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "tests/stage-detail-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/store-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "store.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/style.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "about-night.html",
+        "after-hours.html",
+        "archive.html",
+        "awards.html",
+        "behind.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "concert-archive.html",
+        "contents.html",
+        "daesang-moments.html",
+        "debut-archive.html",
+        "discography.html",
+        "dream-night-2027.html",
+        "era-archive.html",
+        "fanclub.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "five-voices.html",
+        "gallery.html",
+        "highlight-medley.html",
+        "history.html",
+        "if-night.html",
+        "index.html",
+        "infinity-2027.html",
+        "listen.html",
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html",
+        "night-off-summer.html",
+        "night-originals.html",
+        "nightmare-2029.html",
+        "notice.html",
+        "observation-2027.html",
+        "out-of-frame.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "press.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "sensational-2027.html",
+        "social-archive.html",
+        "special-mc.html",
+        "store.html",
+        "travel.html",
+        "vlog.html",
+        "wings-2028.html",
+        "with-luna.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build.mjs",
+        "src/pages/about-night.json",
+        "src/pages/after-hours.json",
+        "src/pages/archive.json",
+        "src/pages/awards.json",
+        "src/pages/behind.json",
+        "src/pages/beyond-night-2028.json",
+        "src/pages/birthday-cafes-2026-2027.json",
+        "src/pages/complete-2027.json",
+        "src/pages/concert-archive.json",
+        "src/pages/contents.json",
+        "src/pages/daesang-moments.json",
+        "src/pages/debut-archive.json",
+        "src/pages/discography.json",
+        "src/pages/dream-night-2027.json",
+        "src/pages/era-archive.json",
+        "src/pages/fanclub.json",
+        "src/pages/fanmeeting.json",
+        "src/pages/fansign-20260919.json",
+        "src/pages/fifth-anniversary-2027.json",
+        "src/pages/five-voices.json",
+        "src/pages/gallery.json",
+        "src/pages/highlight-medley.json",
+        "src/pages/history.json",
+        "src/pages/if-night.json",
+        "src/pages/index.json",
+        "src/pages/infinity-2027.json",
+        "src/pages/listen.json",
+        "src/pages/luna4.json",
+        "src/pages/luna5.json",
+        "src/pages/luna6.json",
+        "src/pages/member-doha.json",
+        "src/pages/member-ihwan.json",
+        "src/pages/member-jiwoo.json",
+        "src/pages/member-taehoon.json",
+        "src/pages/member-woohyun.json",
+        "src/pages/night-off-summer.json",
+        "src/pages/night-originals.json",
+        "src/pages/nightmare-2029.json",
+        "src/pages/notice.json",
+        "src/pages/observation-2027.json",
+        "src/pages/out-of-frame.json",
+        "src/pages/paradox-2029.json",
+        "src/pages/persona-2028.json",
+        "src/pages/press.json",
+        "src/pages/season-greetings-2027.json",
+        "src/pages/season-greetings-2028.json",
+        "src/pages/season-greetings-2029.json",
+        "src/pages/sensational-2027.json",
+        "src/pages/social-archive.json",
+        "src/pages/special-mc.json",
+        "src/pages/store.json",
+        "src/pages/travel.json",
+        "src/pages/vlog.json",
+        "src/pages/wings-2028.json",
+        "src/pages/with-luna.json",
+        "src/pages/year-end-awards-2026.json",
+        "tests/seo-head.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/subpage-fashion.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "about-night.html",
+        "after-hours.html",
+        "awards.html",
+        "behind.html",
+        "beyond-night-2028.html",
+        "birthday-cafes-2026-2027.html",
+        "complete-2027.html",
+        "concert-archive.html",
+        "daesang-moments.html",
+        "debut-archive.html",
+        "dream-night-2027.html",
+        "era-archive.html",
+        "fanmeeting.html",
+        "fansign-20260919.html",
+        "fifth-anniversary-2027.html",
+        "five-voices.html",
+        "highlight-medley.html",
+        "if-night.html",
+        "infinity-2027.html",
+        "luna4.html",
+        "luna5.html",
+        "luna6.html",
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html",
+        "night-off-summer.html",
+        "night-originals.html",
+        "nightmare-2029.html",
+        "observation-2027.html",
+        "out-of-frame.html",
+        "paradox-2029.html",
+        "persona-2028.html",
+        "press.html",
+        "season-greetings-2027.html",
+        "season-greetings-2028.html",
+        "season-greetings-2029.html",
+        "sensational-2027.html",
+        "social-archive.html",
+        "special-mc.html",
+        "store.html",
+        "travel.html",
+        "vlog.html",
+        "wings-2028.html",
+        "with-luna.html",
+        "year-end-awards-2026.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs",
+        "scripts/tests/subpage-fashion.test.mjs",
+        "tests/subpage-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/visual-archive.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "concert-archive.html",
+        "debut-archive.html"
+      ],
+      "buildReferences": [
+        "src/pages/concert-archive.json",
+        "src/pages/debut-archive.json"
+      ]
+    },
+    {
+      "path": "assets/css/vlog.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "vlog.html"
+      ],
+      "buildReferences": [
+        "src/pages/vlog.json"
+      ]
+    },
+    {
+      "path": "assets/js/archive-2026.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/archive-explorer.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/behind.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/contents-categories.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/fanmeeting.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/fansign.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/final-additions.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/five-voices.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/gallery-collections.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/highlight-medley.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/main.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/md-store.js",
+      "type": "js",
+      "status": "build-input",
+      "runtimeReferences": [],
+      "buildReferences": [
+        "scripts/store-products.mjs"
+      ]
+    },
+    {
+      "path": "assets/js/night-collections-data.js",
+      "type": "js",
+      "status": "build-input",
+      "runtimeReferences": [],
+      "buildReferences": [
+        "scripts/photo-episodes.mjs",
+        "tests/collection-pages.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/js/night-collections.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/notice-archive.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/season-2027.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/travel.js",
+      "type": "js",
+      "status": "unresolved",
+      "runtimeReferences": [],
+      "buildReferences": []
+    },
+    {
+      "path": "assets/js/vlog.js",
+      "type": "js",
+      "status": "build-input",
+      "runtimeReferences": [],
+      "buildReferences": [
+        "tests/photo-players.test.mjs"
+      ]
+    }
+  ],
+  "policy": "public CSS/JS is classified against generated dist output first, then repository build-source references. unresolved means no current runtime or build-input evidence and is a review candidate, not automatic deletion permission."
+}
