@@ -28,14 +28,14 @@ jobs:
         run: npm ci
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
-      - name: Test
-        run: npm test
       - name: Verify media manifests
         run: npm run audit:media
       - name: Build and refresh legacy asset audit
         env:
           UPDATE_LEGACY_ASSET_AUDIT: '1'
         run: npm run build
+      - name: Test refreshed cleanup state
+        run: npm test
       - name: Commit refreshed legacy asset audit on cleanup branch
         if: github.ref == 'refs/heads/cleanup/retire-legacy-js'
         run: |
