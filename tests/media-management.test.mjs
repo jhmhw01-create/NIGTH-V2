@@ -28,7 +28,13 @@ test('MD store generated full and thumbnail images are classified as known dynam
   const reasons=new Map(audit.dynamicReferences.known.map(item=>[item.path,item.reason]));
   assert.equal(reasons.get('assets/images/md/full/NIGHT 쿠션.webp'),'md-store-generator');
   assert.equal(reasons.get('assets/images/md/thumbs/NIGHT 쿠션.webp'),'md-store-thumbnail-generator');
-  assert.equal(audit.summary.dynamicReviewRequired,23);
+});
+
+test('HTML-escaped ampersands still count as literal media references',async()=>{
+  const audit=JSON.parse(await readFile(new URL('../maintenance/image-audit.json',import.meta.url),'utf8'));
+  assert.ok(!audit.dynamicReferences.unresolved.includes('assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp'));
+  assert.ok(!Object.hasOwn(audit.dynamicReferences.unresolvedGroups,'night-off-summer'));
+  assert.equal(audit.summary.dynamicReviewRequired,19);
 });
 
 test('media policy keeps archival originals outside the deployed site',async()=>{
