@@ -37,6 +37,15 @@ test('HTML-escaped ampersands still count as literal media references',async()=>
   assert.equal(audit.summary.dynamicReviewRequired,19);
 });
 
+test('reviewed unused-media candidates exactly match current unresolved media',async()=>{
+  const audit=JSON.parse(await readFile(new URL('../maintenance/image-audit.json',import.meta.url),'utf8'));
+  const candidates=JSON.parse(await readFile(new URL('../maintenance/unused-media-candidates.json',import.meta.url),'utf8'));
+  const listed=Object.values(candidates.groups).flatMap(group=>group.paths).sort();
+  const unresolved=[...audit.dynamicReferences.unresolved].sort();
+  assert.deepEqual(listed,unresolved);
+  assert.equal(listed.length,19);
+});
+
 test('media policy keeps archival originals outside the deployed site',async()=>{
   const policy=await readFile(new URL('../maintenance/README.md',import.meta.url),'utf8');
   assert.match(policy,/public\/assets\/images/);
