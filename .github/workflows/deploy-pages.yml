@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: github-pages
@@ -28,6 +28,17 @@ jobs:
         run: npm ci
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
+      - name: Refresh media manifests after retirement
+        run: npm run audit:media:update
+      - name: Commit refreshed media manifests if needed
+        run: |
+          if ! git diff --quiet -- maintenance/web-media-manifest.json maintenance/image-audit.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add maintenance/web-media-manifest.json maintenance/image-audit.json
+            git commit -m "Refresh media manifests after root cleanup"
+            git push
+          fi
       - name: Test
         run: npm test
       - name: Verify media manifests

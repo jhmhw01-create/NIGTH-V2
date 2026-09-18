@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "description": "Historical web-delivery conversions retired from the deployed public tree. Original archive records and conversion metadata remain preserved.",
+  "retired": [
+    "assets/images/doha.webp",
+    "assets/images/ihwan.webp",
+    "assets/images/jiwoo.webp",
+    "assets/images/woohyun.webp",
+    "assets/images/night-group-main.webp",
+    "assets/images/night-group-profile.webp",
+    "assets/images/phantom-between-the-illusion-0905.webp",
+    "assets/images/phantom-comeback-scheduler.webp",
+    "assets/images/phantom-comeback-stage-a-ver-0917.webp",
+    "assets/images/phantom-illusion-lyric-spoiler-0909.webp",
+    "assets/images/phantom-illusion-mv-teaser-01-0911.webp",
+    "assets/images/phantom-illusion-mv-teaser-02-0913.webp",
+    "assets/images/phantom-mood-teaser-0826.webp",
+    "assets/images/phantom-music-show-stage-b-ver-0924.webp",
+    "assets/images/phantom-special-stage-ab-mix-ver-1001.webp",
+    "assets/images/phantom-tracklist-0907.webp"
+  ]
+}

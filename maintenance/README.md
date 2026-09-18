@@ -5,10 +5,11 @@
 ## 저장 위치와 역할
 
 - 보관용 원본: 로컬 원본 아카이브 또는 별도 클라우드 등 저장소 외부에 보관합니다. GitHub Pages와 `public`에는 넣지 않습니다.
-- `public/assets/images`: 페이지가 실제로 불러오는 최적화 이미지입니다. 현재 대용량 PNG 72개는 WebP 52개로 전달되며, 기존 WebP 20개는 같은 경로의 배포본을 재사용합니다.
+- `public/assets/images`: 페이지가 실제로 불러오는 최적화 이미지입니다.
 - `public/assets/audio`: 페이지가 실제로 불러오는 배포용 음원입니다.
-- `original-media-manifest.json`: WebP로 교체한 PNG 원본 72개의 경로·용량·SHA-256 기록입니다. 원본 파일 자체를 포함하지 않습니다.
-- `media-conversions.json`: PNG 원본과 WebP 배포본의 대응 경로, 양쪽 해시·용량·픽셀 크기, 신규 변환/기존 파일 재사용 여부를 기록합니다.
+- `original-media-manifest.json`: WebP로 교체한 PNG 원본의 경로·용량·SHA-256 기록입니다. 원본 파일 자체를 포함하지 않습니다.
+- `media-conversions.json`: PNG 원본과 WebP 배포본의 대응 경로, 양쪽 해시·용량·픽셀 크기, 신규 변환/기존 파일 재사용 여부를 기록하는 **변환 이력**입니다. 과거에 배포되었다가 은퇴한 변환도 이력 보존을 위해 삭제하지 않습니다.
+- `retired-media.json`: 더 이상 페이지에서 사용하지 않아 `public`에서 제거한 웹 배포본 경로를 기록합니다. 이 파일에 있는 경로는 `media-conversions.json`의 과거 변환 이력은 유지하지만 현재 배포 파일로 간주하지 않습니다.
 - `web-media-manifest.json`: 현재 `public/assets`에 배포되는 전체 미디어의 개수·용량·집계 SHA-256 지문입니다.
 - `image-audit.json`: 현재 배포 이미지의 크기·참조 상태·중복 여부를 기록합니다.
 
@@ -28,10 +29,19 @@ npm test
 npm run build
 ```
 
+## 웹 배포본 은퇴 절차
+
+1. 코드·생성 결과·동적 경로 규칙을 확인해 실제 미사용임을 검증합니다.
+2. 해당 웹 경로를 `retired-media.json`에 추가합니다.
+3. `public/assets/images`의 웹 배포본만 삭제합니다.
+4. `original-media-manifest.json`과 `media-conversions.json`의 원본/변환 이력은 보존합니다.
+5. `npm run audit:media:update`, `npm run audit:media`, `npm test`, `npm run build`를 모두 통과시킵니다.
+
 ## 검증 원칙
 
-- `npm run audit:media`는 배포 파일의 바이트 수와 SHA-256이 매니페스트와 같은지 확인합니다.
-- 변환 기록 72건의 원본 경로가 `public`에 다시 들어오지 않았는지, 코드가 삭제된 PNG를 참조하지 않는지 확인합니다.
+- `npm run audit:media`는 현재 배포 파일의 바이트 수와 SHA-256이 매니페스트와 같은지 확인합니다.
+- 활성 변환 기록의 원본 경로가 `public`에 다시 들어오지 않았는지, 코드가 삭제된 PNG를 참조하지 않는지 확인합니다.
+- `retired-media.json`의 경로는 `public`에 존재하거나 소스에서 다시 참조되면 실패합니다.
 - 신규 변환본은 원본과 WebP의 픽셀 크기가 같은지 확인해 의도하지 않은 리사이즈를 막습니다. 이전부터 있던 WebP를 재사용한 경우에는 원본·배포본 크기를 각각 기록합니다.
 - `image-audit.json`의 `needs-dynamic-reference-review`는 삭제 허가가 아닙니다. JavaScript 경로 조합과 `full`/`thumbs` 규칙을 먼저 확인해야 합니다.
 - 원본 파일을 교체하거나 새 변환을 추가할 때는 기존 매니페스트 값을 덮어쓰지 말고 새 원본 버전과 변환 이력을 명시적으로 남깁니다.
