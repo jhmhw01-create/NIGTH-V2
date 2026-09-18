@@ -5,6 +5,7 @@ import {PageLayout} from '../src/components/layout.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
 import {buildReactPages} from './build-react.mjs';
 import {auditSite} from './audit-site.mjs';
+import {auditLegacyAssets} from './audit-legacy-assets.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'dist');
@@ -57,4 +58,6 @@ if (!hasOriginalAssets) console.log('Asset overlay build: retain original assets
 if (hasOriginalAssets) {
   const audit=await auditSite(output);
   console.log(`Site audit passed: ${audit.pages} pages, ${audit.links} local references, ${audit.files} unique targets.`);
+  const legacy=await auditLegacyAssets(output,{write:process.env.UPDATE_LEGACY_ASSET_AUDIT==='1'});
+  console.log(`Legacy asset audit passed: ${legacy.assets} public CSS/JS (${legacy.runtime} runtime, ${legacy.buildInput} build-input, ${legacy.unresolved} unresolved).`);
 }
