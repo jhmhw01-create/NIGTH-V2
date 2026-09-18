@@ -1,19 +1,15 @@
-name: Deploy NIGHT V2
+name: Verify LUNA 7TH Membership Page
 
 on:
   push:
-    branches: [main]
+    branches: [audit/luna7-membership-page]
   workflow_dispatch:
 
 permissions:
-  contents: read
-
-concurrency:
-  group: github-pages
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,38 +18,26 @@ jobs:
         uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
-      - name: Configure Pages
-        uses: actions/configure-pages@v6
       - name: Install dependencies
         run: npm ci
-      - name: Report root unreferenced media
-        run: node scripts/list-root-unreferenced-media.mjs
+      - name: Refresh media manifests
+        run: npm run audit:media:update
       - name: Test
         run: npm test
       - name: Verify media manifests
         run: npm run audit:media
       - name: Build
         run: npm run build
-      - name: Verify site output
+      - name: Verify LUNA 7 output
         run: |
-          test -s dist/index.html
-          test -s dist/contents.html
-          test -s dist/assets/css/style.css
-      - name: Upload site
-        uses: actions/upload-pages-artifact@v5
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v5
+          test -s dist/luna7.html
+          grep -q 'MIDNIGHT OBSERVATORY' dist/luna7.html
+          grep -q 'luna7.html' dist/fanclub.html
+      - name: Commit refreshed manifests
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add maintenance/web-media-manifest.json maintenance/image-audit.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Refresh media manifests for LUNA 7th"
+          git push origin HEAD:audit/luna7-membership-page
