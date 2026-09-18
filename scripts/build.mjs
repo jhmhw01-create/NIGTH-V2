@@ -1,6 +1,6 @@
 import {readFile, writeFile, mkdir, readdir, cp, stat} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
-import {resolve, join, basename} from 'node:path';
+import {join, basename} from 'node:path';
 import {PageLayout} from '../src/components/layout.mjs';
 import {renderCollections} from '../src/components/collections.mjs';
 import {buildReactPages} from './build-react.mjs';
@@ -49,9 +49,6 @@ await writeFile(
   `User-agent: *\nAllow: /\nSitemap: ${siteBase}sitemap.xml\n`,
   'utf8'
 );
-const catalog = JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
-await mkdir(join(output,'assets/data'),{recursive:true});
-await writeFile(join(output,'assets/data/archive-catalog.js'),'window.NightArchiveCatalog = ' + JSON.stringify(catalog) + ';\n');
 await buildReactPages();
 let hasOriginalAssets = false;
 try { hasOriginalAssets = (await stat(join(output,'assets/css/style.css'))).isFile(); } catch {}
