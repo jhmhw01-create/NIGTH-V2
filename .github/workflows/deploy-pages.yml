@@ -2,11 +2,11 @@ name: Deploy NIGHT V2
 
 on:
   push:
-    branches: [main]
+    branches: [main, cleanup/retire-legacy-js]
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: github-pages
@@ -32,19 +32,35 @@ jobs:
         run: npm test
       - name: Verify media manifests
         run: npm run audit:media
-      - name: Build
+      - name: Build and refresh legacy asset audit
+        env:
+          UPDATE_LEGACY_ASSET_AUDIT: '1'
         run: npm run build
+      - name: Commit refreshed legacy asset audit on cleanup branch
+        if: github.ref == 'refs/heads/cleanup/retire-legacy-js'
+        run: |
+          if git diff --quiet -- maintenance/legacy-asset-audit.json; then
+            echo "Legacy asset audit already current"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add maintenance/legacy-asset-audit.json
+            git commit -m "Refresh legacy asset audit after JavaScript retirement"
+            git push
+          fi
       - name: Verify site output
         run: |
           test -s dist/index.html
           test -s dist/contents.html
           test -s dist/assets/css/style.css
       - name: Upload site
+        if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v5
         with:
           path: dist
 
   deploy:
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     permissions:
