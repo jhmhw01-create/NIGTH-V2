@@ -1,4 +1,4 @@
-name: Benchmark image optimization
+name: Benchmark exact-pixel WebP optimization
 
 on:
   push:
@@ -12,30 +12,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Install image benchmark tools
+      - name: Install WebP tools
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y -qq webp ffmpeg
-      - name: Benchmark WebP re-encoding
+          sudo apt-get install -y -qq webp
+      - name: Benchmark exact-pixel re-encoding
         run: |
+          set -euo pipefail
+          SRC=public/assets/images/home-hero-night.webp
           mkdir -p /tmp/webp-test
-          python3 - <<'PY'
-          import os, subprocess
-          paths=[
-            'public/assets/images/home-hero-night.webp',
-            'public/assets/images/2027/complete/complete-033.webp',
-            'public/assets/images/2027/sensational/sensatio-005.webp',
-            'public/assets/images/2028/wings/wings-004.webp'
-          ]
-          for p in paths:
-            base=os.path.basename(p)
-            source=os.path.getsize(p)
-            print(f'\nSOURCE\t{source}\t{p}')
-            for q in (90,92,95):
-              out=f'/tmp/webp-test/{base}.q{q}.webp'
-              subprocess.run(['cwebp','-quiet','-q',str(q),'-m','6','-af',p,'-o',out],check=True)
-              size=os.path.getsize(out)
-              proc=subprocess.run(['ffmpeg','-hide_banner','-i',p,'-i',out,'-lavfi','ssim','-f','null','-'],text=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
-              line=next((x.strip() for x in proc.stderr.splitlines() if 'All:' in x and 'SSIM' in x),'SSIM unavailable')
-              print(f'Q{q}\t{size}\t{size/source:.3f}\t{line}')
-          PY
+          dwebp "$SRC" -ppm -o /tmp/webp-test/source.ppm >/dev/null 2>&1
+          cwebp -quiet -lossless -z 9 /tmp/webp-test/source.ppm -o /tmp/webp-test/lossless.webp
+          dwebp /tmp/webp-test/lossless.webp -ppm -o /tmp/webp-test/lossless.ppm >/dev/null 2>&1
+          echo "SOURCE_BYTES=$(stat -c%s "$SRC")"
+          echo "LOSSLESS_BYTES=$(stat -c%s /tmp/webp-test/lossless.webp)"
+          echo "SOURCE_PIXELS=$(sha256sum /tmp/webp-test/source.ppm | cut -d' ' -f1)"
+          echo "LOSSLESS_PIXELS=$(sha256sum /tmp/webp-test/lossless.ppm | cut -d' ' -f1)"
+          cmp /tmp/webp-test/source.ppm /tmp/webp-test/lossless.ppm
+          echo EXACT_PIXEL_MATCH=true
