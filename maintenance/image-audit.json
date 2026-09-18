@@ -4,8 +4,8 @@
     "images": 1833,
     "bytes": 164565420,
     "exactDuplicateGroups": 1,
-    "literalReferenceFound": 1542,
-    "dynamicReviewRequired": 291,
+    "literalReferenceFound": 1536,
+    "dynamicReviewRequired": 297,
     "emptyFiles": 4
   },
   "duplicates": [
