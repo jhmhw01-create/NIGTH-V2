@@ -4,9 +4,9 @@
     "images": 1829,
     "bytes": 164878356,
     "exactDuplicateGroups": 4,
-    "literalReferenceFound": 1546,
+    "literalReferenceFound": 1550,
     "knownDynamic": 260,
-    "dynamicReviewRequired": 23,
+    "dynamicReviewRequired": 19,
     "emptyFiles": 0
   },
   "duplicates": [
@@ -1244,10 +1244,6 @@
       "assets/images/gallery/thumbs/phantom-b-woohyun.webp",
       "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
       "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp",
-      "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp",
-      "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-DOHA&TAEHOON.webp",
-      "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-DOHA&TAEHOON.webp",
-      "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-JIWOO&TAEHOON.webp",
       "assets/images/vlog/doha/thumbs/reactions.webp",
       "assets/images/vlog/ihwan/thumbs/reactions.webp",
       "assets/images/vlog/jiwoo/thumbs/reactions.webp",
@@ -1272,12 +1268,6 @@
       "md/lightstick-v2": [
         "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
         "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp"
-      ],
-      "night-off-summer": [
-        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp",
-        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 2-DOHA&TAEHOON.webp",
-        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-DOHA&TAEHOON.webp",
-        "assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 3-JIWOO&TAEHOON.webp"
       ],
       "vlog/reaction-thumbnails": [
         "assets/images/vlog/doha/thumbs/reactions.webp",
@@ -1594,5 +1584,5 @@
       "bytes": 144496
     }
   },
-  "policy": "public/assets/images contains web-delivery assets. Literal references are direct evidence; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission."
+  "policy": "public/assets/images contains web-delivery assets. Literal references include normalized HTML entities; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission."
 }
