@@ -64,6 +64,17 @@ function pairedImageCandidates(path){
   return [...new Set(candidates)];
 }
 
+function mdStoreReference(path,corpus){
+  const match=path.match(/^assets\/images\/md\/(full|thumbs)\/(.+)\.webp$/);
+  if(!match)return null;
+  const [,kind,name]=match;
+  const single=`mdPath('${name}')`;
+  const double=`mdPath(\"${name}\")`;
+  if(!corpus.includes(single)&&!corpus.includes(double))return null;
+  if(kind==='thumbs'&&!corpus.includes("path.replace('/full/','/thumbs/')"))return null;
+  return {reason:kind==='full'?'md-store-generator':'md-store-thumbnail-generator',evidence:single};
+}
+
 function dynamicReference(path,corpus,imagePaths){
   if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/(full|thumbs)\/scene-\d{2}\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/${kind}/scene-${')){
     return {reason:'vlog-scene-generator'};
@@ -71,10 +82,20 @@ function dynamicReference(path,corpus,imagePaths){
   if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/full\/reactions\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/full/reactions.webp')){
     return {reason:'vlog-reaction-generator'};
   }
+  const mdStore=mdStoreReference(path,corpus);
+  if(mdStore)return mdStore;
   for(const candidate of pairedImageCandidates(path)){
     if(imagePaths.has(candidate)&&corpus.includes(candidate))return {reason:'paired-delivery-variant',evidence:candidate};
   }
   return null;
+}
+
+function unresolvedGroup(path){
+  if(/^assets\/images\/gallery\/(full|thumbs)\/phantom-b-/.test(path))return 'gallery/phantom-b';
+  if(path.startsWith('assets/images/md/lightstick-v2/'))return 'md/lightstick-v2';
+  if(path.startsWith('assets/images/night-off-summer/'))return 'night-off-summer';
+  if(/^assets\/images\/vlog\/[^/]+\/thumbs\/reactions\.webp$/.test(path))return 'vlog/reaction-thumbnails';
+  return path.slice(0,path.lastIndexOf('/')).replace(/^assets\/images\//,'');
 }
 
 async function createImageAudit(files){
@@ -92,6 +113,11 @@ async function createImageAudit(files){
   });
   const knownDynamic=records.filter(file=>file.status==='known-dynamic');
   const unresolved=records.filter(file=>file.status==='unresolved');
+  const unresolvedGroups={};
+  for(const file of unresolved){
+    const group=unresolvedGroup(file.path);
+    (unresolvedGroups[group]??=[]).push(file.path);
+  }
   const folders={};
   for(const file of records){const item=folders[file.folder]??{files:0,bytes:0};item.files+=1;item.bytes+=file.bytes;folders[file.folder]=item;}
   return {
@@ -109,7 +135,8 @@ async function createImageAudit(files){
     emptyFiles:records.filter(file=>file.bytes===0).map(file=>file.path),
     dynamicReferences:{
       known:knownDynamic.map(file=>({path:file.path,reason:file.dynamicReference.reason,...(file.dynamicReference.evidence?{evidence:file.dynamicReference.evidence}:{})})),
-      unresolved:unresolved.map(file=>file.path)
+      unresolved:unresolved.map(file=>file.path),
+      unresolvedGroups:Object.fromEntries(Object.entries(unresolvedGroups).sort(([a],[b])=>comparePath(a,b)))
     },
     folders:Object.fromEntries(Object.entries(folders).sort(([a],[b])=>comparePath(a,b))),
     policy:'public/assets/images contains web-delivery assets. Literal references are direct evidence; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission.'
