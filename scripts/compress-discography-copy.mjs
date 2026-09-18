@@ -34,6 +34,7 @@ const specific={
 for(const album of albums){
   let html=album.bodyTemplateHtml;
   html=html.replace(/\s*<div[^>]*class="[^"]*era-note[^"]*"[^>]*>[\s\S]*?<\/div>/g,'');
+  html=html.replace(/\s*<p[^>]*class="[^"]*era-note[^"]*"[^>]*>[\s\S]*?<\/p>/g,'');
   html=html.replace(/OFFICIAL ARCHIVE · (?:\d+ IMAGES|2029)/g,'ALBUM ARCHIVE');
   const edit=specific[album.id];
   if(edit){
