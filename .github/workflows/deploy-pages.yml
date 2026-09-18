@@ -12,32 +12,47 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Inspect image tools
-        run: |
-          command -v identify || true
-          command -v magick || true
-          command -v cwebp || true
-          command -v webpmux || true
-      - name: Report largest WebP images
+      - name: Report largest WebP images with dimensions
         run: |
           python3 - <<'PY'
-          import os, subprocess
+          import os, struct
+
+          def webp_size(path):
+              with open(path,'rb') as f:
+                  data=f.read(64)
+              if len(data)<30 or data[:4]!=b'RIFF' or data[8:12]!=b'WEBP': return (0,0)
+              kind=data[12:16]
+              if kind==b'VP8X' and len(data)>=30:
+                  w=1+int.from_bytes(data[24:27],'little')
+                  h=1+int.from_bytes(data[27:30],'little')
+                  return w,h
+              if kind==b'VP8 ':
+                  pos=data.find(b'\x9d\x01\x2a',20)
+                  if pos!=-1 and len(data)>=pos+7:
+                      w=int.from_bytes(data[pos+3:pos+5],'little') & 0x3fff
+                      h=int.from_bytes(data[pos+5:pos+7],'little') & 0x3fff
+                      return w,h
+              if kind==b'VP8L' and len(data)>=25 and data[20]==0x2f:
+                  bits=int.from_bytes(data[21:25],'little')
+                  w=(bits & 0x3fff)+1
+                  h=((bits>>14)&0x3fff)+1
+                  return w,h
+              return (0,0)
+
           rows=[]
           for root,_,files in os.walk('public/assets/images'):
               for f in files:
                   if not f.lower().endswith('.webp'): continue
                   p=os.path.join(root,f)
                   size=os.path.getsize(p)
-                  try:
-                      out=subprocess.check_output(['identify','-format','%w %h',p],text=True,stderr=subprocess.DEVNULL).strip()
-                      w,h=map(int,out.split())
-                  except Exception:
-                      w=h=0
+                  w,h=webp_size(p)
                   rows.append((size,w,h,p))
           rows.sort(reverse=True)
-          print('TOP 80 BYTES')
-          for size,w,h,p in rows[:80]: print(f'{size}\t{w}x{h}\t{p}')
-          print('\nTOP 80 PIXELS')
-          rows2=sorted(rows,key=lambda x:x[1]*x[2],reverse=True)
-          for size,w,h,p in rows2[:80]: print(f'{w*h}\t{w}x{h}\t{size}\t{p}')
+          print('TOP 100 BYTES')
+          for size,w,h,p in rows[:100]: print(f'{size}\t{w}x{h}\t{w*h}\t{p}')
+          print('\nTOP 100 PIXELS')
+          for size,w,h,p in sorted(rows,key=lambda x:x[1]*x[2],reverse=True)[:100]: print(f'{w*h}\t{w}x{h}\t{size}\t{p}')
+          print('\nOVERSIZED long-edge > 3000 and size > 150KB')
+          for size,w,h,p in sorted(rows,reverse=True):
+              if max(w,h)>3000 and size>150000: print(f'{size}\t{w}x{h}\t{p}')
           PY
