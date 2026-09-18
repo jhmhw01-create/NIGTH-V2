@@ -37,7 +37,7 @@ jobs:
           }
           fs.writeFileSync(travelPath, travel);
 
-          const retired = [
+          const removals = [
             'assets/images/gallery/full/phantom-b-doha.webp',
             'assets/images/gallery/full/phantom-b-group.webp',
             'assets/images/gallery/full/phantom-b-ihwan.webp',
@@ -62,16 +62,11 @@ jobs:
             'assets/images/vlog/taehoon/thumbs/reactions.webp',
             'assets/images/vlog/woohyun/thumbs/reactions.webp'
           ];
-          for (const p of retired) {
+          for (const p of removals) {
             const publicPath = `public/${p}`;
             if (!fs.existsSync(publicPath)) throw new Error(`Missing cleanup candidate: ${publicPath}`);
             fs.unlinkSync(publicPath);
           }
-
-          const retiredPath = 'maintenance/retired-media.json';
-          const record = JSON.parse(fs.readFileSync(retiredPath, 'utf8'));
-          record.retired = [...new Set([...record.retired, ...retired])];
-          fs.writeFileSync(retiredPath, `${JSON.stringify(record, null, 2)}\n`);
           NODE
       - name: Refresh media manifests
         run: npm run audit:media:update
@@ -87,7 +82,9 @@ jobs:
           test -s dist/travel.html
           test -s dist/assets/css/style.css
       - name: Restore normal deploy workflow
-        run: git show HEAD^:.github/workflows/deploy-pages.yml > .github/workflows/deploy-pages.yml
+        run: |
+          git fetch origin main --depth=1
+          git checkout FETCH_HEAD -- .github/workflows/deploy-pages.yml
       - name: Commit verified cleanup
         run: |
           git config user.name "github-actions[bot]"
