@@ -18,3 +18,9 @@ test('LISTEN keeps thirteen native audio players', () => {
   const count = (page.contentHtml.match(/<audio\b/g) || []).length;
   assert.equal(count, 13);
 });
+
+test('LISTEN hides native download controls on all thirteen players', () => {
+  const tags = page.contentHtml.match(/<audio\b[^>]*>/g) || [];
+  assert.equal(tags.length, 13);
+  assert.ok(tags.every(tag => tag.includes('controlsList=\"nodownload\"')));
+});
