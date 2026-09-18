@@ -189,11 +189,13 @@
       "runtimeReferences": [
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "nightmare-2029.html"
       ],
       "buildReferences": [
         "src/pages/luna5.json",
         "src/pages/luna6.json",
+        "src/pages/luna7.json",
         "src/pages/nightmare-2029.json"
       ]
     },
@@ -287,6 +289,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
@@ -375,6 +378,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
@@ -436,6 +440,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "season-greetings-2027.html",
         "season-greetings-2028.html",
         "season-greetings-2029.html"
@@ -695,6 +700,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
@@ -772,6 +778,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
@@ -870,6 +877,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
@@ -929,6 +937,7 @@
         "src/pages/luna4.json",
         "src/pages/luna5.json",
         "src/pages/luna6.json",
+        "src/pages/luna7.json",
         "src/pages/member-doha.json",
         "src/pages/member-ihwan.json",
         "src/pages/member-jiwoo.json",
@@ -984,6 +993,7 @@
         "luna4.html",
         "luna5.html",
         "luna6.html",
+        "luna7.html",
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
