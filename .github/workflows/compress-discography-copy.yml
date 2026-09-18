@@ -27,4 +27,4 @@ jobs:
           git add src/pages/discography.json src/data/albums.json
           git commit -m "Compress DISCOGRAPHY copy" || exit 0
           git push
-# rerun after broader ERA NOTE cleanup
+# rerun after paragraph ERA NOTE cleanup
