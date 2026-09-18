@@ -13,6 +13,8 @@
 - `unused-media-candidates.json`: 현재 소스와 인식 가능한 동적 경로에서 사용 근거를 찾지 못해 사람이 재검토한 미사용 후보를 기능별로 기록합니다. 이 목록 자체는 자동 삭제 허가가 아닙니다.
 - `web-media-manifest.json`: 현재 `public/assets`에 배포되는 전체 미디어의 개수·용량·집계 SHA-256 지문입니다.
 - `image-audit.json`: 현재 배포 이미지의 크기·참조 상태·중복 여부를 기록합니다.
+- `legacy-asset-audit.json`: `public/assets/css`와 `public/assets/js`의 실제 생성 HTML 런타임 참조, 빌드 입력 참조, 미해결 후보를 기록합니다.
+- `unused-legacy-assets.json`: 생성 HTML에도 없고 `src`/`scripts`의 빌드 입력 근거도 없는 레거시 CSS/JS 후보를 기록합니다. 이 목록 역시 자동 삭제 허가가 아닙니다.
 
 ## 이미지 교체 절차
 
@@ -52,6 +54,18 @@ npm run build
 
 MD Store는 `public/assets/js/md-store.js`의 `mdPath('...')`가 `assets/images/md/full/...` 경로를 만들고, React Store의 `thumbPath()`가 `/full/`을 `/thumbs/`로 바꿔 목록·장바구니 썸네일을 생성합니다. 따라서 두 생성식에서 근거가 확인된 MD 이미지는 `md-store-generator` 또는 `md-store-thumbnail-generator`로 `known-dynamic` 처리합니다.
 
+## 레거시 CSS/JS 참조 상태
+
+`legacy-asset-audit.json`은 `public/assets/css`와 `public/assets/js`의 전달 자산을 세 상태로 구분합니다.
+
+- `runtime`: React 프리렌더가 끝난 **실제 생성 HTML**에서 해당 CSS/JS 경로가 로드되는 경우입니다. 복사되어 남아 있는 다른 레거시 파일의 문자열은 사용 근거로 세지 않습니다.
+- `build-input`: 생성 HTML에서는 로드하지 않지만 `src` 또는 `scripts`가 현재 빌드 데이터/입력으로 직접 사용하는 자산입니다. 테스트 코드의 문자열 언급만으로는 사용 근거로 인정하지 않습니다.
+- `unresolved`: 생성 HTML 런타임 참조도 없고 현재 빌드 입력 근거도 없는 자산입니다. 삭제 허가가 아니라 별도 검토 후보입니다.
+
+현재 React 구조에서 `md-store.js`, `night-collections-data.js`, `vlog.js`는 브라우저 런타임 스크립트가 아니라 빌드 입력으로 유지됩니다. 반대로 `unused-legacy-assets.json`에는 런타임·빌드 입력 근거가 모두 없는 레거시 JS만 기록합니다.
+
+`npm run build`는 사이트 링크 감사 뒤 `legacy-asset-audit.json`을 현재 생성 결과와 대조합니다. 분류가 달라지면 빌드가 실패하므로, React 전환이나 상세 페이지 정리로 CSS/JS 사용 상태가 변할 때 매니페스트 검토 없이 조용히 상태가 바뀌지 않습니다.
+
 ## 검증 원칙
 
 - `npm run audit:media`는 현재 배포 파일의 바이트 수와 SHA-256이 매니페스트와 같은지 확인합니다.
@@ -61,6 +75,7 @@ MD Store는 `public/assets/js/md-store.js`의 `mdPath('...')`가 `assets/images/
 - 신규 변환본은 원본과 WebP의 픽셀 크기가 같은지 확인해 의도하지 않은 리사이즈를 막습니다. 이전부터 있던 WebP를 재사용한 경우에는 원본·배포본 크기를 각각 기록합니다.
 - `image-audit.json`의 `unresolved`는 삭제 허가가 아닙니다. JavaScript 경로 조합과 `full`/`thumbs` 규칙을 확인한 뒤 상태를 판단합니다.
 - `unused-media-candidates.json`은 현재 `unresolved`와 일치하도록 테스트합니다. 새 unresolved가 생기면 목록 검토 없이 조용히 섞이지 않도록 합니다.
+- `unused-legacy-assets.json`은 `legacy-asset-audit.json`의 `unresolved`와 정확히 일치하도록 테스트합니다. CSS가 unresolved가 되거나 public JS가 다시 런타임에서 로드되면 테스트가 실패합니다.
 - 원본 파일을 교체하거나 새 변환을 추가할 때는 기존 매니페스트 값을 덮어쓰지 말고 새 원본 버전과 변환 이력을 명시적으로 남깁니다.
 
 원본 파일이 필요할 때는 외부 보관소에서 SHA-256을 대조해 가져옵니다. 보관용 PNG를 복구 목적으로 `public`에 복사하지 않습니다.
