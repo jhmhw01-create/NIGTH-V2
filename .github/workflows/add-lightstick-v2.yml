@@ -1,0 +1,37 @@
+name: Add MOONLIGHT VER.2
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/add-lightstick-v2.yml'
+permissions:
+  contents: write
+jobs:
+  integrate-v2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node scripts/add-lightstick-v2.mjs
+      - run: npm run audit:media:update
+      - run: npm test
+      - run: npm run audit:media
+      - run: npm run build
+      - name: Verify V2 output
+        run: |
+          test -s dist/store.html
+          test -s dist/fanclub.html
+          grep -q 'MOONLIGHT VER.2' dist/store.html
+          grep -q 'LUNA ORBIT' dist/fanclub.html
+          grep -q 'night-lightstick-v2-12-detail-view.webp' dist/assets/js/md-store.js
+      - name: Commit V2 integration
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/js/md-store.js src/pages/fanclub.json tests/store-medley.test.mjs maintenance
+          git commit -m "Add MOONLIGHT VER.2 to store and fanclub" || exit 0
+          git push
