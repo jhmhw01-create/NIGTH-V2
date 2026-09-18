@@ -26,18 +26,20 @@ jobs:
         run: npm test
       - name: Verify media manifests
         run: npm run audit:media
-      - name: Build
+      - name: Refresh legacy asset audit
+        run: UPDATE_LEGACY_ASSET_AUDIT=1 npm run build
+      - name: Build with reviewed audits
         run: npm run build
       - name: Verify LUNA 7 output
         run: |
           test -s dist/luna7.html
           grep -q 'MIDNIGHT OBSERVATORY' dist/luna7.html
           grep -q 'luna7.html' dist/fanclub.html
-      - name: Commit refreshed manifests
+      - name: Commit refreshed audits
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add maintenance/web-media-manifest.json maintenance/image-audit.json
+          git add maintenance/web-media-manifest.json maintenance/image-audit.json maintenance/legacy-asset-audit.json
           git diff --cached --quiet && exit 0
-          git commit -m "Refresh media manifests for LUNA 7th"
+          git commit -m "Refresh audits for LUNA 7th"
           git push origin HEAD:audit/luna7-membership-page
