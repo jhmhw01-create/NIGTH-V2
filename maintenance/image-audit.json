@@ -2,29 +2,43 @@
   "schemaVersion": 2,
   "summary": {
     "images": 1829,
-    "bytes": 164687506,
-    "exactDuplicateGroups": 1,
+    "bytes": 164878356,
+    "exactDuplicateGroups": 4,
     "literalReferenceFound": 1546,
     "dynamicReviewRequired": 283,
-    "emptyFiles": 4
+    "emptyFiles": 0
   },
   "duplicates": [
     {
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sha256": "4e3cdbb6cf6388edce290eaffc9d5d7531c171a8d573eef55a2f9943e47314c9",
       "paths": [
         "assets/images/travel/full/04-private-flight.webp",
+        "assets/images/travel/thumbs/04-private-flight.webp"
+      ]
+    },
+    {
+      "sha256": "6e19bec45bc4e78d19c6125bbc0b13af9dfeee64ffec8bf219c8d456381d5b7b",
+      "paths": [
         "assets/images/travel/full/12-mad-tea-party.webp",
+        "assets/images/travel/thumbs/12-mad-tea-party.webp"
+      ]
+    },
+    {
+      "sha256": "3e7334b9518064e014346ee6210b5b954ec53d25a60a0616f74acda688421003",
+      "paths": [
         "assets/images/travel/full/20-las-vegas-together.webp",
-        "assets/images/travel/full/28-hotel-checkout.webp"
+        "assets/images/travel/thumbs/20-las-vegas-together.webp"
+      ]
+    },
+    {
+      "sha256": "d8c8d176abacbb2c19add1f56afd7ff2c704c9dcbcfce18a8dcf77a3263b0a2a",
+      "paths": [
+        "assets/images/travel/full/28-hotel-checkout.webp",
+        "assets/images/travel/thumbs/28-hotel-checkout.webp"
       ]
     }
   ],
-  "emptyFiles": [
-    "assets/images/travel/full/04-private-flight.webp",
-    "assets/images/travel/full/12-mad-tea-party.webp",
-    "assets/images/travel/full/20-las-vegas-together.webp",
-    "assets/images/travel/full/28-hotel-checkout.webp"
-  ],
+  "emptyFiles": [],
   "folders": {
     "assets/images": {
       "files": 16,
@@ -272,7 +286,7 @@
     },
     "assets/images/travel/full": {
       "files": 31,
-      "bytes": 4300522
+      "bytes": 4491372
     },
     "assets/images/travel/thumbs": {
       "files": 31,
