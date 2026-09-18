@@ -17,6 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/add-about-night-page.mjs
+      - run: node scripts/update-about-night-tests.mjs
       - run: npm run audit:media:update
       - run: npm test
       - run: npm run audit:media
@@ -31,6 +32,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/pages/about-night.json src/components/layout.mjs src/react/routes.mjs src/react/App.jsx src/react/HomePage.jsx src/data/archive.json maintenance
+          git add src/pages/about-night.json src/components/layout.mjs src/react/routes.mjs src/react/App.jsx src/react/HomePage.jsx src/data/archive.json tests maintenance
           git commit -m "Add ABOUT NIGHT group profile" || exit 0
           git push
