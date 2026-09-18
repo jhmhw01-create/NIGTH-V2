@@ -34,7 +34,7 @@ test('HTML-escaped ampersands still count as literal media references',async()=>
   const audit=JSON.parse(await readFile(new URL('../maintenance/image-audit.json',import.meta.url),'utf8'));
   assert.ok(!audit.dynamicReferences.unresolved.includes('assets/images/night-off-summer/NIGHT OFF SUMMER-DAY 1-TAEHOON&WOOHYUN.webp'));
   assert.ok(!Object.hasOwn(audit.dynamicReferences.unresolvedGroups,'night-off-summer'));
-  assert.equal(audit.summary.dynamicReviewRequired,19);
+  assert.equal(audit.summary.dynamicReviewRequired,0);
 });
 
 test('reviewed unused-media candidates exactly match current unresolved media',async()=>{
@@ -43,7 +43,7 @@ test('reviewed unused-media candidates exactly match current unresolved media',a
   const listed=Object.values(candidates.groups).flatMap(group=>group.paths).sort();
   const unresolved=[...audit.dynamicReferences.unresolved].sort();
   assert.deepEqual(listed,unresolved);
-  assert.equal(listed.length,19);
+  assert.equal(listed.length,0);
 });
 
 test('media policy keeps archival originals outside the deployed site',async()=>{

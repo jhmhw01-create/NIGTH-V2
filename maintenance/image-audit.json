@@ -1,44 +1,15 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 1829,
-    "bytes": 164878356,
-    "exactDuplicateGroups": 4,
-    "literalReferenceFound": 1550,
+    "images": 1806,
+    "bytes": 162184818,
+    "exactDuplicateGroups": 0,
+    "literalReferenceFound": 1546,
     "knownDynamic": 260,
-    "dynamicReviewRequired": 19,
+    "dynamicReviewRequired": 0,
     "emptyFiles": 0
   },
-  "duplicates": [
-    {
-      "sha256": "4e3cdbb6cf6388edce290eaffc9d5d7531c171a8d573eef55a2f9943e47314c9",
-      "paths": [
-        "assets/images/travel/full/04-private-flight.webp",
-        "assets/images/travel/thumbs/04-private-flight.webp"
-      ]
-    },
-    {
-      "sha256": "6e19bec45bc4e78d19c6125bbc0b13af9dfeee64ffec8bf219c8d456381d5b7b",
-      "paths": [
-        "assets/images/travel/full/12-mad-tea-party.webp",
-        "assets/images/travel/thumbs/12-mad-tea-party.webp"
-      ]
-    },
-    {
-      "sha256": "3e7334b9518064e014346ee6210b5b954ec53d25a60a0616f74acda688421003",
-      "paths": [
-        "assets/images/travel/full/20-las-vegas-together.webp",
-        "assets/images/travel/thumbs/20-las-vegas-together.webp"
-      ]
-    },
-    {
-      "sha256": "d8c8d176abacbb2c19add1f56afd7ff2c704c9dcbcfce18a8dcf77a3263b0a2a",
-      "paths": [
-        "assets/images/travel/full/28-hotel-checkout.webp",
-        "assets/images/travel/thumbs/28-hotel-checkout.webp"
-      ]
-    }
-  ],
+  "duplicates": [],
   "emptyFiles": [],
   "dynamicReferences": {
     "known": [
@@ -1229,54 +1200,8 @@
         "reason": "vlog-scene-generator"
       }
     ],
-    "unresolved": [
-      "assets/images/gallery/full/phantom-b-doha.webp",
-      "assets/images/gallery/full/phantom-b-group.webp",
-      "assets/images/gallery/full/phantom-b-ihwan.webp",
-      "assets/images/gallery/full/phantom-b-jiwoo.webp",
-      "assets/images/gallery/full/phantom-b-taehoon.webp",
-      "assets/images/gallery/full/phantom-b-woohyun.webp",
-      "assets/images/gallery/thumbs/phantom-b-doha.webp",
-      "assets/images/gallery/thumbs/phantom-b-group.webp",
-      "assets/images/gallery/thumbs/phantom-b-ihwan.webp",
-      "assets/images/gallery/thumbs/phantom-b-jiwoo.webp",
-      "assets/images/gallery/thumbs/phantom-b-taehoon.webp",
-      "assets/images/gallery/thumbs/phantom-b-woohyun.webp",
-      "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
-      "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp",
-      "assets/images/vlog/doha/thumbs/reactions.webp",
-      "assets/images/vlog/ihwan/thumbs/reactions.webp",
-      "assets/images/vlog/jiwoo/thumbs/reactions.webp",
-      "assets/images/vlog/taehoon/thumbs/reactions.webp",
-      "assets/images/vlog/woohyun/thumbs/reactions.webp"
-    ],
-    "unresolvedGroups": {
-      "gallery/phantom-b": [
-        "assets/images/gallery/full/phantom-b-doha.webp",
-        "assets/images/gallery/full/phantom-b-group.webp",
-        "assets/images/gallery/full/phantom-b-ihwan.webp",
-        "assets/images/gallery/full/phantom-b-jiwoo.webp",
-        "assets/images/gallery/full/phantom-b-taehoon.webp",
-        "assets/images/gallery/full/phantom-b-woohyun.webp",
-        "assets/images/gallery/thumbs/phantom-b-doha.webp",
-        "assets/images/gallery/thumbs/phantom-b-group.webp",
-        "assets/images/gallery/thumbs/phantom-b-ihwan.webp",
-        "assets/images/gallery/thumbs/phantom-b-jiwoo.webp",
-        "assets/images/gallery/thumbs/phantom-b-taehoon.webp",
-        "assets/images/gallery/thumbs/phantom-b-woohyun.webp"
-      ],
-      "md/lightstick-v2": [
-        "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
-        "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp"
-      ],
-      "vlog/reaction-thumbnails": [
-        "assets/images/vlog/doha/thumbs/reactions.webp",
-        "assets/images/vlog/ihwan/thumbs/reactions.webp",
-        "assets/images/vlog/jiwoo/thumbs/reactions.webp",
-        "assets/images/vlog/taehoon/thumbs/reactions.webp",
-        "assets/images/vlog/woohyun/thumbs/reactions.webp"
-      ]
-    }
+    "unresolved": [],
+    "unresolvedGroups": {}
   },
   "folders": {
     "assets/images": {
@@ -1456,12 +1381,12 @@
       "bytes": 604738
     },
     "assets/images/gallery/full": {
-      "files": 70,
-      "bytes": 7881874
+      "files": 64,
+      "bytes": 6216614
     },
     "assets/images/gallery/thumbs": {
-      "files": 70,
-      "bytes": 3073748
+      "files": 64,
+      "bytes": 2497026
     },
     "assets/images/luna4": {
       "files": 33,
@@ -1488,8 +1413,8 @@
       "bytes": 824228
     },
     "assets/images/md/lightstick-v2": {
-      "files": 12,
-      "bytes": 1430138
+      "files": 10,
+      "bytes": 1276704
     },
     "assets/images/md/thumbs": {
       "files": 49,
@@ -1524,8 +1449,8 @@
       "bytes": 3301332
     },
     "assets/images/travel/full": {
-      "files": 31,
-      "bytes": 4491372
+      "files": 27,
+      "bytes": 4300522
     },
     "assets/images/travel/thumbs": {
       "files": 31,
@@ -1540,24 +1465,24 @@
       "bytes": 930704
     },
     "assets/images/vlog/doha/thumbs": {
-      "files": 8,
-      "bytes": 182772
+      "files": 7,
+      "bytes": 160398
     },
     "assets/images/vlog/ihwan/full": {
       "files": 10,
       "bytes": 1310300
     },
     "assets/images/vlog/ihwan/thumbs": {
-      "files": 10,
-      "bytes": 269194
+      "files": 9,
+      "bytes": 242826
     },
     "assets/images/vlog/jiwoo/full": {
       "files": 11,
       "bytes": 739586
     },
     "assets/images/vlog/jiwoo/thumbs": {
-      "files": 11,
-      "bytes": 148646
+      "files": 10,
+      "bytes": 131118
     },
     "assets/images/vlog/night/full": {
       "files": 14,
@@ -1572,16 +1497,16 @@
       "bytes": 1067490
     },
     "assets/images/vlog/taehoon/thumbs": {
-      "files": 10,
-      "bytes": 185092
+      "files": 9,
+      "bytes": 164218
     },
     "assets/images/vlog/woohyun/full": {
       "files": 8,
       "bytes": 844194
     },
     "assets/images/vlog/woohyun/thumbs": {
-      "files": 8,
-      "bytes": 144496
+      "files": 7,
+      "bytes": 124368
     }
   },
   "policy": "public/assets/images contains web-delivery assets. Literal references include normalized HTML entities; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission."

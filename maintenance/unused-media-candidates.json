@@ -1,41 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "reviewed-unused-candidates",
-  "policy": "These paths have no current source or recognized dynamic reference. They are candidates for a separate retirement/removal change, not automatic deletion permission.",
-  "groups": {
-    "gallery/phantom-b": {
-      "reason": "PHANTOM B full/thumb variants are absent from the current gallery route and no source or recognized dynamic generator references them.",
-      "paths": [
-        "assets/images/gallery/full/phantom-b-doha.webp",
-        "assets/images/gallery/full/phantom-b-group.webp",
-        "assets/images/gallery/full/phantom-b-ihwan.webp",
-        "assets/images/gallery/full/phantom-b-jiwoo.webp",
-        "assets/images/gallery/full/phantom-b-taehoon.webp",
-        "assets/images/gallery/full/phantom-b-woohyun.webp",
-        "assets/images/gallery/thumbs/phantom-b-doha.webp",
-        "assets/images/gallery/thumbs/phantom-b-group.webp",
-        "assets/images/gallery/thumbs/phantom-b-ihwan.webp",
-        "assets/images/gallery/thumbs/phantom-b-jiwoo.webp",
-        "assets/images/gallery/thumbs/phantom-b-taehoon.webp",
-        "assets/images/gallery/thumbs/phantom-b-woohyun.webp"
-      ]
-    },
-    "md/lightstick-v2": {
-      "reason": "Package contents/open images 08 and 09 are not included in the current MD product image arrays and have no other current source reference.",
-      "paths": [
-        "assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp",
-        "assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp"
-      ]
-    },
-    "vlog/reaction-thumbnails": {
-      "reason": "The VLOG reaction renderer uses full/reactions.webp directly; the five thumbs/reactions.webp files have no current source or recognized dynamic reference.",
-      "paths": [
-        "assets/images/vlog/doha/thumbs/reactions.webp",
-        "assets/images/vlog/ihwan/thumbs/reactions.webp",
-        "assets/images/vlog/jiwoo/thumbs/reactions.webp",
-        "assets/images/vlog/taehoon/thumbs/reactions.webp",
-        "assets/images/vlog/woohyun/thumbs/reactions.webp"
-      ]
-    }
-  }
+  "status": "reviewed-unused-candidates-cleared",
+  "policy": "Current reviewed unresolved-media queue. It is empty after the verified September 2026 cleanup; future unresolved paths require a new review before removal.",
+  "groups": {}
 }
