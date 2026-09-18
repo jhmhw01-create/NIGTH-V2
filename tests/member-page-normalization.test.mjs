@@ -1,40 +1,53 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
-import {fileURLToPath} from 'node:url';
-import {normalizeMemberPage, currentMemberPortraits} from '../scripts/member-page-normalization.mjs';
+import {access,readFile} from 'node:fs/promises';
 
-const legacyPortraits = {
-  'member-doha.html': 'assets/images/doha.webp',
-  'member-woohyun.html': 'assets/images/woohyun.webp',
-  'member-jiwoo.html': 'assets/images/jiwoo.webp',
-  'member-ihwan.html': 'assets/images/ihwan.webp'
+const root=new URL('../',import.meta.url);
+const members={
+  'member-doha.json':['member-doha.webp','윤도하'],
+  'member-woohyun.json':['member-woohyun.webp','성우현'],
+  'member-jiwoo.json':['member-jiwoo.webp','천지우'],
+  'member-ihwan.json':['member-ihwan.webp','박이환'],
+  'member-taehoon.json':['member-taehoon.webp','유태훈']
 };
 
-test('legacy portraits for the first four current members are normalized before rendering', () => {
-  for (const [route, legacy] of Object.entries(legacyPortraits)) {
-    const page = normalizeMemberPage({route, contentHtml: `<img src="${legacy}">`});
-    assert.match(page.contentHtml, new RegExp(currentMemberPortraits[route].replaceAll('.', '\\.')));
-    assert.doesNotMatch(page.contentHtml, new RegExp(legacy.replaceAll('.', '\\.')));
+test('member profile sources are canonical without runtime normalization',async()=>{
+  for(const [file,[image,alt]] of Object.entries(members)){
+    const page=JSON.parse(await readFile(new URL('src/pages/'+file,root),'utf8'));
+    assert.match(page.contentHtml,new RegExp('<img alt="'+alt+'" src="assets/images/'+image.replaceAll('.','\\.')+'" width="1122" height="1402"\\/>'));
+    assert.doesNotMatch(page.contentHtml,/<dt>AGE<\/dt>|class="member-meta">[^<]* · \d+/);
   }
 });
 
-test('TAEHOON profile is canonical in authored source', async () => {
-  const root = fileURLToPath(new URL('../', import.meta.url));
-  const source = JSON.parse(await readFile(root + 'src/pages/member-taehoon.json', 'utf8'));
-  assert.equal(source.route, 'member-taehoon.html');
-  assert.match(source.contentHtml, /assets\/images\/member-taehoon\.webp/);
-  assert.match(source.contentHtml, /외동 \(어릴 때부터 옆집 누나와 함께 자람\)/);
-  assert.match(source.contentHtml, /옆집 누나와 자주 어울려 자라/);
-  assert.doesNotMatch(source.contentHtml, /특정한 성장 배경 때문에 만들어진 것이 아니라/);
+test('legacy member portrait paths are absent from canonical sources',async()=>{
+  const source=await Promise.all(Object.keys(members).map(file=>readFile(new URL('src/pages/'+file,root),'utf8')));
+  const joined=source.join('\n');
+  for(const legacy of ['assets/images/doha.webp','assets/images/woohyun.webp','assets/images/jiwoo.webp','assets/images/ihwan.webp'])assert(!joined.includes(legacy));
 });
 
-test('canonical TAEHOON pages do not require normalization', () => {
-  const page = {route: 'member-taehoon.html', contentHtml: '<p>canonical</p>'};
-  assert.equal(normalizeMemberPage(page), page);
+test('TAEHOON public profile excludes private setting while preserving public traits',async()=>{
+  const source=JSON.parse(await readFile(new URL('src/pages/member-taehoon.json',root),'utf8')).contentHtml;
+  assert.match(source,/<dt>FAMILY<\/dt><dd>부모님 · 외동<\/dd>/);
+  assert.match(source,/친구가 많은 편이며/);
+  assert.doesNotMatch(source,/옆집 누나|소꿉친구|짝사랑|연상의 여성/);
 });
 
-test('non-member pages remain untouched', () => {
-  const page = {route: 'notice.html', contentHtml: '<p>unchanged</p>'};
-  assert.equal(normalizeMemberPage(page), page);
+test('home authored fallback does not duplicate the React home',async()=>{
+  const source=JSON.parse(await readFile(new URL('src/pages/index.json',root),'utf8'));
+  assert.equal(source.contentHtml,'');
+});
+
+test('React build has no dependency on removed member normalization',async()=>{
+  const source=await readFile(new URL('scripts/build-react.mjs',root),'utf8');
+  assert.doesNotMatch(source,/member-page-normalization|normalizeMemberPage/);
+});
+
+test('stale nested source snapshots stay removed',async()=>{
+  for(const path of [
+    'scripts/src/data/archive.json',
+    'scripts/src/data/contentsEntries.json',
+    'scripts/src/pages/contents.json',
+    'scripts/src/pages/night-off-summer.json',
+    'scripts/src/react/routes.mjs'
+  ])await assert.rejects(access(new URL(path,root)));
 });

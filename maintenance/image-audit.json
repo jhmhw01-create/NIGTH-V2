@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
   "summary": {
-    "images": 1811,
-    "bytes": 162632106,
+    "images": 1833,
+    "bytes": 164565420,
     "exactDuplicateGroups": 1,
-    "literalReferenceFound": 1530,
-    "dynamicReviewRequired": 281,
+    "literalReferenceFound": 1536,
+    "dynamicReviewRequired": 297,
     "emptyFiles": 4
   },
   "duplicates": [
@@ -117,6 +117,10 @@
     "assets/images/2029/rest": {
       "files": 2,
       "bytes": 205516
+    },
+    "assets/images/2029/season-greetings": {
+      "files": 22,
+      "bytes": 1933314
     },
     "assets/images/behind/additions/full": {
       "files": 11,
