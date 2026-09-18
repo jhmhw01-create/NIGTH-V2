@@ -45,7 +45,9 @@ npm run build
 - `known-dynamic`: 전체 경로가 문자 그대로는 없지만, 코드에 명시된 경로 생성식이 있거나 literal로 참조되는 `full`/`thumbs` 대응 자산을 통해 사용 근거를 확인할 수 있는 이미지입니다.
 - `unresolved`: 위 두 근거를 찾지 못한 이미지입니다. 이 목록만 수동 참조 검토 대상이며, **미사용 또는 삭제 허가를 뜻하지 않습니다.**
 
-`summary.dynamicReviewRequired`는 이제 `unresolved` 개수만 의미합니다. 동적 사용 근거가 확인된 이미지는 `summary.knownDynamic`에 별도로 집계되며 `dynamicReferences.known`에 근거 유형과 함께 기록합니다.
+`summary.dynamicReviewRequired`는 `unresolved` 개수만 의미합니다. 동적 사용 근거가 확인된 이미지는 `summary.knownDynamic`에 별도로 집계되며 `dynamicReferences.known`에 근거 유형과 함께 기록합니다. `dynamicReferences.unresolvedGroups`는 남은 검토 대상을 기능/폴더 단위로 묶어 후속 검토 범위를 작게 유지합니다.
+
+MD Store는 `public/assets/js/md-store.js`의 `mdPath('...')`가 `assets/images/md/full/...` 경로를 만들고, React Store의 `thumbPath()`가 `/full/`을 `/thumbs/`로 바꿔 목록·장바구니 썸네일을 생성합니다. 따라서 두 생성식에서 근거가 확인된 MD 이미지는 `md-store-generator` 또는 `md-store-thumbnail-generator`로 `known-dynamic` 처리합니다.
 
 ## 검증 원칙
 
