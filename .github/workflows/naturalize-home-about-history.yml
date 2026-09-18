@@ -16,7 +16,7 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: node scripts/naturalize-home-about-history.mjs
+      - run: node scripts/naturalize-home-about-history-v2.mjs
       - run: npm test
       - run: npm run audit:media
       - run: npm run build
