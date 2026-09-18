@@ -19,4 +19,7 @@ test('current home photographs and functional destinations remain present',async
  assert(home.includes('function About()'));
  assert(home.includes('function Members()'));
  assert.match(home,/action="archive.html" role="search"/);assert.match(home,/name="q"/);assert.match(home,/2022\.11\.15/);
+ assert(home.includes('데뷔 초반 섹시 콘셉트와 강렬한 무대 장악력을 앞세워'));
+ assert(home.includes('Billboard Global Excl. U.S.에 처음 진입하며 빠르게 주목받았다.'));
+ assert(!home.includes('데뷔 초반 다크 섹시를 기반으로 한 음악과 키 비주얼'));
 });
