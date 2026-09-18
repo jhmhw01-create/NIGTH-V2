@@ -5,8 +5,8 @@
     "css": 46,
     "js": 18,
     "runtime": 46,
-    "buildInput": 3,
-    "unresolved": 15
+    "buildInput": 2,
+    "unresolved": 16
   },
   "groups": {
     "runtime": [
@@ -59,8 +59,7 @@
     ],
     "buildInput": [
       "assets/js/md-store.js",
-      "assets/js/night-collections-data.js",
-      "assets/js/vlog.js"
+      "assets/js/night-collections-data.js"
     ],
     "unresolved": [
       "assets/js/archive-2026.js",
@@ -77,7 +76,8 @@
       "assets/js/night-collections.js",
       "assets/js/notice-archive.js",
       "assets/js/season-2027.js",
-      "assets/js/travel.js"
+      "assets/js/travel.js",
+      "assets/js/vlog.js"
     ]
   },
   "records": [
@@ -97,8 +97,7 @@
         "wings-2028.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/albums-react.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -197,8 +196,7 @@
         "archive.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/archive-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -246,8 +244,7 @@
         "contents.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/contents-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -346,8 +343,7 @@
         "discography.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/discography-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -473,9 +469,7 @@
         "fanclub.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/fanclub-fashion.test.mjs",
-        "tests/fanclub-md-link.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -527,8 +521,7 @@
         "gallery.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/gallery-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -550,8 +543,7 @@
         "history.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/history-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -573,8 +565,7 @@
         "index.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/home-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -650,8 +641,7 @@
         "notice.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/notice-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -684,8 +674,7 @@
         "press.html"
       ],
       "buildReferences": [
-        "src/pages/press.json",
-        "tests/press-latest.test.mjs"
+        "src/pages/press.json"
       ]
     },
     {
@@ -751,8 +740,7 @@
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/readability.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -829,8 +817,7 @@
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/site-stability.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -851,8 +838,7 @@
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "tests/stage-detail-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -985,8 +971,7 @@
         "src/pages/vlog.json",
         "src/pages/wings-2028.json",
         "src/pages/with-luna.json",
-        "src/pages/year-end-awards-2026.json",
-        "tests/seo-head.test.mjs"
+        "src/pages/year-end-awards-2026.json"
       ]
     },
     {
@@ -1044,8 +1029,7 @@
       ],
       "buildReferences": [
         "scripts/build-react.mjs",
-        "scripts/tests/subpage-fashion.test.mjs",
-        "tests/subpage-fashion.test.mjs"
+        "scripts/tests/subpage-fashion.test.mjs"
       ]
     },
     {
@@ -1164,8 +1148,7 @@
       "status": "build-input",
       "runtimeReferences": [],
       "buildReferences": [
-        "scripts/photo-episodes.mjs",
-        "tests/collection-pages.test.mjs"
+        "scripts/photo-episodes.mjs"
       ]
     },
     {
@@ -1199,12 +1182,10 @@
     {
       "path": "assets/js/vlog.js",
       "type": "js",
-      "status": "build-input",
+      "status": "unresolved",
       "runtimeReferences": [],
-      "buildReferences": [
-        "tests/photo-players.test.mjs"
-      ]
+      "buildReferences": []
     }
   ],
-  "policy": "public CSS/JS is classified against generated dist output first, then repository build-source references. unresolved means no current runtime or build-input evidence and is a review candidate, not automatic deletion permission."
+  "policy": "public CSS/JS is classified by generated HTML runtime references first, then src/scripts build-source references. Tests and copied legacy files do not count as usage evidence. unresolved means no current runtime or build-input evidence and is a review candidate, not automatic deletion permission."
 }
