@@ -17,6 +17,7 @@ jobs:
           cache: npm
       - run: npm ci
       - run: node scripts/split-lightstick-v2-products.mjs
+      - run: npm run audit:media:update
       - run: npm test
       - run: npm run audit:media
       - run: npm run build
@@ -26,12 +27,13 @@ jobs:
           test -s dist/fanclub.html
           grep -q 'MOONLIGHT VER.2 Carry Case' dist/assets/js/md-store.js
           grep -q 'LUNA ORBIT Bag Charm' dist/assets/js/md-store.js
-          grep -q 'PRICE TBA' dist/assets/js/md-store.js
+          grep -q 'price:59000' dist/assets/js/md-store.js
+          grep -q 'price:29000' dist/assets/js/md-store.js
           grep -q 'ACCESSORIES SOLD SEPARATELY' dist/fanclub.html
       - name: Commit separated product structure
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/assets/js/md-store.js scripts/store-products.mjs src/react/store.mjs src/pages/fanclub.json tests/store-medley.test.mjs
+          git add public/assets/js/md-store.js src/pages/fanclub.json tests/store-medley.test.mjs maintenance
           git commit -m "Separate MOONLIGHT VER.2 accessories in store" || exit 0
           git push
