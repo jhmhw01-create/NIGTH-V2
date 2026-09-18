@@ -37,6 +37,18 @@ for (const [legacyRoute, canonicalRoute] of Object.entries(legacyMemberRedirects
   );
 }
 await cp(join(root,'public'),output,{recursive:true});
+const siteBase = 'https://jhmhw01-create.github.io/NIGTH-V2/';
+const sitemapUrls = [...routes].sort().map(route => route === 'index.html' ? siteBase : siteBase + route);
+await writeFile(
+  join(output,'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(url => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`,
+  'utf8'
+);
+await writeFile(
+  join(output,'robots.txt'),
+  `User-agent: *\nAllow: /\nSitemap: ${siteBase}sitemap.xml\n`,
+  'utf8'
+);
 const catalog = JSON.parse(await readFile(join(root,'src/data/archive.json'),'utf8'));
 await mkdir(join(output,'assets/data'),{recursive:true});
 await writeFile(join(output,'assets/data/archive-catalog.js'),'window.NightArchiveCatalog = ' + JSON.stringify(catalog) + ';\n');
