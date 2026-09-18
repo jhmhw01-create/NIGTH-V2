@@ -1,44 +1,64 @@
-name: Find large lossless WebP assets
+name: Verify exact-pixel hero optimization
 
 on:
   push:
     branches: [audit/image-size-optimization]
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  audit:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - name: Find lossless assets over 180KB
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install dependencies
+        run: npm ci
+      - name: Install WebP tools
         run: |
-          python3 - <<'PY'
-          import os, struct
-          def chunks(path):
-              out=[]
-              with open(path,'rb') as f:
-                  data=f.read()
-              if data[:4]!=b'RIFF' or data[8:12]!=b'WEBP': return out
-              pos=12
-              while pos+8<=len(data):
-                  typ=data[pos:pos+4]
-                  n=int.from_bytes(data[pos+4:pos+8],'little')
-                  out.append(typ.decode('ascii','replace'))
-                  pos += 8+n+(n&1)
-              return out
-          rows=[]
-          for root,_,files in os.walk('public/assets/images'):
-              for name in files:
-                  if not name.endswith('.webp'): continue
-                  p=os.path.join(root,name); size=os.path.getsize(p)
-                  if size<180000: continue
-                  cs=chunks(p)
-                  if 'VP8L' in cs:
-                      rows.append((size,p,','.join(cs)))
-          rows.sort(reverse=True)
-          print(f'COUNT={len(rows)}')
-          print(f'TOTAL_BYTES={sum(x[0] for x in rows)}')
-          for size,p,cs in rows: print(f'{size}\t{p}\t{cs}')
-          PY
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq webp
+      - name: Optimize hero with exact pixel preservation
+        run: |
+          set -euo pipefail
+          SRC=public/assets/images/home-hero-night.webp
+          BEFORE=$(stat -c%s "$SRC")
+          mkdir -p /tmp/webp-opt
+          dwebp "$SRC" -ppm -o /tmp/webp-opt/source.ppm >/dev/null 2>&1
+          cwebp -quiet -lossless -z 9 /tmp/webp-opt/source.ppm -o /tmp/webp-opt/optimized.webp
+          dwebp /tmp/webp-opt/optimized.webp -ppm -o /tmp/webp-opt/optimized.ppm >/dev/null 2>&1
+          cmp /tmp/webp-opt/source.ppm /tmp/webp-opt/optimized.ppm
+          AFTER=$(stat -c%s /tmp/webp-opt/optimized.webp)
+          test "$AFTER" -lt "$BEFORE"
+          cp /tmp/webp-opt/optimized.webp "$SRC"
+          echo "hero_before=$BEFORE" >> "$GITHUB_ENV"
+          echo "hero_after=$AFTER" >> "$GITHUB_ENV"
+          echo "Exact decoded pixels preserved: $BEFORE -> $AFTER bytes"
+      - name: Refresh media manifests
+        run: npm run audit:media:update
+      - name: Test
+        run: npm test
+      - name: Verify media manifests
+        run: npm run audit:media
+      - name: Build
+        run: npm run build
+      - name: Verify site output
+        run: |
+          test -s dist/index.html
+          test -s dist/contents.html
+          test -s dist/assets/css/style.css
+      - name: Restore normal deploy workflow
+        run: |
+          git show 8579abf6ac635f30a280f998355dfaeca27b613e:.github/workflows/deploy-pages.yml > .github/workflows/deploy-pages.yml
+      - name: Commit verified optimization
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/assets/images/home-hero-night.webp maintenance/web-media-manifest.json maintenance/image-audit.json .github/workflows/deploy-pages.yml
+          git commit -m "Optimize home hero without pixel changes"
+          git push origin HEAD:audit/image-size-optimization
