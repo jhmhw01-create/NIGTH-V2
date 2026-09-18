@@ -21,8 +21,8 @@ test('all 56 existing routes are covered exactly once by React',async()=>{
   assert.equal(reactRoutes.length,56);assert.equal(new Set(reactRoutes).size,56);
   assert.deepEqual([...reactRoutes].sort(),pages.filter(file=>file.endsWith('.json')).map(file=>file.replace('.json','.html')).sort());
 });
-test('all 37 products and their full/thumbnail images survive catalog conversion',async()=>{
-  assert.equal(products.length,37);assert.equal(productList(products,'all').length,37);
+test('all 38 products and their full/thumbnail images survive catalog conversion',async()=>{
+  assert.equal(products.length,38);assert.equal(productList(products,'all').length,38);
   for(const filter of ['featured','collectible','fashion','travel','tech'])assert.ok(productList(products,filter).every(product=>product.category.split(' ').includes(filter)));
   await Promise.all(products.flatMap(product=>product.images.flatMap(path=>[path,path.replace('/full/','/thumbs/')])).map(path=>access(new URL('public/'+path,root))));
   assert.throws(()=>parseStoreProducts('unknown'),/boundary/);

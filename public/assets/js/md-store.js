@@ -3,6 +3,21 @@ const members = ['DOHA', 'WOOHYUN', 'JIWOO', 'IHWAN', 'TAEHOON'];
 const allOption = ['ONE SIZE'];
 
 const mdProducts = [
+  {id:'moonlight-light-stick-v2',name:'MOONLIGHT VER.2 — LUNA ORBIT',category:'featured collectible',price:49000,images:[
+    'assets/images/md/lightstick-v2/night-lightstick-v2-11-off-on.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-01-light-modes.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-12-detail-view.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-09-package-open.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-08-package-contents.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-02-carry-case.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-10-wrist-strap.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-05-display-stand.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-06-mini-keyring.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-03-metal-pin.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-04-bag-charm.webp',
+    'assets/images/md/lightstick-v2/night-lightstick-v2-07-design-evolution.webp'
+  ],options:allOption,benefit:'VER.2 PACKAGE · WRIST STRAP · USER GUIDE / WARRANTY',desc:'달과 별의 궤도를 확장한 NIGHT 공식 응원봉 두 번째 버전 LUNA ORBIT. 더블 크리스털 글로브와 NIGHT STAR CORE, CRESCENT ORBIT 구조를 중심으로 VER.1의 NIGHT DNA를 이어간다.'},
+  {id:'moonlight-light-stick',name:'MOONLIGHT VER.1 — ORIGINAL CELESTIAL FORM',category:'featured collectible',price:49000,images:['assets/images/night-luna.webp'],options:allOption,desc:'NIGHT와 LUNA의 첫 공식 응원봉 MOONLIGHT. 크리스털 글로브 안의 초승달과 별, 보랏빛 광원으로 NIGHT의 밤하늘 아이덴티티를 완성한 오리지널 버전.'},
   {id:'moonlight-lamp',name:'MOONLIGHT Mood Lamp',category:'featured',price:49000,images:[mdPath('응원봉 무드등'),mdPath('무드등 구매 특전 멤버 손글씨카드')],options:allOption,benefit:'멤버 손글씨 카드 1종 랜덤 증정',desc:'MOONLIGHT 응원봉의 보랏빛을 일상 공간에서 즐기는 무드등.'},
   {id:'night-cushion',name:'NIGHT Character Cushion',category:'featured',price:39000,images:[mdPath('NIGHT 쿠션')],options:members,desc:'NIGHT 멤버 비주얼을 담은 포근한 캐릭터 쿠션.'},
   {id:'charging-mat',name:'Desk Mat + Wireless Charger',category:'featured tech',price:45000,images:[mdPath('데스크매트+무선충전')],options:allOption,desc:'데스크매트와 무선 충전 기능을 결합한 NIGHT 데스크 아이템.'},
