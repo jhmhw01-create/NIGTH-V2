@@ -42,7 +42,7 @@ jobs:
       - name: Verify media manifests
         run: npm run audit:media
       - name: Build
-        run: npm run build
+        run: UPDATE_LEGACY_ASSET_AUDIT=1 npm run build
       - name: Verify site output
         run: |
           test -s dist/index.html
