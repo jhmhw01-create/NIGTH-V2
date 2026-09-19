@@ -1,1 +1,123 @@
 .home-search-entry{margin:0 0 24px}
+
+/* Home interaction pass 02 — restrained editorial motion. */
+@media (hover:hover) and (pointer:fine){
+  body[data-night-surface="home"] .member-card{
+    position:relative;
+    isolation:isolate;
+  }
+  body[data-night-surface="home"] .member-card img{
+    transition:transform .65s cubic-bezier(.2,.72,.2,1),filter .65s ease,opacity .65s ease;
+    transform-origin:center 42%;
+  }
+  body[data-night-surface="home"] .member-card .member-info{
+    transition:transform .5s cubic-bezier(.2,.72,.2,1),border-color .4s ease;
+  }
+  body[data-night-surface="home"] .member-card .member-role,
+  body[data-night-surface="home"] .member-card .member-eng{
+    transition:color .35s ease,opacity .35s ease;
+  }
+  body[data-night-surface="home"] .member-card:hover img,
+  body[data-night-surface="home"] .member-card:focus-visible img{
+    transform:translateY(-5px) scale(1.012);
+    filter:contrast(1.025) brightness(1.035);
+  }
+  body[data-night-surface="home"] .member-card:hover .member-info,
+  body[data-night-surface="home"] .member-card:focus-visible .member-info{
+    transform:translateY(-4px);
+    border-color:rgba(238,234,226,.58);
+  }
+  body[data-night-surface="home"] .member-card:hover .member-role,
+  body[data-night-surface="home"] .member-card:hover .member-eng,
+  body[data-night-surface="home"] .member-card:focus-visible .member-role,
+  body[data-night-surface="home"] .member-card:focus-visible .member-eng{
+    color:#ddd7ce;
+  }
+
+  /* The latest-release artwork gets a faint fashion-showroom reflection. */
+  body[data-night-surface="home"] .phantom-scheduler-card{
+    transition:transform .7s cubic-bezier(.2,.72,.2,1);
+  }
+  body[data-night-surface="home"] .phantom-scheduler-card img{
+    -webkit-box-reflect:below 1px linear-gradient(transparent 72%,rgba(255,255,255,.10));
+    transition:transform .7s cubic-bezier(.2,.72,.2,1),filter .55s ease;
+  }
+  body[data-night-surface="home"] .phantom-scheduler-card:hover,
+  body[data-night-surface="home"] .phantom-scheduler-card:focus-visible{
+    transform:translateY(-5px);
+  }
+  body[data-night-surface="home"] .phantom-scheduler-card:hover img,
+  body[data-night-surface="home"] .phantom-scheduler-card:focus-visible img{
+    transform:scale(1.008);
+    filter:brightness(1.025) contrast(1.02);
+  }
+
+  /* Archive rows behave like quiet editorial index entries rather than cards. */
+  body[data-night-surface="home"] .home-archive-card{
+    transition:border-color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1);
+  }
+  body[data-night-surface="home"] .home-archive-card .archive-no,
+  body[data-night-surface="home"] .home-archive-card small,
+  body[data-night-surface="home"] .home-archive-card p,
+  body[data-night-surface="home"] .home-archive-card strong{
+    transition:color .35s ease,opacity .35s ease,transform .45s cubic-bezier(.2,.72,.2,1);
+  }
+  body[data-night-surface="home"] .home-archive-card h3{
+    transition:color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1),letter-spacing .5s ease;
+  }
+  body[data-night-surface="home"] .home-archive-card:hover,
+  body[data-night-surface="home"] .home-archive-card:focus-visible{
+    transform:translateX(6px);
+    border-color:rgba(238,234,226,.62);
+  }
+  body[data-night-surface="home"] .home-archive-card:hover h3,
+  body[data-night-surface="home"] .home-archive-card:focus-visible h3{
+    transform:translateX(4px);
+    letter-spacing:.008em;
+  }
+  body[data-night-surface="home"] .home-archive-card:hover strong,
+  body[data-night-surface="home"] .home-archive-card:focus-visible strong{
+    transform:translateX(5px);
+    color:var(--text);
+  }
+  body[data-night-surface="home"] .home-era-shortcut{
+    transition:border-color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1);
+  }
+  body[data-night-surface="home"] .home-era-shortcut strong,
+  body[data-night-surface="home"] .home-era-shortcut b{
+    transition:transform .45s cubic-bezier(.2,.72,.2,1),color .35s ease;
+  }
+  body[data-night-surface="home"] .home-era-shortcut:hover,
+  body[data-night-surface="home"] .home-era-shortcut:focus-visible{
+    transform:translateX(5px);
+    border-color:rgba(238,234,226,.62);
+  }
+  body[data-night-surface="home"] .home-era-shortcut:hover b,
+  body[data-night-surface="home"] .home-era-shortcut:focus-visible b{
+    transform:translateX(4px);
+    color:var(--text);
+  }
+}
+
+body[data-night-surface="home"] .member-card:focus-visible,
+body[data-night-surface="home"] .phantom-scheduler-card:focus-visible,
+body[data-night-surface="home"] .home-archive-card:focus-visible,
+body[data-night-surface="home"] .home-era-shortcut:focus-visible{
+  outline:1px solid rgba(238,234,226,.78);
+  outline-offset:7px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  body[data-night-surface="home"] .member-card img,
+  body[data-night-surface="home"] .member-card .member-info,
+  body[data-night-surface="home"] .phantom-scheduler-card,
+  body[data-night-surface="home"] .phantom-scheduler-card img,
+  body[data-night-surface="home"] .home-archive-card,
+  body[data-night-surface="home"] .home-archive-card *,
+  body[data-night-surface="home"] .home-era-shortcut,
+  body[data-night-surface="home"] .home-era-shortcut *{
+    transition:none!important;
+    transform:none!important;
+  }
+  body[data-night-surface="home"] .phantom-scheduler-card img{-webkit-box-reflect:unset}
+}
