@@ -16,5 +16,6 @@ export function detailNavigation(page){
     const heading=descendants(node).find(n=>n.tagName==='h2');
     if(!heading)return [];seen.add(id);return [{id,label:text(heading)}];
   });
-  return {title,parent,sections};
+  const related=page.route==='moonlight-club-2029.html'?[{label:'MD ARCHIVE ↗',href:'moonlight-club-md-2029.html'}]:page.route==='moonlight-club-md-2029.html'?[{label:'MOONLIGHT CLUB ↗',href:'moonlight-club-2029.html'}]:[];
+  return {title,parent,sections,related};
 }
