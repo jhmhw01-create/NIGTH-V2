@@ -28,6 +28,15 @@ jobs:
         run: npm ci
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
+      - name: Refresh media manifests
+        run: npm run audit:media:update
+      - name: Upload refreshed media manifests
+        uses: actions/upload-artifact@v4
+        with:
+          name: refreshed-media-manifests
+          path: |
+            maintenance/web-media-manifest.json
+            maintenance/image-audit.json
       - name: Test
         run: npm test
       - name: Verify media manifests
