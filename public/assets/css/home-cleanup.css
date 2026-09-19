@@ -2,226 +2,65 @@
 
 /* Home interaction pass 02 — restrained editorial motion. */
 @media (hover:hover) and (pointer:fine){
-  body[data-night-surface="home"] .member-card{
-    position:relative;
-    isolation:isolate;
-  }
-  body[data-night-surface="home"] .member-card img{
-    transition:transform .65s cubic-bezier(.2,.72,.2,1),filter .65s ease,opacity .65s ease;
-    transform-origin:center 42%;
-  }
-  body[data-night-surface="home"] .member-card .member-info{
-    transition:transform .5s cubic-bezier(.2,.72,.2,1),border-color .4s ease;
-  }
-  body[data-night-surface="home"] .member-card .member-role,
-  body[data-night-surface="home"] .member-card .member-eng{
-    transition:color .35s ease,opacity .35s ease;
-  }
-  body[data-night-surface="home"] .member-card:hover img,
-  body[data-night-surface="home"] .member-card:focus-visible img{
-    transform:translateY(-5px) scale(1.012);
-    filter:contrast(1.025) brightness(1.035);
-  }
-  body[data-night-surface="home"] .member-card:hover .member-info,
-  body[data-night-surface="home"] .member-card:focus-visible .member-info{
-    transform:translateY(-4px);
-    border-color:rgba(238,234,226,.58);
-  }
-  body[data-night-surface="home"] .member-card:hover .member-role,
-  body[data-night-surface="home"] .member-card:hover .member-eng,
-  body[data-night-surface="home"] .member-card:focus-visible .member-role,
-  body[data-night-surface="home"] .member-card:focus-visible .member-eng{
-    color:#ddd7ce;
-  }
-
-  /* The latest-release artwork gets a faint fashion-showroom reflection. */
-  body[data-night-surface="home"] .phantom-scheduler-card{
-    transition:transform .7s cubic-bezier(.2,.72,.2,1);
-  }
-  body[data-night-surface="home"] .phantom-scheduler-card img{
-    -webkit-box-reflect:below 1px linear-gradient(transparent 72%,rgba(255,255,255,.10));
-    transition:transform .7s cubic-bezier(.2,.72,.2,1),filter .55s ease;
-  }
-  body[data-night-surface="home"] .phantom-scheduler-card:hover,
-  body[data-night-surface="home"] .phantom-scheduler-card:focus-visible{
-    transform:translateY(-5px);
-  }
-  body[data-night-surface="home"] .phantom-scheduler-card:hover img,
-  body[data-night-surface="home"] .phantom-scheduler-card:focus-visible img{
-    transform:scale(1.008);
-    filter:brightness(1.025) contrast(1.02);
-  }
-
-  /* Archive rows behave like quiet editorial index entries rather than cards. */
-  body[data-night-surface="home"] .home-archive-card{
-    transition:border-color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1);
-  }
-  body[data-night-surface="home"] .home-archive-card .archive-no,
-  body[data-night-surface="home"] .home-archive-card small,
-  body[data-night-surface="home"] .home-archive-card p,
-  body[data-night-surface="home"] .home-archive-card strong{
-    transition:color .35s ease,opacity .35s ease,transform .45s cubic-bezier(.2,.72,.2,1);
-  }
-  body[data-night-surface="home"] .home-archive-card h3{
-    transition:color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1),letter-spacing .5s ease;
-  }
-  body[data-night-surface="home"] .home-archive-card:hover,
-  body[data-night-surface="home"] .home-archive-card:focus-visible{
-    transform:translateX(6px);
-    border-color:rgba(238,234,226,.62);
-  }
-  body[data-night-surface="home"] .home-archive-card:hover h3,
-  body[data-night-surface="home"] .home-archive-card:focus-visible h3{
-    transform:translateX(4px);
-    letter-spacing:.008em;
-  }
-  body[data-night-surface="home"] .home-archive-card:hover strong,
-  body[data-night-surface="home"] .home-archive-card:focus-visible strong{
-    transform:translateX(5px);
-    color:var(--text);
-  }
-  body[data-night-surface="home"] .home-era-shortcut{
-    transition:border-color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1);
-  }
-  body[data-night-surface="home"] .home-era-shortcut strong,
-  body[data-night-surface="home"] .home-era-shortcut b{
-    transition:transform .45s cubic-bezier(.2,.72,.2,1),color .35s ease;
-  }
-  body[data-night-surface="home"] .home-era-shortcut:hover,
-  body[data-night-surface="home"] .home-era-shortcut:focus-visible{
-    transform:translateX(5px);
-    border-color:rgba(238,234,226,.62);
-  }
-  body[data-night-surface="home"] .home-era-shortcut:hover b,
-  body[data-night-surface="home"] .home-era-shortcut:focus-visible b{
-    transform:translateX(4px);
-    color:var(--text);
-  }
+  body[data-night-surface="home"] .member-card{position:relative;isolation:isolate}
+  body[data-night-surface="home"] .member-card img{transition:transform .65s cubic-bezier(.2,.72,.2,1),filter .65s ease,opacity .65s ease;transform-origin:center 42%}
+  body[data-night-surface="home"] .member-card .member-info{transition:transform .5s cubic-bezier(.2,.72,.2,1),border-color .4s ease}
+  body[data-night-surface="home"] .member-card .member-role,body[data-night-surface="home"] .member-card .member-eng{transition:color .35s ease,opacity .35s ease}
+  body[data-night-surface="home"] .member-card:hover img,body[data-night-surface="home"] .member-card:focus-visible img{transform:translateY(-5px) scale(1.012);filter:contrast(1.025) brightness(1.035)}
+  body[data-night-surface="home"] .member-card:hover .member-info,body[data-night-surface="home"] .member-card:focus-visible .member-info{transform:translateY(-4px);border-color:rgba(238,234,226,.58)}
+  body[data-night-surface="home"] .member-card:hover .member-role,body[data-night-surface="home"] .member-card:hover .member-eng,body[data-night-surface="home"] .member-card:focus-visible .member-role,body[data-night-surface="home"] .member-card:focus-visible .member-eng{color:#ddd7ce}
+  body[data-night-surface="home"] .phantom-scheduler-card{transition:transform .7s cubic-bezier(.2,.72,.2,1)}
+  body[data-night-surface="home"] .phantom-scheduler-card img{-webkit-box-reflect:below 1px linear-gradient(transparent 72%,rgba(255,255,255,.10));transition:transform .7s cubic-bezier(.2,.72,.2,1),filter .55s ease}
+  body[data-night-surface="home"] .phantom-scheduler-card:hover,body[data-night-surface="home"] .phantom-scheduler-card:focus-visible{transform:translateY(-5px)}
+  body[data-night-surface="home"] .phantom-scheduler-card:hover img,body[data-night-surface="home"] .phantom-scheduler-card:focus-visible img{transform:scale(1.008);filter:brightness(1.025) contrast(1.02)}
+  body[data-night-surface="home"] .home-archive-card{transition:border-color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1)}
+  body[data-night-surface="home"] .home-archive-card .archive-no,body[data-night-surface="home"] .home-archive-card small,body[data-night-surface="home"] .home-archive-card p,body[data-night-surface="home"] .home-archive-card strong{transition:color .35s ease,opacity .35s ease,transform .45s cubic-bezier(.2,.72,.2,1)}
+  body[data-night-surface="home"] .home-archive-card h3{transition:color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1),letter-spacing .5s ease}
+  body[data-night-surface="home"] .home-archive-card:hover,body[data-night-surface="home"] .home-archive-card:focus-visible{transform:translateX(6px);border-color:rgba(238,234,226,.62)}
+  body[data-night-surface="home"] .home-archive-card:hover h3,body[data-night-surface="home"] .home-archive-card:focus-visible h3{transform:translateX(4px);letter-spacing:.008em}
+  body[data-night-surface="home"] .home-archive-card:hover strong,body[data-night-surface="home"] .home-archive-card:focus-visible strong{transform:translateX(5px);color:var(--text)}
+  body[data-night-surface="home"] .home-era-shortcut{transition:border-color .35s ease,transform .5s cubic-bezier(.2,.72,.2,1)}
+  body[data-night-surface="home"] .home-era-shortcut strong,body[data-night-surface="home"] .home-era-shortcut b{transition:transform .45s cubic-bezier(.2,.72,.2,1),color .35s ease}
+  body[data-night-surface="home"] .home-era-shortcut:hover,body[data-night-surface="home"] .home-era-shortcut:focus-visible{transform:translateX(5px);border-color:rgba(238,234,226,.62)}
+  body[data-night-surface="home"] .home-era-shortcut:hover b,body[data-night-surface="home"] .home-era-shortcut:focus-visible b{transform:translateX(4px);color:var(--text)}
 }
-
-body[data-night-surface="home"] .member-card:focus-visible,
-body[data-night-surface="home"] .phantom-scheduler-card:focus-visible,
-body[data-night-surface="home"] .home-archive-card:focus-visible,
-body[data-night-surface="home"] .home-era-shortcut:focus-visible{
-  outline:1px solid rgba(238,234,226,.78);
-  outline-offset:7px;
-}
+body[data-night-surface="home"] .member-card:focus-visible,body[data-night-surface="home"] .phantom-scheduler-card:focus-visible,body[data-night-surface="home"] .home-archive-card:focus-visible,body[data-night-surface="home"] .home-era-shortcut:focus-visible{outline:1px solid rgba(238,234,226,.78);outline-offset:7px}
 
 /* Home interaction pass 03 — quiet finishing details. */
-body[data-night-surface="home"] .section-head{
-  position:relative;
-}
-body[data-night-surface="home"] .section-head::after{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:-18px;
-  height:1px;
-  background:linear-gradient(90deg,rgba(238,234,226,.34),rgba(238,234,226,.09) 48%,transparent 86%);
-  transform:scaleX(.18);
-  transform-origin:left center;
-  opacity:.42;
-  transition:transform 1.05s cubic-bezier(.2,.72,.2,1),opacity .75s ease;
-}
-body[data-night-surface="home"] .section-head.reveal.is-visible::after,
-body[data-night-surface="home"] .reveal.is-visible .section-head::after{
-  transform:scaleX(1);
-  opacity:1;
-}
-
-body[data-night-surface="home"] .home-editorial,
-body[data-night-surface="home"] .phantom-comeback-home,
-body[data-night-surface="home"] .home-guide,
-body[data-night-surface="home"] .home-updates{
-  position:relative;
-  isolation:isolate;
-}
-body[data-night-surface="home"] .home-editorial::before,
-body[data-night-surface="home"] .phantom-comeback-home::before,
-body[data-night-surface="home"] .home-guide::before,
-body[data-night-surface="home"] .home-updates::before{
-  content:"";
-  position:absolute;
-  width:min(42vw,620px);
-  aspect-ratio:1;
-  border-radius:50%;
-  pointer-events:none;
-  z-index:-1;
-  opacity:.22;
-  filter:blur(1px);
-  background:radial-gradient(circle,rgba(214,205,220,.08) 0%,rgba(190,176,201,.035) 38%,transparent 70%);
-}
+body[data-night-surface="home"] .section-head{position:relative}
+body[data-night-surface="home"] .section-head::after{content:"";position:absolute;left:0;right:0;bottom:-18px;height:1px;background:linear-gradient(90deg,rgba(238,234,226,.34),rgba(238,234,226,.09) 48%,transparent 86%);transform:scaleX(.18);transform-origin:left center;opacity:.42;transition:transform 1.05s cubic-bezier(.2,.72,.2,1),opacity .75s ease}
+body[data-night-surface="home"] .section-head.reveal.is-visible::after,body[data-night-surface="home"] .reveal.is-visible .section-head::after{transform:scaleX(1);opacity:1}
+body[data-night-surface="home"] .home-editorial,body[data-night-surface="home"] .phantom-comeback-home,body[data-night-surface="home"] .home-guide,body[data-night-surface="home"] .home-updates{position:relative;isolation:isolate}
+body[data-night-surface="home"] .home-editorial::before,body[data-night-surface="home"] .phantom-comeback-home::before,body[data-night-surface="home"] .home-guide::before,body[data-night-surface="home"] .home-updates::before{content:"";position:absolute;width:min(42vw,620px);aspect-ratio:1;border-radius:50%;pointer-events:none;z-index:-1;opacity:.22;filter:blur(1px);background:radial-gradient(circle,rgba(214,205,220,.08) 0%,rgba(190,176,201,.035) 38%,transparent 70%)}
 body[data-night-surface="home"] .home-editorial::before{right:-16vw;top:4%}
 body[data-night-surface="home"] .phantom-comeback-home::before{left:-18vw;top:14%}
 body[data-night-surface="home"] .home-guide::before{right:-20vw;top:-22%}
 body[data-night-surface="home"] .home-updates::before{left:-18vw;top:-18%}
 
+/* Fanclub finale — use the existing V1 → V2 design-evolution artwork as the closing visual. */
+body[data-night-surface="home"] .home-fanclub{padding-top:96px;padding-bottom:104px}
+body[data-night-surface="home"] .fanclub-evolution{grid-template-columns:minmax(0,1.45fr) minmax(300px,.75fr);gap:72px;align-items:center;padding-top:72px}
+body[data-night-surface="home"] .fanclub-evolution img{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;background:#f2f0eb}
+body[data-night-surface="home"] .fanclub-evolution .fanclub-copy{max-width:440px}
+body[data-night-surface="home"] .fanclub-evolution .fanclub-copy p{color:var(--muted);margin:24px 0 28px}
+
 @media (hover:hover) and (pointer:fine){
-  body[data-night-surface="home"] .btn,
-  body[data-night-surface="home"] .home-updates a,
-  body[data-night-surface="home"] .home-guide button{
-    transition:color .3s ease,border-color .35s ease,transform .4s cubic-bezier(.2,.72,.2,1);
-  }
-  body[data-night-surface="home"] .btn:hover,
-  body[data-night-surface="home"] .btn:focus-visible,
-  body[data-night-surface="home"] .home-updates a:hover,
-  body[data-night-surface="home"] .home-updates a:focus-visible,
-  body[data-night-surface="home"] .home-guide button:hover,
-  body[data-night-surface="home"] .home-guide button:focus-visible{
-    transform:translateY(-2px);
-    color:#fffdf8;
-    border-color:rgba(238,234,226,.72);
-  }
-  body[data-night-surface="home"] .nav-links a{
-    position:relative;
-  }
-  body[data-night-surface="home"] .nav-links a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:6px;
-    height:1px;
-    background:currentColor;
-    transform:scaleX(0);
-    transform-origin:right center;
-    opacity:.58;
-    transition:transform .38s cubic-bezier(.2,.72,.2,1);
-  }
-  body[data-night-surface="home"] .nav-links a:hover::after,
-  body[data-night-surface="home"] .nav-links a:focus-visible::after{
-    transform:scaleX(1);
-    transform-origin:left center;
-  }
+  body[data-night-surface="home"] .btn,body[data-night-surface="home"] .home-updates a,body[data-night-surface="home"] .home-guide button{transition:color .3s ease,border-color .35s ease,transform .4s cubic-bezier(.2,.72,.2,1)}
+  body[data-night-surface="home"] .btn:hover,body[data-night-surface="home"] .btn:focus-visible,body[data-night-surface="home"] .home-updates a:hover,body[data-night-surface="home"] .home-updates a:focus-visible,body[data-night-surface="home"] .home-guide button:hover,body[data-night-surface="home"] .home-guide button:focus-visible{transform:translateY(-2px);color:#fffdf8;border-color:rgba(238,234,226,.72)}
+  body[data-night-surface="home"] .nav-links a{position:relative}
+  body[data-night-surface="home"] .nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right center;opacity:.58;transition:transform .38s cubic-bezier(.2,.72,.2,1)}
+  body[data-night-surface="home"] .nav-links a:hover::after,body[data-night-surface="home"] .nav-links a:focus-visible::after{transform:scaleX(1);transform-origin:left center}
   body[data-night-surface="home"] .nav-links a[aria-current="page"]::after{display:none}
 }
-
+@media(max-width:860px){body[data-night-surface="home"] .fanclub-evolution{grid-template-columns:1fr;gap:36px}body[data-night-surface="home"] .fanclub-evolution .fanclub-copy{max-width:620px}}
 @media(max-width:600px){
   body[data-night-surface="home"] .section-head::after{bottom:-12px}
-  body[data-night-surface="home"] .home-editorial::before,
-  body[data-night-surface="home"] .phantom-comeback-home::before,
-  body[data-night-surface="home"] .home-guide::before,
-  body[data-night-surface="home"] .home-updates::before{opacity:.13;width:78vw}
+  body[data-night-surface="home"] .home-editorial::before,body[data-night-surface="home"] .phantom-comeback-home::before,body[data-night-surface="home"] .home-guide::before,body[data-night-surface="home"] .home-updates::before{opacity:.13;width:78vw}
+  body[data-night-surface="home"] .home-fanclub{padding-top:64px;padding-bottom:72px}
+  body[data-night-surface="home"] .fanclub-evolution{padding-top:48px;gap:30px}
 }
-
 @media (prefers-reduced-motion:reduce){
-  body[data-night-surface="home"] .member-card img,
-  body[data-night-surface="home"] .member-card .member-info,
-  body[data-night-surface="home"] .phantom-scheduler-card,
-  body[data-night-surface="home"] .phantom-scheduler-card img,
-  body[data-night-surface="home"] .home-archive-card,
-  body[data-night-surface="home"] .home-archive-card *,
-  body[data-night-surface="home"] .home-era-shortcut,
-  body[data-night-surface="home"] .home-era-shortcut *,
-  body[data-night-surface="home"] .section-head::after,
-  body[data-night-surface="home"] .btn,
-  body[data-night-surface="home"] .home-updates a,
-  body[data-night-surface="home"] .home-guide button,
-  body[data-night-surface="home"] .nav-links a::after{
-    transition:none!important;
-    transform:none!important;
-  }
+  body[data-night-surface="home"] .member-card img,body[data-night-surface="home"] .member-card .member-info,body[data-night-surface="home"] .phantom-scheduler-card,body[data-night-surface="home"] .phantom-scheduler-card img,body[data-night-surface="home"] .home-archive-card,body[data-night-surface="home"] .home-archive-card *,body[data-night-surface="home"] .home-era-shortcut,body[data-night-surface="home"] .home-era-shortcut *,body[data-night-surface="home"] .section-head::after,body[data-night-surface="home"] .btn,body[data-night-surface="home"] .home-updates a,body[data-night-surface="home"] .home-guide button,body[data-night-surface="home"] .nav-links a::after{transition:none!important;transform:none!important}
   body[data-night-surface="home"] .section-head::after{opacity:1!important}
   body[data-night-surface="home"] .phantom-scheduler-card img{-webkit-box-reflect:unset}
 }
