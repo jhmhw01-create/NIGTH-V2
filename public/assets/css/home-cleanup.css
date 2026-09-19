@@ -107,6 +107,104 @@ body[data-night-surface="home"] .home-era-shortcut:focus-visible{
   outline-offset:7px;
 }
 
+/* Home interaction pass 03 — quiet finishing details. */
+body[data-night-surface="home"] .section-head{
+  position:relative;
+}
+body[data-night-surface="home"] .section-head::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-18px;
+  height:1px;
+  background:linear-gradient(90deg,rgba(238,234,226,.34),rgba(238,234,226,.09) 48%,transparent 86%);
+  transform:scaleX(.18);
+  transform-origin:left center;
+  opacity:.42;
+  transition:transform 1.05s cubic-bezier(.2,.72,.2,1),opacity .75s ease;
+}
+body[data-night-surface="home"] .section-head.reveal.is-visible::after,
+body[data-night-surface="home"] .reveal.is-visible .section-head::after{
+  transform:scaleX(1);
+  opacity:1;
+}
+
+body[data-night-surface="home"] .home-editorial,
+body[data-night-surface="home"] .phantom-comeback-home,
+body[data-night-surface="home"] .home-guide,
+body[data-night-surface="home"] .home-updates{
+  position:relative;
+  isolation:isolate;
+}
+body[data-night-surface="home"] .home-editorial::before,
+body[data-night-surface="home"] .phantom-comeback-home::before,
+body[data-night-surface="home"] .home-guide::before,
+body[data-night-surface="home"] .home-updates::before{
+  content:"";
+  position:absolute;
+  width:min(42vw,620px);
+  aspect-ratio:1;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:-1;
+  opacity:.22;
+  filter:blur(1px);
+  background:radial-gradient(circle,rgba(214,205,220,.08) 0%,rgba(190,176,201,.035) 38%,transparent 70%);
+}
+body[data-night-surface="home"] .home-editorial::before{right:-16vw;top:4%}
+body[data-night-surface="home"] .phantom-comeback-home::before{left:-18vw;top:14%}
+body[data-night-surface="home"] .home-guide::before{right:-20vw;top:-22%}
+body[data-night-surface="home"] .home-updates::before{left:-18vw;top:-18%}
+
+@media (hover:hover) and (pointer:fine){
+  body[data-night-surface="home"] .btn,
+  body[data-night-surface="home"] .home-updates a,
+  body[data-night-surface="home"] .home-guide button{
+    transition:color .3s ease,border-color .35s ease,transform .4s cubic-bezier(.2,.72,.2,1);
+  }
+  body[data-night-surface="home"] .btn:hover,
+  body[data-night-surface="home"] .btn:focus-visible,
+  body[data-night-surface="home"] .home-updates a:hover,
+  body[data-night-surface="home"] .home-updates a:focus-visible,
+  body[data-night-surface="home"] .home-guide button:hover,
+  body[data-night-surface="home"] .home-guide button:focus-visible{
+    transform:translateY(-2px);
+    color:#fffdf8;
+    border-color:rgba(238,234,226,.72);
+  }
+  body[data-night-surface="home"] .nav-links a{
+    position:relative;
+  }
+  body[data-night-surface="home"] .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:6px;
+    height:1px;
+    background:currentColor;
+    transform:scaleX(0);
+    transform-origin:right center;
+    opacity:.58;
+    transition:transform .38s cubic-bezier(.2,.72,.2,1);
+  }
+  body[data-night-surface="home"] .nav-links a:hover::after,
+  body[data-night-surface="home"] .nav-links a:focus-visible::after{
+    transform:scaleX(1);
+    transform-origin:left center;
+  }
+  body[data-night-surface="home"] .nav-links a[aria-current="page"]::after{display:none}
+}
+
+@media(max-width:600px){
+  body[data-night-surface="home"] .section-head::after{bottom:-12px}
+  body[data-night-surface="home"] .home-editorial::before,
+  body[data-night-surface="home"] .phantom-comeback-home::before,
+  body[data-night-surface="home"] .home-guide::before,
+  body[data-night-surface="home"] .home-updates::before{opacity:.13;width:78vw}
+}
+
 @media (prefers-reduced-motion:reduce){
   body[data-night-surface="home"] .member-card img,
   body[data-night-surface="home"] .member-card .member-info,
@@ -115,9 +213,15 @@ body[data-night-surface="home"] .home-era-shortcut:focus-visible{
   body[data-night-surface="home"] .home-archive-card,
   body[data-night-surface="home"] .home-archive-card *,
   body[data-night-surface="home"] .home-era-shortcut,
-  body[data-night-surface="home"] .home-era-shortcut *{
+  body[data-night-surface="home"] .home-era-shortcut *,
+  body[data-night-surface="home"] .section-head::after,
+  body[data-night-surface="home"] .btn,
+  body[data-night-surface="home"] .home-updates a,
+  body[data-night-surface="home"] .home-guide button,
+  body[data-night-surface="home"] .nav-links a::after{
     transition:none!important;
     transform:none!important;
   }
+  body[data-night-surface="home"] .section-head::after{opacity:1!important}
   body[data-night-surface="home"] .phantom-scheduler-card img{-webkit-box-reflect:unset}
 }
