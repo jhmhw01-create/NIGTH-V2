@@ -52,6 +52,34 @@ const summarize=(description,text)=>{
   if(base.length<=180)return base;
   return base.slice(0,177).replace(/\s+\S*$/,'').trim()+'…';
 };
+const albumArchiveRoute=album=>{
+  for(const tag of String(album.bodyTemplateHtml||'').match(/<a\b[^>]*>/gi)||[]){
+    if(!/album-detail-link/i.test(tagAttribute(tag,'class')))continue;
+    const href=tagAttribute(tag,'href');
+    if(/^[a-z0-9-]+\.html$/i.test(href))return href;
+  }
+  return '';
+};
+const albumVisual=(album,documents)=>{
+  const ownImage=firstImage(album.bodyTemplateHtml||'');
+  if(ownImage)return ownImage;
+  const archiveRoute=albumArchiveRoute(album);
+  if(archiveRoute&&documents[archiveRoute]){
+    const image=firstImage(documents[archiveRoute].markup||'');
+    if(image)return image;
+  }
+  const needle=String(album.title||'').toLowerCase();
+  for(const route of albumRoutes){
+    const document=documents[route];
+    if(!document)continue;
+    const title=headTitle(document.headHtml||'').toLowerCase();
+    const text=cleanText(document.markup||'').toLowerCase();
+    if(!title.includes(needle)&&!text.includes(needle))continue;
+    const image=firstImage(document.markup||'');
+    if(image)return image;
+  }
+  return '';
+};
 
 export function categoryForRoute(route){
   for(const [category,routes] of Object.entries(sets))if(routes.has(route))return category;
@@ -75,7 +103,8 @@ export function buildSearchCatalog({routes,documents,albums}){
 
   for(const album of albums){
     const text=cleanText(album.bodyTemplateHtml||'');
-    records.push({
+    const image=albumVisual(album,documents);
+    const record={
       id:'discography-'+album.id,
       href:'discography.html#'+album.id,
       title:album.title,
@@ -83,7 +112,9 @@ export function buildSearchCatalog({routes,documents,albums}){
       summary:summarize('',text),
       keywords:[album.title,album.id].join(' '),
       searchText:text
-    });
+    };
+    if(image)record.image=image;
+    records.push(record);
   }
 
   const ids=new Set();
