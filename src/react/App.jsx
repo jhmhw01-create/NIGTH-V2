@@ -57,22 +57,5 @@ function PageMotion(){
   return <style>{motionCss}</style>;
 }
 
-function ListenSunoLink({route}){
-  useEffect(()=>{
-    if(route!=='listen.html')return;
-    const nav=document.querySelector('.listen-jump-nav');
-    if(!nav||nav.querySelector('[data-suno-playlist]'))return;
-    const link=document.createElement('a');
-    link.href='https://suno.com/playlist/25d4ecd2-5dfa-499c-a3da-ff0ab1a27bdc';
-    link.target='_blank';
-    link.rel='noopener noreferrer';
-    link.dataset.sunoPlaylist='true';
-    link.textContent='SUNO PLAYLIST ↗';
-    nav.appendChild(link);
-    return()=>link.remove();
-  },[route]);
-  return null;
-}
-
-function SiteApp({route='index.html',pageData}) {const dimensions=pageData.imageDimensions;return <><PageMotion/><ListenSunoLink route={route}/><Header activeNav={route==='store.html'?'FANCLUB':route==='highlight-medley.html'?'LISTEN':route==='press.html'?'ARCHIVE':route==='five-voices.html'?'CONTENTS':albumRoutes.includes(route)?'DISCOGRAPHY':stageRoutes.includes(route)||storyRoutes.includes(route)||playerRoutes.includes(route)||collectionRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route)?'CONTENTS':fanclubDetailRoutes.includes(route)?'FANCLUB':route==='archive.html'?'ARCHIVE':route.startsWith('member-')?'MEMBERS':active[route]} /><DetailNavigation item={pageData.navigation}/><div id="night-main-content" tabIndex={-1}>{route==='index.html'?<HomePage updates={pageData.updates}/>:route==='store.html'?<StorePage products={pageData.products} dimensions={dimensions}/>:route==='archive.html'?<SearchArchive catalog={pageData.catalog} dimensions={dimensions}/>:playerRoutes.includes(route)?<PhotoEpisodePage route={route} originalData={pageData.photos} dimensions={dimensions}/>:collectionRoutes.includes(route)?<CollectionPage route={route} data={pageData.photos} dimensions={dimensions}/>:<ArchivePage route={route} nodes={pageData.nodes}/>}</div><DetailNavigation item={pageData.navigation} bottom/><Footer /></>;}
+function SiteApp({route='index.html',pageData}) {const dimensions=pageData.imageDimensions;return <><PageMotion/><Header activeNav={route==='store.html'?'FANCLUB':route==='highlight-medley.html'?'LISTEN':route==='press.html'?'ARCHIVE':route==='five-voices.html'?'CONTENTS':albumRoutes.includes(route)?'DISCOGRAPHY':stageRoutes.includes(route)||storyRoutes.includes(route)||playerRoutes.includes(route)||collectionRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route)?'CONTENTS':fanclubDetailRoutes.includes(route)?'FANCLUB':route==='archive.html'?'ARCHIVE':route.startsWith('member-')?'MEMBERS':active[route]} /><DetailNavigation item={pageData.navigation}/><div id="night-main-content" tabIndex={-1}>{route==='index.html'?<HomePage updates={pageData.updates}/>:route==='store.html'?<StorePage products={pageData.products} dimensions={dimensions}/>:route==='archive.html'?<SearchArchive catalog={pageData.catalog} dimensions={dimensions}/>:playerRoutes.includes(route)?<PhotoEpisodePage route={route} originalData={pageData.photos} dimensions={dimensions}/>:collectionRoutes.includes(route)?<CollectionPage route={route} data={pageData.photos} dimensions={dimensions}/>:<ArchivePage route={route} nodes={pageData.nodes}/>}</div><DetailNavigation item={pageData.navigation} bottom/><Footer /></>;}
 export function App(props){return <><a className="skip-link" href="#night-main-content" onClick={()=>document.getElementById('night-main-content')?.focus()}>본문 바로가기</a><ErrorBoundary><SiteApp {...props}/></ErrorBoundary></>;}
