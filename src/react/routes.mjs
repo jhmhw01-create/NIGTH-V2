@@ -7,5 +7,5 @@ export const collectionRoutes=['with-luna.html','if-night.html'];
 export const editorialRoutes=['press.html','five-voices.html'];
 export const eventRoutes=['fansign-20260919.html','birthday-cafes-2026-2027.html','fifth-anniversary-2027.html'];
 export const visualRoutes=['debut-archive.html','out-of-frame.html','social-archive.html'];
-export const finalRoutes=['highlight-medley.html','store.html'];
+export const finalRoutes=['store.html'];
 export const reactRoutes=['index.html','about-night.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html','archive.html','member-doha.html','member-ihwan.html','member-jiwoo.html','member-taehoon.html','member-woohyun.html',...albumRoutes,...stageRoutes,...fanclubDetailRoutes,...storyRoutes,...playerRoutes,...collectionRoutes,...editorialRoutes,...eventRoutes,...visualRoutes,...finalRoutes];
