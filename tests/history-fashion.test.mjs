@@ -4,13 +4,15 @@ import {readFile,access} from 'node:fs/promises';
 const page=JSON.parse(await readFile(new URL('../src/pages/history.json',import.meta.url),'utf8'));
 const html=page.contentHtml;
 
-test('history preserves every existing event and adds only the three requested records',()=>{
+test('history preserves every existing event and adds the current requested records',()=>{
   const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","First Solo Concert","Overseas Expansion","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE"];
   for(const title of expected)assert.ok(html.includes('<h3>'+title+'</h3>'),title);
-  assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+3);
+  assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+4);
   assert.ok(html.includes('DIGITAL SINGLE · 2029.11.02'));
   assert.ok(html.includes('ALBUM · 2029.08.27'));
   assert.ok(html.includes('EXHIBITION · 2029.05.18–2029.06.03'));
+  assert.ok(html.includes('<h3>COACHELLA</h3>'));
+  assert.ok(html.includes('href="coachella-2029.html"'));
   assert.ok(!html.includes('<img'));
 });
 
