@@ -7,8 +7,8 @@ test('all sixteen releases are text only',async()=>{
   assert.equal(data.length,16);
   for(const record of data){const output=AlbumCard(record);assert(!/<img\b/.test(output));assert(output.includes('id="'+record.id+'"'));}
 });
-test('27 notices and seven membership cards render',async()=>{
-  for(const [name,count,renderer] of [['notices',27,NoticeItem],['memberships',7,MembershipCard]]){
+test('28 notices and seven membership cards render',async()=>{
+  for(const [name,count,renderer] of [['notices',28,NoticeItem],['memberships',7,MembershipCard]]){
     const data=JSON.parse(await readFile(new URL('../src/data/'+name+'.json',import.meta.url),'utf8'));
     assert.equal(data.length,count);
     for(const record of data)assert(!renderer(record).includes('{{title}}'));
@@ -23,9 +23,10 @@ test('PHANTOM notice keeps only the album release announcement',async()=>{
 test('AFTER HOURS notice keeps only the album release announcement',async()=>{
   const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
   const afterHours=data.filter(record=>(record.title+'\n'+record.bodyTemplateHtml).includes('AFTER HOURS'));
-  assert.deepEqual(afterHours.map(record=>record.title),['AFTER HOURS 발매 및 NO SUNRISE 공개']);
+  assert.deepEqual(afterHours.map(record=>record.title),['AFTER HOURS 발매 및 MOONLIGHT Official M/V 공개']);
 });
 test('title fields are escaped; missing collection records fail the build',()=>{
-  assert(AlbumCard({title:'<unsafe>',attributesHtml:'',bodyTemplateHtml:'{{title}}'}).includes('&lt;unsafe&gt;'));
-  assert.throws(()=>renderCollections('{{albums:0}}',{albums:[]}));
+  const escaped=AlbumCard({id:'x',title:'<script>alert(1)</script>',meta:'2029',href:'discography.html#x'});
+  assert(!escaped.includes('<script>'));assert(escaped.includes('&lt;script&gt;'));
+  assert.throws(()=>renderCollections('<main>{{albums:99}}</main>',{albums:[],notices:[],memberships:[]}),/Missing albums record 99/);
 });
