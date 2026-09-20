@@ -5,9 +5,10 @@ const page=JSON.parse(await readFile(new URL('../src/pages/history.json',import.
 const html=page.contentHtml;
 
 test('history preserves every existing event and adds the current requested records',()=>{
-  const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","First Solo Concert","NIGHT 1ST OVERSEAS TOUR — INTO THE NIGHT","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","NIGHT 2ND OVERSEAS TOUR","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","NIGHT 3RD OVERSEAS TOUR","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","NIGHT 4TH OVERSEAS TOUR","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE"];
+  const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","NIGHT 1ST CONCERT — INTO THE NIGHT","NIGHT 1ST OVERSEAS TOUR — INTO THE NIGHT","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","NIGHT 2ND OVERSEAS TOUR","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","NIGHT 3RD OVERSEAS TOUR","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","NIGHT 4TH OVERSEAS TOUR","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE"];
   for(const title of expected)assert.ok(html.includes('<h3>'+title+'</h3>'),title);
   assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+4);
+  assert.ok(html.includes('LIVE · 2025.08.09'));
   assert.ok(html.includes('TOUR · 2025.08.23–10.04'));
   assert.ok(html.includes('TOUR · 2026.06.13–09.12'));
   assert.ok(html.includes('TOUR · 2027.03.13–07.17'));
@@ -36,6 +37,7 @@ test('history theme stays scoped, text-only and responsive',async()=>{
 test('history retains canonical dates with concise fan-facing copy',()=>{
   for(const fragment of [
     '<small>2022.11.15 · DEBUT</small>',
+    '<small>LIVE · 2025.08.09</small>',
     '<small>TOUR · 2025.08.23–10.04</small>',
     '<small>TOUR · 2026.06.13–09.12</small>',
     '<small>COMEBACK · 2026.09.14</small>',
