@@ -5,7 +5,7 @@ import {stageRoutes,eventRoutes} from '../src/react/routes.mjs';
 test('all concert and fan-event detail routes use the scoped editorial layout',async()=>{
   const css=await readFile(new URL('../public/assets/css/stage-detail-fashion.css',import.meta.url),'utf8');
   const build=await readFile(new URL('../scripts/build-react.mjs',import.meta.url),'utf8');
-  assert.equal(stageRoutes.length+eventRoutes.length,15);
+  assert.equal(stageRoutes.length+eventRoutes.length,16);
   assert.match(build,/stageRoutes\.includes\(route\)\|\|eventRoutes\.includes\(route\)/);
   assert.match(build,/stage-detail-fashion\.css/);
   assert.match(build,/data-night-stage-detail/);
