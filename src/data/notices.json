@@ -6,6 +6,12 @@
     "bodyTemplateHtml": "<summary><time>2029.11.02</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 디지털 싱글 REST와 타이틀곡 NEXT TIME이 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/next-time.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/next-time.webp\" alt=\"REST · NEXT TIME\" loading=\"lazy\"></a><a class=\"notice-feature-image\" href=\"assets/images/2029/rest/release.webp\" target=\"_blank\" rel=\"noopener noreferrer\"><img src=\"assets/images/2029/rest/release.webp\" alt=\"REST RELEASE · 2029.11.02\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"discography.html#rest\">VIEW DISCOGRAPHY →</a></div>"
   },
   {
+    "id": "moonlight-club-2029",
+    "title": "NIGHT 1ST FAN-CON 〈MOONLIGHT CLUB〉 공식 아카이브",
+    "attributesHtml": " id=\"moonlight-club-2029\" data-notice-category=\"event\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.10.13–2029.10.14</time><span class=\"notice-category\">FAN-CON</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT와 LUNA가 가까이 마주한 이틀의 밤. 공연과 이야기, 다양한 무대로 채운 첫 번째 <strong>FAN-CON 〈MOONLIGHT CLUB〉</strong>의 공식 기록을 공개합니다.</p><a class=\"notice-feature-image\" href=\"moonlight-club-2029.html\" aria-label=\"NIGHT 1ST FAN-CON MOONLIGHT CLUB 공식 아카이브 열기\"><img src=\"assets/images/FANCONCERT MOONLIGHT CLUB/FANCONCERT MOONLIGHT CLUB MAIN POSTER.webp\" alt=\"NIGHT 1ST FAN-CON MOONLIGHT CLUB 메인 포스터\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"moonlight-club-2029.html\">ENTER MOONLIGHT CLUB →</a></div>"
+  },
+  {
     "id": "paradox-release",
     "title": "PARADOX 발매 및 PARADISE 공개",
     "attributesHtml": " id=\"paradox-release\" data-notice-category=\"music\" class=\"notice-item reveal\"",
