@@ -23,10 +23,10 @@ test('PHANTOM notice keeps only the album release announcement',async()=>{
 test('AFTER HOURS notice keeps only the album release announcement',async()=>{
   const data=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
   const afterHours=data.filter(record=>(record.title+'\n'+record.bodyTemplateHtml).includes('AFTER HOURS'));
-  assert.deepEqual(afterHours.map(record=>record.title),['AFTER HOURS 발매 및 MOONLIGHT Official M/V 공개']);
+  assert.deepEqual(afterHours.map(record=>record.title),['AFTER HOURS 발매 및 NO SUNRISE 공개']);
 });
 test('title fields are escaped; missing collection records fail the build',()=>{
-  const escaped=AlbumCard({id:'x',title:'<script>alert(1)</script>',meta:'2029',href:'discography.html#x'});
+  const escaped=AlbumCard({id:'x',title:'<script>alert(1)</script>',bodyTemplateHtml:'<h3>{{title}}</h3>',attributesHtml:' id="x"'});
   assert(!escaped.includes('<script>'));assert(escaped.includes('&lt;script&gt;'));
-  assert.throws(()=>renderCollections('<main>{{albums:99}}</main>',{albums:[],notices:[],memberships:[]}),/Missing albums record 99/);
+  assert.throws(()=>renderCollections('<main>{{albums:99}}</main>',{albums:[],notices:[],memberships:[]}),/Unknown record: albums:99/);
 });
