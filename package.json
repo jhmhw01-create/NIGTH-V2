@@ -12,7 +12,7 @@
   "engines": {
     "node": ">=22 <23"
   },
-  "description": "NIGHT phased React migration: React Home and shared layout, existing detail pages preserved.",
+  "description": "NIGHT official archive: React-rendered multi-page site with preserved legacy routes and archive content.",
   "dependencies": {
     "react": "19.3.0",
     "react-dom": "19.3.0"
