@@ -10,8 +10,8 @@ test('notice fashion is page-scoped, readable, responsive and preserves native d
  assert.ok(css.includes('filter:none;opacity:1'));
  assert.ok(!css.includes('object-fit:cover'));
  const page=JSON.parse(await readFile(new URL('../src/pages/notice.json',import.meta.url),'utf8'));
- assert.equal((page.contentHtml.match(/\{\{notices:\d+\}\}/g)||[]).length,28);
+ assert.equal((page.contentHtml.match(/\{\{notices:\d+\}\}/g)||[]).length,29);
  const notices=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
- assert.equal(notices.length,28);
+ assert.equal(notices.length,29);
  for(const notice of notices)assert.ok(notice.bodyTemplateHtml.includes('<summary>'));
 });

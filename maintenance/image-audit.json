@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 1973,
-    "bytes": 187312594,
+    "images": 1982,
+    "bytes": 188547986,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 1713,
+    "literalReferenceFound": 1722,
     "knownDynamic": 260,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1208,6 +1208,10 @@
       "files": 16,
       "bytes": 2244748
     },
+    "assets/images/2024/mirror": {
+      "files": 1,
+      "bytes": 81106
+    },
     "assets/images/2026/after-hours": {
       "files": 44,
       "bytes": 2546956
@@ -1267,6 +1271,10 @@
     "assets/images/2028/persona": {
       "files": 91,
       "bytes": 6404462
+    },
+    "assets/images/2028/so-good": {
+      "files": 8,
+      "bytes": 1154286
     },
     "assets/images/2028/wings": {
       "files": 58,

@@ -7,7 +7,9 @@ const html=page.contentHtml;
 test('history preserves every existing event and adds the current requested records',()=>{
   const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","NIGHT 1ST CONCERT — INTO THE NIGHT","NIGHT 1ST OVERSEAS TOUR — INTO THE NIGHT","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","NIGHT 2ND OVERSEAS TOUR","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","NIGHT 3RD OVERSEAS TOUR","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","NIGHT 4TH OVERSEAS TOUR","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE"];
   for(const title of expected)assert.ok(html.includes('<h3>'+title+'</h3>'),title);
-  assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+4);
+  assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+5);
+  assert.ok(html.includes('<h3>WOOHYUN × JIWOO — SO GOOD</h3>'));
+  assert.ok(html.includes('UNIT ALBUM · 2028.06.16'));
   assert.ok(html.includes('LIVE · 2025.08.09'));
   assert.ok(html.includes('TOUR · 2025.08.23–10.04'));
   assert.ok(html.includes('TOUR · 2026.06.13–09.12'));

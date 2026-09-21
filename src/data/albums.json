@@ -94,5 +94,11 @@
     "title": "PARADOX",
     "attributesHtml": " class=\"discography-card reveal\" id=\"paradox\"",
     "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">ALBUM</span><h2>{{title}}</h2><p class=\"album-tagline\">완벽함의 모순. 아름다운 낙원과 그 안의 어긋남을 따라가는 PARADOX의 공식 기록.</p></div><span class=\"discography-year\">2029.08.27</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2029.08.27</strong></div><div><span>LINE-UP</span><strong>DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON</strong></div><div><span>TITLE TRACK</span><strong>PARADISE</strong></div><div class=\"phantom-tracklist-meta\"><span>TRACKS</span><ol class=\"phantom-tracklist\"><li><b>01</b><strong>PROMISE</strong></li><li><b>02</b><strong>ARRIVAL</strong></li><li class=\"is-title\"><b>03</b><strong>PARADISE</strong><em>TITLE</em></li><li><b>04</b><strong>STRANGE</strong></li><li><b>05</b><strong>THRESHOLD</strong></li></ol></div></div><a class=\"btn secondary album-detail-link\" href=\"paradox-2029.html\">VIEW ALBUM ARCHIVE →</a>"
+  },
+  {
+    "id": "so-good",
+    "title": "SO GOOD",
+    "attributesHtml": " class=\"discography-card reveal\" id=\"so-good\"",
+    "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">UNIT ALBUM</span><h2>{{title}}</h2><p class=\"album-tagline\">WOOHYUN × JIWOO · 자유와 해방감으로 가득한 여름의 록 에너지.</p></div><span class=\"discography-year\">2028.06.16</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2028.06.16</strong></div><div><span>UNIT</span><strong>WOOHYUN · JIWOO</strong></div><div><span>TITLE TRACK</span><strong>SO GOOD</strong></div><div class=\"phantom-tracklist-meta\"><span>TRACKS</span><ol class=\"phantom-tracklist\"><li class=\"is-title\"><b>01</b><strong>SO GOOD</strong><em>TITLE</em></li></ol></div></div><div class=\"phantom-package-preview\"><div class=\"phantom-package-copy\"><span>UNIT ALBUM ARCHIVE</span><h3>SO GOOD</h3><p>록 페스티벌에서 시작된 두 사람의 약속과 음악방송 무대, 엔딩 순간을 확인하세요.</p></div><a href=\"so-good-2028.html\" class=\"btn secondary album-detail-link\">VIEW UNIT ARCHIVE →</a></div>"
   }
 ]

@@ -42,6 +42,12 @@
     "bodyTemplateHtml": "<summary><time>2028.11.20</time><span class=\"notice-category\">FANCLUB</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>공식 팬클럽 LUNA 6기 멤버십 키트 <strong>AFTERIMAGE</strong>가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"luna6.html\"><img src=\"assets/images/luna6/01-box.webp\" alt=\"LUNA 6기 AFTERIMAGE\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"luna6.html\">VIEW LUNA 6TH KIT →</a></div>"
   },
   {
+    "id": "so-good-unit-release",
+    "title": "WOOHYUN × JIWOO 유닛 앨범 SO GOOD 발매",
+    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2028.06.16</time><span class=\"notice-category\">UNIT RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>WOOHYUN과 JIWOO가 자유, 해방감, 청춘의 에너지를 담은 유닛 앨범 <strong>SO GOOD</strong>을 발표했습니다.</p><a class=\"notice-feature-image\" href=\"so-good-2028.html\"><img src=\"assets/images/2028/so-good/album-cover.webp\" alt=\"WOOHYUN × JIWOO SO GOOD 앨범 커버\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"so-good-2028.html\">VIEW UNIT ARCHIVE →</a></div>"
+  },
+  {
     "id": "notices-1",
     "title": "PERSONA 발매 및 탈환 (TAKE IT BACK) 공개",
     "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",

@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {ContentsEntry} from '../src/components/collections.mjs';
-test('30 text entries keep links, categories and existing deep links',async()=>{
+test('31 text entries keep links, categories and existing deep links',async()=>{
   const entries=JSON.parse(await readFile(new URL('../src/data/contentsEntries.json',import.meta.url),'utf8'));
-  assert.equal(entries.length,30);
-  assert.equal(new Set(entries.map(x=>x.href)).size,30);
+  assert.equal(entries.length,31);
+  assert.equal(new Set(entries.map(x=>x.href)).size,31);
   assert.equal(new Set(entries.map(x=>x.category)).size,6);
   assert.equal(entries[0].category,'daily');
   for(const entry of entries){
@@ -21,4 +21,5 @@ test('30 text entries keep links, categories and existing deep links',async()=>{
   assert(entries.some(x=>x.href==='coachella-2029.html'));
   assert(entries.some(x=>x.href==='documentary-2029.html'));
   assert(entries.some(x=>x.href==='woohyun-jiwoo-unit-2024.html'));
+  assert(entries.some(x=>x.href==='so-good-2028.html'));
 });
