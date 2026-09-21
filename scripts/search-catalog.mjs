@@ -32,6 +32,7 @@ const cleanText=value=>decode(String(value||'')
   .replace(/<[^>]+>/g,' '))
   .replace(/\s+/g,' ')
   .trim();
+const mainMarkup=markup=>String(markup||'').match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]||String(markup||'');
 const tagAttribute=(tag,name)=>tag.match(new RegExp('\\b'+name+'=["\\\']([^"\\\']*)["\\\']','i'))?.[1]||'';
 const headTitle=head=>cleanText(head.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||'NIGHT');
 const headDescription=head=>{
@@ -92,7 +93,7 @@ export function buildSearchCatalog({routes,documents,albums}){
     const head=document.headHtml||'';
     const markup=document.markup||'';
     const title=headTitle(head);
-    const text=cleanText(markup);
+    const text=cleanText(mainMarkup(markup));
     const summary=summarize(headDescription(head),text);
     const image=firstImage(markup);
     const id=route==='index.html'?'index':route.replace(/\.html$/,'');
@@ -102,7 +103,7 @@ export function buildSearchCatalog({routes,documents,albums}){
   });
 
   for(const album of albums){
-    const text=cleanText(album.bodyTemplateHtml||'');
+    const text=cleanText(String(album.bodyTemplateHtml||'').replaceAll('{{title}}',album.title));
     const image=albumVisual(album,documents);
     const record={
       id:'discography-'+album.id,

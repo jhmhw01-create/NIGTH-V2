@@ -30,6 +30,21 @@ test('archive search normalizes query and matches generated current content',()=
   assert.equal(searchRecords(catalog,{query:'impossible-query-99999'}).length,0);
 });
 
+test('search summaries use authored content without layout or template residue',()=>{
+  const sample=buildSearchCatalog({
+    routes:['sample.html'],
+    documents:{'sample.html':{headHtml:'<title>Sample</title>',markup:'<header>COMMON NAVIGATION</header><main><h1>Page heading</h1><p>Useful page summary.</p></main><footer>COMMON FOOTER</footer>'}},
+    albums:[{id:'sample-album',title:'SAMPLE ALBUM',bodyTemplateHtml:'<h2>{{title}}</h2><p>Album summary.</p>'}]
+  });
+  const page=sample.records.find(record=>record.id==='sample');
+  const album=sample.records.find(record=>record.id==='discography-sample-album');
+  assert.match(page.summary,/Page heading Useful page summary/);
+  assert.doesNotMatch(page.searchText,/COMMON NAVIGATION|COMMON FOOTER/);
+  assert.match(album.summary,/SAMPLE ALBUM Album summary/);
+  assert.doesNotMatch(album.summary,/\{\{title\}\}/);
+  for(const record of catalog.records)assert.doesNotMatch(record.summary,/\{\{title\}\}/);
+});
+
 test('member search records are derived from the current canonical profile pages',()=>{
   const members=['member-doha','member-woohyun','member-jiwoo','member-ihwan','member-taehoon'];
   const records=Object.fromEntries(catalog.records.filter(record=>members.includes(record.id)).map(record=>[record.id,record]));
