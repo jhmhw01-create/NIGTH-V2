@@ -21,3 +21,12 @@ test('authored page conversion keeps links, text and boolean attributes',()=>{
   assert.throws(()=>pageTree('<script>alert(1)</script>'));
   assert.throws(()=>pageTree('<a onclick="alert(1)">test</a>'));
 });
+test('authored iframe attributes use React property names',()=>{
+  const [node]=pageTree('<iframe frameborder="0" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>');
+  assert.equal(node.props.frameBorder,'0');
+  assert.equal(node.props.allowFullScreen,true);
+  assert.equal(node.props.referrerPolicy,'no-referrer-when-downgrade');
+  assert.equal(node.props.frameborder,undefined);
+  assert.equal(node.props.allowfullscreen,undefined);
+  assert.equal(node.props.referrerpolicy,undefined);
+});

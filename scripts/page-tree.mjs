@@ -1,6 +1,6 @@
 import {parseFragment} from 'parse5';
-const names={class:'className',for:'htmlFor',tabindex:'tabIndex',readonly:'readOnly',colspan:'colSpan',rowspan:'rowSpan',srcset:'srcSet',crossorigin:'crossOrigin',datetime:'dateTime',autoplay:'autoPlay',autofocus:'autoFocus',fetchpriority:'fetchPriority',controlslist:'controlsList'};
-const booleans=new Set(['hidden','open','disabled','checked','multiple','required','autofocus','selected','controls','loop','muted','autoplay']);
+const names={class:'className',for:'htmlFor',tabindex:'tabIndex',readonly:'readOnly',colspan:'colSpan',rowspan:'rowSpan',srcset:'srcSet',crossorigin:'crossOrigin',datetime:'dateTime',autoplay:'autoPlay',autofocus:'autoFocus',fetchpriority:'fetchPriority',controlslist:'controlsList',frameborder:'frameBorder',allowfullscreen:'allowFullScreen',referrerpolicy:'referrerPolicy'};
+const booleans=new Set(['hidden','open','disabled','checked','multiple','required','autofocus','selected','controls','loop','muted','autoplay','allowfullscreen']);
 export function pageTree(markup,imageDimensions={}) {
   let imageCount=0;
   const convert=node => {
