@@ -15,9 +15,9 @@ test('medley cards remain visible through play, pause and track changes',()=>{
   }
   assert.equal(medleyClassName('medley-master',false),'medley-master');
 });
-test('all 62 existing routes are covered exactly once by React',async()=>{
+test('all 63 existing routes are covered exactly once by React',async()=>{
   const pages=await readdir(new URL('src/pages/',root));
-  assert.equal(reactRoutes.length,62);assert.equal(new Set(reactRoutes).size,62);
+  assert.equal(reactRoutes.length,63);assert.equal(new Set(reactRoutes).size,63);
   assert.deepEqual([...reactRoutes].sort(),pages.filter(file=>file.endsWith('.json')).map(file=>file.replace('.json','.html')).sort());
 });
 test('all 43 products and their full/thumbnail images survive catalog conversion',async()=>{
