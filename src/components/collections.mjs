@@ -4,7 +4,10 @@ function Record(tag, record) {
   // HTML fields are trusted, authored website content, not public user input.
   return '<' + tag + record.attributesHtml + '>' + record.bodyTemplateHtml.replaceAll('{{title}}',escape(record.title)) + '</' + tag + '>';
 }
-export const AlbumCard = record => Record('article',record);
+export const AlbumCard = record => {
+  const normalized=record?.id==='phantom'?{...record,bodyTemplateHtml:record.bodyTemplateHtml.replace(/href="assets\/images\/phantom-package-preview-0908\.webp"[^>]*aria-label="PHANTOM FULL PACKAGE PREVIEW 크게 보기"/,'href="phantom-2026.html" aria-label="PHANTOM 공식 아카이브 열기"')}:record;
+  return Record('article',normalized);
+};
 export const NoticeItem = record => Record('details',record);
 export const MembershipCard = record => Record('article',record);
 export function ContentsEntry(record) {
