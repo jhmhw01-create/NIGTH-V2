@@ -36,7 +36,7 @@
     "category": "visual",
     "title": "SOCIAL ARCHIVE",
     "attributesHtml": " class=\"gallery-archive-entry\"",
-    "bodyTemplateHtml": "<img src=\"assets/images/final-additions/social/social-08.webp\" alt=\"SOCIAL ARCHIVE\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>OFFICIAL SOCIAL · IMAGE ARCHIVE</span><h2>{{title}}</h2><p>제공된 가상 SNS 계정과 게시물, 멤버 캐릭터 공개 이미지를 보관한 정적 아카이브. 실제 SNS 계정이나 외부 서비스 링크가 아닙니다.</p><a href=\"social-archive.html\">VIEW ARCHIVE ↗</a></div>",
+    "bodyTemplateHtml": "<img src=\"assets/images/final-additions/social/social-08.webp\" alt=\"SOCIAL ARCHIVE\" loading=\"lazy\" style=\"object-fit:contain\"><div><span>OFFICIAL SOCIAL · IMAGE ARCHIVE</span><h2>{{title}}</h2><p>NIGHT의 공식 SNS 순간과 멤버 캐릭터 공개 기록을 한곳에 모았습니다.</p><a href=\"social-archive.html\">VIEW ARCHIVE ↗</a></div>",
     "href": "social-archive.html"
   },
   {
