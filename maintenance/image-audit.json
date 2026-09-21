@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 1818,
-    "bytes": 164798974,
+    "images": 1973,
+    "bytes": 187312594,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 1558,
+    "literalReferenceFound": 1713,
     "knownDynamic": 260,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1304,6 +1304,42 @@
       "files": 12,
       "bytes": 2649816
     },
+    "assets/images/FANCONCERT MOONLIGHT CLUB": {
+      "files": 29,
+      "bytes": 5832796
+    },
+    "assets/images/GLOBAL SPECIAL MUSIC SHOW": {
+      "files": 3,
+      "bytes": 509488
+    },
+    "assets/images/MOONLIGHT_CLUB_MD_WEB": {
+      "files": 16,
+      "bytes": 1508746
+    },
+    "assets/images/NIGHT_DOCUMENTARY": {
+      "files": 10,
+      "bytes": 857698
+    },
+    "assets/images/NIGHT_coachella": {
+      "files": 8,
+      "bytes": 1467746
+    },
+    "assets/images/PHANTOM_ALBUM": {
+      "files": 27,
+      "bytes": 3190736
+    },
+    "assets/images/PHANTOM_ALBUM/PHANTOM COMEBACK": {
+      "files": 33,
+      "bytes": 4648016
+    },
+    "assets/images/PHANTOM_ALBUM/PHANTOM COMEBACK/MV": {
+      "files": 14,
+      "bytes": 2486268
+    },
+    "assets/images/WOOHYUN_X_JIWOO_UNIT": {
+      "files": 11,
+      "bytes": 1328904
+    },
     "assets/images/behind/additions/full": {
       "files": 11,
       "bytes": 2113932
@@ -1461,8 +1497,8 @@
       "bytes": 1638294
     },
     "assets/images/visual-archive": {
-      "files": 19,
-      "bytes": 3315810
+      "files": 23,
+      "bytes": 3999032
     },
     "assets/images/vlog/doha/full": {
       "files": 8,
