@@ -1,4 +1,4 @@
-export const albumRoutes=['phantom-2026.html','after-hours.html','complete-2027.html','infinity-2027.html','sensational-2027.html','wings-2028.html','so-good-2028.html','persona-2028.html','nightmare-2029.html','paradox-2029.html','era-archive.html'];
+export const albumRoutes=['phantom-2026.html','after-hours.html','complete-2027.html','infinity-2027.html','sensational-2027.html','wings-2028.html','so-good-2028.html','persona-2028.html','nightmare-2029.html','paradox-2029.html','sometime.html','era-archive.html'];
 export const stageRoutes=['concert-archive.html','dream-night-2027.html','beyond-night-2028.html','fanmeeting.html','moonlight-club-2029.html','moonlight-club-md-2029.html','coachella-2029.html','global-special-music-show.html','special-mc.html','year-end-awards-2026.html','daesang-moments.html','awards.html','woohyun-jiwoo-unit-2024.html'];
 export const fanclubDetailRoutes=['luna4.html','luna5.html','luna6.html','luna7.html','season-greetings-2027.html','season-greetings-2028.html','season-greetings-2029.html'];
 export const storyRoutes=['behind.html','travel.html','observation-2027.html','night-off-summer.html','documentary-2029.html'];
