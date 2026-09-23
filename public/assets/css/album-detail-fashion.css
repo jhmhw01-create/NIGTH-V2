@@ -56,6 +56,9 @@ body[data-night-album-detail] :is(.archive26-photo span,.paradox-photo span){pos
 body[data-night-album-detail] :is(.archive26-photo b,.archive-new-card h3){margin:0;padding:14px 0 0;color:var(--text);font:400 12px/1.7 Inter,Pretendard,sans-serif;letter-spacing:.03em;overflow-wrap:anywhere}
 body[data-night-album-detail] .archive26-photo span b{padding:0}
 body[data-night-album-detail] :is(.archive26-photo small,.archive-new-card p){color:var(--muted);font-size:9px;letter-spacing:.1em}
+body[data-night-album-detail] .stm-section .archive26-photo span{padding:10px 12px;background:rgba(29,48,58,.96);color:#f7fafb;border-top:1px solid rgba(255,255,255,.12)}
+body[data-night-album-detail] .stm-section .archive26-photo span b{color:#f7fafb}
+body[data-night-album-detail] .stm-section .archive26-photo span small{color:#c8d9e1}
 body[data-night-album-detail] .archive26-return{display:flex;flex-wrap:wrap;gap:16px;padding-top:32px;padding-bottom:48px}
 body[data-night-album-detail] :is(.btn,.archive-new-actions a,.era-footer-link .btn){display:inline-flex;align-items:center;min-height:44px;padding:10px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;box-shadow:none;color:var(--text);font-size:10px;letter-spacing:.1em}
 body[data-night-album-detail] .archive26-lightbox{background:rgba(8,8,7,.97);backdrop-filter:blur(12px)}

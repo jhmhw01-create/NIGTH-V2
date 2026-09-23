@@ -51,5 +51,6 @@ test('all album detail routes receive the shared editorial stylesheet without re
   assert.match(css,/body\[data-night-album-detail\]/);
   assert.ok(!css.includes('url('));
   assert.match(css,/object-fit:contain/);
+  assert.match(css,/\.stm-section \.archive26-photo span\{[^}]*background:/);
   assert.match(css,/@media\(max-width:600px\)/);
 });
