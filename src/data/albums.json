@@ -100,5 +100,11 @@
     "title": "SO GOOD",
     "attributesHtml": " class=\"discography-card reveal\" id=\"so-good\"",
     "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">UNIT ALBUM</span><h2>{{title}}</h2><p class=\"album-tagline\">WOOHYUN × JIWOO · 자유와 해방감으로 가득한 여름의 록 에너지.</p></div><span class=\"discography-year\">2028.06.16</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2028.06.16</strong></div><div><span>UNIT</span><strong>WOOHYUN · JIWOO</strong></div><div><span>TITLE TRACK</span><strong>SO GOOD</strong></div><div class=\"phantom-tracklist-meta\"><span>TRACKS</span><ol class=\"phantom-tracklist\"><li class=\"is-title\"><b>01</b><strong>SO GOOD</strong><em>TITLE</em></li></ol></div></div><div class=\"phantom-package-preview\"><div class=\"phantom-package-copy\"><span>UNIT ALBUM ARCHIVE</span><h3>SO GOOD</h3><p>록 페스티벌에서 시작된 두 사람의 약속과 음악방송 무대, 엔딩 순간을 확인하세요.</p></div><a href=\"so-good-2028.html\" class=\"btn secondary album-detail-link\">VIEW UNIT ARCHIVE →</a></div>"
+  },
+  {
+    "id": "sometime",
+    "title": "SOMETIME",
+    "attributesHtml": " class=\"discography-card reveal\" id=\"sometime\"",
+    "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">ALBUM</span><h2>{{title}}</h2><p class=\"album-tagline\">언젠가의 기억과 어딘가의 풍경이 같은 시간에 포개지는 앨범.</p></div><span class=\"discography-year\">2030</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2030</strong></div><div><span>LINE-UP</span><strong>DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON</strong></div><div><span>VERSIONS</span><strong>SOMEDAY · SOMEWHERE</strong></div><div><span>ARCHIVE</span><strong>75 IMAGES</strong></div></div><div class=\"phantom-package-preview\"><div class=\"phantom-package-copy\"><span>ALBUM ARCHIVE</span><h3>SOMETIME</h3><p>두 버전의 앨범 패키지와 포토북, 포토카드, 가사지 및 뮤직비디오 장면을 확인하세요.</p></div><a href=\"sometime.html\" class=\"btn secondary album-detail-link\">VIEW ALBUM ARCHIVE →</a></div>"
   }
 ]

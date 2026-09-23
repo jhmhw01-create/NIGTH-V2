@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {releaseOrder} from '../src/react/release-order.mjs';
+import {renderCollections} from '../src/components/collections.mjs';
 test('legacy activity-year labels never sort above recent releases',()=>{
   assert.equal(releaseOrder('lucid','3RD YEAR').year,'2025');
   assert.equal(releaseOrder('nocturne','1ST YEAR · LATE').year,'2023');
@@ -19,4 +20,15 @@ test('discography fashion is scoped and preserves text-only accessible releases'
   assert.ok(source.includes('aria-labelledby'));
   assert.ok(source.includes('<summary>트랙리스트 · 앨범 정보</summary>'));
   assert.ok(source.includes('<summary>아카이브 안내 · 관련 링크</summary>'));
+});
+test('2030 SOMETIME appears first with its two versions and archive link',async()=>{
+  const albums=JSON.parse(await readFile(new URL('../src/data/albums.json',import.meta.url),'utf8'));
+  const page=JSON.parse(await readFile(new URL('../src/pages/discography.json',import.meta.url),'utf8'));
+  const sometime=albums.find(album=>album.id==='sometime');
+  assert.ok(sometime);
+  assert.match(sometime.bodyTemplateHtml,/2030/);
+  assert.match(sometime.bodyTemplateHtml,/SOMEDAY · SOMEWHERE/);
+  assert.match(sometime.bodyTemplateHtml,/href=\"sometime\.html\"/);
+  const html=renderCollections(page.contentHtml,{albums});
+  assert.ok(html.indexOf('id=\"sometime\"')<html.indexOf('id=\"rest\"'));
 });

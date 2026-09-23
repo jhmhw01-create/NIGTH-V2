@@ -2,9 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {AlbumCard,NoticeItem,MembershipCard,renderCollections} from '../src/components/collections.mjs';
-test('all seventeen releases are text only',async()=>{
+test('all eighteen releases are text only',async()=>{
   const data=JSON.parse(await readFile(new URL('../src/data/albums.json',import.meta.url),'utf8'));
-  assert.equal(data.length,17);
+  assert.equal(data.length,18);
   for(const record of data){const output=AlbumCard(record);assert(!/<img\b/.test(output));assert(output.includes('id="'+record.id+'"'));}
 });
 test('30 notices and seven membership cards render',async()=>{
