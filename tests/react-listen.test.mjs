@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {pageTree} from '../scripts/page-tree.mjs';
 const walk=nodes=>nodes.flatMap(n=>typeof n==='string'?[]:[n,...walk(n.children)]);
-test('Listen retains thirteen native players and three Suno embeds',async()=>{
+test('Listen retains thirteen native players and four Suno embeds',async()=>{
   const page=JSON.parse(await readFile(new URL('../src/pages/listen.json',import.meta.url),'utf8'));
   const nodes=walk(pageTree(page.contentHtml));
   const players=nodes.filter(n=>n.tag==='audio');
@@ -14,7 +14,8 @@ test('Listen retains thirteen native players and three Suno embeds',async()=>{
   assert(paths.includes('assets/audio/take-it-back.mp3'));
   assert(paths.includes('assets/audio/after-midnight.mp3'));
   const embeds=nodes.filter(n=>n.tag==='iframe' && String(n.props.src||'').startsWith('https://suno.com/embed/'));
-  assert.equal(embeds.length,3);
+  assert.equal(embeds.length,4);
+  assert(embeds.some(n=>n.props.title==='CINEMATIC — Suno player'));
   assert(embeds.some(n=>n.props.title==='NEXT TIME — Suno player'));
   assert(embeds.some(n=>n.props.title==='PARADISE — Suno player'));
   assert(embeds.some(n=>n.props.title==='BLACK NIGHT — Suno player'));
