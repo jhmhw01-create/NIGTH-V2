@@ -21,12 +21,15 @@ test('discography fashion is scoped and preserves text-only accessible releases'
   assert.ok(source.includes('<summary>트랙리스트 · 앨범 정보</summary>'));
   assert.ok(source.includes('<summary>아카이브 안내 · 관련 링크</summary>'));
 });
-test('2030 SOMETIME appears first with its two versions and archive link',async()=>{
+test('2030 SOMETIME appears first with release date, tracks, two versions and archive link',async()=>{
   const albums=JSON.parse(await readFile(new URL('../src/data/albums.json',import.meta.url),'utf8'));
   const page=JSON.parse(await readFile(new URL('../src/pages/discography.json',import.meta.url),'utf8'));
   const sometime=albums.find(album=>album.id==='sometime');
   assert.ok(sometime);
-  assert.match(sometime.bodyTemplateHtml,/2030/);
+  assert.match(sometime.bodyTemplateHtml,/2030\.04\.08/);
+  for(const track of ['ON MORE TIME','밤의 페이지','CINEMATIC','TOGETHER','YOU AND I (VOCAL UNIT)']){
+    assert.ok(sometime.bodyTemplateHtml.includes(track));
+  }
   assert.match(sometime.bodyTemplateHtml,/SOMEDAY · SOMEWHERE/);
   assert.match(sometime.bodyTemplateHtml,/href=\"sometime\.html\"/);
   const html=renderCollections(page.contentHtml,{albums});
