@@ -8,13 +8,14 @@ const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(no
 test('twelve album archives remain in unique React routes',()=>{
   assert.equal(albumRoutes.length,12);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(albumRoutes.every(route=>reactRoutes.includes(route)));
 });
-test('SOMETIME preserves all 75 unique archive images across four sections',async()=>{
+test('SOMETIME preserves all 101 unique archive images across five sections',async()=>{
   const page=JSON.parse(await readFile(new URL('../src/pages/sometime.json',import.meta.url),'utf8'));
   const nodes=walk(pageTree(page.contentHtml));
   const photos=nodes.filter(node=>(node.props.className??'').split(/\s+/).includes('archive26-photo'));
-  assert.equal(photos.length,75);
-  assert.equal(new Set(photos.map(node=>node.props['data-full'])).size,75);
-  for(const id of ['album','mv','someday','somewhere']) assert.ok(nodes.some(node=>node.props.id===id));
+  assert.equal(photos.length,101);
+  assert.equal(new Set(photos.map(node=>node.props['data-full'])).size,101);
+  assert.equal(photos.filter(node=>node.props['data-full'].includes('/comeback/')).length,26);
+  for(const id of ['comeback','album','mv','someday','somewhere']) assert.ok(nodes.some(node=>node.props.id===id));
 });
 test('album conversion preserves photos and exactly one authored dialog where needed',async()=>{
   for(const route of albumRoutes){
