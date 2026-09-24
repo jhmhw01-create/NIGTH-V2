@@ -31,5 +31,6 @@
   {"title":"OUT OF FRAME","summary":"NIGHT OFF-CAMERA ARCHIVE. 다섯 전시 공간과 공식 티켓으로 만나는 프레임 밖의 NIGHT.","label":"2029.05.18 — 06.03 · OFFICIAL EXHIBITION","action":"ENTER THE EXHIBITION →","href":"out-of-frame.html","category":"editorial","anchor":"out-of-frame"},
   {"title":"SOCIAL ARCHIVE","summary":"NIGHT의 공식 SNS 순간과 멤버 캐릭터 공개 기록을 한곳에 모았습니다.","label":"OFFICIAL SOCIAL · IMAGE ARCHIVE","action":"VIEW ARCHIVE →","href":"social-archive.html","category":"social","anchor":"final-social"},
   {"title":"SOMETIME","summary":"언젠가의 기억과 어딘가의 풍경을 SOMEDAY와 SOMEWHERE 두 버전, CINEMATIC 퍼포먼스로 기록한 앨범 아카이브.","label":"2030.04.08 · ALBUM · 107 IMAGES","action":"VIEW SOMETIME →","href":"sometime.html","category":"album","anchor":null},
-  {"title":"NIGHT OFFICIAL PHOTO BOOK","summary":"2026년 4월 1일 발간된 NIGHT의 공식 화보와 에디토리얼 기록.","label":"2026.04.01 · OFFICIAL EDITORIAL","action":"VIEW EDITORIAL SITE ↗","href":"https://jhmhw01-create.github.io/NIGHT_EDITORIAL/","category":"editorial","anchor":null}
+  {"title":"NIGHT OFFICIAL PHOTO BOOK","summary":"2026년 4월 1일 발간된 NIGHT의 공식 화보와 에디토리얼 기록.","label":"2026.04.01 · OFFICIAL EDITORIAL","action":"VIEW EDITORIAL SITE ↗","href":"https://jhmhw01-create.github.io/NIGHT_EDITORIAL/","category":"editorial","anchor":null},
+  {"title":"SUNDAY CLUB","summary":"브런치와 음악, 보드게임, 멤버별 휴식 장면과 하루의 끝까지 이어지는 NIGHT의 느긋한 일요일.","label":"2029.01.02 · SEASON’S GREETINGS · 22 IMAGES","action":"ENTER SUNDAY CLUB →","href":"season-greetings-2029.html","category":"luna","anchor":null}
 ]
