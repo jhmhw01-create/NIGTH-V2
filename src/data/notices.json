@@ -184,5 +184,11 @@
     "title": "SOMETIME 발매 및 CINEMATIC 공개",
     "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "<summary><time>2030.04.08</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 <strong>SOMETIME</strong>이 공개되었습니다. SOMEDAY와 SOMEWHERE 두 버전, 수록곡 <strong>CINEMATIC</strong>의 뮤직비디오와 퍼포먼스 기록을 공식 앨범 아카이브에서 확인하세요.</p><a class=\"notice-feature-image\" href=\"sometime.html\"><img src=\"assets/images/sometime/night-sometime-album-cover.webp\" alt=\"NIGHT SOMETIME 앨범 커버\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"sometime.html\">VIEW ALBUM ARCHIVE →</a></div>"
+  },
+  {
+    "id": "luna7-membership",
+    "title": "LUNA 7th Generation MIDNIGHT OBSERVATORY 멤버십 키트 공개",
+    "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2029.11.20</time><span class=\"notice-category\">FANCLUB</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>같은 밤을 바라보며 다시 같은 궤도에서 만나는 NIGHT와 LUNA의 일곱 번째 공식 멤버십 <strong>MIDNIGHT OBSERVATORY</strong> 키트를 공개합니다.</p><a class=\"notice-feature-image\" href=\"luna7.html\"><img src=\"assets/images/7TH LUNA/luna7-kit-complete-archive.webp\" alt=\"LUNA 7TH MIDNIGHT OBSERVATORY 멤버십 키트\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"luna7.html\">EXPLORE THE KIT →</a></div>"
   }
 ]

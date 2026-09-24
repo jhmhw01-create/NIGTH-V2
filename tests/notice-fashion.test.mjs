@@ -10,8 +10,16 @@ test('notice fashion is page-scoped, readable, responsive and preserves native d
  assert.ok(css.includes('filter:none;opacity:1'));
  assert.ok(!css.includes('object-fit:cover'));
  const page=JSON.parse(await readFile(new URL('../src/pages/notice.json',import.meta.url),'utf8'));
- assert.equal((page.contentHtml.match(/\{\{notices:\d+\}\}/g)||[]).length,31);
+ assert.equal((page.contentHtml.match(/\{\{notices:\d+\}\}/g)||[]).length,32);
+ assert.ok(page.contentHtml.includes('{{notices:31}}'));
+ assert.ok(page.contentHtml.indexOf('{{notices:29}}')<page.contentHtml.indexOf('{{notices:31}}'));
+ assert.ok(page.contentHtml.indexOf('{{notices:31}}')<page.contentHtml.indexOf('{{notices:0}}'));
  const notices=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
- assert.equal(notices.length,31);
+ assert.equal(notices.length,32);
+ const luna7=notices.find(({id})=>id==='luna7-membership');
+ assert.ok(luna7);
+ assert.equal(luna7.attributesHtml.includes('data-notice-category="fanclub"'),true);
+ assert.ok(luna7.bodyTemplateHtml.includes('<time>2029.11.20</time>'));
+ assert.ok(luna7.bodyTemplateHtml.includes('href="luna7.html"'));
  for(const notice of notices)assert.ok(notice.bodyTemplateHtml.includes('<summary>'));
 });
