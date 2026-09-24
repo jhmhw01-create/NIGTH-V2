@@ -11,7 +11,8 @@ export const AlbumCard = record => {
 export const NoticeItem = record => Record('details',record);
 export const MembershipCard = record => Record('article',record);
 export function ContentsEntry(record) {
-  return '<a class="content-card contents-text-entry" href="'+escape(record.href)+'" data-category="'+escape(record.category)+'"'+(record.anchor?' id="'+escape(record.anchor)+'"':'')+'><small class="contents-entry-label">'+escape(record.label)+'</small><h3>'+escape(record.title)+'</h3><p>'+escape(record.summary)+'</p><span class="contents-entry-action">'+escape(record.action)+'</span></a>';
+  const external=/^https?:\/\//.test(record.href);
+  return '<a class="content-card contents-text-entry" href="'+escape(record.href)+'"'+(external?' target="_blank" rel="noopener noreferrer"':'')+' data-category="'+escape(record.category)+'"'+(record.anchor?' id="'+escape(record.anchor)+'"':'')+'><small class="contents-entry-label">'+escape(record.label)+'</small><h3>'+escape(record.title)+'</h3><p>'+escape(record.summary)+'</p><span class="contents-entry-action">'+escape(record.action)+'</span></a>';
 }
 export function renderCollections(content, collections) {
   const renderers = {albums:AlbumCard,notices:NoticeItem,memberships:MembershipCard,galleryCards:record=>Record('div',record),contentsEntries:ContentsEntry};
