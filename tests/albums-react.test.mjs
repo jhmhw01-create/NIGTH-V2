@@ -18,6 +18,16 @@ test('SOMETIME preserves all 107 unique archive images across six sections',asyn
   assert.equal(photos.filter(node=>node.props['data-full'].includes('/performance/')).length,6);
   for(const id of ['comeback','album','mv','performance','someday','somewhere']) assert.ok(nodes.some(node=>node.props.id===id));
 });
+test('SOMETIME detail carries canonical release, versions and tracklist',async()=>{
+  const page=JSON.parse(await readFile(new URL('../src/pages/sometime.json',import.meta.url),'utf8'));
+  const nodes=walk(pageTree(page.contentHtml));
+  assert.ok(nodes.some(node=>node.props.id==='tracklist'));
+  assert.ok(page.contentHtml.includes('2030.04.08'));
+  assert.ok(page.contentHtml.includes('SOMEDAY · SOMEWHERE'));
+  for(const track of ['ON MORE TIME','밤의 페이지','CINEMATIC','TOGETHER','YOU AND I (VOCAL UNIT)']) assert.ok(page.contentHtml.includes(track));
+  assert.match(page.contentHtml,/<strong>CINEMATIC<\/strong><em>TITLE<\/em>/);
+  assert.ok(nodes.some(node=>node.tag==='a'&&node.props.href==='listen.html#cinematic'));
+});
 test('album conversion preserves photos and exactly one authored dialog where needed',async()=>{
   for(const route of albumRoutes){
     const page=JSON.parse(await readFile(new URL('../src/pages/'+route.replace('.html','.json'),import.meta.url),'utf8'));

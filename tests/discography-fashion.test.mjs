@@ -30,6 +30,7 @@ test('2030 SOMETIME appears first with release date, tracks, two versions and ar
   for(const track of ['ON MORE TIME','밤의 페이지','CINEMATIC','TOGETHER','YOU AND I (VOCAL UNIT)']){
     assert.ok(sometime.bodyTemplateHtml.includes(track));
   }
+  assert.match(sometime.bodyTemplateHtml,/<li class="is-title"><b>03<\/b><strong>CINEMATIC<\/strong><em>TITLE<\/em><\/li>/);
   assert.match(sometime.bodyTemplateHtml,/SOMEDAY · SOMEWHERE/);
   assert.match(sometime.bodyTemplateHtml,/href=\"sometime\.html\"/);
   const html=renderCollections(page.contentHtml,{albums});
