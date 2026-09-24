@@ -5,7 +5,7 @@ const page=JSON.parse(await readFile(new URL('../src/pages/history.json',import.
 const html=page.contentHtml;
 
 test('history preserves every existing event and adds the current requested records',()=>{
-  const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","NIGHT 1ST CONCERT — INTO THE NIGHT","NIGHT 1ST OVERSEAS TOUR — INTO THE NIGHT","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","NIGHT 2ND OVERSEAS TOUR","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","NIGHT 3RD OVERSEAS TOUR","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","NIGHT 4TH OVERSEAS TOUR","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE"];
+  const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","NIGHT 1ST CONCERT — INTO THE NIGHT","NIGHT 1ST OVERSEAS TOUR — INTO THE NIGHT","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","NIGHT 2ND OVERSEAS TOUR","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","NIGHT 3RD OVERSEAS TOUR","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","NIGHT 4TH OVERSEAS TOUR","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE","SUNDAY CLUB","NIGHT 1ST FAN-CON — MOONLIGHT CLUB","LUNA 7th Generation — MIDNIGHT OBSERVATORY"];
   for(const title of expected)assert.ok(html.includes('<h3>'+title+'</h3>'),title);
   assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+7);
   assert.ok(html.includes('<h3>SOMETIME</h3>'));
@@ -20,11 +20,23 @@ test('history preserves every existing event and adds the current requested reco
   assert.ok(html.includes('TOUR · 2027.03.13–07.17'));
   assert.ok(html.includes('TOUR · 2028.06.10–10.29'));
   assert.ok(html.includes('DIGITAL SINGLE · 2029.11.02'));
+  assert.ok(html.includes('FANCLUB · 2029.11.20'));
+  assert.ok(html.includes('FAN-CON · 2029.10.13–2029.10.14'));
+  assert.ok(html.includes('SEASON’S GREETINGS · 2029.01.02'));
   assert.ok(html.includes('ALBUM · 2029.08.27'));
   assert.ok(html.includes('EXHIBITION · 2029.05.18–2029.06.03'));
   assert.ok(html.includes('<h3>COACHELLA</h3>'));
   assert.ok(html.includes('href="coachella-2029.html"'));
   assert.ok(!html.includes('<img'));
+});
+
+test('2029 current records are connected in newest-first order',()=>{
+  const section=html.slice(html.indexOf('id="history-2029"'),html.indexOf('id="history-2028"'));
+  const ordered=['MOMENTS OF THE NIGHT','LUNA 7th Generation — MIDNIGHT OBSERVATORY','REST','NIGHT 1ST FAN-CON — MOONLIGHT CLUB','PARADOX','OUT OF FRAME','NIGHTMARE','SUNDAY CLUB'];
+  const positions=ordered.map(title=>section.indexOf('<h3>'+title+'</h3>'));
+  assert.ok(positions.every(position=>position>=0));
+  assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
+  for(const href of ['luna7.html','moonlight-club-2029.html','season-greetings-2029.html']) assert.ok(section.includes('href="'+href+'"'));
 });
 
 test('history years are newest first and every detail destination exists',async()=>{
@@ -54,6 +66,9 @@ test('history retains canonical dates with concise fan-facing copy',()=>{
     '<small>ALBUM · 2029.02.23</small>',
     '<small>ALBUM · 2029.08.27</small>',
     '<small>DIGITAL SINGLE · 2029.11.02</small>',
+    '<small>FANCLUB · 2029.11.20</small>',
+    '<small>FAN-CON · 2029.10.13–2029.10.14</small>',
+    '<small>SEASON’S GREETINGS · 2029.01.02</small>',
     '<small>ALBUM · 2030.04.08</small>',
     'NIGHT의 공식 에디토리얼 포토북 공개.',
     '앨범 PHANTOM 발표. 타이틀곡은 ILLUSION.',
