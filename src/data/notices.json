@@ -178,5 +178,11 @@
     "title": "NIGHT 공식 다큐멘터리 MOMENTS OF THE NIGHT 공개",
     "attributesHtml": " data-notice-category=\"contents\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "<summary><time>2029.12.01</time><span class=\"notice-category\">DOCUMENTARY</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>무대 직전과 공연 후, 새벽 이동과 PARADISE 컴백, REST 녹음까지 이어지는 NIGHT의 공식 다큐멘터리 <strong>MOMENTS OF THE NIGHT</strong>가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"documentary-2029.html\"><img src=\"assets/images/NIGHT_DOCUMENTARY/01-opening-night-of-history.webp\" alt=\"MOMENTS OF THE NIGHT 공식 다큐멘터리\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"documentary-2029.html\">WATCH THE DOCUMENTARY →</a></div>"
+  },
+  {
+    "id": "sometime-release",
+    "title": "SOMETIME 발매 및 CINEMATIC 공개",
+    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2030.04.08</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 <strong>SOMETIME</strong>이 공개되었습니다. SOMEDAY와 SOMEWHERE 두 버전, 수록곡 <strong>CINEMATIC</strong>의 뮤직비디오와 퍼포먼스 기록을 공식 앨범 아카이브에서 확인하세요.</p><a class=\"notice-feature-image\" href=\"sometime.html\"><img src=\"assets/images/sometime/night-sometime-album-cover.webp\" alt=\"NIGHT SOMETIME 앨범 커버\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"sometime.html\">VIEW ALBUM ARCHIVE →</a></div>"
   }
 ]

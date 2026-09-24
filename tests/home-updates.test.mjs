@@ -16,6 +16,6 @@ test('home updates reuse the three latest dated notices with authored valid dest
     assert.equal(update.href,href(firstLink)??'notice.html');
   }
   assert.ok(updates.every((item,index)=>index===0||updates[index-1].date>=item.date));
-  assert.equal(updates[0].date,'2029.12.01');
-  assert.equal(updates[0].href,'documentary-2029.html');
+  assert.equal(updates[0].date,'2030.04.08');
+  assert.equal(updates[0].href,'sometime.html');
 });
