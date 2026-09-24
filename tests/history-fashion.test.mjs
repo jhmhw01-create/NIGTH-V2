@@ -81,3 +81,10 @@ test('history retains canonical dates with concise fan-facing copy',()=>{
   assert.ok(!html.includes('NIGHT 자신들이 악몽 그 자체였음이 드러나는'));
   assert.ok(!html.includes('완벽함의 모순을 주제로 한 앨범 PARADOX'));
 });
+
+test('history events with exact dates remain in chronological order',async()=>{
+  const page=JSON.parse(await readFile(new URL('../src/pages/history.json',import.meta.url),'utf8'));
+  const html=page.contentHtml;
+  assert.ok(html.indexOf('TOUR · 2028.06.10–10.29')<html.indexOf('UNIT ALBUM · 2028.06.16'));
+  assert.ok(html.indexOf('MEMBER EVENT · 2026.09.22–11.29')<html.indexOf('FANCLUB · 2026.10.15'));
+});
