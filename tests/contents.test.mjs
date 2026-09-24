@@ -24,3 +24,15 @@ test('32 text entries keep links, categories and existing deep links',async()=>{
   assert(entries.some(x=>x.href==='so-good-2028.html'));
   assert(entries.some(x=>x.href==='sometime.html'));
 });
+
+test('contents page renders every entry and keeps SOMETIME first in the album group',async()=>{
+  const page=JSON.parse(await readFile(new URL('../src/pages/contents.json',import.meta.url),'utf8'));
+  const placeholders=[...page.contentHtml.matchAll(/\{\{contentsEntries:(\d+)\}\}/g)].map(match=>Number(match[1]));
+  assert.equal(placeholders.length,32);
+  assert.equal(new Set(placeholders).size,32);
+  assert.deepEqual([...placeholders].sort((a,b)=>a-b),Array.from({length:32},(_,index)=>index));
+  assert(placeholders.indexOf(31)<placeholders.indexOf(7));
+  assert(page.contentHtml.includes('전체 <span>32</span>'));
+  assert(page.contentHtml.includes('앨범 <span>7</span>'));
+  assert(page.contentHtml.includes('에디토리얼 <span>3</span>'));
+});
