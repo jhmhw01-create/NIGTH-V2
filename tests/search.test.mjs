@@ -23,6 +23,23 @@ test('search catalog is generated from every current route and album anchor',()=
   assert.equal(new Set(catalog.records.map(record=>record.href)).size,catalog.records.length);
 });
 
+test('early album archive cards use their matching visual archive covers',()=>{
+  const expected={
+    'after-midnight':'assets/images/visual-archive/after-midnight.webp',
+    nocturne:'assets/images/visual-archive/nocturne.webp',
+    eclipse:'assets/images/visual-archive/eclipse.webp',
+    'no-signal':'assets/images/visual-archive/no-signal.webp',
+    'new-moon':'assets/images/visual-archive/new-moon.webp',
+    lucid:'assets/images/visual-archive/lucid.webp'
+  };
+  for(const [id,image] of Object.entries(expected)){
+    const album=albums.find(record=>record.id===id);
+    const record=catalog.records.find(item=>item.id==='discography-'+id);
+    assert.equal(album?.image,image);
+    assert.equal(record?.image,image);
+  }
+});
+
 test('archive search normalizes query and matches generated current content',()=>{
   assert.deepEqual(searchRecords(catalog,{query:'ＮＩＧＨＴ'}),searchRecords(catalog,{query:'night'}));
   assert.ok(searchRecords(catalog,{query:'after hours'}).some(record=>record.href==='discography.html#after-hours'||record.href==='after-hours.html'));

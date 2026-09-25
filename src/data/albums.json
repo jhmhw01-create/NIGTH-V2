@@ -50,36 +50,42 @@
   {
     "id": "after-midnight",
     "title": "AFTER MIDNIGHT",
+    "image": "assets/images/visual-archive/after-midnight.webp",
     "attributesHtml": " class=\"album-card reveal\" id=\"after-midnight\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">01</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>DEBUT MINI ALBUM</span><span>1ST YEAR</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“자정이 지난 순간, NIGHT의 시간이 시작된다.”</p>\n<p class=\"album-concept\">도시의 심야, 네온과 어둠 사이에서 시작된 NIGHT의 첫 장면.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>2022.11.15 · DEBUT</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN · ANGELO</strong></div>\n  <div><small>TITLE TRACK</small><strong>After Midnight</strong></div>\n  <div><small>TRACKS</small><strong>5 TRACKS</strong></div>\n</div>\n<ol class=\"track-list\">\n<li><span>Blue Hour</span></li>\n<li class=\"title-track\"><span>After Midnight</span><em>TITLE</em></li>\n<li><span>Under Your Skin</span></li>\n<li><span>City Lights</span></li>\n<li><span>2:17 AM</span></li>\n</ol>\n</div>\n"
   },
   {
     "id": "nocturne",
     "title": "NOCTURNE",
+    "image": "assets/images/visual-archive/nocturne.webp",
     "attributesHtml": " class=\"album-card reveal\" id=\"nocturne\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">02</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>1ST MINI ALBUM</span><span>1ST YEAR</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“아름다운 밤일수록, 빠져나오는 길은 더 희미해진다.”</p>\n<p class=\"album-concept\">고딕한 우아함과 위험한 매혹으로 초기 NIGHT의 색을 확립한 앨범.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>1ST YEAR · LATE</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN · ANGELO</strong></div>\n  <div><small>TITLE TRACK</small><strong>OBSESSION</strong></div>\n  <div><small>TRACKS</small><strong>5 TRACKS</strong></div>\n</div>\n<ol class=\"track-list\">\n<li><span>Prelude: Nocturne</span></li>\n<li class=\"title-track\"><span>OBSESSION</span><em>TITLE</em></li>\n<li><span>Velvet Cage</span></li>\n<li><span>Masquerade</span></li>\n<li><span>Last Waltz</span></li>\n</ol>\n</div>\n"
   },
   {
     "id": "eclipse",
     "title": "ECLIPSE",
+    "image": "assets/images/visual-archive/eclipse.webp",
     "attributesHtml": " class=\"album-card reveal\" id=\"eclipse\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">03</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>2ND MINI ALBUM</span><span>2ND YEAR</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“달이 가려진 자리에서, 서로의 그림자만 길어진다.”</p>\n<p class=\"album-concept\">빛이 가려진 밤. 완벽해 보이던 표면 아래의 균열과 그림자를 담았다.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>2ND YEAR · EARLY</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN · ANGELO</strong></div>\n  <div><small>TITLE TRACK</small><strong>SHADOW PLAY</strong></div>\n  <div><small>TRACKS</small><strong>5 TRACKS</strong></div>\n</div>\n<ol class=\"track-list\">\n<li><span>Half Light</span></li>\n<li class=\"title-track\"><span>SHADOW PLAY</span><em>TITLE</em></li>\n<li><span>Blind Spot</span></li>\n<li><span>Afterimage</span></li>\n<li><span>Cold Orbit</span></li>\n</ol>\n</div>\n"
   },
   {
     "id": "no-signal",
     "title": "NO SIGNAL",
+    "image": "assets/images/visual-archive/no-signal.webp",
     "attributesHtml": " class=\"album-card reveal album-card-single\" id=\"no-signal\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">04</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>DIGITAL SINGLE</span><span>2ND YEAR · 4 MEMBER ERA</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“아무 대답 없는 밤에도, 남겨진 신호는 사라지지 않는다.”</p>\n<p class=\"album-concept\">네 멤버가 남겨진 신호와 공백을 차갑고 절제된 사운드로 담아낸 디지털 싱글.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>2ND YEAR · MID</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN</strong></div>\n  <div><small>TITLE TRACK</small><strong>NO SIGNAL</strong></div>\n  <div><small>TRACKS</small><strong>1 TRACK</strong></div>\n</div>\n<ol class=\"track-list\">\n<li class=\"title-track\"><span>NO SIGNAL</span><em>TITLE</em></li>\n</ol>\n</div>\n"
   },
   {
     "id": "new-moon",
     "title": "NEW MOON",
+    "image": "assets/images/visual-archive/new-moon.webp",
     "attributesHtml": " class=\"album-card reveal\" id=\"new-moon\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">05</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>3RD MINI ALBUM</span><span>2ND YEAR · NEW LINE-UP</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“보이지 않는 달 아래, 다섯 개의 그림자가 다시 하나가 된다.”</p>\n<p class=\"album-concept\">새로운 다섯 멤버의 시작. NIGHT의 어둠 위에 더욱 역동적인 에너지를 더한 앨범.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>2ND YEAR · LATE</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN · TAEHOON</strong></div>\n  <div><small>TITLE TRACK</small><strong>REBORN</strong></div>\n  <div><small>TRACKS</small><strong>5 TRACKS</strong></div>\n</div>\n<ol class=\"track-list\">\n<li><span>New Phase</span></li>\n<li class=\"title-track\"><span>REBORN</span><em>TITLE</em></li>\n<li><span>Gravity Zero</span></li>\n<li><span>Midnight Run</span></li>\n<li><span>Silver Line</span></li>\n</ol>\n</div>\n"
   },
   {
     "id": "lucid",
     "title": "LUCID",
+    "image": "assets/images/visual-archive/lucid.webp",
     "attributesHtml": " class=\"album-card reveal\" id=\"lucid\"",
     "bodyTemplateHtml": "\n<div class=\"album-index\">06</div>\n<div class=\"album-main\">\n<div class=\"album-topline\"><span>4TH MINI ALBUM</span><span>3RD YEAR</span></div>\n<h2>{{title}}</h2>\n<p class=\"album-tagline\">“꿈이라는 걸 알면서도, 우리는 끝내 눈을 뜨지 않는다.”</p>\n<p class=\"album-concept\">자각몽과 현실의 경계가 흐려지며 NIGHT의 세계가 본격적으로 비현실적인 영역으로 확장된다.</p>\n<div class=\"album-meta\">\n  <div><small>RELEASE</small><strong>3RD YEAR</strong></div>\n  <div><small>LINE-UP</small><strong>DOHA · IHWAN · JIWOO · WOOHYUN · TAEHOON</strong></div>\n  <div><small>TITLE TRACK</small><strong>DREAMWALKER</strong></div>\n  <div><small>TRACKS</small><strong>5 TRACKS</strong></div>\n</div>\n<ol class=\"track-list\">\n<li><span>False Awake</span></li>\n<li class=\"title-track\"><span>DREAMWALKER</span><em>TITLE</em></li>\n<li><span>Déjà Vu</span></li>\n<li><span>Glass Room</span></li>\n<li><span>Sleep Paralysis</span></li>\n</ol>\n</div>\n"
   },

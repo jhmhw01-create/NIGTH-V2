@@ -62,6 +62,7 @@ const albumArchiveRoute=album=>{
   return '';
 };
 const albumVisual=(album,documents)=>{
+  if(album.image)return album.image;
   const ownImage=firstImage(album.bodyTemplateHtml||'');
   if(ownImage)return ownImage;
   const archiveRoute=albumArchiveRoute(album);
