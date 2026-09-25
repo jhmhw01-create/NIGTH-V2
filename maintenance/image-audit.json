@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2089,
-    "bytes": 200403256,
+    "images": 2211,
+    "bytes": 207217826,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 1829,
+    "literalReferenceFound": 1951,
     "knownDynamic": 260,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1491,6 +1491,22 @@
     "assets/images/press": {
       "files": 1,
       "bytes": 202716
+    },
+    "assets/images/return/album": {
+      "files": 98,
+      "bytes": 5399848
+    },
+    "assets/images/return/music-show": {
+      "files": 5,
+      "bytes": 359724
+    },
+    "assets/images/return/promotion-1": {
+      "files": 10,
+      "bytes": 494804
+    },
+    "assets/images/return/promotion-2": {
+      "files": 9,
+      "bytes": 560194
     },
     "assets/images/season-2027": {
       "files": 29,
