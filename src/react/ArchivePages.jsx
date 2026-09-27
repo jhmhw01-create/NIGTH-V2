@@ -92,8 +92,8 @@ export function ArchivePage({route,nodes}) {
     if(album && node.props.id==='archive26Lightbox')return <AlbumLightbox key={key} photo={albumPhoto} index={albumIndex} total={albumItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveAlbum} />;
     if(imageArchive&&['fmLightbox','behindLightbox','travelLightbox','fansignLightbox','sg-viewer'].includes(node.props.id))return <StageLightbox key={key} variant={node.props.id==='sg-viewer'?'sg':node.props.id.replace('Lightbox','')} photo={stagePhoto} index={stageIndex} total={stageItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveStage}/>;
     const props={...node.props,key};
-    if(route==='night-in-the-house-2030.html'&&node.props.id==='visuals'){
-      props.className=[props.className,'night-house-visuals-masonry'].filter(Boolean).join(' ');
+    if(route==='night-in-the-house-2030.html'&&['visuals','part-1','part-2','encore'].includes(node.props.id)){
+      props.className=[props.className,'night-house-photo-masonry'].filter(Boolean).join(' ');
     }
     const cls=classes(node);
     let children=node.children.map((child,i)=>render(child,i));
