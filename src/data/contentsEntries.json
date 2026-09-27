@@ -440,5 +440,18 @@
     "endDate": null,
     "year": 2029,
     "type": "luna"
+  },
+  {
+    "title": "NIGHT IN THE HOUSE",
+    "summary": "토크와 게임, 코스프레, 스페셜 스테이지와 앵콜까지 NIGHT와 LUNA가 한집에서 함께한 팬미팅의 전체 기록.",
+    "label": "2030.07.06 · FANMEETING · 63 IMAGES",
+    "action": "ENTER THE HOUSE →",
+    "href": "night-in-the-house-2030.html",
+    "category": "luna",
+    "anchor": null,
+    "date": "2030-07-06",
+    "endDate": null,
+    "year": 2030,
+    "type": "luna"
   }
 ]
