@@ -16,3 +16,18 @@ test('all concert and fan-event detail routes use the scoped editorial layout',a
   assert.ok(!css.includes('object-fit:cover'));
   assert.match(css,/@media\(max-width:600px\)/);
 });
+
+test('NIGHT IN THE HOUSE visuals use the source component masonry without changing archive media',async()=>{
+  const component=await readFile(new URL('../src/react/ArchivePages.jsx',import.meta.url),'utf8');
+  const css=await readFile(new URL('../public/assets/css/stage-detail-fashion.css',import.meta.url),'utf8');
+  const page=JSON.parse(await readFile(new URL('../src/pages/night-in-the-house-2030.json',import.meta.url),'utf8'));
+  const visuals=page.contentHtml.slice(page.contentHtml.indexOf('id="visuals"'),page.contentHtml.indexOf('id="part-1"'));
+  assert.match(component,/route==='night-in-the-house-2030\.html'&&node\.props\.id==='visuals'/);
+  assert.match(component,/night-house-visuals-masonry/);
+  assert.match(css,/\.night-house-visuals-masonry \.gallery-grid\{display:block;columns:3 280px/);
+  assert.match(css,/\.night-house-visuals-masonry \.gallery-item\{display:inline-block;width:100%/);
+  assert.match(css,/height:auto;aspect-ratio:auto;object-fit:contain/);
+  assert.doesNotMatch(page.headHtml,/#visuals \.gallery-grid/);
+  assert.equal((visuals.match(/<figure /g)||[]).length,7);
+  assert.equal((visuals.match(/target="_blank"/g)||[]).length,7);
+});
