@@ -56,7 +56,7 @@ body[data-night-stage-detail] .fansign-gallery-head{padding-bottom:16px;border-b
 body[data-night-stage-detail] :is(.archive26-lightbox,.fm-lightbox,.fansign-lightbox){background:rgba(8,8,7,.97)}
 body[data-night-stage-detail] :is(.archive26-lightbox-image,.archive26-image,.fm-lightbox-image,.fansign-lightbox-image){object-fit:contain;filter:none}
 body[data-night-stage-detail].night-house-page .night-house-photo-masonry .gallery-grid{display:block;columns:3 280px;column-gap:14px;max-width:1180px;margin-inline:auto}
-body[data-night-stage-detail].night-house-page .night-house-photo-masonry .gallery-item{display:inline-block;width:100%;margin:0 0 14px;break-inside:avoid;page-break-inside:avoid;vertical-align:top}
+body[data-night-stage-detail].night-house-page .night-house-photo-masonry .gallery-item{display:inline-block;width:100%;height:auto;aspect-ratio:auto;margin:0 0 14px;break-inside:avoid;page-break-inside:avoid;vertical-align:top}
 body[data-night-stage-detail].night-house-page .night-house-photo-masonry .gallery-item a{display:block}
 body[data-night-stage-detail].night-house-page .night-house-photo-masonry .gallery-item img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 body[data-night-stage-detail].night-house-page .event-log{margin-top:8px;padding:10px 11px;border-left:1px solid color-mix(in srgb,var(--text) 22%,transparent);background:color-mix(in srgb,var(--text) 3%,transparent);font-size:11px;line-height:1.55;color:color-mix(in srgb,var(--text) 72%,transparent)}

@@ -30,7 +30,7 @@ test('NIGHT IN THE HOUSE photo archive uses scoped masonry, fixed ordering, and 
   assert.match(component,/\['visuals','part-1','part-2','encore'\]\.includes\(node\.props\.id\)/);
   assert.match(component,/night-house-photo-masonry/);
   assert.match(css,/\.night-house-photo-masonry \.gallery-grid\{display:block;columns:3 280px/);
-  assert.match(css,/\.night-house-photo-masonry \.gallery-item\{display:inline-block;width:100%/);
+  assert.match(css,/\.night-house-photo-masonry \.gallery-item\{display:inline-block;width:100%;height:auto;aspect-ratio:auto/);
   assert.match(css,/height:auto;aspect-ratio:auto;object-fit:contain/);
   assert.match(css,/\.event-log\{/);
   assert.match(css,/\.event-speaker\{/);
