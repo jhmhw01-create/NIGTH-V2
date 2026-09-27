@@ -45,6 +45,7 @@ test('NIGHT IN THE HOUSE photo archive uses scoped masonry, fixed ordering, and 
   ]);
   assert.equal(files('part-2').length,33);
   assert.equal(files('part-2').at(-1),'image-07.webp');
+  for(const id of ['part-1','part-2','encore'])assert.doesNotMatch(section(id),/loading="lazy"/);
   assert.equal((page.contentHtml.match(/class="event-log"/g)||[]).length,22);
   assert.equal((page.contentHtml.match(/target="_blank"/g)||[]).length,63);
 });
