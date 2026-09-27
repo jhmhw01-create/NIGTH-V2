@@ -7,9 +7,13 @@ const html=page.contentHtml;
 test('history preserves every existing event and adds the current requested records',()=>{
   const expected=["NIGHT Debut","AFTER MIDNIGHT","NOCTURNE","LUNA","ECLIPSE","ANGELO Departure","NO SIGNAL","TAEHOON Joins NIGHT","NEW MOON","LUNA 2nd Generation","LUCID","NIGHT 1ST CONCERT — INTO THE NIGHT","NIGHT 1ST OVERSEAS TOUR — INTO THE NIGHT","LUNA 3rd Generation","NIGHT OFFICIAL PHOTO BOOK","NIGHT 2ND CONCERT — BEYOND THE NIGHT","NIGHT MAGAZINE FEATURE","NIGHT 2ND OVERSEAS TOUR","PHANTOM","PHANTOM Era","LUNA 4th Generation","IHWAN / TAEHOON Birthday Café","AFTER HOURS","2026 Year-End Awards","NIGHT 3rd Concert 夢夜","DOHA / WOOHYUN / JIWOO Birthday Café","NIGHT 3RD OVERSEAS TOUR","COMPLETE","NIGHT 관찰 예능","INFINITY","SENSATIONAL","Five Years. One Night.","LUNA 5th Generation — EVERNIGHT","WINGS","NIGHT 4TH CONCERT 超夜","NIGHT 4TH OVERSEAS TOUR","PERSONA","LUNA 6th Generation — AFTERIMAGE","NIGHTMARE","SUNDAY CLUB","NIGHT 1ST FAN-CON — MOONLIGHT CLUB","LUNA 7th Generation — MIDNIGHT OBSERVATORY"];
   for(const title of expected)assert.ok(html.includes('<h3>'+title+'</h3>'),title);
-  assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+7);
+  assert.equal((html.match(/class="history-event"/g)||[]).length,expected.length+9);
   assert.ok(html.includes('<h3>SOMETIME</h3>'));
   assert.ok(html.includes('ALBUM · 2030.04.08'));
+  assert.ok(html.includes('<h3>NIGHT IN THE HOUSE</h3>'));
+  assert.ok(html.includes('FANMEETING · 2030.07.06'));
+  assert.ok(html.includes('<h3>RETURN</h3>'));
+  assert.ok(html.includes('ALBUM · 2030.11.15'));
   assert.ok(html.includes('<h3>MOMENTS OF THE NIGHT</h3>'));
   assert.ok(html.includes('OFFICIAL DOCUMENTARY · 2029.12.01'));
   assert.ok(html.includes('<h3>WOOHYUN × JIWOO — SO GOOD</h3>'));
@@ -37,6 +41,15 @@ test('2029 current records are connected in newest-first order',()=>{
   assert.ok(positions.every(position=>position>=0));
   assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
   for(const href of ['luna7.html','moonlight-club-2029.html','season-greetings-2029.html']) assert.ok(section.includes('href="'+href+'"'));
+});
+
+test('2030 records are connected in chronological order',()=>{
+  const section=html.slice(html.indexOf('id="history-2030"'),html.indexOf('id="history-2029"'));
+  const ordered=['SOMETIME','NIGHT IN THE HOUSE','RETURN'];
+  const positions=ordered.map(title=>section.indexOf('<h3>'+title+'</h3>'));
+  assert.ok(positions.every(position=>position>=0));
+  assert.deepEqual(positions,[...positions].sort((a,b)=>a-b));
+  for(const href of ['sometime.html','night-in-the-house-2030.html','return-2030.html'])assert.ok(section.includes('href="'+href+'"'));
 });
 
 test('history years are newest first and every detail destination exists',async()=>{
@@ -70,6 +83,8 @@ test('history retains canonical dates with concise fan-facing copy',()=>{
     '<small>FAN-CON · 2029.10.13–2029.10.14</small>',
     '<small>SEASON’S GREETINGS · 2029.01.02</small>',
     '<small>ALBUM · 2030.04.08</small>',
+    '<small>FANMEETING · 2030.07.06</small>',
+    '<small>ALBUM · 2030.11.15</small>',
     'NIGHT의 공식 에디토리얼 포토북 공개.',
     '앨범 PHANTOM 발표. 타이틀곡은 ILLUSION.',
     '세 번째 단독 콘서트 夢夜 개최.',
