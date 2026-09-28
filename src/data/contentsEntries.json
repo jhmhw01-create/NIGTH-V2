@@ -453,5 +453,18 @@
     "endDate": null,
     "year": 2030,
     "type": "luna"
+  },
+  {
+    "title": "DOHA — PLAY ON",
+    "summary": "DOHA가 임시 선수로 처음 호출된 순간부터 고정 멤버가 되고, 마지막 5분의 어시스트로 승리를 연결하기까지 이어지는 개인 예능·스포츠 활동 아카이브.",
+    "label": "PERSONAL SCHEDULE · VARIETY",
+    "action": "VIEW PLAY ON →",
+    "href": "doha-play-on.html",
+    "category": "daily",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "daily"
   }
 ]

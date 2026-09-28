@@ -17,8 +17,9 @@ import {homeUpdates} from './home-updates.mjs';
 import {readImageDimensions} from './image-dimensions.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
 import {buildSearchCatalog} from './search-catalog.mjs';
+import {syncHubPage} from './hub-sync.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const normalizePage=page=>normalizeSeasonGreetingsPage(page);
+const normalizePage=page=>syncHubPage(normalizeSeasonGreetingsPage(page));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});

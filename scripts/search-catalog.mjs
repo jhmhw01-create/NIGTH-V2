@@ -10,11 +10,18 @@ export const searchLabels={
   news:'공지 · PRESS'
 };
 
+const routeKeywords={
+  'doha-play-on.html':'DOHA 윤도하 PLAY ON PERSONAL SCHEDULE VARIETY SPORTS',
+  'night-in-the-house-2030.html':'NIGHT IN THE HOUSE FANMEETING LUNA 2030',
+  'return-2030.html':'RETURN 5MM 2030',
+  'sometime.html':'SOMETIME CINEMATIC 2030'
+};
+
 const sets={
   music:new Set([...albumRoutes,'discography.html','listen.html','highlight-medley.html']),
   stage:new Set(stageRoutes),
-  luna:new Set(['fanclub.html','store.html','with-luna.html',...fanclubDetailRoutes,...eventRoutes]),
-  stories:new Set(['contents.html','if-night.html',...storyRoutes,...playerRoutes]),
+  luna:new Set(['fanclub.html','store.html','with-luna.html',...fanclubDetailRoutes,...eventRoutes.filter(route=>route!=='doha-play-on.html')]),
+  stories:new Set(['contents.html','if-night.html','doha-play-on.html',...storyRoutes,...playerRoutes]),
   visual:new Set(['gallery.html','five-voices.html',...visualRoutes]),
   news:new Set(['notice.html','press.html'])
 };
@@ -98,7 +105,7 @@ export function buildSearchCatalog({routes,documents,albums}){
     const summary=summarize(headDescription(head),text);
     const image=firstImage(markup);
     const id=route==='index.html'?'index':route.replace(/\.html$/,'');
-    const record={id,href:route,title,category:categoryForRoute(route),summary,keywords:title,searchText:text};
+    const record={id,href:route,title,category:categoryForRoute(route),summary,keywords:[title,routeKeywords[route]||''].join(' ').trim(),searchText:text};
     if(image)record.image=image;
     return record;
   });

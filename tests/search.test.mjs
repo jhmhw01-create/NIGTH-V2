@@ -44,6 +44,12 @@ test('archive search normalizes query and matches generated current content',()=
   assert.deepEqual(searchRecords(catalog,{query:'ＮＩＧＨＴ'}),searchRecords(catalog,{query:'night'}));
   assert.ok(searchRecords(catalog,{query:'after hours'}).some(record=>record.href==='discography.html#after-hours'||record.href==='after-hours.html'));
   assert.ok(searchRecords(catalog,{query:'night off summer'}).some(record=>record.href==='night-off-summer.html'));
+  assert.ok(searchRecords(catalog,{query:'RETURN 5MM'}).some(record=>record.href==='return-2030.html'));
+  assert.ok(searchRecords(catalog,{query:'NIGHT IN THE HOUSE'}).some(record=>record.href==='night-in-the-house-2030.html'));
+  assert.ok(searchRecords(catalog,{query:'DOHA PLAY ON'}).some(record=>record.href==='doha-play-on.html'));
+  assert.ok(searchRecords(catalog,{query:'윤도하 VARIETY'}).some(record=>record.href==='doha-play-on.html'));
+  assert.ok(searchRecords(catalog,{query:'SOMETIME CINEMATIC'}).some(record=>record.href==='sometime.html'));
+  assert.equal(catalog.records.find(record=>record.href==='doha-play-on.html')?.category,'stories');
   assert.equal(searchRecords(catalog,{query:'impossible-query-99999'}).length,0);
 });
 
