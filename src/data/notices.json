@@ -382,5 +382,29 @@
     "href": "luna7.html",
     "attributesHtml": " data-notice-category=\"fanclub\" class=\"notice-item reveal\"",
     "bodyTemplateHtml": "<summary><time>2029.11.20</time><span class=\"notice-category\">FANCLUB</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>같은 밤을 바라보며 다시 같은 궤도에서 만나는 NIGHT와 LUNA의 일곱 번째 공식 멤버십 <strong>MIDNIGHT OBSERVATORY</strong> 키트를 공개합니다.</p><a class=\"notice-feature-image\" href=\"luna7.html\"><img src=\"assets/images/7TH LUNA/luna7-kit-complete-archive.webp\" alt=\"LUNA 7TH MIDNIGHT OBSERVATORY 멤버십 키트\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"luna7.html\">EXPLORE THE KIT →</a></div>"
+  },
+  {
+    "id": "night-in-the-house-2030",
+    "title": "NIGHT IN THE HOUSE 팬미팅 및 공식 아카이브 공개",
+    "date": "2030-07-06",
+    "endDate": null,
+    "year": 2030,
+    "type": "event",
+    "dateDisplay": "2030.07.06",
+    "href": "night-in-the-house-2030.html",
+    "attributesHtml": " data-notice-category=\"event\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2030.07.06</time><span class=\"notice-category\">EVENT</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT와 LUNA가 한집에서 함께한 팬미팅 <strong>NIGHT IN THE HOUSE</strong>와 공식 아카이브가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"night-in-the-house-2030.html\"><img src=\"assets/images/FANMEETING-NIGHT-IN-THE-HOUSE/night-in-the-house-2030-fanmeeting-poster.webp\" alt=\"NIGHT IN THE HOUSE 팬미팅 포스터\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"night-in-the-house-2030.html\">ENTER THE HOUSE →</a></div>"
+  },
+  {
+    "id": "return-2030-release",
+    "title": "RETURN 발매 및 5MM 공개",
+    "date": "2030-11-15",
+    "endDate": null,
+    "year": 2030,
+    "type": "music",
+    "dateDisplay": "2030.11.15",
+    "href": "return-2030.html",
+    "attributesHtml": " data-notice-category=\"music\" class=\"notice-item reveal\"",
+    "bodyTemplateHtml": "<summary><time>2030.11.15</time><span class=\"notice-category\">RELEASE</span><strong>{{title}}</strong></summary><div class=\"notice-body\"><p>NIGHT의 앨범 <strong>RETURN</strong>과 타이틀곡 <strong>5MM</strong>가 공개되었습니다.</p><a class=\"notice-feature-image\" href=\"return-2030.html\"><img src=\"assets/images/return/album/return-origin-cover.webp\" alt=\"NIGHT RETURN ORIGIN 앨범 커버\" loading=\"lazy\"></a><a class=\"notice-link-btn\" href=\"return-2030.html\">VIEW RETURN →</a></div>"
   }
 ]

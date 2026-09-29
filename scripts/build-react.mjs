@@ -17,8 +17,9 @@ import {homeUpdates} from './home-updates.mjs';
 import {readImageDimensions} from './image-dimensions.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
 import {buildSearchCatalog} from './search-catalog.mjs';
+import {syncHubPage} from './hub-sync.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
-const normalizePage=page=>normalizeSeasonGreetingsPage(page);
+const normalizePage=page=>syncHubPage(normalizeSeasonGreetingsPage(page));
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
@@ -75,6 +76,7 @@ export async function buildReactPages() {
   const subpageStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/subpage-fashion.css'))).digest('hex').slice(0,12);
   const stageStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/stage-detail-fashion.css'))).digest('hex').slice(0,12);
   const storeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/store-fashion.css'))).digest('hex').slice(0,12);
+  const actingStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/jiwoo-acting.css'))).digest('hex').slice(0,12);
   const indexRoutes=new Set(['index.html','discography.html','history.html','listen.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html']);
   for(const route of routes) {
     const page=pages[route];
@@ -87,9 +89,10 @@ export async function buildReactPages() {
     const fanclubDetailTheme=fanclubDetailRoutes.includes(route)?'<link rel="stylesheet" href="assets/css/fanclub-detail-fashion.css?v='+fanclubDetailStyleVersion+'">':'';
     const albumDetailTheme=albumRoutes.includes(route)?'<link rel="stylesheet" href="assets/css/album-detail-fashion.css?v='+albumDetailStyleVersion+'">':'';
     const storeTheme=route==='store.html'?'<link rel="stylesheet" href="assets/css/store-fashion.css?v='+storeStyleVersion+'">':'';
+    const actingTheme=route==='jiwoo-acting.html'?'<link rel="stylesheet" href="assets/css/jiwoo-acting.css?v='+actingStyleVersion+'">':'';
     const fallback=route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route)?(page.contentHtml.match(/<noscript>[\s\S]*?<\/noscript>/)?.[0]||''):'';
     const body=page.beforeHeaderHtml+'<div id="night-react-root">'+markup+'</div>'+fallback+'<noscript><style>.reveal{opacity:1!important;transform:none!important}.nav-links{display:flex!important;flex-wrap:wrap}</style></noscript><script id="night-page-data" type="application/json">'+serializeRouteData(pageData)+'</script><script type="module" src="assets/js/'+clientFile+'"></script>';
-    await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+enhanceHead(page)+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+subpageTheme+fanclubDetailTheme+listenTheme+albumDetailTheme+stageTheme+storeTheme+'</head><body '+page.bodyAttributes+(fanclubDetailRoutes.includes(route)?' data-night-fanclub-detail="true"':'')+(route==='listen.html'?' data-night-listen="true"':'')+(albumRoutes.includes(route)?' data-night-album-detail="true"':'')+(!indexRoutes.has(route)?' data-night-subpage="true"':'')+(stageRoutes.includes(route)||eventRoutes.includes(route)?' data-night-stage-detail="true"':'')+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');
+    await writeFile(join(root,'dist',route),'<!DOCTYPE html>\n<html '+page.htmlAttributes+'><head>'+enhanceHead(page)+'<link rel="stylesheet" href="assets/css/detail-navigation.css"><link rel="stylesheet" href="assets/css/site-stability.css"><link rel="stylesheet" href="assets/css/discovery-guide.css"><link rel="stylesheet" href="assets/css/readability.css">'+homeTheme+subpageTheme+fanclubDetailTheme+listenTheme+albumDetailTheme+stageTheme+storeTheme+actingTheme+'</head><body '+page.bodyAttributes+(fanclubDetailRoutes.includes(route)?' data-night-fanclub-detail="true"':'')+(route==='listen.html'?' data-night-listen="true"':'')+(albumRoutes.includes(route)?' data-night-album-detail="true"':'')+(!indexRoutes.has(route)?' data-night-subpage="true"':'')+(stageRoutes.includes(route)||eventRoutes.includes(route)?' data-night-stage-detail="true"':'')+' data-night-surface="'+(route==='index.html'?'home':'information')+'">'+body+'</body></html>\n');
   }
   console.log(`All ${routes.length} routes pre-rendered with React; search catalog generated from current routes and albums.`);
 }

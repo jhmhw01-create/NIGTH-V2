@@ -77,6 +77,9 @@ function mdStoreReference(path,corpus){
 }
 
 function dynamicReference(path,corpus,imagePaths){
+  if(/^assets\/images\/jiwoo\/acting\/([^/]+)\/\1-\d{2}\.webp$/.test(path)&&corpus.includes('assets/images/jiwoo/acting/${slug}/${slug}-${String(index+1).padStart(2,\'0\')}.webp')){
+    return {reason:'jiwoo-acting-filmography-generator'};
+  }
   if(/^assets\/images\/vlog\/(night|doha|woohyun|jiwoo|ihwan|taehoon)\/(full|thumbs)\/scene-\d{2}\.webp$/.test(path)&&corpus.includes('assets/images/vlog/${episode.id}/${kind}/scene-${')){
     return {reason:'vlog-scene-generator'};
   }
