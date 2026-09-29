@@ -1,0 +1,5 @@
+.doha-personal-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;padding:clamp(24px,4vw,40px);border:1px solid rgba(255,255,255,.16);background:linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.01))}
+.doha-personal-card .member-meta{margin-bottom:10px}.doha-personal-card h2{margin:0 0 8px;font-size:clamp(28px,4vw,44px);letter-spacing:.08em}.doha-personal-card p{margin:0;color:var(--muted,#aaa);letter-spacing:.12em}.doha-personal-card .btn{white-space:nowrap}
+.fm-archive-entry{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(18px,3vw,38px);align-items:center;padding:clamp(24px,4vw,42px);border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.025)}
+.fm-archive-entry time,.fm-archive-entry small{font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.6)}.fm-archive-entry h2{margin:6px 0 4px;font-size:clamp(25px,3.4vw,42px);letter-spacing:.06em}.fm-archive-entry a{white-space:nowrap}
+@media(max-width:720px){.doha-personal-card,.fm-archive-entry{grid-template-columns:1fr;align-items:start}.doha-personal-card .btn,.fm-archive-entry a{justify-self:start}}

@@ -12,8 +12,8 @@ test('home updates reuse the three latest dated notices with authored valid dest
     assert.equal(update.href,original.href);
   }
   assert.ok(updates.every((item,index)=>index===0||updates[index-1].date>=item.date));
-  assert.equal(updates[0].date,'2030.04.08');
-  assert.equal(updates[0].href,'sometime.html');
-  assert.deepEqual(updates.map(update=>update.date),['2030.04.08','2029.12.01','2029.11.20']);
-  assert.equal(updates[2].href,'luna7.html');
+  assert.equal(updates[0].date,'2030.11.15');
+  assert.equal(updates[0].href,'return-2030.html');
+  assert.deepEqual(updates.map(update=>update.date),['2030.11.15','2030.07.06','2030.04.08']);
+  assert.equal(updates[2].href,'sometime.html');
 });

@@ -7,6 +7,7 @@ import {buildReactPages} from './build-react.mjs';
 import {auditSite} from './audit-site.mjs';
 import {auditLegacyAssets} from './audit-legacy-assets.mjs';
 import {normalizeSeasonGreetingsPage} from './season-greetings-normalization.mjs';
+import {syncHubPage} from './hub-sync.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'dist');
 await mkdir(output, {recursive:true});
@@ -29,6 +30,7 @@ for (const file of pages.filter(file => file.endsWith('.json')).sort()) {
   let page = JSON.parse(await readFile(join(pagesDir,file),'utf8'));
   page = normalizeSeasonGreetingsPage(page);
   page = applyLatestArchivePatches(page);
+  page = syncHubPage(page);
   page.contentHtml = renderCollections(page.contentHtml,collections);
   if (!/^[a-z0-9-]+\.html$/.test(page.route) || basename(page.route) !== page.route) throw Error('Invalid route: ' + page.route);
   if (routes.has(page.route)) throw Error('Duplicate route: ' + page.route);

@@ -23,12 +23,13 @@ test('notice and contents records keep display copy separate from sortable metad
   }
 });
 
-test('the newest album remains connected across discography, notice and contents data',async()=>{
+test('current releases remain connected across discography, notice and contents data',async()=>{
   const albums=await readJson('src/data/albums.json');
   const notices=await readJson('src/data/notices.json');
   const contents=await readJson('src/data/contentsEntries.json');
   const latest=[...notices].filter(item=>item.type==='music').sort((a,b)=>b.date.localeCompare(a.date))[0];
-  assert.equal(latest.id,'sometime-release');
+  assert.equal(latest.id,'return-2030-release');
+  assert.equal(latest.href,'return-2030.html');
   assert.ok(albums.some(item=>item.title==='SOMETIME'));
-  assert.ok(contents.some(item=>item.title==='SOMETIME'&&item.date===latest.date&&item.href===latest.href));
+  assert.ok(contents.some(item=>item.title==='SOMETIME'&&item.date==='2030-04-08'&&item.href==='sometime.html'));
 });

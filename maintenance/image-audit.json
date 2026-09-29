@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2274,
-    "bytes": 218084920,
+    "images": 2301,
+    "bytes": 221355958,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2014,
+    "literalReferenceFound": 2041,
     "knownDynamic": 260,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1311,6 +1311,10 @@
     "assets/images/7TH LUNA": {
       "files": 12,
       "bytes": 2649816
+    },
+    "assets/images/DOHA-PLAY-ON": {
+      "files": 27,
+      "bytes": 3271038
     },
     "assets/images/FANCONCERT MOONLIGHT CLUB": {
       "files": 29,

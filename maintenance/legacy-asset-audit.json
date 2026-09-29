@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 48,
-    "css": 46,
+    "assets": 49,
+    "css": 47,
     "js": 2,
-    "runtime": 46,
+    "runtime": 47,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -38,6 +38,7 @@
       "assets/css/history-fashion.css",
       "assets/css/home-cleanup.css",
       "assets/css/home-fashion.css",
+      "assets/css/hub-sync.css",
       "assets/css/listen-fashion.css",
       "assets/css/luna4.css",
       "assets/css/night-collections.css",
@@ -282,6 +283,7 @@
         "debut-archive.html",
         "discography.html",
         "documentary-2029.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "era-archive.html",
         "fanclub.html",
@@ -382,6 +384,7 @@
         "debut-archive.html",
         "discography.html",
         "documentary-2029.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "era-archive.html",
         "fanclub.html",
@@ -587,6 +590,18 @@
       ]
     },
     {
+      "path": "assets/css/hub-sync.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "fanmeeting.html",
+        "member-doha.html"
+      ],
+      "buildReferences": [
+        "scripts/hub-sync.mjs"
+      ]
+    },
+    {
       "path": "assets/css/listen-fashion.css",
       "type": "css",
       "status": "runtime",
@@ -715,6 +730,7 @@
         "debut-archive.html",
         "discography.html",
         "documentary-2029.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "era-archive.html",
         "fanclub.html",
@@ -804,6 +820,7 @@
         "debut-archive.html",
         "discography.html",
         "documentary-2029.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "era-archive.html",
         "fanclub.html",
@@ -873,6 +890,7 @@
         "coachella-2029.html",
         "concert-archive.html",
         "daesang-moments.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "fanmeeting.html",
         "fansign-20260919.html",
@@ -920,6 +938,7 @@
         "debut-archive.html",
         "discography.html",
         "documentary-2029.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "era-archive.html",
         "fanclub.html",
@@ -991,6 +1010,7 @@
         "src/pages/debut-archive.json",
         "src/pages/discography.json",
         "src/pages/documentary-2029.json",
+        "src/pages/doha-play-on.json",
         "src/pages/dream-night-2027.json",
         "src/pages/era-archive.json",
         "src/pages/fanclub.json",
@@ -1063,6 +1083,7 @@
         "daesang-moments.html",
         "debut-archive.html",
         "documentary-2029.html",
+        "doha-play-on.html",
         "dream-night-2027.html",
         "era-archive.html",
         "fanmeeting.html",
