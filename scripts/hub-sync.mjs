@@ -10,10 +10,12 @@ export function syncHubPage(page) {
   }
   if (page.route==='member-jiwoo.html'&&!page.contentHtml.includes('jiwoo-acting.html')) {
     page.headHtml+=hubStyle;
+    const original=page.contentHtml;
     page.contentHtml=page.contentHtml.replace(
       '<section class="section-tight member-switch-section">',
       '<section class="section-tight" aria-labelledby="jiwoo-personal-schedule"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">PERSONAL SCHEDULE</div><h2 id="jiwoo-personal-schedule">ACTING</h2><p>DRAMA · FILM</p></div><a class="btn secondary" href="jiwoo-acting.html">VIEW FILMOGRAPHY →</a></article></div></section>\n<section class="section-tight member-switch-section">'
     );
+    if(page.contentHtml===original||!page.contentHtml.includes('jiwoo-personal-schedule'))throw Error('Unable to place JIWOO acting archive after the keyword section');
   }
   if (page.route==='fanmeeting.html'&&!page.contentHtml.includes('night-in-the-house-2030.html')) {
     page.headHtml+=hubStyle;
