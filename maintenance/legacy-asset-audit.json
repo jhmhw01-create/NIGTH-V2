@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 49,
-    "css": 47,
+    "assets": 50,
+    "css": 48,
     "js": 2,
-    "runtime": 47,
+    "runtime": 48,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -39,6 +39,7 @@
       "assets/css/home-cleanup.css",
       "assets/css/home-fashion.css",
       "assets/css/hub-sync.css",
+      "assets/css/jiwoo-acting.css",
       "assets/css/listen-fashion.css",
       "assets/css/luna4.css",
       "assets/css/night-collections.css",
@@ -297,6 +298,7 @@
         "if-night.html",
         "index.html",
         "infinity-2027.html",
+        "jiwoo-acting.html",
         "listen.html",
         "luna4.html",
         "luna5.html",
@@ -398,6 +400,7 @@
         "if-night.html",
         "index.html",
         "infinity-2027.html",
+        "jiwoo-acting.html",
         "listen.html",
         "luna4.html",
         "luna5.html",
@@ -595,10 +598,22 @@
       "status": "runtime",
       "runtimeReferences": [
         "fanmeeting.html",
-        "member-doha.html"
+        "member-doha.html",
+        "member-jiwoo.html"
       ],
       "buildReferences": [
         "scripts/hub-sync.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/jiwoo-acting.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "jiwoo-acting.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -744,6 +759,7 @@
         "if-night.html",
         "index.html",
         "infinity-2027.html",
+        "jiwoo-acting.html",
         "listen.html",
         "luna4.html",
         "luna5.html",
@@ -834,6 +850,7 @@
         "if-night.html",
         "index.html",
         "infinity-2027.html",
+        "jiwoo-acting.html",
         "listen.html",
         "luna4.html",
         "luna5.html",
@@ -952,6 +969,7 @@
         "if-night.html",
         "index.html",
         "infinity-2027.html",
+        "jiwoo-acting.html",
         "listen.html",
         "luna4.html",
         "luna5.html",
@@ -1024,6 +1042,7 @@
         "src/pages/if-night.json",
         "src/pages/index.json",
         "src/pages/infinity-2027.json",
+        "src/pages/jiwoo-acting.json",
         "src/pages/listen.json",
         "src/pages/luna4.json",
         "src/pages/luna5.json",
@@ -1093,6 +1112,7 @@
         "global-special-music-show.html",
         "if-night.html",
         "infinity-2027.html",
+        "jiwoo-acting.html",
         "luna4.html",
         "luna5.html",
         "luna6.html",

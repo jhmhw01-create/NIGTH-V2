@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2301,
-    "bytes": 221355958,
+    "images": 2371,
+    "bytes": 230199468,
     "exactDuplicateGroups": 0,
     "literalReferenceFound": 2041,
-    "knownDynamic": 260,
+    "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
   },
@@ -22,6 +22,286 @@
         "path": "assets/images/gallery/full/phantom-group-02.webp",
         "reason": "paired-delivery-variant",
         "evidence": "assets/images/gallery/thumbs/phantom-group-02.webp"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/blind-spot/blind-spot-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/blind-spot/blind-spot-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/blind-spot/blind-spot-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-04.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-05.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-06.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-07.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-08.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-09.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-10.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-11.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/borderline/borderline-12.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-04.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-05.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-06.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-07.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-08.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-09.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-10.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-11.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-12.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-13.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-14.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-15.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-16.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-17.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-18.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-19.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/flawless/flawless-20.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/instead-of-saying-i-like-you/instead-of-saying-i-like-you-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/instead-of-saying-i-like-you/instead-of-saying-i-like-you-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/instead-of-saying-i-like-you/instead-of-saying-i-like-you-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/instead-of-saying-i-like-you/instead-of-saying-i-like-you-04.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-04.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-05.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-06.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/ordinary-day/ordinary-day-07.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-04.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-05.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-06.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-07.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-08.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-09.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-10.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-11.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-12.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-13.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-14.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-15.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-16.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/perfect-mismatch/perfect-mismatch-17.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-01.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-02.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-03.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-04.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-05.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-06.webp",
+        "reason": "jiwoo-acting-filmography-generator"
+      },
+      {
+        "path": "assets/images/jiwoo/acting/temperature-of-nineteen/temperature-of-nineteen-07.webp",
+        "reason": "jiwoo-acting-filmography-generator"
       },
       {
         "path": "assets/images/md/full/NIGHT 쿠션.webp",
@@ -1443,6 +1723,34 @@
     "assets/images/gallery/thumbs": {
       "files": 64,
       "bytes": 2497026
+    },
+    "assets/images/jiwoo/acting/blind-spot": {
+      "files": 3,
+      "bytes": 342038
+    },
+    "assets/images/jiwoo/acting/borderline": {
+      "files": 12,
+      "bytes": 1657502
+    },
+    "assets/images/jiwoo/acting/flawless": {
+      "files": 20,
+      "bytes": 2417986
+    },
+    "assets/images/jiwoo/acting/instead-of-saying-i-like-you": {
+      "files": 4,
+      "bytes": 529988
+    },
+    "assets/images/jiwoo/acting/ordinary-day": {
+      "files": 7,
+      "bytes": 1064682
+    },
+    "assets/images/jiwoo/acting/perfect-mismatch": {
+      "files": 17,
+      "bytes": 1992260
+    },
+    "assets/images/jiwoo/acting/temperature-of-nineteen": {
+      "files": 7,
+      "bytes": 839054
     },
     "assets/images/luna4": {
       "files": 33,
