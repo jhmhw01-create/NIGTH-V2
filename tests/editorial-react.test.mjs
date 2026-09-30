@@ -15,7 +15,7 @@ test('editorial conversion preserves all authored articles and interview photos'
     const sources=nodes=>nodes.filter(node=>node.tag==='img'&&node.props.src).map(node=>node.props.src);
     const links=nodes=>nodes.filter(node=>node.tag==='a').map(node=>node.props.href);
     assert.deepEqual(sources(converted),sources(original));assert.deepEqual(links(converted),links(original));
-    if(route==='press.html'){assert.equal(converted.filter(node=>node.tag==='details').length,4);assert.equal(converted.filter(node=>node.tag==='article').length,original.filter(node=>node.tag==='article').length);}
+    if(route==='press.html'){assert.equal(converted.filter(node=>node.tag==='details').length,5);assert.equal(converted.filter(node=>node.tag==='article').length,original.filter(node=>node.tag==='article').length);}
     else{assert.equal(converted.filter(node=>node.props['data-full']).length,6);assert.equal(converted.filter(node=>node.props.id==='fv-viewer').length,1);}
     assert.ok(!converted.some(node=>node.tag==='script'));
   }
