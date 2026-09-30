@@ -1,0 +1,12 @@
+import {useEffect,useState} from 'react';
+import {ihwanMusicalImages} from '../data/ihwanMusical.mjs';
+
+export function IhwanMusicalPage(){
+  const [activePhoto,setActivePhoto]=useState(null);
+  useEffect(()=>{if(activePhoto===null)return;const onKey=event=>{if(event.key==='Escape')setActivePhoto(null);if(event.key==='ArrowLeft')setActivePhoto(index=>(index-1+ihwanMusicalImages.length)%ihwanMusicalImages.length);if(event.key==='ArrowRight')setActivePhoto(index=>(index+1)%ihwanMusicalImages.length);};document.addEventListener('keydown',onKey);return()=>document.removeEventListener('keydown',onKey);},[activePhoto]);
+  return <main className="musical-archive">
+    <section className="musical-hero"><div className="container"><p className="musical-member">IHWAN</p><p className="musical-kicker">PERSONAL SCHEDULE</p><h1>MUSICAL<br/>ARCHIVE</h1><div className="musical-hero-meta"><span>STAGE · PHOTO</span><span>34 PHOTOS</span></div></div></section>
+    <section className="musical-photos" id="photo-archive"><div className="container"><header className="musical-section-head"><div><span>IHWAN MUSICAL</span><h2>PHOTO ARCHIVE</h2></div><small>01 — 34</small></header><div className="musical-grid">{ihwanMusicalImages.map((src,index)=><button className="musical-photo" type="button" key={src} onClick={()=>setActivePhoto(index)} aria-label={`IHWAN 뮤지컬 사진 ${String(index+1).padStart(2,'0')} 크게 보기`}><img src={src} alt={`IHWAN 뮤지컬 아카이브 ${String(index+1).padStart(2,'0')}`} loading={index===0?'eager':'lazy'} decoding="async"/><span>{String(index+1).padStart(2,'0')}</span></button>)}</div></div></section>
+    {activePhoto!==null?<div className="musical-lightbox" role="dialog" aria-modal="true" aria-label="IHWAN 뮤지컬 사진 크게 보기" onClick={event=>{if(event.target===event.currentTarget)setActivePhoto(null);}}><button className="musical-lightbox-close" type="button" onClick={()=>setActivePhoto(null)} aria-label="닫기">×</button><button className="musical-lightbox-prev" type="button" onClick={()=>setActivePhoto(index=>(index-1+ihwanMusicalImages.length)%ihwanMusicalImages.length)} aria-label="이전 사진">‹</button><figure><img src={ihwanMusicalImages[activePhoto]} alt={`IHWAN 뮤지컬 아카이브 ${String(activePhoto+1).padStart(2,'0')}`}/><figcaption>{String(activePhoto+1).padStart(2,'0')} / {ihwanMusicalImages.length}</figcaption></figure><button className="musical-lightbox-next" type="button" onClick={()=>setActivePhoto(index=>(index+1)%ihwanMusicalImages.length)} aria-label="다음 사진">›</button></div>:null}
+  </main>;
+}
