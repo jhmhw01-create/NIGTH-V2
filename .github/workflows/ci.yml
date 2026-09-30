@@ -53,8 +53,8 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/woohyun-night-off.html > /tmp/woohyun-night-off-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/woohyun-night-off-desktop.png http://127.0.0.1:4173/woohyun-night-off.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,7000 --screenshot=/tmp/woohyun-night-off-mobile.png http://127.0.0.1:4173/woohyun-night-off.html
-          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,5000 --screenshot=/tmp/woohyun-night-off-moments-desktop.png http://127.0.0.1:4173/woohyun-night-off.html#night-off-moments
-          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,7000 --screenshot=/tmp/woohyun-night-off-moments-mobile.png http://127.0.0.1:4173/woohyun-night-off.html#night-off-moments
+          google-chrome --headless --no-sandbox --disable-gpu --disable-features=LazyImageLoading --virtual-time-budget=3000 --window-size=1440,5000 --screenshot=/tmp/woohyun-night-off-moments-desktop.png http://127.0.0.1:4173/woohyun-night-off.html#night-off-moments
+          google-chrome --headless --no-sandbox --disable-gpu --disable-features=LazyImageLoading --virtual-time-budget=3000 --window-size=390,7000 --screenshot=/tmp/woohyun-night-off-moments-mobile.png http://127.0.0.1:4173/woohyun-night-off.html#night-off-moments
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/member-woohyun.html > /tmp/member-woohyun-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/member-woohyun-desktop.png http://127.0.0.1:4173/member-woohyun.html
           grep -q 'MUSICAL ARCHIVE' /tmp/ihwan-musical-dom.html
