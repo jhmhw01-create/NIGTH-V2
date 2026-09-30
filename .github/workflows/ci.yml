@@ -51,9 +51,10 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/jiwoo-acting.html > /tmp/jiwoo-acting-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/doha-play-on.html > /tmp/doha-play-on-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/woohyun-night-off.html > /tmp/woohyun-night-off-dom.html
-          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --screenshot=/tmp/woohyun-night-off-desktop.png http://127.0.0.1:4173/woohyun-night-off.html
-          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,844 --screenshot=/tmp/woohyun-night-off-mobile.png http://127.0.0.1:4173/woohyun-night-off.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/woohyun-night-off-desktop.png http://127.0.0.1:4173/woohyun-night-off.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,7000 --screenshot=/tmp/woohyun-night-off-mobile.png http://127.0.0.1:4173/woohyun-night-off.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/member-woohyun.html > /tmp/member-woohyun-dom.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/member-woohyun-desktop.png http://127.0.0.1:4173/member-woohyun.html
           grep -q 'MUSICAL ARCHIVE' /tmp/ihwan-musical-dom.html
           grep -q 'FILMOGRAPHY' /tmp/ihwan-musical-dom.html
           grep -q 'YEAR → WORK → CONTENT' /tmp/ihwan-musical-dom.html
@@ -80,3 +81,4 @@ jobs:
             /tmp/member-ihwan-desktop.png
             /tmp/woohyun-night-off-desktop.png
             /tmp/woohyun-night-off-mobile.png
+            /tmp/member-woohyun-desktop.png
