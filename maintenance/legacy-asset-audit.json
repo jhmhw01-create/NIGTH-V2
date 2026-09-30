@@ -510,10 +510,12 @@
       "type": "css",
       "status": "runtime",
       "runtimeReferences": [
+        "doha-play-on.html",
         "fansign-20260919.html",
         "taehoon-camera-on-off.html"
       ],
       "buildReferences": [
+        "src/pages/doha-play-on.json",
         "src/pages/fansign-20260919.json",
         "src/pages/taehoon-camera-on-off.json"
       ]

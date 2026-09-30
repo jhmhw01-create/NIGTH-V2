@@ -16,7 +16,7 @@ import {ErrorBoundary} from './ErrorBoundary.jsx';
 const active={'index.html':'HOME','about-night.html':'ABOUT','discography.html':'DISCOGRAPHY','contents.html':'CONTENTS','notice.html':'NOTICE','fanclub.html':'FANCLUB','gallery.html':'GALLERY','history.html':'HISTORY','listen.html':'LISTEN'};
 
 const motionCss=`
-#night-react-root{animation:night-page-in .52s cubic-bezier(.22,.61,.36,1) both}
+#night-react-root{animation:night-page-in .52s cubic-bezier(.22,.61,.36,1) backwards}
 body.night-page-leaving #night-react-root{opacity:0;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease}
 @keyframes night-page-in{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
 body[data-night-surface="home"] .hero{overflow:hidden}
