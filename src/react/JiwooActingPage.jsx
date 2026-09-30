@@ -1,3 +1,4 @@
+import {usePersonalPhotoFocus} from './PersonalPhotoFocus.mjs';
 import {useEffect,useState} from 'react';
 import {jiwooFilmography} from '../data/jiwooFilmography.mjs';
 
@@ -9,6 +10,7 @@ const workFromHash=()=>{
 export function JiwooActingPage(){
   const [selected,setSelected]=useState(null);
   const [activePhoto,setActivePhoto]=useState(null);
+  const photoDialog=usePersonalPhotoFocus(Boolean(selected&&activePhoto!==null));
 
   useEffect(()=>{
     const sync=()=>setSelected(workFromHash());
@@ -59,6 +61,6 @@ export function JiwooActingPage(){
       <div className="acting-photo-head"><h3>PHOTO ARCHIVE</h3><span>{selected.images.length} PHOTOS</span></div>
       <div className="acting-gallery">{selected.images.map((src,index)=><button className="acting-photo" type="button" key={src} onClick={()=>setActivePhoto(index)} aria-label={`${selected.title} 사진 ${String(index+1).padStart(2,'0')} 크게 보기`}><img src={src} alt={`${selected.title} ${selected.role} 사진 ${String(index+1).padStart(2,'0')}`} loading="lazy" decoding="async"/><span>{String(index+1).padStart(2,'0')}</span></button>)}</div>
     </div></section>:null}
-    {selected&&activePhoto!==null?<div className="acting-lightbox" role="dialog" aria-modal="true" aria-label={`${selected.title} 사진 크게 보기`} onClick={event=>{if(event.target===event.currentTarget)setActivePhoto(null);}}><button className="acting-lightbox-close" type="button" onClick={()=>setActivePhoto(null)} aria-label="닫기">×</button><button className="acting-lightbox-prev" type="button" onClick={()=>setActivePhoto(index=>(index-1+selected.images.length)%selected.images.length)} aria-label="이전 사진">‹</button><figure><img src={selected.images[activePhoto]} alt={`${selected.title} ${selected.role} 사진 ${String(activePhoto+1).padStart(2,'0')}`}/><figcaption>{selected.title} · {String(activePhoto+1).padStart(2,'0')} / {selected.images.length}</figcaption></figure><button className="acting-lightbox-next" type="button" onClick={()=>setActivePhoto(index=>(index+1)%selected.images.length)} aria-label="다음 사진">›</button></div>:null}
+    {selected&&activePhoto!==null?<div ref={photoDialog} className="acting-lightbox" role="dialog" aria-modal="true" aria-label={`${selected.title} 사진 크게 보기`} onClick={event=>{if(event.target===event.currentTarget)setActivePhoto(null);}}><button className="acting-lightbox-close" type="button" onClick={()=>setActivePhoto(null)} aria-label="닫기">×</button><button className="acting-lightbox-prev" type="button" onClick={()=>setActivePhoto(index=>(index-1+selected.images.length)%selected.images.length)} aria-label="이전 사진">‹</button><figure><img src={selected.images[activePhoto]} alt={`${selected.title} ${selected.role} 사진 ${String(activePhoto+1).padStart(2,'0')}`}/><figcaption>{selected.title} · {String(activePhoto+1).padStart(2,'0')} / {selected.images.length}</figcaption></figure><button className="acting-lightbox-next" type="button" onClick={()=>setActivePhoto(index=>(index+1)%selected.images.length)} aria-label="다음 사진">›</button></div>:null}
   </main>;
 }
