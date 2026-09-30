@@ -11,6 +11,7 @@ export const searchLabels={
 };
 
 const routeKeywords={
+  'taehoon-camera-on-off.html':'TAEHOON 태훈 유태훈 태훈의 카메라 ON-OFF PERSONAL SCHEDULE',
   'doha-play-on.html':'DOHA 윤도하 PLAY ON PERSONAL SCHEDULE VARIETY SPORTS',
   'jiwoo-acting.html':'JIWOO 천지우 ACTING PERSONAL SCHEDULE DRAMA FILM FILMOGRAPHY',
   'ihwan-musical.html':'IHWAN 박이환 MUSICAL PERSONAL SCHEDULE STAGE PHOTO ARCHIVE',

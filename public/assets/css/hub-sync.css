@@ -3,3 +3,5 @@
 .fm-archive-entry{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(18px,3vw,38px);align-items:center;padding:clamp(24px,4vw,42px);border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.025)}
 .fm-archive-entry time,.fm-archive-entry small{font-size:11px;letter-spacing:.18em;color:rgba(255,255,255,.6)}.fm-archive-entry h2{margin:6px 0 4px;font-size:clamp(25px,3.4vw,42px);letter-spacing:.06em}.fm-archive-entry a{white-space:nowrap}
 @media(max-width:720px){.doha-personal-card,.fm-archive-entry{grid-template-columns:1fr;align-items:start}.doha-personal-card .btn,.fm-archive-entry a{justify-self:start}}
+
+#taehoon-personal-schedule span{display:inline-block;white-space:nowrap}

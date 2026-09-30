@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 52,
-    "css": 50,
+    "assets": 53,
+    "css": 51,
     "js": 2,
-    "runtime": 50,
+    "runtime": 51,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -57,6 +57,7 @@
       "assets/css/store-fashion.css",
       "assets/css/style.css",
       "assets/css/subpage-fashion.css",
+      "assets/css/taehoon-camera.css",
       "assets/css/visual-archive.css",
       "assets/css/vlog.css",
       "assets/css/woohyun-night-off.css"
@@ -336,6 +337,7 @@
         "sometime.html",
         "special-mc.html",
         "store.html",
+        "taehoon-camera-on-off.html",
         "travel.html",
         "vlog.html",
         "wings-2028.html",
@@ -440,6 +442,7 @@
         "sometime.html",
         "special-mc.html",
         "store.html",
+        "taehoon-camera-on-off.html",
         "travel.html",
         "vlog.html",
         "wings-2028.html",
@@ -507,10 +510,12 @@
       "type": "css",
       "status": "runtime",
       "runtimeReferences": [
-        "fansign-20260919.html"
+        "fansign-20260919.html",
+        "taehoon-camera-on-off.html"
       ],
       "buildReferences": [
-        "src/pages/fansign-20260919.json"
+        "src/pages/fansign-20260919.json",
+        "src/pages/taehoon-camera-on-off.json"
       ]
     },
     {
@@ -607,6 +612,7 @@
         "member-doha.html",
         "member-ihwan.html",
         "member-jiwoo.html",
+        "member-taehoon.html",
         "member-woohyun.html"
       ],
       "buildReferences": [
@@ -814,6 +820,7 @@
         "sometime.html",
         "special-mc.html",
         "store.html",
+        "taehoon-camera-on-off.html",
         "travel.html",
         "vlog.html",
         "wings-2028.html",
@@ -907,6 +914,7 @@
         "sometime.html",
         "special-mc.html",
         "store.html",
+        "taehoon-camera-on-off.html",
         "travel.html",
         "vlog.html",
         "wings-2028.html",
@@ -1028,6 +1036,7 @@
         "sometime.html",
         "special-mc.html",
         "store.html",
+        "taehoon-camera-on-off.html",
         "travel.html",
         "vlog.html",
         "wings-2028.html",
@@ -1103,6 +1112,7 @@
         "src/pages/sometime.json",
         "src/pages/special-mc.json",
         "src/pages/store.json",
+        "src/pages/taehoon-camera-on-off.json",
         "src/pages/travel.json",
         "src/pages/vlog.json",
         "src/pages/wings-2028.json",
@@ -1173,6 +1183,7 @@
         "sometime.html",
         "special-mc.html",
         "store.html",
+        "taehoon-camera-on-off.html",
         "travel.html",
         "vlog.html",
         "wings-2028.html",
@@ -1184,6 +1195,17 @@
       "buildReferences": [
         "scripts/build-react.mjs",
         "scripts/tests/subpage-fashion.test.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/taehoon-camera.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "taehoon-camera-on-off.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
       ]
     },
     {

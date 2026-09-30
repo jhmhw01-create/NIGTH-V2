@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2414,
-    "bytes": 237781974,
+    "images": 2449,
+    "bytes": 245918606,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2084,
+    "literalReferenceFound": 2119,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1843,6 +1843,30 @@
     "assets/images/sometime/performance": {
       "files": 6,
       "bytes": 655812
+    },
+    "assets/images/taehoon-camera-on-off/ep-01": {
+      "files": 6,
+      "bytes": 1217826
+    },
+    "assets/images/taehoon-camera-on-off/ep-02": {
+      "files": 6,
+      "bytes": 1314570
+    },
+    "assets/images/taehoon-camera-on-off/ep-03": {
+      "files": 5,
+      "bytes": 1175848
+    },
+    "assets/images/taehoon-camera-on-off/ep-04": {
+      "files": 6,
+      "bytes": 1545796
+    },
+    "assets/images/taehoon-camera-on-off/ep-05": {
+      "files": 6,
+      "bytes": 1614840
+    },
+    "assets/images/taehoon-camera-on-off/ep-06": {
+      "files": 6,
+      "bytes": 1267752
     },
     "assets/images/travel/full": {
       "files": 27,
