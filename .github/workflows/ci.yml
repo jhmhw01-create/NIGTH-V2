@@ -1,0 +1,35 @@
+name: Verify NIGHT V2
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: '.nvmrc'
+      - name: Install dependencies
+        run: npm ci
+      - name: Refresh media manifests
+        run: npm run audit:media:update
+      - name: Test
+        run: npm test
+      - name: Verify media manifests
+        run: npm run audit:media
+      - name: Build
+        run: UPDATE_LEGACY_ASSET_AUDIT=1 npm run build
+      - name: Verify site output
+        run: |
+          test -s dist/member-ihwan.html
+          test -s dist/ihwan-musical.html
+          test -s dist/jiwoo-acting.html
+          test -s dist/doha-play-on.html
