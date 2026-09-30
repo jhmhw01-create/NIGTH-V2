@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-import {ContentsEntry} from '../src/components/collections.mjs';
-test('36 text entries keep links, categories and existing deep links',async()=>{
+import {ContentsEntry,renderCollections} from '../src/components/collections.mjs';
+test('41 text entries keep links, categories and existing deep links',async()=>{
   const entries=JSON.parse(await readFile(new URL('../src/data/contentsEntries.json',import.meta.url),'utf8'));
-  assert.equal(entries.length,36);
-  assert.equal(new Set(entries.map(x=>x.href)).size,36);
+  assert.equal(entries.length,41);
+  assert.equal(new Set(entries.map(x=>x.href)).size,41);
   assert.equal(new Set(entries.map(x=>x.category)).size,6);
   assert.equal(entries[0].category,'daily');
   for(const entry of entries){
@@ -19,6 +19,7 @@ test('36 text entries keep links, categories and existing deep links',async()=>{
   assert(entries.some(x=>x.href==='night-off-summer.html'));
   assert(entries.some(x=>x.href==='moonlight-club-2029.html'));
   assert(entries.some(x=>x.href==='coachella-2029.html'));
+  assert(entries.some(x=>x.href==='global-special-music-show.html'&&x.category==='stage'));
   assert(entries.some(x=>x.href==='documentary-2029.html'));
   assert(entries.some(x=>x.href==='woohyun-jiwoo-unit-2024.html'));
   assert(entries.some(x=>x.href==='so-good-2028.html'));
@@ -33,20 +34,31 @@ test('36 text entries keep links, categories and existing deep links',async()=>{
   assert(ContentsEntry(externalEditorial).includes('target="_blank" rel="noopener noreferrer"'));
 });
 
-test('contents page renders every entry and keeps SOMETIME first in the album group',async()=>{
+test('contents counts follow selected cards rather than the whole collection',async()=>{
+  const entries=JSON.parse(await readFile(new URL('../src/data/contentsEntries.json',import.meta.url),'utf8'));
+  const content='{{contentsCount:all}} / {{contentsCount:album}} / {{contentsCount:daily}} / {{contentsEntries:36}}';
+  assert(renderCollections(content,{contentsEntries:entries}).startsWith('1 / 1 / 0 / '));
+  assert(renderCollections(content+'{{contentsEntries:6}}',{contentsEntries:entries}).startsWith('2 / 1 / 1 / '));
+});
+
+test('contents page renders every entry and keeps RETURN first in the album group',async()=>{
   const entries=JSON.parse(await readFile(new URL('../src/data/contentsEntries.json',import.meta.url),'utf8'));
   const {syncHubPage}=await import('../scripts/hub-sync.mjs');
   const page=syncHubPage(JSON.parse(await readFile(new URL('../src/pages/contents.json',import.meta.url),'utf8')));
   const placeholders=[...page.contentHtml.matchAll(/\{\{contentsEntries:(\d+)\}\}/g)].map(match=>Number(match[1]));
-  assert.equal(placeholders.length,36);
-  assert.equal(new Set(placeholders).size,36);
-  assert.deepEqual([...placeholders].sort((a,b)=>a-b),Array.from({length:36},(_,index)=>index));
+  assert.equal(placeholders.length,41);
+  assert.equal(new Set(placeholders).size,41);
+  assert.deepEqual([...placeholders].sort((a,b)=>a-b),Array.from({length:41},(_,index)=>index));
   assert(placeholders.indexOf(31)<placeholders.indexOf(7));
-  assert(page.contentHtml.includes('전체 <span>36</span>'));
+  const rendered=renderCollections(page.contentHtml,{contentsEntries:entries});
+  assert(rendered.includes('전체 <span>41</span>'));
+  assert(placeholders.indexOf(36)<placeholders.indexOf(31));
+  for(const route of ['return-2030.html','paradox-2029.html','nightmare-2029.html','phantom-2026.html'])assert(entries.some(entry=>entry.href===route&&entry.category==='album'));
+  assert(!rendered.includes('{{contentsCount:'));
   const labels={daily:'일상·자체 콘텐츠',album:'앨범',stage:'공연·방송·수상',luna:'LUNA·시즌그리팅',editorial:'에디토리얼',social:'SNS'};
   for(const [category,label] of Object.entries(labels)){
     const count=entries.filter(entry=>entry.category===category).length;
     assert(page.contentHtml.includes(`data-content-filter=\"${category}\"`));
-    assert(page.contentHtml.includes(`${label} <span>${count}</span>`));
+    assert(rendered.includes(`${label} <span>${count}</span>`));
   }
 });

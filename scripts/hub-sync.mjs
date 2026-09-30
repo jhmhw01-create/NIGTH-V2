@@ -42,12 +42,5 @@ export function syncHubPage(page) {
       '\n<section class="section" aria-labelledby="night-in-the-house-entry"><div class="container"><article class="fm-archive-entry reveal"><time datetime="2030-07-06">2030.07.06</time><div><small>FANMEETING</small><h2 id="night-in-the-house-entry">NIGHT IN THE HOUSE</h2></div><a class="btn secondary" href="night-in-the-house-2030.html">ENTER THE HOUSE →</a></article></div></section>\n</main>'
     );
   }
-  if (page.route==='contents.html'&&!page.contentHtml.includes('{{contentsEntries:35}}')) {
-    page.contentHtml=page.contentHtml
-      .replace('전체 <span>35</span>','전체 <span>36</span>')
-      .replace('일상·자체 콘텐츠 <span>7</span>','일상·자체 콘텐츠 <span>8</span>')
-      .replace('전체 · 35개 기록','전체 · 36개 기록')
-      .replace('{{contentsEntries:6}}\n','{{contentsEntries:6}}\n{{contentsEntries:35}}\n');
-  }
   return page;
 }

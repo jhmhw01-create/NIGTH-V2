@@ -466,5 +466,70 @@
     "endDate": null,
     "year": null,
     "type": "daily"
+  },
+  {
+    "title": "RETURN",
+    "summary": "ORIGIN · AFTER DARK · REDEFINED 세 버전과 5MM, 프롤로그 프로모션부터 앨범 구성과 음악방송까지 이어지는 공식 아카이브.",
+    "label": "2030.11.15 · ALBUM ARCHIVE",
+    "action": "VIEW RETURN →",
+    "href": "return-2030.html",
+    "category": "album",
+    "anchor": null,
+    "date": "2030-11-15",
+    "endDate": null,
+    "year": 2030,
+    "type": "album"
+  },
+  {
+    "title": "PARADOX",
+    "summary": "PARADISE를 타이틀로 한 PARADOX의 콘셉트 포토와 필름, 컴백 자료, 앨범 패키지와 음악방송 기록.",
+    "label": "2029.08.27 · ALBUM ARCHIVE",
+    "action": "VIEW PARADOX →",
+    "href": "paradox-2029.html",
+    "category": "album",
+    "anchor": null,
+    "date": "2029-08-27",
+    "endDate": null,
+    "year": 2029,
+    "type": "album"
+  },
+  {
+    "title": "NIGHTMARE",
+    "summary": "BLACK NIGHT을 타이틀로 한 NIGHTMARE의 콘셉트와 프로모션, 앨범 구성과 무대 기록.",
+    "label": "2029.02.23 · ALBUM ARCHIVE",
+    "action": "VIEW NIGHTMARE →",
+    "href": "nightmare-2029.html",
+    "category": "album",
+    "anchor": null,
+    "date": "2029-02-23",
+    "endDate": null,
+    "year": 2029,
+    "type": "album"
+  },
+  {
+    "title": "PHANTOM",
+    "summary": "A와 B 두 버전의 콘셉트, 프로모션과 앨범 패키지, ILLUSION 뮤직비디오와 음악방송 기록.",
+    "label": "2026.09.14 · ALBUM ARCHIVE",
+    "action": "VIEW PHANTOM →",
+    "href": "phantom-2026.html",
+    "category": "album",
+    "anchor": null,
+    "date": "2026-09-14",
+    "endDate": null,
+    "year": 2026,
+    "type": "album"
+  },
+  {
+    "title": "GLOBAL SPECIAL MUSIC SHOW",
+    "summary": "오프닝부터 메인 스테이지, 엔딩까지 세 장면으로 이어지는 NIGHT의 스페셜 음악방송 무대 기록.",
+    "label": "MUSIC SHOW · PERFORMANCE ARCHIVE",
+    "action": "VIEW THE STAGE →",
+    "href": "global-special-music-show.html",
+    "category": "stage",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "stage"
   }
 ]

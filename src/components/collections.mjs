@@ -26,11 +26,15 @@ export function NoticeArchive(records) {
   return years.map(year=>'<section class="notice-year-group" aria-labelledby="notice-year-'+year+'"><h2 class="notice-year-title" id="notice-year-'+year+'">'+year+'</h2><div class="notice-list">\n'+sorted.filter(record=>record.year===year).map(NoticeItem).join('\n')+'\n</div></section>').join('\n');
 }
 export function renderCollections(content, collections) {
+  const contentsSlots=[...content.matchAll(/\{\{contentsEntries:(\d+)\}\}/g)].map(match=>Number(match[1]));
+  const contentsRecords=contentsSlots.map(index=>collections.contentsEntries?.[index]);
+  if(contentsRecords.some(record=>!record))throw Error('Unknown contents record');
   const renderers = {albums:AlbumCard,notices:NoticeItem,memberships:MembershipCard,galleryCards:record=>Record('div',record),contentsEntries:ContentsEntry};
   const membershipSlots=[...content.matchAll(/\{\{memberships:(\d+)\}\}/g)].map(match=>Number(match[1]));
   const membershipMax=membershipSlots.length?Math.max(...membershipSlots):-1;
   const newerMemberships=membershipMax>=0?(collections.memberships||[]).slice(membershipMax+1).toReversed():[];
   const expanded=content
+    .replace(/\{\{contentsCount:([a-z]+)\}\}/g,(_,category)=>String(contentsRecords.filter(record=>category==='all'||record.category===category).length))
     .replaceAll('{{noticeCount}}',String(collections.notices?.length||0))
     .replaceAll('{{noticesByDate}}',NoticeArchive(collections.notices||[]));
   return expanded.replace(/\{\{(albums|notices|memberships|galleryCards|contentsEntries):(\d+)\}\}/g, (_, name, indexText) => {
