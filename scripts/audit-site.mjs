@@ -34,6 +34,11 @@ export function jiwooActingPlacement(html){
   const link=findElement(acting??{},node=>node.tagName==='a'&&attributes(node).href==='jiwoo-acting.html');
   return {keywordIndex,actingIndex,switchIndex,linked:Boolean(link),valid:keywordIndex>=0&&actingIndex===keywordIndex+1&&switchIndex===actingIndex+1&&Boolean(link)};
 }
+export function ihwanMusicalPlacement(html){
+  const document=parse(html);const main=findElement(document,node=>node.tagName==='main');const sections=elementChildren(main).filter(node=>node.tagName==='section');
+  const keywordIndex=sections.findIndex(node=>hasClass(node,'member-highlights-section'));const musicalIndex=sections.findIndex(node=>attributes(node)['aria-labelledby']==='ihwan-personal-schedule');const switchIndex=sections.findIndex(node=>hasClass(node,'member-switch-section'));const musical=sections[musicalIndex];const link=findElement(musical??{},node=>node.tagName==='a'&&attributes(node).href==='ihwan-musical.html');
+  return {keywordIndex,musicalIndex,switchIndex,linked:Boolean(link),valid:keywordIndex>=0&&musicalIndex===keywordIndex+1&&switchIndex===musicalIndex+1&&Boolean(link)};
+}
 
 export async function auditSite(directory) {
   const root=resolve(directory),pages=(await readdir(root)).filter(name=>name.endsWith('.html'));
@@ -42,6 +47,7 @@ export async function auditSite(directory) {
     const html=await readFile(resolve(root,page),'utf8');
     documents.set(page,documentReferences(html));
     if(page==='member-jiwoo.html'&&!jiwooActingPlacement(html).valid)throw Error('Site audit failed:\nmember-jiwoo.html: ACTING archive must appear directly after KEYWORDS and link to jiwoo-acting.html');
+    if(page==='member-ihwan.html'&&!ihwanMusicalPlacement(html).valid)throw Error('Site audit failed:\nmember-ihwan.html: MUSICAL archive must appear directly after KEYWORDS and link to ihwan-musical.html');
   }
   const failures=[],checked=new Set();let links=0;
   for(const [page,document] of documents){

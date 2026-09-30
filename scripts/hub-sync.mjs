@@ -17,6 +17,15 @@ export function syncHubPage(page) {
     );
     if(page.contentHtml===original||!page.contentHtml.includes('jiwoo-personal-schedule'))throw Error('Unable to place JIWOO acting archive after the keyword section');
   }
+  if (page.route==='member-ihwan.html'&&!page.contentHtml.includes('ihwan-musical.html')) {
+    page.headHtml+=hubStyle;
+    const original=page.contentHtml;
+    page.contentHtml=page.contentHtml.replace(
+      '<section class="section-tight member-switch-section">',
+      '<section class="section-tight" aria-labelledby="ihwan-personal-schedule"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">PERSONAL SCHEDULE</div><h2 id="ihwan-personal-schedule">MUSICAL</h2><p>STAGE · PHOTO</p></div><a class="btn secondary" href="ihwan-musical.html">VIEW ARCHIVE →</a></article></div></section>\n<section class="section-tight member-switch-section">'
+    );
+    if(page.contentHtml===original||!page.contentHtml.includes('ihwan-personal-schedule'))throw Error('Unable to place IHWAN musical archive after the keyword section');
+  }
   if (page.route==='fanmeeting.html'&&!page.contentHtml.includes('night-in-the-house-2030.html')) {
     page.headHtml+=hubStyle;
     page.contentHtml=page.contentHtml.replace(

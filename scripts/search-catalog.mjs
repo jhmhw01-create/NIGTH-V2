@@ -13,6 +13,7 @@ export const searchLabels={
 const routeKeywords={
   'doha-play-on.html':'DOHA 윤도하 PLAY ON PERSONAL SCHEDULE VARIETY SPORTS',
   'jiwoo-acting.html':'JIWOO 천지우 ACTING PERSONAL SCHEDULE DRAMA FILM FILMOGRAPHY',
+  'ihwan-musical.html':'IHWAN 박이환 MUSICAL PERSONAL SCHEDULE STAGE PHOTO ARCHIVE',
   'night-in-the-house-2030.html':'NIGHT IN THE HOUSE FANMEETING LUNA 2030',
   'return-2030.html':'RETURN 5MM 2030',
   'sometime.html':'SOMETIME CINEMATIC 2030'

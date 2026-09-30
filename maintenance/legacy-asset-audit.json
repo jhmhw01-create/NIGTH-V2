@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 50,
-    "css": 48,
+    "assets": 51,
+    "css": 49,
     "js": 2,
-    "runtime": 48,
+    "runtime": 49,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -39,6 +39,7 @@
       "assets/css/home-cleanup.css",
       "assets/css/home-fashion.css",
       "assets/css/hub-sync.css",
+      "assets/css/ihwan-musical.css",
       "assets/css/jiwoo-acting.css",
       "assets/css/listen-fashion.css",
       "assets/css/luna4.css",
@@ -296,6 +297,7 @@
         "global-special-music-show.html",
         "history.html",
         "if-night.html",
+        "ihwan-musical.html",
         "index.html",
         "infinity-2027.html",
         "jiwoo-acting.html",
@@ -398,6 +400,7 @@
         "global-special-music-show.html",
         "history.html",
         "if-night.html",
+        "ihwan-musical.html",
         "index.html",
         "infinity-2027.html",
         "jiwoo-acting.html",
@@ -599,10 +602,22 @@
       "runtimeReferences": [
         "fanmeeting.html",
         "member-doha.html",
+        "member-ihwan.html",
         "member-jiwoo.html"
       ],
       "buildReferences": [
         "scripts/hub-sync.mjs"
+      ]
+    },
+    {
+      "path": "assets/css/ihwan-musical.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "ihwan-musical.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
       ]
     },
     {
@@ -757,6 +772,7 @@
         "global-special-music-show.html",
         "history.html",
         "if-night.html",
+        "ihwan-musical.html",
         "index.html",
         "infinity-2027.html",
         "jiwoo-acting.html",
@@ -848,6 +864,7 @@
         "global-special-music-show.html",
         "history.html",
         "if-night.html",
+        "ihwan-musical.html",
         "index.html",
         "infinity-2027.html",
         "jiwoo-acting.html",
@@ -967,6 +984,7 @@
         "global-special-music-show.html",
         "history.html",
         "if-night.html",
+        "ihwan-musical.html",
         "index.html",
         "infinity-2027.html",
         "jiwoo-acting.html",
@@ -1040,6 +1058,7 @@
         "src/pages/global-special-music-show.json",
         "src/pages/history.json",
         "src/pages/if-night.json",
+        "src/pages/ihwan-musical.json",
         "src/pages/index.json",
         "src/pages/infinity-2027.json",
         "src/pages/jiwoo-acting.json",
@@ -1111,6 +1130,7 @@
         "five-voices.html",
         "global-special-music-show.html",
         "if-night.html",
+        "ihwan-musical.html",
         "infinity-2027.html",
         "jiwoo-acting.html",
         "luna4.html",
