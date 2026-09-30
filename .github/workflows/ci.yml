@@ -33,3 +33,28 @@ jobs:
           test -s dist/ihwan-musical.html
           test -s dist/jiwoo-acting.html
           test -s dist/doha-play-on.html
+      - name: Verify production preview in Chrome
+        run: |
+          npm run preview > /tmp/night-preview.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill $PREVIEW_PID' EXIT
+          for attempt in {1..20}; do
+            curl --fail --silent http://127.0.0.1:4173/ihwan-musical.html > /dev/null && break
+            sleep 1
+          done
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/ihwan-musical.html > /tmp/ihwan-musical-dom.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --screenshot=/tmp/ihwan-musical-desktop.png http://127.0.0.1:4173/ihwan-musical.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,844 --screenshot=/tmp/ihwan-musical-mobile.png http://127.0.0.1:4173/ihwan-musical.html
+          grep -q 'MUSICAL ARCHIVE' /tmp/ihwan-musical-dom.html
+          grep -q 'PHOTO ARCHIVE' /tmp/ihwan-musical-dom.html
+          test "$(grep -o 'ihwan-musical-[0-9][0-9].webp' /tmp/ihwan-musical-dom.html | sort -u | wc -l)" -eq 34
+          curl --fail --silent http://127.0.0.1:4173/member-ihwan.html | grep -q 'href="ihwan-musical.html"'
+          curl --fail --silent http://127.0.0.1:4173/jiwoo-acting.html | grep -q 'ACTING ARCHIVE'
+          curl --fail --silent http://127.0.0.1:4173/doha-play-on.html | grep -q 'PLAY ON'
+      - name: Upload browser screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: ihwan-musical-browser-check
+          path: |
+            /tmp/ihwan-musical-desktop.png
+            /tmp/ihwan-musical-mobile.png
