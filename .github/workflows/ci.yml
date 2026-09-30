@@ -53,6 +53,8 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/woohyun-night-off.html > /tmp/woohyun-night-off-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/woohyun-night-off-desktop.png http://127.0.0.1:4173/woohyun-night-off.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,7000 --screenshot=/tmp/woohyun-night-off-mobile.png http://127.0.0.1:4173/woohyun-night-off.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,5000 --screenshot=/tmp/woohyun-night-off-moments-desktop.png http://127.0.0.1:4173/woohyun-night-off.html#night-off-moments
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,7000 --screenshot=/tmp/woohyun-night-off-moments-mobile.png http://127.0.0.1:4173/woohyun-night-off.html#night-off-moments
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/member-woohyun.html > /tmp/member-woohyun-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/member-woohyun-desktop.png http://127.0.0.1:4173/member-woohyun.html
           grep -q 'MUSICAL ARCHIVE' /tmp/ihwan-musical-dom.html
@@ -70,6 +72,7 @@ jobs:
           grep -q 'EVERY FRIDAY · 10 PM' /tmp/woohyun-night-off-dom.html
           test "$(grep -o 'class="night-off-corner-number"' /tmp/woohyun-night-off-dom.html | wc -l)" -eq 4
           test "$(grep -o 'woohyun-night-off-[0-9][0-9]-[a-z-]*.webp' /tmp/woohyun-night-off-dom.html | sort -u | wc -l)" -eq 9
+          grep -o 'assets/images/woohyun/radio/woohyun-night-off-[0-9][0-9]-[a-z-]*.webp' /tmp/woohyun-night-off-dom.html | sort -u | while read -r image; do curl --fail --silent "http://127.0.0.1:4173/$image" > /dev/null; done
           grep -q 'href="woohyun-night-off.html"' /tmp/member-woohyun-dom.html
       - name: Upload browser screenshots
         uses: actions/upload-artifact@v4
@@ -81,4 +84,6 @@ jobs:
             /tmp/member-ihwan-desktop.png
             /tmp/woohyun-night-off-desktop.png
             /tmp/woohyun-night-off-mobile.png
+            /tmp/woohyun-night-off-moments-desktop.png
+            /tmp/woohyun-night-off-moments-mobile.png
             /tmp/member-woohyun-desktop.png
