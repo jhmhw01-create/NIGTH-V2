@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2405,
-    "bytes": 235849522,
+    "images": 2414,
+    "bytes": 237781974,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2075,
+    "literalReferenceFound": 2084,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1903,6 +1903,10 @@
     "assets/images/vlog/woohyun/thumbs": {
       "files": 7,
       "bytes": 124368
+    },
+    "assets/images/woohyun/radio": {
+      "files": 9,
+      "bytes": 1932452
     }
   },
   "policy": "public/assets/images contains web-delivery assets. Literal references include normalized HTML entities; known-dynamic requires an explicit generator or a literal paired delivery variant. Only unresolved paths require manual reference review, and unresolved is not deletion permission."
