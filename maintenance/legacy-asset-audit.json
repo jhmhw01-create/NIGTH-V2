@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 51,
-    "css": 49,
+    "assets": 52,
+    "css": 50,
     "js": 2,
-    "runtime": 49,
+    "runtime": 50,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -58,7 +58,8 @@
       "assets/css/style.css",
       "assets/css/subpage-fashion.css",
       "assets/css/visual-archive.css",
-      "assets/css/vlog.css"
+      "assets/css/vlog.css",
+      "assets/css/woohyun-night-off.css"
     ],
     "buildInput": [
       "assets/js/md-store.js",
@@ -340,6 +341,7 @@
         "wings-2028.html",
         "with-luna.html",
         "woohyun-jiwoo-unit-2024.html",
+        "woohyun-night-off.html",
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
@@ -443,6 +445,7 @@
         "wings-2028.html",
         "with-luna.html",
         "woohyun-jiwoo-unit-2024.html",
+        "woohyun-night-off.html",
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
@@ -603,7 +606,8 @@
         "fanmeeting.html",
         "member-doha.html",
         "member-ihwan.html",
-        "member-jiwoo.html"
+        "member-jiwoo.html",
+        "member-woohyun.html"
       ],
       "buildReferences": [
         "scripts/hub-sync.mjs"
@@ -815,6 +819,7 @@
         "wings-2028.html",
         "with-luna.html",
         "woohyun-jiwoo-unit-2024.html",
+        "woohyun-night-off.html",
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
@@ -907,6 +912,7 @@
         "wings-2028.html",
         "with-luna.html",
         "woohyun-jiwoo-unit-2024.html",
+        "woohyun-night-off.html",
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
@@ -1027,6 +1033,7 @@
         "wings-2028.html",
         "with-luna.html",
         "woohyun-jiwoo-unit-2024.html",
+        "woohyun-night-off.html",
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
@@ -1101,6 +1108,7 @@
         "src/pages/wings-2028.json",
         "src/pages/with-luna.json",
         "src/pages/woohyun-jiwoo-unit-2024.json",
+        "src/pages/woohyun-night-off.json",
         "src/pages/year-end-awards-2026.json"
       ]
     },
@@ -1170,6 +1178,7 @@
         "wings-2028.html",
         "with-luna.html",
         "woohyun-jiwoo-unit-2024.html",
+        "woohyun-night-off.html",
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
@@ -1199,6 +1208,17 @@
       ],
       "buildReferences": [
         "src/pages/vlog.json"
+      ]
+    },
+    {
+      "path": "assets/css/woohyun-night-off.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "woohyun-night-off.html"
+      ],
+      "buildReferences": [
+        "scripts/build-react.mjs"
       ]
     },
     {

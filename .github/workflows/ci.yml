@@ -33,6 +33,7 @@ jobs:
           test -s dist/ihwan-musical.html
           test -s dist/jiwoo-acting.html
           test -s dist/doha-play-on.html
+          test -s dist/woohyun-night-off.html
       - name: Verify production preview in Chrome
         run: |
           npm run preview > /tmp/night-preview.log 2>&1 &
@@ -49,6 +50,10 @@ jobs:
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,7000 --screenshot=/tmp/member-ihwan-desktop.png http://127.0.0.1:4173/member-ihwan.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/jiwoo-acting.html > /tmp/jiwoo-acting-dom.html
           google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/doha-play-on.html > /tmp/doha-play-on-dom.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/woohyun-night-off.html > /tmp/woohyun-night-off-dom.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --screenshot=/tmp/woohyun-night-off-desktop.png http://127.0.0.1:4173/woohyun-night-off.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=390,844 --screenshot=/tmp/woohyun-night-off-mobile.png http://127.0.0.1:4173/woohyun-night-off.html
+          google-chrome --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --window-size=1440,1200 --dump-dom http://127.0.0.1:4173/member-woohyun.html > /tmp/member-woohyun-dom.html
           grep -q 'MUSICAL ARCHIVE' /tmp/ihwan-musical-dom.html
           grep -q 'FILMOGRAPHY' /tmp/ihwan-musical-dom.html
           grep -q 'YEAR → WORK → CONTENT' /tmp/ihwan-musical-dom.html
@@ -59,6 +64,12 @@ jobs:
           grep -q 'href="ihwan-musical.html"' /tmp/member-ihwan-dom.html
           grep -q 'ACTING ARCHIVE' /tmp/jiwoo-acting-dom.html
           grep -q 'PLAY ON' /tmp/doha-play-on-dom.html
+          grep -q "WOOHYUN'S NIGHT OFF" /tmp/woohyun-night-off-dom.html
+          grep -q '2027 — 2029' /tmp/woohyun-night-off-dom.html
+          grep -q 'EVERY FRIDAY · 10 PM' /tmp/woohyun-night-off-dom.html
+          test "$(grep -o 'class="night-off-corner-number"' /tmp/woohyun-night-off-dom.html | wc -l)" -eq 4
+          test "$(grep -o 'woohyun-night-off-[0-9][0-9]-[a-z-]*.webp' /tmp/woohyun-night-off-dom.html | sort -u | wc -l)" -eq 9
+          grep -q 'href="woohyun-night-off.html"' /tmp/member-woohyun-dom.html
       - name: Upload browser screenshots
         uses: actions/upload-artifact@v4
         with:
@@ -67,3 +78,5 @@ jobs:
             /tmp/ihwan-musical-desktop.png
             /tmp/ihwan-musical-mobile.png
             /tmp/member-ihwan-desktop.png
+            /tmp/woohyun-night-off-desktop.png
+            /tmp/woohyun-night-off-mobile.png
