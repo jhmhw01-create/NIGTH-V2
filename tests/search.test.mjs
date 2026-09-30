@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {archiveState,searchRecords} from '../src/react/search.mjs';
 import {reactRoutes} from '../src/react/routes.mjs';
-import {buildSearchCatalog,searchLabels} from '../scripts/search-catalog.mjs';
+import {archiveFallback,buildSearchCatalog,searchLabels} from '../scripts/search-catalog.mjs';
 
 const albums=JSON.parse(await readFile(new URL('../src/data/albums.json',import.meta.url),'utf8'));
 const documents={};
@@ -51,6 +51,23 @@ test('archive search normalizes query and matches generated current content',()=
   assert.ok(searchRecords(catalog,{query:'SOMETIME CINEMATIC'}).some(record=>record.href==='sometime.html'));
   assert.equal(catalog.records.find(record=>record.href==='doha-play-on.html')?.category,'stories');
   assert.equal(searchRecords(catalog,{query:'impossible-query-99999'}).length,0);
+});
+
+test('current archives are searchable at their canonical routes',()=>{
+  const expected={
+    'PARADOX':'paradox-2029.html','REST':'discography.html#rest','SOMETIME':'sometime.html','RETURN 5MM':'return-2030.html',
+    'MOONLIGHT CLUB':'moonlight-club-2029.html','COACHELLA':'coachella-2029.html','NIGHT IN THE HOUSE':'night-in-the-house-2030.html',
+    'MOMENTS OF THE NIGHT':'documentary-2029.html','SO GOOD':'so-good-2028.html','LUNA 7':'luna7.html','2029 SEASON':'season-greetings-2029.html',
+    'JIWOO ACTING':'jiwoo-acting.html','IHWAN MUSICAL':'ihwan-musical.html',"WOOHYUN'S NIGHT OFF":'woohyun-night-off.html'
+  };
+  for(const [query,href] of Object.entries(expected))assert.ok(searchRecords(catalog,{query}).some(record=>record.href===href),query+' → '+href);
+  for(const route of ['debut-archive.html','out-of-frame.html','social-archive.html'])assert.ok(catalog.records.some(record=>record.href===route),route);
+});
+
+test('noscript fallback is generated from the same complete catalog',()=>{
+  const fallback=archiveFallback(catalog);
+  assert.equal((fallback.match(/<li>/g)||[]).length,catalog.records.length);
+  for(const record of catalog.records)assert.ok(fallback.includes('href="'+record.href+'"'),record.href);
 });
 
 test('search summaries use authored content without layout or template residue',()=>{

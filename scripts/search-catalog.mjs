@@ -14,10 +14,17 @@ const routeKeywords={
   'doha-play-on.html':'DOHA 윤도하 PLAY ON PERSONAL SCHEDULE VARIETY SPORTS',
   'jiwoo-acting.html':'JIWOO 천지우 ACTING PERSONAL SCHEDULE DRAMA FILM FILMOGRAPHY',
   'ihwan-musical.html':'IHWAN 박이환 MUSICAL PERSONAL SCHEDULE STAGE PHOTO ARCHIVE',
+  'woohyun-night-off.html':"WOOHYUN 성우현 RADIO PERSONAL SCHEDULE WOOHYUN'S NIGHT OFF 우현의 나이트 오프",
   'night-in-the-house-2030.html':'NIGHT IN THE HOUSE FANMEETING LUNA 2030',
   'return-2030.html':'RETURN 5MM 2030',
   'sometime.html':'SOMETIME CINEMATIC 2030'
 };
+
+const escape=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+
+export function archiveFallback(catalog){
+  return '<noscript><p>검색 기능은 JavaScript가 필요합니다. 아래 목록에서 바로 이동할 수 있습니다.</p><ul>'+catalog.records.map(record=>'<li><a href="'+escape(record.href)+'">'+escape(record.title)+'</a></li>').join('')+'</ul></noscript>';
+}
 
 const sets={
   music:new Set([...albumRoutes,'discography.html','listen.html','highlight-medley.html']),

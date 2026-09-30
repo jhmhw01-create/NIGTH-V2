@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {renderCollections} from '../src/components/collections.mjs';
 test('notice fashion is page-scoped, readable, responsive and preserves native disclosure',async()=>{
  const css=await readFile(new URL('../public/assets/css/notice-fashion.css',import.meta.url),'utf8');
  assert.ok(css.includes('body:has(.notice-section)'));
@@ -9,16 +10,17 @@ test('notice fashion is page-scoped, readable, responsive and preserves native d
  assert.ok(css.includes('grid-column:1/span 2'));
  assert.ok(css.includes('filter:none;opacity:1'));
  assert.ok(!css.includes('object-fit:cover'));
- const {syncHubPage}=await import('../scripts/hub-sync.mjs');
- const page=syncHubPage(JSON.parse(await readFile(new URL('../src/pages/notice.json',import.meta.url),'utf8')));
- assert.equal((page.contentHtml.match(/\{\{notices:\d+\}\}/g)||[]).length,34);
- assert.ok(page.contentHtml.indexOf('{{notices:33}}')<page.contentHtml.indexOf('{{notices:32}}'));
- assert.ok(page.contentHtml.indexOf('{{notices:32}}')<page.contentHtml.indexOf('{{notices:30}}'));
- assert.ok(page.contentHtml.includes('{{notices:31}}'));
- assert.ok(page.contentHtml.indexOf('{{notices:29}}')<page.contentHtml.indexOf('{{notices:31}}'));
- assert.ok(page.contentHtml.indexOf('{{notices:31}}')<page.contentHtml.indexOf('{{notices:0}}'));
+ const page=JSON.parse(await readFile(new URL('../src/pages/notice.json',import.meta.url),'utf8'));
  const notices=JSON.parse(await readFile(new URL('../src/data/notices.json',import.meta.url),'utf8'));
  assert.equal(notices.length,34);
+ const html=renderCollections(page.contentHtml,{notices});
+ assert.ok(html.includes('전체 공지 34건'));
+ assert.equal((html.match(/class="notice-item reveal"/g)||[]).length,34);
+ assert.equal((html.match(/class="notice-year-group"/g)||[]).length,5);
+ const renderedIds=[...html.matchAll(/<details\b[^>]*\bid="([^"]+)"/g)].map(match=>match[1]);
+ assert.deepEqual(renderedIds,notices.toSorted((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id)).map(notice=>notice.id));
+ assert.ok(html.indexOf('notice-year-2030')<html.indexOf('notice-year-2029'));
+ assert.ok(html.indexOf('return-2030-release')<html.indexOf('night-in-the-house-2030'));
  assert.equal(notices.find(({id})=>id==='return-2030-release')?.href,'return-2030.html');
  assert.equal(notices.find(({id})=>id==='night-in-the-house-2030')?.href,'night-in-the-house-2030.html');
  assert.equal(notices.filter(({id})=>id==='sometime-release').length,1);

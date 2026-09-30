@@ -49,10 +49,5 @@ export function syncHubPage(page) {
       .replace('전체 · 35개 기록','전체 · 36개 기록')
       .replace('{{contentsEntries:6}}\n','{{contentsEntries:6}}\n{{contentsEntries:35}}\n');
   }
-  if (page.route==='notice.html'&&!page.contentHtml.includes('{{notices:32}}')) {
-    page.contentHtml=page.contentHtml
-      .replace('전체 공지 32건','전체 공지 34건')
-      .replace('{{notices:30}}\n','{{notices:33}}\n{{notices:32}}\n{{notices:30}}\n');
-  }
   return page;
 }
