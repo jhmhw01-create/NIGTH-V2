@@ -1,0 +1,10 @@
+{
+  "route": "jiwoo-acting.html",
+  "activeNav": "CONTENTS",
+  "htmlAttributes": "lang=\"ko\"",
+  "bodyAttributes": "class=\"jiwoo-acting-page\"",
+  "headHtml": "<meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>JIWOO — ACTING ARCHIVE</title><meta name=\"description\" content=\"NIGHT JIWOO의 개인 연기 활동 아카이브. 2026년부터 2031년까지의 드라마와 영화 필모그래피.\"><link rel=\"stylesheet\" href=\"assets/css/style.css\">",
+  "beforeHeaderHtml": "",
+  "contentHtml": "<main></main>",
+  "afterFooterHtml": ""
+}

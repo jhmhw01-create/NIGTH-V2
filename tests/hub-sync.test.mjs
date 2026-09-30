@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {syncHubPage} from '../scripts/hub-sync.mjs';
+import {PageLayout} from '../src/components/layout.mjs';
+import {jiwooActingPlacement} from '../scripts/audit-site.mjs';
 
 const page=async route=>syncHubPage(JSON.parse(await readFile(new URL(`../src/pages/${route}.json`,import.meta.url),'utf8')));
 
@@ -10,6 +12,18 @@ test('DOHA profile links to the separate PLAY ON personal schedule archive',asyn
   assert.match(doha.contentHtml,/PERSONAL SCHEDULE/);
   assert.match(doha.contentHtml,/VARIETY · SPORTS/);
   assert.match(doha.contentHtml,/href="doha-play-on\.html"/);
+});
+
+test('JIWOO acting card is rendered directly after KEYWORDS with the DOHA card pattern',async()=>{
+  const jiwoo=await page('member-jiwoo');
+  assert.match(jiwoo.contentHtml,/class="doha-personal-card reveal"/);
+  assert.match(jiwoo.contentHtml,/PERSONAL SCHEDULE/);
+  assert.match(jiwoo.contentHtml,/DRAMA · FILM/);
+  assert.match(jiwoo.contentHtml,/VIEW FILMOGRAPHY →/);
+  const placement=jiwooActingPlacement(PageLayout(jiwoo));
+  assert.equal(placement.valid,true);
+  assert.equal(placement.actingIndex,placement.keywordIndex+1);
+  assert.equal(placement.switchIndex,placement.actingIndex+1);
 });
 
 test('fanmeeting archive keeps its content and adds the 2030 archive entry',async()=>{

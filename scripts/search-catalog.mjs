@@ -1,4 +1,4 @@
-import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,playerRoutes,collectionRoutes,editorialRoutes,eventRoutes,visualRoutes} from '../src/react/routes.mjs';
+import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,playerRoutes,collectionRoutes,editorialRoutes,eventRoutes,personalRoutes,visualRoutes} from '../src/react/routes.mjs';
 
 export const searchLabels={
   group:'그룹 · 연혁',
@@ -12,6 +12,8 @@ export const searchLabels={
 
 const routeKeywords={
   'doha-play-on.html':'DOHA 윤도하 PLAY ON PERSONAL SCHEDULE VARIETY SPORTS',
+  'jiwoo-acting.html':'JIWOO 천지우 ACTING PERSONAL SCHEDULE DRAMA FILM FILMOGRAPHY',
+  'ihwan-musical.html':'IHWAN 박이환 MUSICAL PERSONAL SCHEDULE STAGE PHOTO ARCHIVE',
   'night-in-the-house-2030.html':'NIGHT IN THE HOUSE FANMEETING LUNA 2030',
   'return-2030.html':'RETURN 5MM 2030',
   'sometime.html':'SOMETIME CINEMATIC 2030'
@@ -21,7 +23,7 @@ const sets={
   music:new Set([...albumRoutes,'discography.html','listen.html','highlight-medley.html']),
   stage:new Set(stageRoutes),
   luna:new Set(['fanclub.html','store.html','with-luna.html',...fanclubDetailRoutes,...eventRoutes.filter(route=>route!=='doha-play-on.html')]),
-  stories:new Set(['contents.html','if-night.html','doha-play-on.html',...storyRoutes,...playerRoutes]),
+  stories:new Set(['contents.html','if-night.html','doha-play-on.html',...personalRoutes,...storyRoutes,...playerRoutes]),
   visual:new Set(['gallery.html','five-voices.html',...visualRoutes]),
   news:new Set(['notice.html','press.html'])
 };
