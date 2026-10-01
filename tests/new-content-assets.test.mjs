@@ -39,3 +39,14 @@ test('the two OST covers remain attached only to their confirmed JIWOO works',as
   assert.match(component,/ORIGINAL SOUNDTRACK/);
   assert.doesNotMatch(component,/JIWOO.*VOCAL|JIWOO.*가창/);
 });
+
+test('fashion week and IHWAN graduation alone use natural-ratio archive cards',async()=>{
+  const fashion=await readPage('fashion-week-2030.html');
+  const graduation=await readPage('ihwan-graduation.html');
+  const luna=await readPage('luna8.html');
+  const css=await readFile(new URL('public/assets/css/archive-new.css',root),'utf8');
+  assert.match(fashion.contentHtml,/archive-new-grid archive-new-grid--natural-images/);
+  assert.match(graduation.contentHtml,/archive-new-grid archive-new-grid--natural-images/);
+  assert.doesNotMatch(luna.contentHtml,/archive-new-grid--natural-images/);
+  assert.match(css,/\.archive-new-grid--natural-images \.archive-new-card img\{[^}]*width:100%;height:auto;aspect-ratio:auto;object-fit:initial/);
+});
