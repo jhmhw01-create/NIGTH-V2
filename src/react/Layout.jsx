@@ -6,9 +6,25 @@ export function Header({activeNav = 'HOME'}) {
   const toggle = useRef(null);
   useEffect(() => {
     if (!open) return;
-    const close = event => { if (event.key === 'Escape') {setOpen(false); toggle.current?.focus();} };
+    const navigationElement=document.getElementById('night-navigation');
+    const background=[document.getElementById('night-main-content'),...document.querySelectorAll('.detail-navigation'),document.querySelector('.site-footer')].filter(Boolean);
+    background.forEach(element=>{element.inert=true;});
+    document.body.classList.add('mobile-menu-open');
+    navigationElement?.querySelector('a')?.focus();
+    const close = event => {
+      if (event.key === 'Escape') {event.preventDefault();setOpen(false);toggle.current?.focus();return;}
+      if(event.key!=='Tab')return;
+      const controls=[toggle.current,...(navigationElement?.querySelectorAll('a')??[])].filter(Boolean);
+      const first=controls[0],last=controls.at(-1);
+      if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+      else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+    };
     document.addEventListener('keydown',close);
-    return () => document.removeEventListener('keydown',close);
+    return () => {
+      document.removeEventListener('keydown',close);
+      document.body.classList.remove('mobile-menu-open');
+      background.forEach(element=>{element.inert=false;});
+    };
   },[open]);
   return <header className="site-header"><nav className="nav container">
     <a className="brand" href="index.html">N<span>I</span>GHT</a>

@@ -21,5 +21,5 @@ export function HomePage({updates=[]}) {
     elements.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
-  return <><Hero/><About/><Members/><EditorialFeature/><ArchiveLinks/><HomeGuide updates={updates}/><Fanclub/></>;
+  return <main><Hero/><About/><Members/><EditorialFeature/><ArchiveLinks/><HomeGuide updates={updates}/><Fanclub/></main>;
 }
