@@ -19,6 +19,10 @@ const routeKeywords={
   'night-in-the-house-2030.html':'NIGHT IN THE HOUSE FANMEETING LUNA 2030',
   'return-2030.html':'RETURN 5MM 2030',
   'sometime.html':'SOMETIME CINEMATIC 2030'
+  ,'luna8.html':'LUNA 8TH SHINE AND DAWN MEMBERSHIP KIT'
+  ,'taehoon-todays-scenery.html':'TAEHOON 유태훈 오늘의 풍경 SOLO SINGLE 아무 데도 다녀왔어'
+  ,'ihwan-graduation.html':'IHWAN 박이환 GRADUATION 졸업 PERSONAL ARCHIVE'
+  ,'fashion-week-2030.html':'NIGHT 2030 FASHION WEEK DOHA WOOHYUN JIWOO IHWAN TAEHOON'
 };
 
 const escape=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));

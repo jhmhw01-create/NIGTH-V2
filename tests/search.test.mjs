@@ -58,7 +58,8 @@ test('current archives are searchable at their canonical routes',()=>{
     'PARADOX':'paradox-2029.html','REST':'discography.html#rest','SOMETIME':'sometime.html','RETURN 5MM':'return-2030.html',
     'MOONLIGHT CLUB':'moonlight-club-2029.html','COACHELLA':'coachella-2029.html','NIGHT IN THE HOUSE':'night-in-the-house-2030.html',
     'MOMENTS OF THE NIGHT':'documentary-2029.html','SO GOOD':'so-good-2028.html','LUNA 7':'luna7.html','2029 SEASON':'season-greetings-2029.html',
-    'JIWOO ACTING':'jiwoo-acting.html','IHWAN MUSICAL':'ihwan-musical.html',"WOOHYUN'S NIGHT OFF":'woohyun-night-off.html'
+    'JIWOO ACTING':'jiwoo-acting.html','IHWAN MUSICAL':'ihwan-musical.html',"WOOHYUN'S NIGHT OFF":'woohyun-night-off.html',
+    'LUNA 8 SHINE':'luna8.html','오늘의 풍경':'taehoon-todays-scenery.html','IHWAN GRADUATION':'ihwan-graduation.html','2030 FASHION WEEK':'fashion-week-2030.html'
   };
   for(const [query,href] of Object.entries(expected))assert.ok(searchRecords(catalog,{query}).some(record=>record.href===href),query+' → '+href);
   for(const route of ['debut-archive.html','out-of-frame.html','social-archive.html'])assert.ok(catalog.records.some(record=>record.href===route),route);

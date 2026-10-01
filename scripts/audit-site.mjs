@@ -37,7 +37,7 @@ export function jiwooActingPlacement(html){
 export function ihwanMusicalPlacement(html){
   const document=parse(html);const main=findElement(document,node=>node.tagName==='main');const sections=elementChildren(main).filter(node=>node.tagName==='section');
   const keywordIndex=sections.findIndex(node=>hasClass(node,'member-highlights-section'));const musicalIndex=sections.findIndex(node=>attributes(node)['aria-labelledby']==='ihwan-personal-schedule');const switchIndex=sections.findIndex(node=>hasClass(node,'member-switch-section'));const musical=sections[musicalIndex];const link=findElement(musical??{},node=>node.tagName==='a'&&attributes(node).href==='ihwan-musical.html');
-  return {keywordIndex,musicalIndex,switchIndex,linked:Boolean(link),valid:keywordIndex>=0&&musicalIndex===keywordIndex+1&&switchIndex===musicalIndex+1&&Boolean(link)};
+  return {keywordIndex,musicalIndex,switchIndex,linked:Boolean(link),valid:keywordIndex>=0&&musicalIndex===keywordIndex+1&&switchIndex>musicalIndex&&Boolean(link)};
 }
 
 export async function auditSite(directory) {

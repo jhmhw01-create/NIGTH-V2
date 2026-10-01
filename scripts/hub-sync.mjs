@@ -1,6 +1,9 @@
 const hubStyle='<link rel="stylesheet" href="assets/css/hub-sync.css">';
 
 export function syncHubPage(page) {
+  if(page.route==='contents.html'&&!page.contentHtml.includes('{{contentsEntries:41}}')){
+    page.contentHtml=page.contentHtml.replace('{{contentsEntries:6}}','{{contentsEntries:6}}\n{{contentsEntries:41}}\n{{contentsEntries:42}}\n{{contentsEntries:43}}');
+  }
   if (page.route==='member-doha.html'&&!page.contentHtml.includes('doha-play-on.html')) {
     page.headHtml+=hubStyle;
     page.contentHtml=page.contentHtml.replace(
@@ -26,6 +29,13 @@ export function syncHubPage(page) {
     );
     if(page.contentHtml===original||!page.contentHtml.includes('ihwan-personal-schedule'))throw Error('Unable to place IHWAN musical archive after the keyword section');
   }
+  if (page.route==='member-ihwan.html'&&!page.contentHtml.includes('ihwan-graduation.html')) {
+    if(!page.headHtml.includes('hub-sync.css'))page.headHtml+=hubStyle;
+    page.contentHtml=page.contentHtml.replace(
+      '<section class="section-tight member-switch-section">',
+      '<section class="section-tight" aria-labelledby="ihwan-graduation-entry"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">PERSONAL ARCHIVE</div><h2 id="ihwan-graduation-entry">GRADUATION</h2><p>PHOTO ARCHIVE</p></div><a class="btn secondary" href="ihwan-graduation.html">VIEW ARCHIVE →</a></article></div></section>\n<section class="section-tight member-switch-section">'
+    );
+  }
   if (page.route==='member-woohyun.html'&&!page.contentHtml.includes('woohyun-night-off.html')) {
     page.headHtml+=hubStyle;
     const original=page.contentHtml;
@@ -43,6 +53,13 @@ export function syncHubPage(page) {
       '<section class="section-tight" aria-labelledby="taehoon-personal-schedule"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">PERSONAL SCHEDULE</div><h2 id="taehoon-personal-schedule">태훈의 카메라 <span>ON-OFF</span></h2><p>EPISODE · 01—06</p></div><a class="btn secondary" href="taehoon-camera-on-off.html">VIEW ARCHIVE →</a></article></div></section>\n<section class="section-tight member-switch-section">'
     );
     if(page.contentHtml===original)throw Error('Unable to place TAEHOON personal schedule after the keyword section');
+  }
+  if (page.route==='member-taehoon.html'&&!page.contentHtml.includes('taehoon-todays-scenery.html')) {
+    if(!page.headHtml.includes('hub-sync.css'))page.headHtml+=hubStyle;
+    page.contentHtml=page.contentHtml.replace(
+      '<section class="section-tight" aria-labelledby="taehoon-personal-schedule">',
+      '<section class="section-tight" aria-labelledby="taehoon-solo-entry"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">1ST SOLO SINGLE</div><h2 id="taehoon-solo-entry">오늘의 풍경</h2><p>3 TRACKS</p></div><a class="btn secondary" href="taehoon-todays-scenery.html">VIEW SINGLE →</a></article></div></section>\n<section class="section-tight" aria-labelledby="taehoon-personal-schedule">'
+    );
   }
   if (page.route==='fanmeeting.html'&&!page.contentHtml.includes('night-in-the-house-2030.html')) {
     page.headHtml+=hubStyle;

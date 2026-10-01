@@ -14,6 +14,6 @@ assert.equal((page.contentHtml.match(/\{\{memberships:\d+\}\}/g)||[]).length,6);
 for(const route of ['season-greetings-2027.html','season-greetings-2028.html','season-greetings-2029.html','with-luna.html','store.html','fanmeeting.html'])assert.ok(page.contentHtml.includes(route));
 assert.ok(page.contentHtml.includes('멤버십 키트는 FANCLUB 전용 아카이브'));
 const kits=JSON.parse(await readFile(new URL('../src/data/memberships.json',import.meta.url),'utf8'));
-assert.equal(kits.length,7);
-for(const route of ['luna4.html','luna5.html','luna6.html','luna7.html'])assert.ok(kits.some(k=>k.bodyTemplateHtml.includes(route)));
+assert.equal(kits.length,8);
+for(const route of ['luna4.html','luna5.html','luna6.html','luna7.html','luna8.html'])assert.ok(kits.some(k=>k.bodyTemplateHtml.includes(route)));
 });

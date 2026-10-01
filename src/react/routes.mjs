@@ -1,13 +1,13 @@
 export const albumRoutes=['phantom-2026.html','after-hours.html','complete-2027.html','infinity-2027.html','sensational-2027.html','wings-2028.html','so-good-2028.html','persona-2028.html','nightmare-2029.html','paradox-2029.html','sometime.html','return-2030.html','era-archive.html'];
 export const stageRoutes=['concert-archive.html','dream-night-2027.html','beyond-night-2028.html','fanmeeting.html','night-in-the-house-2030.html','moonlight-club-2029.html','moonlight-club-md-2029.html','coachella-2029.html','global-special-music-show.html','special-mc.html','year-end-awards-2026.html','daesang-moments.html','awards.html','woohyun-jiwoo-unit-2024.html'];
-export const fanclubDetailRoutes=['luna4.html','luna5.html','luna6.html','luna7.html','season-greetings-2027.html','season-greetings-2028.html','season-greetings-2029.html'];
+export const fanclubDetailRoutes=['luna4.html','luna5.html','luna6.html','luna7.html','luna8.html','season-greetings-2027.html','season-greetings-2028.html','season-greetings-2029.html'];
 export const storyRoutes=['behind.html','travel.html','observation-2027.html','night-off-summer.html','documentary-2029.html'];
 export const playerRoutes=['vlog.html','night-originals.html'];
 export const collectionRoutes=['with-luna.html','if-night.html'];
 export const editorialRoutes=['press.html','five-voices.html'];
 export const eventRoutes=['fansign-20260919.html','birthday-cafes-2026-2027.html','fifth-anniversary-2027.html','doha-play-on.html'];
-export const personalRoutes=['jiwoo-acting.html','ihwan-musical.html','woohyun-night-off.html','taehoon-camera-on-off.html'];
-export const visualRoutes=['debut-archive.html','out-of-frame.html','social-archive.html'];
+export const personalRoutes=['jiwoo-acting.html','ihwan-musical.html','ihwan-graduation.html','woohyun-night-off.html','taehoon-camera-on-off.html','taehoon-todays-scenery.html'];
+export const visualRoutes=['debut-archive.html','out-of-frame.html','social-archive.html','fashion-week-2030.html'];
 export const listenDetailRoutes=['mirror-2024.html'];
 export const finalRoutes=['store.html'];
 export const reactRoutes=['index.html','about-night.html','discography.html','contents.html','notice.html','fanclub.html','gallery.html','history.html','listen.html','archive.html','member-doha.html','member-ihwan.html','member-jiwoo.html','member-taehoon.html','member-woohyun.html',...albumRoutes,...stageRoutes,...fanclubDetailRoutes,...storyRoutes,...playerRoutes,...collectionRoutes,...editorialRoutes,...eventRoutes,...personalRoutes,...visualRoutes,...listenDetailRoutes,...finalRoutes];

@@ -11,3 +11,8 @@ export const jiwooFilmography=[
 ];
 
 export const jiwooActingImageCount=jiwooFilmography.reduce((total,work)=>total+work.images.length,0);
+
+export const jiwooDramaOsts={
+  'instead-of-saying-i-like-you':{title:'말하지 않아도',credit:'NIGHT VOCAL UNIT',image:'assets/images/OST/instead-of-saying-i-like-you-ost-without-saying-it-vocal.webp'},
+  flawless:{title:'INNOCENT',credit:'NIGHT',image:'assets/images/OST/flawless-ost-innocent.webp'}
+};
