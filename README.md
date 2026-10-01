@@ -7,10 +7,10 @@ Repository: https://github.com/jhmhw01-create/NIGTH-V2
 
 ## 현재 구조
 
-- 전체 64개 정식 라우트의 본문·메뉴·푸터를 React로 미리 렌더링하고 브라우저에서 연결합니다.
+- 정식 라우트의 본문·메뉴·푸터를 React로 미리 렌더링하고 브라우저에서 연결합니다. 라우트 수는 `src/react/routes.mjs`에서 동적으로 계산하며 빌드 결과에 출력합니다.
 - React SPA가 아니라 기존 개별 페이지 주소를 유지하는 멀티페이지 방식입니다.
-- 레거시 TAEHOON 주소 `member-taehun.html` 리다이렉트 1개를 포함해 실제 배포 HTML은 65개입니다.
-- ARCHIVE 검색 카탈로그는 64개 정식 라우트와 DISCOGRAPHY의 16개 앨범 앵커를 합친 80개 기록으로 구성됩니다.
+- 레거시 TAEHOON 주소 `member-taehun.html` 리다이렉트 1개를 정식 라우트와 별도로 유지합니다.
+- ARCHIVE 검색 카탈로그는 현재 정식 라우트와 DISCOGRAPHY 앨범 앵커에서 자동 생성합니다.
 - 멤버 얼굴·헤어·구도와 기존 콘텐츠 이미지는 변경하지 않으며, 웹 전달용 미디어는 내용 변경 없이 인코딩 형식과 용량을 최적화할 수 있습니다.
 - `dist`는 생성 결과물이며 Git 관리에서 제외합니다. 배포 시 소스에서 새로 빌드합니다.
 
@@ -20,8 +20,10 @@ Node.js 22 환경에서 프로젝트 폴더를 열고 실행합니다.
 
 ```sh
 npm ci
-npm run build
 npm test
+npm run audit:media
+npm run build
+npm run verify:dist
 npm run preview
 ```
 
@@ -31,6 +33,7 @@ npm run preview
 
 ```sh
 npm run build
+npm run verify:dist
 npm test
 npm run audit:media
 npm run audit:media:update
@@ -38,9 +41,10 @@ npm run preview
 ```
 
 - `build`: 전체 페이지 생성 및 사이트 검증
+- `verify:dist`: 생성된 라우트·사이트맵·SEO·접근성·대량 이미지 loading 정책 검증
 - `test`: 자동 테스트 실행
 - `audit:media`: 현재 웹 미디어 검증
-- `audit:media:update`: 미디어 검증 기준 갱신
+- `audit:media:update`: 의도적인 미디어 변경 후 diff를 검토하며 기준을 갱신하는 유지보수 명령(CI에서는 실행하지 않음)
 - `preview`: 로컬 미리보기 서버 실행
 
 ## 폴더
@@ -76,7 +80,7 @@ DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON의 개별 프로필 페이지를 �
 
 ### DISCOGRAPHY
 
-현재 DISCOGRAPHY 데이터의 16개 앨범 기록을 발매 순서와 앨범 앵커로 제공합니다. 앨범별 상세 아카이브가 있는 경우 기존 주소를 유지하며 연결합니다.
+현재 DISCOGRAPHY 데이터의 앨범 기록을 발매 순서와 앨범 앵커로 제공합니다. 앨범별 상세 아카이브가 있는 경우 기존 주소를 유지하며 연결합니다.
 
 ### ARCHIVE / CONTENTS
 
@@ -114,6 +118,10 @@ STORE는 NIGHT 세계관의 가상 MD 아카이브입니다. 기존 상품 데�
 - 상세 페이지 앵커
 - 중복 ID
 - 레거시 CSS/JS 자산 참조
+- 정식 라우트와 배포 HTML·사이트맵의 일치
+- 배포 HTML의 title·description·canonical·main·h1
+- 배포 HTML의 이미지 alt·iframe title/loading·interactive name·tabindex
+- 이미지가 많은 페이지의 eager loading 상한
 
 빌드 과정은 `scripts/build.mjs`에서 페이지를 생성한 뒤 사이트 감사와 레거시 자산 감사를 수행합니다. 원본 자산이 없는 오버레이 빌드에서는 해당 조건에 맞는 안내를 출력합니다.
 
@@ -125,7 +133,9 @@ STORE는 NIGHT 세계관의 가상 MD 아카이브입니다. 기존 상품 데�
 
 https://jhmhw01-create.github.io/NIGTH-V2/
 
-`main`에 변경사항을 반영하면 GitHub Actions가 테스트와 빌드를 수행한 뒤 Pages 배포를 갱신합니다.
+현재 운영 흐름은 최신 `main` 확인 → 수정 → 전체 검증 → `main` 반영 → Pages 배포 → 운영 확인입니다. Pull Request는 선택 사항이며 배포 필수 조건이 아닙니다.
+
+`main`에 변경사항을 반영하면 GitHub Actions가 Node.js 22에서 `npm ci` → 자동/접근성 테스트 → 커밋된 미디어 기준 검증 → 빌드·pre-render·사이트/레거시 감사 → 배포 결과물 검증 순서로 실행합니다. 모든 gate가 성공한 현재 커밋의 `dist`만 Pages artifact로 업로드하고 배포합니다. 미디어 및 레거시 감사 기준은 CI가 자동 갱신하지 않으므로 기준 변경은 로컬에서 diff를 검토해 함께 커밋해야 합니다.
 
 ZIP 파일 자체를 저장소에 올리는 대신 프로젝트 내부 파일과 폴더를 버전 관리합니다. 기존 NIGHT 저장소에는 덮어쓰지 않으며 대상 저장소는 실제 주소대로 `NIGTH-V2`를 사용합니다.
 

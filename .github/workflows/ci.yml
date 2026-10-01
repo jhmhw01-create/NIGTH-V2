@@ -19,21 +19,14 @@ jobs:
           node-version-file: '.nvmrc'
       - name: Install dependencies
         run: npm ci
-      - name: Refresh media manifests
-        run: npm run audit:media:update
-      - name: Test
+      - name: Run automated and accessibility tests
         run: npm test
-      - name: Verify media manifests
+      - name: Verify committed media manifests
         run: npm run audit:media
-      - name: Build
-        run: UPDATE_LEGACY_ASSET_AUDIT=1 npm run build
-      - name: Verify site output
-        run: |
-          test -s dist/member-ihwan.html
-          test -s dist/ihwan-musical.html
-          test -s dist/jiwoo-acting.html
-          test -s dist/doha-play-on.html
-          test -s dist/woohyun-night-off.html
+      - name: Build, pre-render, and audit site
+        run: npm run build
+      - name: Verify production artifact
+        run: npm run verify:dist
       - name: Verify production preview in Chrome
         run: |
           npm run preview > /tmp/night-preview.log 2>&1 &

@@ -26,28 +26,16 @@ jobs:
         uses: actions/configure-pages@v6
       - name: Install dependencies
         run: npm ci
+      - name: Run automated and accessibility tests
+        run: npm test
+      - name: Verify committed media manifests
+        run: npm run audit:media
       - name: Report root unreferenced media
         run: node scripts/list-root-unreferenced-media.mjs
-      - name: Refresh media manifests
-        run: npm run audit:media:update
-      - name: Upload refreshed media manifests
-        uses: actions/upload-artifact@v4
-        with:
-          name: refreshed-media-manifests
-          path: |
-            maintenance/web-media-manifest.json
-            maintenance/image-audit.json
-      - name: Test
-        run: npm test
-      - name: Verify media manifests
-        run: npm run audit:media
-      - name: Build
-        run: UPDATE_LEGACY_ASSET_AUDIT=1 npm run build
-      - name: Verify site output
-        run: |
-          test -s dist/index.html
-          test -s dist/contents.html
-          test -s dist/assets/css/style.css
+      - name: Build, pre-render, and audit site
+        run: npm run build
+      - name: Verify production artifact
+        run: npm run verify:dist
       - name: Upload site
         uses: actions/upload-pages-artifact@v5
         with:
