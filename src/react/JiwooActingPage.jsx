@@ -1,6 +1,6 @@
 import {usePersonalPhotoFocus} from './PersonalPhotoFocus.mjs';
 import {useEffect,useState} from 'react';
-import {jiwooFilmography} from '../data/jiwooFilmography.mjs';
+import {jiwooFilmography,jiwooDramaOsts} from '../data/jiwooFilmography.mjs';
 import {imageProps} from './image-props.mjs';
 
 const workFromHash=()=>{
@@ -59,6 +59,7 @@ export function JiwooActingPage({dimensions}){
     {selected?<section className="acting-work" id="work-detail"><div className="container">
       <button className="acting-back" type="button" onClick={back}>← BACK TO FILMOGRAPHY</button>
       <header className="acting-work-head"><div><span>{selected.year} · {selected.type}</span><h2>{selected.title}</h2></div><div><strong>{selected.role}</strong><p>{selected.roleType}</p><small>{selected.period}</small></div></header>
+      {jiwooDramaOsts[selected.slug]?<section className="acting-ost" aria-labelledby={`ost-${selected.slug}`}><img src={jiwooDramaOsts[selected.slug].image} alt={`${selected.title} OST ${jiwooDramaOsts[selected.slug].title} 커버`} loading="lazy" decoding="async" {...imageProps(dimensions,jiwooDramaOsts[selected.slug].image)}/><div><span>ORIGINAL SOUNDTRACK</span><h3 id={`ost-${selected.slug}`}>{jiwooDramaOsts[selected.slug].title}</h3><p>{selected.title} OST</p><strong>{jiwooDramaOsts[selected.slug].credit}</strong></div></section>:null}
       <div className="acting-photo-head"><h3>PHOTO ARCHIVE</h3><span>{selected.images.length} PHOTOS</span></div>
       <div className="acting-gallery">{selected.images.map((src,index)=><button className="acting-photo" type="button" key={src} onClick={()=>setActivePhoto(index)} aria-label={`${selected.title} 사진 ${String(index+1).padStart(2,'0')} 크게 보기`}><img src={src} alt={`${selected.title} ${selected.role} 사진 ${String(index+1).padStart(2,'0')}`} loading="lazy" decoding="async" {...imageProps(dimensions,src)}/><span>{String(index+1).padStart(2,'0')}</span></button>)}</div>
     </div></section>:null}

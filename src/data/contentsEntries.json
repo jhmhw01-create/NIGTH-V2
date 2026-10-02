@@ -531,5 +531,44 @@
     "endDate": null,
     "year": null,
     "type": "stage"
+  },
+  {
+    "title": "TAEHOON — 오늘의 풍경",
+    "summary": "TAEHOON의 첫 번째 솔로 싱글 오늘의 풍경 앨범 이미지와 3곡의 트랙리스트.",
+    "label": "PERSONAL MUSIC · SOLO SINGLE",
+    "action": "VIEW THE SINGLE →",
+    "href": "taehoon-todays-scenery.html",
+    "category": "daily",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "daily"
+  },
+  {
+    "title": "IHWAN — GRADUATION",
+    "summary": "IHWAN의 졸업 기록 이미지 아카이브.",
+    "label": "PERSONAL ARCHIVE · PHOTO",
+    "action": "VIEW THE ARCHIVE →",
+    "href": "ihwan-graduation.html",
+    "category": "daily",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "daily"
+  },
+  {
+    "title": "2030 FASHION WEEK",
+    "summary": "DOHA, WOOHYUN, JIWOO, IHWAN, TAEHOON의 2030 FASHION WEEK 공식 이미지 아카이브.",
+    "label": "2030 · FASHION ARCHIVE",
+    "action": "VIEW THE ARCHIVE →",
+    "href": "fashion-week-2030.html",
+    "category": "editorial",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": 2030,
+    "type": "editorial"
   }
 ]

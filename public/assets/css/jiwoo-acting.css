@@ -2,3 +2,7 @@ body.jiwoo-acting-page{background:#11100f}.acting-archive{overflow:clip}.acting-
 @media(max-width:900px){.acting-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.acting-lightbox{grid-template-columns:48px minmax(0,1fr) 48px;padding-inline:8px}}
 @media(max-width:720px){.acting-hero{padding-top:52px}.acting-hero-meta{flex-direction:column;gap:8px}.acting-section-head{align-items:start;flex-direction:column}.acting-grid{grid-template-columns:1fr;gap:42px}.acting-work-head{grid-template-columns:1fr;gap:20px}.acting-card h3,.acting-work-head h2{overflow-wrap:anywhere}}
 @media(max-width:480px){.acting-gallery{grid-template-columns:1fr}.acting-lightbox{grid-template-columns:42px minmax(0,1fr) 42px}.acting-lightbox button{font-size:30px}}
+/* Confirmed drama OST artwork linked to the matching filmography entry. */
+.acting-ost{display:grid;grid-template-columns:minmax(180px,320px) minmax(0,1fr);gap:32px;align-items:center;margin:0 0 56px;padding:32px 0;border-top:1px solid rgba(255,255,255,.12);border-bottom:1px solid rgba(255,255,255,.12)}
+.acting-ost img{display:block;width:100%;height:auto;object-fit:contain}.acting-ost span{font-size:10px;letter-spacing:.18em;color:var(--muted)}.acting-ost h3{font:400 clamp(32px,5vw,64px)/1.1 Georgia,serif;margin:12px 0}.acting-ost p{color:var(--muted);margin:0 0 12px}.acting-ost strong{font-size:12px;letter-spacing:.12em}
+@media(max-width:700px){.acting-ost{grid-template-columns:1fr;gap:24px;padding:24px 0;margin-bottom:40px}}

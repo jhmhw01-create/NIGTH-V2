@@ -1,5 +1,5 @@
 import {vlogEpisodes,expandVlog,vlogReaction} from '../src/react/photo-data.mjs';
-import {jiwooFilmography} from '../src/data/jiwooFilmography.mjs';
+import {jiwooFilmography,jiwooDramaOsts} from '../src/data/jiwooFilmography.mjs';
 import {ihwanMusicalImages} from '../src/data/ihwanMusical.mjs';
 import {woohyunNightOffImages} from '../src/data/woohyunNightOff.mjs';
 function referencedImageDimensions(value,imageDimensions){
@@ -27,7 +27,7 @@ export function routeData(route,{trees,navigation,catalog,photos,products,imageD
   if(route==='night-originals.html')data.photos={originals:photos.originals,flowers:photos.flowers};
   if(route==='with-luna.html')data.photos={luna:photos.luna};
   if(route==='if-night.html')data.photos={gallery:photos.gallery};
-  const personalImages=route==='jiwoo-acting.html'?jiwooFilmography
+  const personalImages=route==='jiwoo-acting.html'?[jiwooFilmography,Object.values(jiwooDramaOsts)]
     :route==='ihwan-musical.html'?ihwanMusicalImages
     :route==='woohyun-night-off.html'?woohyunNightOffImages
     :null;
