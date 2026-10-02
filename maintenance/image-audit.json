@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2485,
-    "bytes": 249681610,
+    "images": 2521,
+    "bytes": 254558452,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2155,
+    "literalReferenceFound": 2191,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1588,6 +1588,10 @@
       "files": 22,
       "bytes": 1933314
     },
+    "assets/images/2030 NIGHT-LUXURY BRAND AMBASSADOR": {
+      "files": 5,
+      "bytes": 690336
+    },
     "assets/images/2030_FASHION_WEEK": {
       "files": 5,
       "bytes": 447730
@@ -1623,6 +1627,10 @@
     "assets/images/MOONLIGHT_CLUB_MD_WEB": {
       "files": 16,
       "bytes": 1508746
+    },
+    "assets/images/NIGHT-MEMBER FRAGRANCE MATCH": {
+      "files": 5,
+      "bytes": 750822
     },
     "assets/images/NIGHT_DOCUMENTARY": {
       "files": 10,
@@ -1851,6 +1859,10 @@
     "assets/images/season-2027": {
       "files": 29,
       "bytes": 3301332
+    },
+    "assets/images/selfie": {
+      "files": 26,
+      "bytes": 3435684
     },
     "assets/images/sometime": {
       "files": 75,

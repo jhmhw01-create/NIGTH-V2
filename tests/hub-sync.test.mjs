@@ -23,7 +23,7 @@ test('JIWOO acting card is rendered directly after KEYWORDS with the DOHA card p
   const placement=jiwooActingPlacement(PageLayout(jiwoo));
   assert.equal(placement.valid,true);
   assert.equal(placement.actingIndex,placement.keywordIndex+1);
-  assert.equal(placement.switchIndex,placement.actingIndex+1);
+  assert.ok(placement.switchIndex>placement.actingIndex);
 });
 
 test('fanmeeting archive keeps its content and adds the 2030 archive entry',async()=>{

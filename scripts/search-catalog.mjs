@@ -23,6 +23,9 @@ const routeKeywords={
   ,'taehoon-todays-scenery.html':'TAEHOON 유태훈 오늘의 풍경 SOLO SINGLE 아무 데도 다녀왔어'
   ,'ihwan-graduation.html':'IHWAN 박이환 GRADUATION 졸업 PERSONAL ARCHIVE'
   ,'fashion-week-2030.html':'NIGHT 2030 FASHION WEEK DOHA WOOHYUN JIWOO IHWAN TAEHOON'
+  ,'night-selfie-archive.html':'NIGHT SELFIE ARCHIVE BED POST WORKOUT SHOWER BACKSTAGE SNOWMAN DOHA WOOHYUN JIWOO IHWAN TAEHOON'
+  ,'member-fragrance-match.html':'NIGHT MEMBER FRAGRANCE MATCH TOM FORD OUD WOOD MAISON MARGIELA REPLICA JAZZ CLUB MFK GENTLE FLUIDITY SILVER BYREDO MOJAVE GHOST JO MALONE LONDON CYPRESS GRAPEVINE'
+  ,'luxury-brand-ambassador-2030.html':'2030 NIGHT LUXURY BRAND AMBASSADOR SAINT LAURENT PRADA DIOR VALENTINO LOEWE DOHA WOOHYUN JIWOO IHWAN TAEHOON'
 };
 
 const escape=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));

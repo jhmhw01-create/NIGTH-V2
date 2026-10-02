@@ -570,5 +570,44 @@
     "endDate": null,
     "year": 2030,
     "type": "editorial"
+  },
+  {
+    "title": "NIGHT SELFIE ARCHIVE",
+    "summary": "BED, POST-WORKOUT, POST-SHOWER, BACKSTAGE, WITH SNOWMAN 다섯 테마의 NIGHT 셀피 아카이브.",
+    "label": "SELFIE · PHOTO ARCHIVE",
+    "action": "VIEW THE ARCHIVE →",
+    "href": "night-selfie-archive.html",
+    "category": "daily",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "daily"
+  },
+  {
+    "title": "MEMBER FRAGRANCE MATCH",
+    "summary": "NIGHT 다섯 멤버의 FRAGRANCE MATCH 이미지 아카이브.",
+    "label": "EDITORIAL · FRAGRANCE MATCH",
+    "action": "VIEW THE EDITORIAL →",
+    "href": "member-fragrance-match.html",
+    "category": "editorial",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "editorial"
+  },
+  {
+    "title": "2030 LUXURY BRAND AMBASSADOR",
+    "summary": "NIGHT 다섯 멤버의 2030 LUXURY BRAND AMBASSADOR 이미지 아카이브.",
+    "label": "2030 · OFFICIAL ACTIVITY",
+    "action": "VIEW THE ARCHIVE →",
+    "href": "luxury-brand-ambassador-2030.html",
+    "category": "editorial",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": 2030,
+    "type": "editorial"
   }
 ]

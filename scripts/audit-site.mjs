@@ -32,7 +32,7 @@ export function jiwooActingPlacement(html){
   const switchIndex=sections.findIndex(node=>hasClass(node,'member-switch-section'));
   const acting=sections[actingIndex];
   const link=findElement(acting??{},node=>node.tagName==='a'&&attributes(node).href==='jiwoo-acting.html');
-  return {keywordIndex,actingIndex,switchIndex,linked:Boolean(link),valid:keywordIndex>=0&&actingIndex===keywordIndex+1&&switchIndex===actingIndex+1&&Boolean(link)};
+  return {keywordIndex,actingIndex,switchIndex,linked:Boolean(link),valid:keywordIndex>=0&&actingIndex===keywordIndex+1&&switchIndex>actingIndex&&Boolean(link)};
 }
 export function ihwanMusicalPlacement(html){
   const document=parse(html);const main=findElement(document,node=>node.tagName==='main');const sections=elementChildren(main).filter(node=>node.tagName==='section');

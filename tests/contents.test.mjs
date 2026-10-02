@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {ContentsEntry,renderCollections} from '../src/components/collections.mjs';
-test('44 text entries keep links, categories and existing deep links',async()=>{
+test('47 text entries keep links, categories and existing deep links',async()=>{
   const entries=JSON.parse(await readFile(new URL('../src/data/contentsEntries.json',import.meta.url),'utf8'));
-  assert.equal(entries.length,44);
-  assert.equal(new Set(entries.map(x=>x.href)).size,44);
+  assert.equal(entries.length,47);
+  assert.equal(new Set(entries.map(x=>x.href)).size,47);
   assert.equal(new Set(entries.map(x=>x.category)).size,6);
   assert.equal(entries[0].category,'daily');
   for(const entry of entries){
@@ -46,12 +46,12 @@ test('contents page renders every entry and keeps RETURN first in the album grou
   const {syncHubPage}=await import('../scripts/hub-sync.mjs');
   const page=syncHubPage(JSON.parse(await readFile(new URL('../src/pages/contents.json',import.meta.url),'utf8')));
   const placeholders=[...page.contentHtml.matchAll(/\{\{contentsEntries:(\d+)\}\}/g)].map(match=>Number(match[1]));
-  assert.equal(placeholders.length,44);
-  assert.equal(new Set(placeholders).size,44);
-  assert.deepEqual([...placeholders].sort((a,b)=>a-b),Array.from({length:44},(_,index)=>index));
+  assert.equal(placeholders.length,47);
+  assert.equal(new Set(placeholders).size,47);
+  assert.deepEqual([...placeholders].sort((a,b)=>a-b),Array.from({length:47},(_,index)=>index));
   assert(placeholders.indexOf(31)<placeholders.indexOf(7));
   const rendered=renderCollections(page.contentHtml,{contentsEntries:entries});
-  assert(rendered.includes('전체 <span>44</span>'));
+  assert(rendered.includes('전체 <span>47</span>'));
   assert(placeholders.indexOf(36)<placeholders.indexOf(31));
   for(const route of ['return-2030.html','paradox-2029.html','nightmare-2029.html','phantom-2026.html'])assert(entries.some(entry=>entry.href===route&&entry.category==='album'));
   assert(!rendered.includes('{{contentsCount:'));

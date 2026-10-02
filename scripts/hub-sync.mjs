@@ -2,7 +2,7 @@ const hubStyle='<link rel="stylesheet" href="assets/css/hub-sync.css">';
 
 export function syncHubPage(page) {
   if(page.route==='contents.html'&&!page.contentHtml.includes('{{contentsEntries:41}}')){
-    page.contentHtml=page.contentHtml.replace('{{contentsEntries:6}}','{{contentsEntries:6}}\n{{contentsEntries:41}}\n{{contentsEntries:42}}\n{{contentsEntries:43}}');
+    page.contentHtml=page.contentHtml.replace('{{contentsEntries:6}}','{{contentsEntries:6}}\n{{contentsEntries:46}}\n{{contentsEntries:45}}\n{{contentsEntries:44}}\n{{contentsEntries:41}}\n{{contentsEntries:42}}\n{{contentsEntries:43}}');
   }
   if (page.route==='member-doha.html'&&!page.contentHtml.includes('doha-play-on.html')) {
     page.headHtml+=hubStyle;
@@ -59,6 +59,15 @@ export function syncHubPage(page) {
     page.contentHtml=page.contentHtml.replace(
       '<section class="section-tight" aria-labelledby="taehoon-personal-schedule">',
       '<section class="section-tight" aria-labelledby="taehoon-solo-entry"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">1ST SOLO SINGLE</div><h2 id="taehoon-solo-entry">오늘의 풍경</h2><p>3 TRACKS</p></div><a class="btn secondary" href="taehoon-todays-scenery.html">VIEW SINGLE →</a></article></div></section>\n<section class="section-tight" aria-labelledby="taehoon-personal-schedule">'
+    );
+  }
+  if (page.route.startsWith('member-')&&!page.contentHtml.includes('luxury-brand-ambassador-2030.html')) {
+    if(!page.headHtml.includes('hub-sync.css'))page.headHtml+=hubStyle;
+    const member=page.route.slice('member-'.length,-'.html'.length).toUpperCase();
+    const id=`${member.toLowerCase()}-ambassador-entry`;
+    page.contentHtml=page.contentHtml.replace(
+      '<section class="section-tight member-switch-section">',
+      `<section class="section-tight" aria-labelledby="${id}"><div class="container"><article class="doha-personal-card reveal"><div><div class="member-meta">2030 OFFICIAL ACTIVITY</div><h2 id="${id}">LUXURY BRAND AMBASSADOR</h2><p>${member}</p></div><a class="btn secondary" href="luxury-brand-ambassador-2030.html">VIEW AMBASSADOR ARCHIVE →</a></article></div></section>\n<section class="section-tight member-switch-section">`
     );
   }
   if (page.route==='fanmeeting.html'&&!page.contentHtml.includes('night-in-the-house-2030.html')) {

@@ -7,9 +7,9 @@ import {pageTree} from '../scripts/page-tree.mjs';
 const root=new URL('../',import.meta.url);
 const walk=nodes=>nodes.flatMap(node=>typeof node==='string'?[]:[node,...walk(node.children)]);
 test('visual and fashion archives remain in unique React routes',()=>{
-  assert.deepEqual(visualRoutes,['debut-archive.html','out-of-frame.html','social-archive.html','fashion-week-2030.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(visualRoutes.every(route=>reactRoutes.includes(route)));
+  assert.deepEqual(visualRoutes,['debut-archive.html','out-of-frame.html','social-archive.html','fashion-week-2030.html','night-selfie-archive.html','member-fragrance-match.html','luxury-brand-ambassador-2030.html']);assert.equal(new Set(reactRoutes).size,reactRoutes.length);assert.ok(visualRoutes.every(route=>reactRoutes.includes(route)));
 });
-test('all 53 original images and social photo viewer are preserved',async()=>{
+test('all 89 visual archive images and social photo viewer are preserved',async()=>{
   let total=0;
   for(const route of visualRoutes){
     const page=JSON.parse(await readFile(new URL('src/pages/'+route.replace('.html','.json'),root),'utf8'));
@@ -20,5 +20,5 @@ test('all 53 original images and social photo viewer are preserved',async()=>{
     if(route==='social-archive.html'){assert.equal(after.filter(node=>node.props.id==='sg-viewer').length,1);assert.equal(after.filter(node=>node.props['data-full']).length,33);}
     await Promise.all(sources(after).map(path=>access(new URL('public/'+path,root))));
   }
-  assert.equal(total,53);
+  assert.equal(total,89);
 });
