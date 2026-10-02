@@ -67,7 +67,7 @@ const headDescription=head=>{
 };
 const firstImage=markup=>{
   for(const tag of markup.match(/<img\b[^>]*>/gi)||[]){
-    const src=tagAttribute(tag,'src');
+    const src=decode(tagAttribute(tag,'src'));
     if(src)return src;
   }
   return '';
