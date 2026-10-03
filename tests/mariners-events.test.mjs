@@ -43,3 +43,11 @@ test('MARINERS events stay out of CONTENTS and are linked from 2030 HISTORY',asy
   const history=(await readPage('history.html')).contentHtml;
   for(const route of routes)assert.match(history,new RegExp(`href="${route.replaceAll('.','\\.')}"`));
 });
+
+test('MARINERS event detail navigation returns to Archive',async()=>{
+  const {detailNavigation}=await import('../scripts/detail-navigation.mjs');
+  for(const route of routes){
+    const page=await readPage(route);
+    assert.equal(detailNavigation(page).parent.href,'archive.html');
+  }
+});
