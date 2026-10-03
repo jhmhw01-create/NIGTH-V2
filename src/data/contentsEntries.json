@@ -609,5 +609,18 @@
     "endDate": null,
     "year": 2030,
     "type": "editorial"
+  },
+  {
+    "title": "AFTER HOURS PHOTOBOOK",
+    "summary": "ALLURE, PROVOCATION, DANGER 세 콘셉트와 BEHIND THE SCENES로 구성된 NIGHT의 독립 화보 프로젝트.",
+    "label": "VISUAL · PHOTOBOOK",
+    "action": "VIEW THE PHOTOBOOK →",
+    "href": "after-hours-photobook.html",
+    "category": "editorial",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": null,
+    "type": "editorial"
   }
 ]

@@ -1,15 +1,16 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 53,
-    "css": 51,
+    "assets": 54,
+    "css": 52,
     "js": 2,
-    "runtime": 51,
+    "runtime": 52,
     "buildInput": 2,
     "unresolved": 0
   },
   "groups": {
     "runtime": [
+      "assets/css/after-hours-photobook.css",
       "assets/css/album-detail-fashion.css",
       "assets/css/archive-2026.css",
       "assets/css/archive-2027.css",
@@ -69,6 +70,17 @@
     "unresolved": []
   },
   "records": [
+    {
+      "path": "assets/css/after-hours-photobook.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "after-hours-photobook.html"
+      ],
+      "buildReferences": [
+        "src/pages/after-hours-photobook.json"
+      ]
+    },
     {
       "path": "assets/css/album-detail-fashion.css",
       "type": "css",
@@ -200,6 +212,7 @@
       "type": "css",
       "status": "runtime",
       "runtimeReferences": [
+        "after-hours-photobook.html",
         "fashion-week-2030.html",
         "ihwan-graduation.html",
         "luna5.html",
@@ -213,6 +226,7 @@
         "taehoon-todays-scenery.html"
       ],
       "buildReferences": [
+        "src/pages/after-hours-photobook.json",
         "src/pages/fashion-week-2030.json",
         "src/pages/ihwan-graduation.json",
         "src/pages/luna5.json",
@@ -287,6 +301,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "about-night.html",
+        "after-hours-photobook.html",
         "after-hours.html",
         "archive.html",
         "awards.html",
@@ -399,6 +414,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "about-night.html",
+        "after-hours-photobook.html",
         "after-hours.html",
         "archive.html",
         "awards.html",
@@ -788,6 +804,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "about-night.html",
+        "after-hours-photobook.html",
         "after-hours.html",
         "archive.html",
         "awards.html",
@@ -889,6 +906,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "about-night.html",
+        "after-hours-photobook.html",
         "after-hours.html",
         "archive.html",
         "awards.html",
@@ -1018,6 +1036,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "about-night.html",
+        "after-hours-photobook.html",
         "after-hours.html",
         "archive.html",
         "awards.html",
@@ -1101,6 +1120,7 @@
       "buildReferences": [
         "scripts/build.mjs",
         "src/pages/about-night.json",
+        "src/pages/after-hours-photobook.json",
         "src/pages/after-hours.json",
         "src/pages/archive.json",
         "src/pages/awards.json",
@@ -1188,6 +1208,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "about-night.html",
+        "after-hours-photobook.html",
         "after-hours.html",
         "awards.html",
         "behind.html",
