@@ -1,4 +1,4 @@
-const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const escape = value => String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]));
 function Record(tag, record) {
   if (!record || typeof record.title !== 'string' || typeof record.bodyTemplateHtml !== 'string') throw Error('Invalid collection record');
   // HTML fields are trusted, authored website content, not public user input.
@@ -26,8 +26,9 @@ export function NoticeArchive(records) {
   return years.map(year=>'<section class="notice-year-group" aria-labelledby="notice-year-'+year+'"><h2 class="notice-year-title" id="notice-year-'+year+'">'+year+'</h2><div class="notice-list">\n'+sorted.filter(record=>record.year===year).map(NoticeItem).join('\n')+'\n</div></section>').join('\n');
 }
 export function renderCollections(content, collections) {
+  const renderAllContents=content.includes('{{contentsEntries:all}}');
   const contentsSlots=[...content.matchAll(/\{\{contentsEntries:(\d+)\}\}/g)].map(match=>Number(match[1]));
-  const contentsRecords=contentsSlots.map(index=>collections.contentsEntries?.[index]);
+  const contentsRecords=renderAllContents?[...(collections.contentsEntries||[])]:contentsSlots.map(index=>collections.contentsEntries?.[index]);
   if(contentsRecords.some(record=>!record))throw Error('Unknown contents record');
   const renderers = {albums:AlbumCard,notices:NoticeItem,memberships:MembershipCard,galleryCards:record=>Record('div',record),contentsEntries:ContentsEntry};
   const membershipSlots=[...content.matchAll(/\{\{memberships:(\d+)\}\}/g)].map(match=>Number(match[1]));
@@ -35,6 +36,7 @@ export function renderCollections(content, collections) {
   const newerMemberships=membershipMax>=0?(collections.memberships||[]).slice(membershipMax+1).toReversed():[];
   const expanded=content
     .replace(/\{\{contentsCount:([a-z]+)\}\}/g,(_,category)=>String(contentsRecords.filter(record=>category==='all'||record.category===category).length))
+    .replaceAll('{{contentsEntries:all}}',contentsRecords.map(ContentsEntry).join('\n'))
     .replaceAll('{{noticeCount}}',String(collections.notices?.length||0))
     .replaceAll('{{noticesByDate}}',NoticeArchive(collections.notices||[]));
   return expanded.replace(/\{\{(albums|notices|memberships|galleryCards|contentsEntries):(\d+)\}\}/g, (_, name, indexText) => {
