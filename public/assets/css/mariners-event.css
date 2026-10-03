@@ -1,0 +1,12 @@
+.mariners-event-page .mariners-event-hero{padding:110px 0 56px}
+.mariners-event-page .mariners-event-hero h1{font-size:clamp(3rem,8vw,7rem);letter-spacing:.06em;margin:.12em 0}
+.mariners-event-page .mariners-event-kicker{letter-spacing:.18em;text-transform:uppercase;opacity:.7}
+.mariners-event-page .mariners-event-lead{font-size:clamp(1.1rem,2vw,1.45rem);letter-spacing:.08em}
+.mariners-event-page .mariners-event-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:30px 0 0}
+.mariners-event-page .mariners-event-facts div{border-top:1px solid rgba(255,255,255,.22);padding-top:14px}
+.mariners-event-page .mariners-event-facts dt{font-size:.72rem;letter-spacing:.16em;opacity:.62}
+.mariners-event-page .mariners-event-facts dd{margin:7px 0 0;line-height:1.7}
+.mariners-event-page .mariners-event-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:1040px;margin-inline:auto;align-items:start}
+.mariners-event-page .mariners-event-phase{display:block;margin:.8rem 0 .2rem;font-size:.72rem;letter-spacing:.16em;opacity:.62}
+.mariners-event-page .mariners-event-grid .archive-new-card h3{margin:.2rem 0 .25rem;line-height:1.55}
+@media(max-width:640px){.mariners-event-page .mariners-event-hero{padding-top:80px}.mariners-event-page .mariners-event-facts,.mariners-event-page .mariners-event-grid{grid-template-columns:1fr}}

@@ -49,6 +49,10 @@ test('archive search normalizes query and matches generated current content',()=
   assert.ok(searchRecords(catalog,{query:'DOHA PLAY ON'}).some(record=>record.href==='doha-play-on.html'));
   assert.ok(searchRecords(catalog,{query:'윤도하 VARIETY'}).some(record=>record.href==='doha-play-on.html'));
   assert.ok(searchRecords(catalog,{query:'SOMETIME CINEMATIC'}).some(record=>record.href==='sometime.html'));
+  assert.deepEqual(searchRecords(catalog,{query:'INCHEON MARINERS'}).filter(record=>record.href.includes('mariners-2030.html')).map(record=>record.href).sort(),['doha-taehoon-mariners-2030.html','ihwan-mariners-2030.html','jiwoo-woohyun-mariners-2030.html']);
+  assert.ok(searchRecords(catalog,{query:'박이환 애국가'}).some(record=>record.href==='ihwan-mariners-2030.html'));
+  assert.ok(searchRecords(catalog,{query:'천지우 시구'}).some(record=>record.href==='jiwoo-woohyun-mariners-2030.html'));
+  for(const route of ['doha-taehoon-mariners-2030.html','ihwan-mariners-2030.html','jiwoo-woohyun-mariners-2030.html'])assert.equal(catalog.records.find(record=>record.href===route)?.category,'stage');
   assert.equal(catalog.records.find(record=>record.href==='doha-play-on.html')?.category,'stories');
   assert.equal(searchRecords(catalog,{query:'impossible-query-99999'}).length,0);
 });
