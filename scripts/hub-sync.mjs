@@ -1,9 +1,6 @@
 const hubStyle='<link rel="stylesheet" href="assets/css/hub-sync.css">';
 
 export function syncHubPage(page) {
-  if(page.route==='contents.html'&&!page.contentHtml.includes('{{contentsEntries:41}}')){
-    page.contentHtml=page.contentHtml.replace('{{contentsEntries:6}}','{{contentsEntries:6}}\n{{contentsEntries:47}}\n{{contentsEntries:46}}\n{{contentsEntries:45}}\n{{contentsEntries:44}}\n{{contentsEntries:41}}\n{{contentsEntries:42}}\n{{contentsEntries:43}}');
-  }
   if (page.route==='member-doha.html'&&!page.contentHtml.includes('doha-play-on.html')) {
     page.headHtml+=hubStyle;
     page.contentHtml=page.contentHtml.replace(
