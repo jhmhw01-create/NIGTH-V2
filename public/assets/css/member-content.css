@@ -1,0 +1,11 @@
+.member-content-page .member-content-intro{max-width:760px}
+.member-content-page .member-content-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.member-content-page .member-content-nav a{border:1px solid rgba(255,255,255,.2);padding:10px 14px;font-size:.78rem;letter-spacing:.12em}
+.member-content-page .closet-list{display:grid;gap:72px;max-width:920px;margin-inline:auto}
+.member-content-page .closet-sheet{margin:0}
+.member-content-page .closet-sheet h2{margin:0 0 16px;font-size:clamp(2rem,5vw,4rem)}
+.member-content-page .closet-sheet img{display:block;width:100%;height:auto}
+.member-content-page .night-files-grid{grid-template-columns:repeat(5,minmax(0,1fr));align-items:start}
+.member-content-page .night-files-grid .archive-new-card{min-width:0}
+@media(max-width:900px){.member-content-page .night-files-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.member-content-page .closet-list{gap:52px}.member-content-page .night-files-grid{grid-template-columns:1fr}}

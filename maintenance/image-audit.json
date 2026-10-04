@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2556,
-    "bytes": 258748702,
+    "images": 2581,
+    "bytes": 262509922,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2226,
+    "literalReferenceFound": 2251,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1832,6 +1832,10 @@
       "files": 10,
       "bytes": 233924
     },
+    "assets/images/member-misc": {
+      "files": 20,
+      "bytes": 3012164
+    },
     "assets/images/night-baseball": {
       "files": 11,
       "bytes": 1456212
@@ -1843,6 +1847,10 @@
     "assets/images/night-off-summer/live": {
       "files": 10,
       "bytes": 1067552
+    },
+    "assets/images/nights-closet": {
+      "files": 5,
+      "bytes": 749056
     },
     "assets/images/out-of-frame": {
       "files": 6,

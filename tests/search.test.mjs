@@ -52,6 +52,9 @@ test('archive search normalizes query and matches generated current content',()=
   assert.deepEqual(searchRecords(catalog,{query:'INCHEON MARINERS'}).filter(record=>record.href.includes('mariners-2030.html')).map(record=>record.href).sort(),['doha-taehoon-mariners-2030.html','ihwan-mariners-2030.html','jiwoo-woohyun-mariners-2030.html']);
   assert.ok(searchRecords(catalog,{query:'박이환 애국가'}).some(record=>record.href==='ihwan-mariners-2030.html'));
   assert.ok(searchRecords(catalog,{query:'천지우 시구'}).some(record=>record.href==='jiwoo-woohyun-mariners-2030.html'));
+  assert.ok(searchRecords(catalog,{query:"NIGHTS CLOSET WARDROBE 윤도하"}).some(record=>record.href==='nights-closet.html'));
+  assert.ok(searchRecords(catalog,{query:'NIGHT FILES 인생네컷 천지우'}).some(record=>record.href==='night-files.html'));
+  for(const route of ['nights-closet.html','night-files.html'])assert.equal(catalog.records.find(record=>record.href===route)?.category,'stories');
   for(const route of ['doha-taehoon-mariners-2030.html','ihwan-mariners-2030.html','jiwoo-woohyun-mariners-2030.html'])assert.equal(catalog.records.find(record=>record.href===route)?.category,'stage');
   assert.equal(catalog.records.find(record=>record.href==='doha-play-on.html')?.category,'stories');
   assert.equal(searchRecords(catalog,{query:'impossible-query-99999'}).length,0);
@@ -63,7 +66,7 @@ test('current archives are searchable at their canonical routes',()=>{
     'MOONLIGHT CLUB':'moonlight-club-2029.html','COACHELLA':'coachella-2029.html','NIGHT IN THE HOUSE':'night-in-the-house-2030.html',
     'MOMENTS OF THE NIGHT':'documentary-2029.html','SO GOOD':'so-good-2028.html','LUNA 7':'luna7.html','2029 SEASON':'season-greetings-2029.html',
     'JIWOO ACTING':'jiwoo-acting.html','IHWAN MUSICAL':'ihwan-musical.html',"WOOHYUN'S NIGHT OFF":'woohyun-night-off.html',
-    'LUNA 8 SHINE':'luna8.html','오늘의 풍경':'taehoon-todays-scenery.html','IHWAN GRADUATION':'ihwan-graduation.html','2030 FASHION WEEK':'fashion-week-2030.html','BED SELFIE':'night-selfie-archive.html','OUD WOOD':'member-fragrance-match.html','SAINT LAURENT':'luxury-brand-ambassador-2030.html','AFTER HOURS PHOTOBOOK':'after-hours-photobook.html'
+    'LUNA 8 SHINE':'luna8.html','오늘의 풍경':'taehoon-todays-scenery.html','IHWAN GRADUATION':'ihwan-graduation.html','2030 FASHION WEEK':'fashion-week-2030.html','BED SELFIE':'night-selfie-archive.html','OUD WOOD':'member-fragrance-match.html','SAINT LAURENT':'luxury-brand-ambassador-2030.html','AFTER HOURS PHOTOBOOK':'after-hours-photobook.html',"NIGHT'S CLOSET":'nights-closet.html','PROFILE PHOTO HISTORY':'night-files.html'
   };
   for(const [query,href] of Object.entries(expected))assert.ok(searchRecords(catalog,{query}).some(record=>record.href===href),query+' → '+href);
   for(const route of ['debut-archive.html','out-of-frame.html','social-archive.html'])assert.ok(catalog.records.some(record=>record.href===route),route);

@@ -1,4 +1,4 @@
-import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,playerRoutes,collectionRoutes,editorialRoutes,eventRoutes,personalRoutes,visualRoutes} from '../src/react/routes.mjs';
+import {albumRoutes,stageRoutes,fanclubDetailRoutes,storyRoutes,playerRoutes,collectionRoutes,editorialRoutes,eventRoutes,personalRoutes,visualRoutes,memberContentRoutes} from '../src/react/routes.mjs';
 
 export const searchLabels={
   group:'그룹 · 연혁',
@@ -30,6 +30,8 @@ const routeKeywords={
   ,'doha-taehoon-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME DOHA TAEHOON 윤도하 유태훈 FIRST PITCH CEREMONIAL BATTING 시구 시타'
   ,'ihwan-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME IHWAN 박이환 NATIONAL ANTHEM 애국가 애국가 제창'
   ,'jiwoo-woohyun-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME JIWOO WOOHYUN 천지우 성우현 FIRST PITCH CEREMONIAL BATTING 시구 시타'
+  ,'nights-closet.html':"NIGHT'S CLOSET NIGHTS CLOSET WARDROBE WARDROBE SHEET DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈"
+  ,'night-files.html':'NIGHT FILES SELFIE SEQUENCE OUTFIT MATCH FOUR CUT PROFILE PHOTO HISTORY 셀카 의상 인생네컷 프로필 사진 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈'
 };
 
 const escape=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
@@ -42,7 +44,7 @@ const sets={
   music:new Set([...albumRoutes,'discography.html','listen.html','highlight-medley.html']),
   stage:new Set(stageRoutes),
   luna:new Set(['fanclub.html','store.html','with-luna.html',...fanclubDetailRoutes,...eventRoutes.filter(route=>route!=='doha-play-on.html')]),
-  stories:new Set(['contents.html','if-night.html','doha-play-on.html',...personalRoutes,...storyRoutes,...playerRoutes]),
+  stories:new Set(['contents.html','if-night.html','doha-play-on.html',...personalRoutes,...storyRoutes,...playerRoutes,...memberContentRoutes]),
   visual:new Set(['gallery.html','five-voices.html',...visualRoutes]),
   news:new Set(['notice.html','press.html'])
 };
