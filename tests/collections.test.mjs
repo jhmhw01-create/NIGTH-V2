@@ -26,7 +26,7 @@ test('AFTER HOURS notice keeps only the album release announcement',async()=>{
   assert.deepEqual(afterHours.map(record=>record.title),['AFTER HOURS 발매 및 NO SUNRISE 공개']);
 });
 test('title fields are escaped; missing collection records fail the build',()=>{
-  const escaped=AlbumCard({id:'x',title:'<script>alert(1)</script>',bodyTemplateHtml:'<h3>{{title}}</h3>',attributesHtml:' id="x"'});
-  assert(!escaped.includes('<script>'));assert(escaped.includes('&lt;script&gt;'));
+  const escaped=AlbumCard({id:'x',title:'&<>"\'',bodyTemplateHtml:'<h3>{{title}}</h3>',attributesHtml:' id="x"'});
+  assert.equal(escaped,'<article id="x"><h3>&amp;&lt;&gt;&quot;&#39;</h3></article>');
   assert.throws(()=>renderCollections('<main>{{albums:99}}</main>',{albums:[],notices:[],memberships:[]}),/Unknown record: albums:99/);
 });
