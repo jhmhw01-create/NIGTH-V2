@@ -22,8 +22,8 @@ export function NoticeArchive(records) {
     ids.add(record.id);
   }
   const sorted=[...records].sort((a,b)=>b.date.localeCompare(a.date)||a.id.localeCompare(b.id));
-  const years=[...new Set(sorted.map((record=>record.year))].sort((a,b)=>b-a);
-  return years.map(year=>'section class="notice-year-group" aria-labelledby="notice-year-'+year+'"><h2 class="notice-year-title" id="notice-year-'+year+'">'+year+'</h2><div class="notice-list">\n'+sorted.filter(record=>record.year===year).map(NoticeItem).join('\n')+'\n</div></section>').join('\n');
+  const years=[...new Set(sorted.map(record=>record.year))].sort((a,b)=>b-a);
+  return years.map(year=>'<section class="notice-year-group" aria-labelledby="notice-year-'+year+'"><h2 class="notice-year-title" id="notice-year-'+year+'">'+year+'</h2><div class="notice-list">\n'+sorted.filter(record=>record.year===year).map(NoticeItem).join('\n')+'\n</div></section>').join('\n');
 }
 export function renderCollections(content, collections) {
   const renderAllContents=content.includes('{{contentsEntries:all}}');
