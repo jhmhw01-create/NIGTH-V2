@@ -40,6 +40,15 @@ test('early album archive cards use their matching visual archive covers',()=>{
   }
 });
 
+test('REST search record uses its explicit release image',()=>{
+  const album=albums.find(record=>record.id==='rest');
+  const record=catalog.records.find(item=>item.id==='discography-rest');
+  assert.equal(album?.image,'assets/images/2029/rest/release.webp');
+  assert.equal(record?.href,'discography.html#rest');
+  assert.equal(record?.image,'assets/images/2029/rest/release.webp');
+  assert.doesNotMatch(record?.image||'',/^assets\/images\/2027\/infinity\//);
+});
+
 test('archive search normalizes query and matches generated current content',()=>{
   assert.deepEqual(searchRecords(catalog,{query:'ＮＩＧＨＴ'}),searchRecords(catalog,{query:'night'}));
   assert.ok(searchRecords(catalog,{query:'after hours'}).some(record=>record.href==='discography.html#after-hours'||record.href==='after-hours.html'));

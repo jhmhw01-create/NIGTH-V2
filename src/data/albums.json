@@ -92,6 +92,7 @@
   {
     "id": "rest",
     "title": "REST",
+    "image": "assets/images/2029/rest/release.webp",
     "attributesHtml": " class=\"discography-card reveal\" id=\"rest\"",
     "bodyTemplateHtml": "<div class=\"discography-head\"><div><span class=\"discography-type\">DIGITAL SINGLE</span><h2>{{title}}</h2><p class=\"album-tagline\">REST · NEXT TIME</p></div><span class=\"discography-year\">2029.11.02</span></div><div class=\"discography-meta\"><div><span>RELEASE</span><strong>2029.11.02</strong></div><div><span>LINE-UP</span><strong>DOHA · WOOHYUN · JIWOO · IHWAN · TAEHOON</strong></div><div><span>TITLE TRACK</span><strong>NEXT TIME</strong></div><div class=\"phantom-tracklist-meta\"><span>TRACKS</span><ol class=\"phantom-tracklist\"><li class=\"is-title\"><b>01</b><strong>NEXT TIME</strong><em>TITLE</em></li></ol></div></div>"
   },
