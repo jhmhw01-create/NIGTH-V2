@@ -32,6 +32,7 @@ const routeKeywords={
   ,'jiwoo-woohyun-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME JIWOO WOOHYUN 천지우 성우현 FIRST PITCH CEREMONIAL BATTING 시구 시타'
   ,'nights-closet.html':"NIGHT'S CLOSET NIGHTS CLOSET WARDROBE WARDROBE SHEET DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈"
   ,'night-files.html':'NIGHT FILES SELFIE SEQUENCE OUTFIT MATCH FOUR CUT PROFILE PHOTO HISTORY CAMERA ROLL CAMERAROLL 카메라 롤 카메라롤 셀카 의상 인생네컷 프로필 사진 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈'
+  ,'halloween-2026.html':'HALLOWEEN 2026 HALLOWEEN COSTUME HALLOWEEN COSTUME PARTY COSTUME 할로윈 코스튬 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈 WEREWOLF VAMPIRE GRIM REAPER PHANTOM DEVIL GLADIATOR PIRATE DARK KNIGHT VICTORIAN MAGICIAN WHIMSICAL HATTER'
 };
 
 const escape=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));

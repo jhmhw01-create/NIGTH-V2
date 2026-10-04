@@ -648,5 +648,18 @@
     "endDate": null,
     "year": null,
     "type": "editorial"
+  },
+  {
+    "title": "HALLOWEEN 2026",
+    "summary": "NIGHT 다섯 멤버의 두 가지 HALLOWEEN COSTUME 비주얼 컬렉션.",
+    "label": "VISUAL · COSTUME COLLECTION",
+    "action": "VIEW THE COLLECTION →",
+    "href": "halloween-2026.html",
+    "category": "editorial",
+    "anchor": null,
+    "date": null,
+    "endDate": null,
+    "year": 2026,
+    "type": "editorial"
   }
 ]

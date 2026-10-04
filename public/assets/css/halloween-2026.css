@@ -1,0 +1,10 @@
+.halloween-2026-page .halloween-banner{margin:32px 0 0}
+.halloween-2026-page .halloween-banner img,.halloween-2026-page .halloween-grid img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:initial;background:transparent}
+.halloween-2026-page .halloween-banner figcaption{padding:14px 0 0;color:var(--muted);font-size:.75rem;letter-spacing:.14em}
+.halloween-2026-page .halloween-banner+.halloween-grid{margin-top:18px}
+.halloween-2026-page .halloween-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.halloween-2026-page .halloween-grid .archive-new-card{min-width:0}
+.halloween-2026-page .halloween-grid h3{overflow-wrap:anywhere}
+.halloween-2026-page .halloween-grid p{margin:.3rem 0 0;letter-spacing:.08em}
+@media(max-width:980px){.halloween-2026-page .halloween-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.halloween-2026-page .halloween-grid{grid-template-columns:1fr}.halloween-2026-page .halloween-banner{margin-top:24px}}

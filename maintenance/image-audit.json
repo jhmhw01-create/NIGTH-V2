@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2586,
-    "bytes": 263583530,
+    "images": 2598,
+    "bytes": 265768636,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2256,
+    "literalReferenceFound": 2268,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1619,6 +1619,10 @@
     "assets/images/GLOBAL SPECIAL MUSIC SHOW": {
       "files": 3,
       "bytes": 509488
+    },
+    "assets/images/HALLOWEEN_COSTUME": {
+      "files": 12,
+      "bytes": 2185106
     },
     "assets/images/IHWAN_graduation": {
       "files": 5,

@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 56,
-    "css": 54,
+    "assets": 57,
+    "css": 55,
     "js": 2,
-    "runtime": 54,
+    "runtime": 55,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -36,6 +36,7 @@
       "assets/css/five-voices.css",
       "assets/css/gallery-fashion.css",
       "assets/css/gallery-organized.css",
+      "assets/css/halloween-2026.css",
       "assets/css/history-fashion.css",
       "assets/css/home-cleanup.css",
       "assets/css/home-fashion.css",
@@ -217,6 +218,7 @@
         "after-hours-photobook.html",
         "doha-taehoon-mariners-2030.html",
         "fashion-week-2030.html",
+        "halloween-2026.html",
         "ihwan-graduation.html",
         "ihwan-mariners-2030.html",
         "jiwoo-woohyun-mariners-2030.html",
@@ -236,6 +238,7 @@
         "src/pages/after-hours-photobook.json",
         "src/pages/doha-taehoon-mariners-2030.json",
         "src/pages/fashion-week-2030.json",
+        "src/pages/halloween-2026.json",
         "src/pages/ihwan-graduation.json",
         "src/pages/ihwan-mariners-2030.json",
         "src/pages/jiwoo-woohyun-mariners-2030.json",
@@ -340,6 +343,7 @@
         "five-voices.html",
         "gallery.html",
         "global-special-music-show.html",
+        "halloween-2026.html",
         "history.html",
         "if-night.html",
         "ihwan-graduation.html",
@@ -458,6 +462,7 @@
         "five-voices.html",
         "gallery.html",
         "global-special-music-show.html",
+        "halloween-2026.html",
         "history.html",
         "if-night.html",
         "ihwan-graduation.html",
@@ -637,6 +642,17 @@
       ],
       "buildReferences": [
         "src/pages/gallery.json"
+      ]
+    },
+    {
+      "path": "assets/css/halloween-2026.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "halloween-2026.html"
+      ],
+      "buildReferences": [
+        "src/pages/halloween-2026.json"
       ]
     },
     {
@@ -881,6 +897,7 @@
         "five-voices.html",
         "gallery.html",
         "global-special-music-show.html",
+        "halloween-2026.html",
         "history.html",
         "if-night.html",
         "ihwan-graduation.html",
@@ -988,6 +1005,7 @@
         "five-voices.html",
         "gallery.html",
         "global-special-music-show.html",
+        "halloween-2026.html",
         "history.html",
         "if-night.html",
         "ihwan-graduation.html",
@@ -1126,6 +1144,7 @@
         "five-voices.html",
         "gallery.html",
         "global-special-music-show.html",
+        "halloween-2026.html",
         "history.html",
         "if-night.html",
         "ihwan-graduation.html",
@@ -1215,6 +1234,7 @@
         "src/pages/five-voices.json",
         "src/pages/gallery.json",
         "src/pages/global-special-music-show.json",
+        "src/pages/halloween-2026.json",
         "src/pages/history.json",
         "src/pages/if-night.json",
         "src/pages/ihwan-graduation.json",
@@ -1303,6 +1323,7 @@
         "fifth-anniversary-2027.html",
         "five-voices.html",
         "global-special-music-show.html",
+        "halloween-2026.html",
         "if-night.html",
         "ihwan-graduation.html",
         "ihwan-mariners-2030.html",
