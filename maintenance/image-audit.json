@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2581,
-    "bytes": 262509922,
+    "images": 2586,
+    "bytes": 263583530,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2251,
+    "literalReferenceFound": 2256,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1839,6 +1839,10 @@
     "assets/images/night-baseball": {
       "files": 11,
       "bytes": 1456212
+    },
+    "assets/images/night-camera-roll": {
+      "files": 5,
+      "bytes": 1073608
     },
     "assets/images/night-off-summer": {
       "files": 21,

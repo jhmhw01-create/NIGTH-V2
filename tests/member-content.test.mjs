@@ -7,11 +7,11 @@ const root=new URL('../',import.meta.url);
 const members=['doha','woohyun','jiwoo','ihwan','taehoon'];
 const readPage=async route=>JSON.parse(await readFile(new URL(`src/pages/${route.replace('.html','.json')}`,root),'utf8'));
 
-test('member content routes use all 25 supplied WebP assets once',async()=>{
+test('member content routes use all 30 supplied WebP assets once',async()=>{
   assert.deepEqual(memberContentRoutes,['nights-closet.html','night-files.html']);
   const closet=await readPage('nights-closet.html');
   const files=await readPage('night-files.html');
-  const groups=[['nights-closet',closet,5],['member-misc',files,20]];
+  const groups=[['nights-closet',closet,5],['member-misc',files,20],['night-camera-roll',files,5]];
   for(const [directory,page,count] of groups){
     const inventory=(await readdir(new URL(`public/assets/images/${directory}/`,root))).filter(file=>file.endsWith('.webp')).sort();
     const references=[...page.contentHtml.matchAll(new RegExp(`assets/images/${directory}/([^\"']+\\.webp)`,'g'))].map(match=>match[1]).sort();
@@ -31,16 +31,16 @@ test("NIGHT'S CLOSET preserves member order, natural ratios and loading policy",
 
 test('NIGHT FILES preserves theme and member order with neutral metadata',async()=>{
   const page=await readPage('night-files.html');
-  const themes=['selfie-sequence','outfit-match','four-cut','profile-photo-history'];
+  const themes=['selfie-sequence','outfit-match','four-cut','profile-photo-history','camera-roll'];
   let cursor=-1;
   for(const theme of themes){
     const sectionStart=page.contentHtml.indexOf(`id=\"${theme}\"`);assert.ok(sectionStart>cursor);cursor=sectionStart;
     const section=page.contentHtml.slice(sectionStart,page.contentHtml.indexOf('</section>',sectionStart));
-    const positions=members.map(member=>section.indexOf(`${member}-${theme}.webp`));
+    const positions=members.map(member=>section.indexOf(theme==='camera-roll'?`night-camera-roll-${member}.webp`:`${member}-${theme}.webp`));
     assert.ok(positions.every(position=>position>=0));assert.deepEqual([...positions].sort((a,b)=>a-b),positions);
   }
   assert.equal((page.contentHtml.match(/loading=\"eager\"/g)||[]).length,1);
-  assert.equal((page.contentHtml.match(/loading=\"lazy\"/g)||[]).length,19);
+  assert.equal((page.contentHtml.match(/loading=\"lazy\"/g)||[]).length,24);
   assert.doesNotMatch(page.contentHtml,/기밀|유출|성향 분석|데이터베이스/);
 });
 
