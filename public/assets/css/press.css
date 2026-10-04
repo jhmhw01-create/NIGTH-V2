@@ -27,6 +27,9 @@
 .return-press-overview{display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:24px;align-items:start}
 .return-press-overview>img{display:block;width:100%;height:auto;border:1px solid var(--line)}
 .return-press-copy{display:block;min-width:0}
+.press-award-overview{display:grid;grid-template-columns:minmax(150px,240px) minmax(0,1fr);gap:24px;align-items:start}
+.press-award-overview>img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.press-award-copy{display:block;min-width:0}
 .press-short{display:grid;grid-template-columns:120px 85px minmax(0,1fr) 22px;gap:24px;padding:30px 20px}
 .press-year{font-size:.875rem;color:var(--silver);font-variant-numeric:tabular-nums}
 .press-short h2{margin:0}
@@ -42,6 +45,8 @@
 .press-body{padding:4px 14px 30px}
 .return-press-overview{grid-template-columns:1fr;gap:18px}
 .return-press-overview>img{max-width:240px}
+.press-award-overview{grid-template-columns:1fr;gap:18px}
+.press-award-overview>img{max-width:320px}
 .press-short{grid-template-columns:auto 1fr;gap:12px 18px;padding:24px 14px}
 .press-short .press-overview{grid-column:1/-1}
 .press-hero{padding-top:54px}
