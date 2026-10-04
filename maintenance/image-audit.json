@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2598,
-    "bytes": 265768636,
+    "images": 2601,
+    "bytes": 266389200,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2268,
+    "literalReferenceFound": 2271,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1619,6 +1619,10 @@
     "assets/images/GLOBAL SPECIAL MUSIC SHOW": {
       "files": 3,
       "bytes": 509488
+    },
+    "assets/images/GLOBAL_AWARDS": {
+      "files": 3,
+      "bytes": 620564
     },
     "assets/images/HALLOWEEN_COSTUME": {
       "files": 12,

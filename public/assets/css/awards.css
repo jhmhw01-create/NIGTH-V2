@@ -21,6 +21,7 @@
 .award-record small,.achievement-list small,.progression-grid small{color:var(--purple-soft);font-size:12px;letter-spacing:.16em}
 .award-record h3{margin:5px 0 6px;font-family:Georgia,"Times New Roman",serif;font-size:25px;font-weight:500;letter-spacing:.025em;overflow-wrap:anywhere}
 .award-record p{margin:0;color:var(--muted);font-size:15px;line-height:1.75}
+.award-record-image{display:block;width:min(100%,520px);height:auto;margin:0 0 18px;aspect-ratio:auto;object-fit:initial;background:transparent}
 .record-lineup{text-align:right;color:#8e879b;font-size:11px;letter-spacing:.1em;line-height:1.7;overflow-wrap:anywhere}
 .award-status{margin-top:22px;padding:25px 28px;border-left:2px solid #8976d5;background:linear-gradient(90deg,rgba(122,92,255,.09),rgba(255,255,255,.012));display:grid;grid-template-columns:180px minmax(240px,.8fr) 1fr;gap:26px;align-items:center}
 .award-status span{color:var(--purple-soft);font-size:11px;letter-spacing:.13em}
