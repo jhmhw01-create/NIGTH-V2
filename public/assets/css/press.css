@@ -30,6 +30,9 @@
 .press-award-overview{display:grid;grid-template-columns:minmax(150px,240px) minmax(0,1fr);gap:24px;align-items:start}
 .press-award-overview>img{display:block;width:100%;height:auto;border:1px solid var(--line)}
 .press-award-copy{display:block;min-width:0}
+.press-related-links{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:16px}
+.press-related-links a{color:var(--silver);font-size:.72rem;letter-spacing:.11em;border-bottom:1px solid var(--line);padding-bottom:4px}
+.press-related-links a:hover,.press-related-links a:focus-visible{color:var(--purple-soft);border-color:currentColor}
 .press-short{display:grid;grid-template-columns:120px 85px minmax(0,1fr) 22px;gap:24px;padding:30px 20px}
 .press-year{font-size:.875rem;color:var(--silver);font-variant-numeric:tabular-nums}
 .press-short h2{margin:0}
@@ -84,12 +87,7 @@
 .archive-heading{margin:0 0 14px}.press-records>.container>.press-help{margin:0 0 24px}
 @media(max-width:600px){.feature-hero{min-height:630px;align-items:flex-end}.feature-hero>img{object-position:35% center}.feature-hero::before{background:linear-gradient(0deg,rgba(0,0,0,.28),transparent 85%)}.feature-hero-copy{padding:40px 0}.feature-hero h2{font-size:2rem}.feature-subhead br{display:none}.feature-reading{margin-top:38px}.feature-tracks{grid-template-columns:1fr;gap:22px}}
 
-/* 2029 archive chronology: newest major news first, PHANTOM retained as an archive feature. */
-.press-page main{display:flex;flex-direction:column}
-.press-page main>.press-hero{order:0}
-.press-page main>section.press-records:nth-of-type(2){order:1}
-.press-page main>.current-feature{order:2}
-.press-page main>section.press-records:nth-of-type(3){order:3}
+/* PHANTOM is retained as an archive feature after the current chronology. */
 .current-feature .feature-label{font-size:0}
 .current-feature .feature-label::after{content:"ARCHIVE FEATURE · 2026";font-size:.75rem;letter-spacing:.2em}
 

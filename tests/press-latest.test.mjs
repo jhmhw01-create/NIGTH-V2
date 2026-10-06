@@ -20,10 +20,19 @@ test('PRESS archive includes current releases and documentary in newest-first or
   }
   const dates=[...section.matchAll(/<time class="press-year" datetime="([^"]+)"/g)].map(match=>match[1]);
   assert.deepEqual(dates,[...dates].sort().reverse());
+  const yearOnly=[...section.matchAll(/<article class="[^"]*press-record[^"]*" id="article-(\d+)"[\s\S]*?<\/article>/g)].flatMap(match=>{
+    const year=match[0].match(/<span class="press-year">(\d{4})<\/span>/)?.[1];
+    return year?[{id:match[1],year}]:[];
+  });
+  assert.deepEqual(yearOnly,[{id:'31',year:'2029'},{id:'30',year:'2029'},{id:'33',year:'2028'},{id:'32',year:'2027'}]);
   const ids=[...section.matchAll(/<article class="press-record press-short" id="article-(\d+)"/g)].map(match=>match[1]);
   assert.equal(ids.indexOf('13'),ids.indexOf('20')+1,'INFINITY should appear immediately before COMPLETE');
   const css=await readFile(new URL('../public/assets/css/press.css',import.meta.url),'utf8');
   assert.doesNotMatch(css,/#article-\d+\s*\{\s*order\s*:/,'CSS must not override editorial date order');
+  assert.doesNotMatch(css,/\.press-page main[^}]*display:flex|\.press-page main>[^}]*order:/,'CSS must not reverse DOM reading order');
+  const dom=page.contentHtml;
+  assert.ok(dom.indexOf('id="post-phantom-heading"')<dom.indexOf('id="article-10"'));
+  assert.ok(dom.indexOf('id="article-10"')<dom.indexOf('<h2 class="archive-heading">ARCHIVE</h2>'));
   assert.equal(dates[0],'2030-04-08');
   const catalog=await buildSourceSearchCatalog();
   const record=catalog.records.find(row=>row.href==='press.html');
