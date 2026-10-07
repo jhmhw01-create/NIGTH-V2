@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 57,
-    "css": 55,
+    "assets": 56,
+    "css": 54,
     "js": 2,
-    "runtime": 55,
+    "runtime": 54,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -55,7 +55,6 @@
       "assets/css/paradox.css",
       "assets/css/press.css",
       "assets/css/readability.css",
-      "assets/css/season-2027.css",
       "assets/css/site-stability.css",
       "assets/css/stage-detail-fashion.css",
       "assets/css/store-fashion.css",
@@ -598,6 +597,7 @@
       "status": "runtime",
       "runtimeReferences": [
         "daesang-moments.html",
+        "season-greetings-2027.html",
         "season-greetings-2028.html",
         "season-greetings-2029.html",
         "social-archive.html",
@@ -605,6 +605,7 @@
       ],
       "buildReferences": [
         "src/pages/daesang-moments.json",
+        "src/pages/season-greetings-2027.json",
         "src/pages/season-greetings-2028.json",
         "src/pages/season-greetings-2029.json",
         "src/pages/social-archive.json",
@@ -959,17 +960,6 @@
       ],
       "buildReferences": [
         "scripts/build-react.mjs"
-      ]
-    },
-    {
-      "path": "assets/css/season-2027.css",
-      "type": "css",
-      "status": "runtime",
-      "runtimeReferences": [
-        "season-greetings-2027.html"
-      ],
-      "buildReferences": [
-        "src/pages/season-greetings-2027.json"
       ]
     },
     {
