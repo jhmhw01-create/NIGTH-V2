@@ -7,7 +7,6 @@ body[data-night-surface="home"] {
 body[data-night-surface="information"] {
   --bg: #14141c;
   --bg-soft: #1b1b26;
-  --panel: #20202b;
   --muted: #cbc7d4;
   --line: rgba(219,218,230,.24);
   background-color: var(--bg);

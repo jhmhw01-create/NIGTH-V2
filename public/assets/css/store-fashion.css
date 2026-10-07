@@ -1,6 +1,6 @@
 /* NIGHT V2 / STORE: charcoal editorial surface. Product imagery is left intact. */
 body.store-page[data-night-subpage] {
-  --store-ink:#151412;--store-panel:#211f1c;--store-deep:#181715;
+  --store-ink:#151412;--store-panel:#211f1c;
   --store-line:rgba(238,234,225,.19);--store-text:#eeeae1;--store-muted:#bdb7ad;
   background:var(--store-ink);color:var(--store-text);
 }
