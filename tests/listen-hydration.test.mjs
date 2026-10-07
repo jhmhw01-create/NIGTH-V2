@@ -13,6 +13,27 @@ const render=node=>typeof node==='string'?node:createElement(node.tag,node.props
 const data=routeData('listen.html',{trees:{'listen.html':pageTree(page.contentHtml)},navigation:{}});
 const clientData=JSON.parse(serializeRouteData(data));
 
+test('LISTEN embeds use scoped CSS without changing the serialized player tree',async()=>{
+  assert.deepEqual(clientData,data);
+  const nodes=walk(clientData.nodes);
+  const wrappers=nodes.filter(node=>node.props.className==='listen-suno-player');
+  assert.equal(wrappers.length,5);
+  for(const wrapper of wrappers){
+    assert.equal(wrapper.props.style,undefined);
+    const frame=wrapper.children.find(node=>node.tag==='iframe');
+    assert.ok(frame);
+    assert.equal(frame.props.style,undefined);
+    assert.deepEqual(frame.children,[]);
+    const dom=parseFragment(renderToString(render(wrapper))).childNodes[0];
+    assert.equal(dom.attrs.find(attr=>attr.name==='class').value,'listen-suno-player');
+    assert.equal(dom.childNodes[0].tagName,'iframe');
+    assert.deepEqual(dom.childNodes[0].childNodes,[]);
+  }
+  const css=await readFile(new URL('../public/assets/css/listen-fashion.css',import.meta.url),'utf8');
+  assert.match(css,/body\[data-night-listen\] \.listen-suno-player\{width:100%;max-width:760px;margin:18px 0 8px;overflow:hidden\}/);
+  assert.match(css,/body\[data-night-listen\] \.listen-suno-player>iframe\{display:block;width:100%;border:0\}/);
+});
+
 test('LISTEN iframe text survives the actual tree/data/React SSR/HTML parser round trip',()=>{
   // iframe is RAWTEXT: entities emitted by React SSR are not decoded by HTML parsing.
   // The former fallback anchor became a text string and therefore could not hydrate.
