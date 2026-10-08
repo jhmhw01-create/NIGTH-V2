@@ -18,18 +18,9 @@ const collections = {};
 for (const name of ['albums','notices','memberships','galleryCards','contentsEntries']) {
   collections[name] = JSON.parse(await readFile(join(root,'src/data',name+'.json'),'utf8'));
 }
-const applyLatestArchivePatches=page=>{
-  if(page.route!=='history.html')return page;
-  page.contentHtml=page.contentHtml
-    .replace('데뷔부터 SOMETIME까지, NIGHT의 앨범과 공연, 팬클럽 활동과 주요 프로젝트를 시간순으로 만나보세요.','데뷔부터 RETURN까지, NIGHT의 앨범과 공연, 팬클럽 활동과 주요 프로젝트를 시간순으로 만나보세요.')
-    .replace('<h2 id="history-label-2030">2030</h2><small>SOMETIME</small>','<h2 id="history-label-2030">2030</h2><small>SOMETIME / RETURN</small>')
-    .replace('<div class="history-events"><div class="history-event"><span class="history-dot"></span><div><small>ALBUM · 2030.04.08</small>', '<div class="history-events"><div class="history-event"><span class="history-dot"></span><div><small>ALBUM · 2030.11.15</small><h3>RETURN</h3><p>데뷔일과 같은 11월 15일, NIGHT의 시작을 현재의 다섯 멤버로 다시 바라본 앨범 RETURN 발표. ORIGIN · AFTER DARK · REDEFINED 세 버전으로 발매됐으며 타이틀곡은 5MM. 3주차에는 DANGEROUS 스페셜 페어 무대를 선보였다. <a href="return-2030.html">아카이브 보기 →</a></p></div></div><div class="history-event"><span class="history-dot"></span><div><small>ALBUM · 2030.04.08</small>');
-  return page;
-};
 for (const file of pages.filter(file => file.endsWith('.json')).sort()) {
   let page = JSON.parse(await readFile(join(pagesDir,file),'utf8'));
   page = normalizeSeasonGreetingsPage(page);
-  page = applyLatestArchivePatches(page);
   page = syncHubPage(page);
   page.contentHtml = renderCollections(page.contentHtml,collections);
   if (!/^[a-z0-9-]+\.html$/.test(page.route) || basename(page.route) !== page.route) throw Error('Invalid route: ' + page.route);
