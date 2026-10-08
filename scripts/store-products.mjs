@@ -1,10 +1,9 @@
 import {readFile} from 'node:fs/promises';
 import {runInNewContext} from 'node:vm';
 export function parseStoreProducts(source){
-  const end=source.indexOf('\nconst grid = ');
-  if(end<0)throw Error('Missing MD product data boundary');
-  // Evaluate only the original static catalog, not its DOM/storage event code.
-  const products=JSON.parse(runInNewContext(source.slice(0,end)+'\nJSON.stringify(mdProducts)',{}, {timeout:100}));
+  // This build input contains only the static catalog and its data helpers.
+  if(!/^const mdPath = /.test(source)||!/\nconst mdProducts = \[/.test(source)||!/\n\];\s*$/.test(source))throw Error('Invalid MD product data source');
+  const products=JSON.parse(runInNewContext(source+'\nJSON.stringify(mdProducts)',{}, {timeout:100,contextCodeGeneration:{strings:false,wasm:false}}));
   if(!products.some(product=>product.id==='moonlight-light-stick')){
     products.unshift({
       id:'moonlight-light-stick',
