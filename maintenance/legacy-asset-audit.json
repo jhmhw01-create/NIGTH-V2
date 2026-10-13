@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "summary": {
-    "assets": 56,
-    "css": 54,
+    "assets": 57,
+    "css": 55,
     "js": 2,
-    "runtime": 54,
+    "runtime": 55,
     "buildInput": 2,
     "unresolved": 0
   },
@@ -47,6 +47,7 @@
       "assets/css/luna4.css",
       "assets/css/mariners-event.css",
       "assets/css/member-content.css",
+      "assets/css/member-physical-profile.css",
       "assets/css/night-collections.css",
       "assets/css/night-off-summer.css",
       "assets/css/notice-archive.css",
@@ -778,6 +779,25 @@
       "buildReferences": [
         "src/pages/night-files.json",
         "src/pages/nights-closet.json"
+      ]
+    },
+    {
+      "path": "assets/css/member-physical-profile.css",
+      "type": "css",
+      "status": "runtime",
+      "runtimeReferences": [
+        "member-doha.html",
+        "member-ihwan.html",
+        "member-jiwoo.html",
+        "member-taehoon.html",
+        "member-woohyun.html"
+      ],
+      "buildReferences": [
+        "src/pages/member-doha.json",
+        "src/pages/member-ihwan.json",
+        "src/pages/member-jiwoo.json",
+        "src/pages/member-taehoon.json",
+        "src/pages/member-woohyun.json"
       ]
     },
     {

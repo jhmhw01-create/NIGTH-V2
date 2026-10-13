@@ -31,6 +31,9 @@ export function ArchivePage({route,nodes}) {
   const gallery=route==='gallery.html';
   const editorial=route==='five-voices.html';
   const portrait=editorial?nodes.flatMap(n=>descendants(n,n=>classes(n).has('fv-photo'))).find(n=>n.props['data-full']===activePhoto):null;
+  const physicalItem=nodes.flatMap(n=>descendants(n,n=>classes(n).has('member-physical-photo'))).find(n=>n.props['data-full']===activePhoto);
+  const physicalImage=physicalItem?descendants(physicalItem,n=>n.tag==='img')[0]:null;
+  const physicalPhoto=physicalItem?{full:physicalItem.props['data-full'],label:physicalItem.props['data-caption'],width:physicalImage?.props.width,height:physicalImage?.props.height}:null;
   const portraitPhoto=portrait?{full:portrait.props['data-full'],label:portrait.props['data-caption']}:null;
   const imageArchive=stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route);
   const album=albumRoutes.includes(route)||stageRoutes.includes(route)||storyRoutes.includes(route)||eventRoutes.includes(route);
@@ -87,6 +90,7 @@ export function ArchivePage({route,nodes}) {
   },[contents]);
   function render(node,key) {
     if(typeof node==='string')return node;
+    if(node.props.id==='memberPhysicalDialog')return <CollectionPhotoDialog key={key} variant="physical" photo={physicalPhoto} onClose={()=>setActivePhoto(null)}/>;
     if(editorial&&node.props.id==='fv-viewer')return <CollectionPhotoDialog key={key} variant="editorial" photo={portraitPhoto} onClose={()=>setActivePhoto(null)}/>;
     if(gallery && node.props.id==='galleryLightbox')return <GalleryLightbox key={key} photo={photo} index={photoIndex} total={lightboxItems.length} onClose={()=>setActivePhoto(null)} onMove={movePhoto} />;
     if(album && node.props.id==='archive26Lightbox')return <AlbumLightbox key={key} photo={albumPhoto} index={albumIndex} total={albumItems.length} label={node.props['aria-label']} onClose={()=>setActivePhoto(null)} onMove={moveAlbum} />;
@@ -124,6 +128,7 @@ export function ArchivePage({route,nodes}) {
       props.onEnded=()=>setPlayingTrack(current=>current===source?null:current);
     }
     if(medley&&(cls.has('medley-master')||cls.has('medley-track'))){const source=descendants(node,n=>n.tag==='source')[0].props.src;props.className=medleyClassName(props.className,playingTrack===source);}
+    if(cls.has('member-physical-photo')){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(editorial&&cls.has('fv-photo')){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(album && cls.has('archive26-photo') && props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}
     if(imageArchive&&isStoryPhoto(node)&&props['data-full']){props.type='button';props.onClick=()=>setActivePhoto(props['data-full']);}

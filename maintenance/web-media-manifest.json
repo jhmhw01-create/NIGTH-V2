@@ -2,12 +2,12 @@
   "schemaVersion": 1,
   "root": "public",
   "summary": {
-    "files": 2614,
-    "bytes": 335141601,
-    "sha256": "ca3e81b46530286157b1b4fb1bd465fdf4cfac1494b67dbc3aeacf6d075fe4bf",
+    "files": 2624,
+    "bytes": 336251339,
+    "sha256": "7819bb94fbc09d709489082443e6ad5f40fb5d4faf84c6bebf62eef6ba42f7c7",
     "extensions": {
       ".mp3": 13,
-      ".webp": 2601
+      ".webp": 2611
     }
   }
 }

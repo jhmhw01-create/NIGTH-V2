@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
   "summary": {
-    "images": 2601,
-    "bytes": 266389200,
+    "images": 2611,
+    "bytes": 267498938,
     "exactDuplicateGroups": 0,
-    "literalReferenceFound": 2271,
+    "literalReferenceFound": 2281,
     "knownDynamic": 330,
     "dynamicReviewRequired": 0,
     "emptyFiles": 0
@@ -1651,6 +1651,10 @@
     "assets/images/NIGHT_DOCUMENTARY": {
       "files": 10,
       "bytes": 857698
+    },
+    "assets/images/NIGHT_PHYSICAL_PROFILE": {
+      "files": 10,
+      "bytes": 1109738
     },
     "assets/images/NIGHT_coachella": {
       "files": 8,
