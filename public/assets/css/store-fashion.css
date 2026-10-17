@@ -80,3 +80,10 @@ body.store-page :is(button,select,input):focus-visible {outline:2px solid #eeeae
 @media(max-width:760px){body.store-page .store-head{padding:50px 0}body.store-page .store-head-inner{align-items:start;flex-direction:column}body.store-page .store-toolbar{align-items:start;flex-direction:column;gap:13px}body.store-page .store-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}body.store-page .store-section{padding:30px 0 64px}body.store-page .store-modal{padding:12px}body.store-page .store-modal-panel{display:block;width:100%;padding:22px}body.store-page .store-detail-gallery>img{max-height:42vh;aspect-ratio:auto}body.store-page .store-detail-copy{padding:4px 0 10px}}
 @media(max-width:450px){body.store-page .store-grid{grid-template-columns:1fr}body.store-page .store-card-image{aspect-ratio:4/3}body.store-page .store-filter{padding:9px 10px}body.store-page .store-modal-panel{padding:18px}body.store-page .store-detail-gallery>img{max-height:38vh}}
 @media(prefers-reduced-motion:reduce){body.store-page .store-card,body.store-page .store-cart,body.store-page .store-backdrop,body.store-page .store-toast{transition:none}}
+
+/* Reuse the detail quantity controls' charcoal palette in each cart row. */
+body.store-page .store-cart-quantity {display:flex;align-items:center;justify-content:space-between;max-width:145px;min-height:44px;border:1px solid var(--store-line);background:#191816;margin:0 0 10px}
+body.store-page .store-cart-quantity button {flex:0 0 44px;min-height:44px;color:var(--store-text)}
+body.store-page .store-cart-quantity button[aria-disabled="true"] {opacity:.45;cursor:default}
+body.store-page .store-cart-quantity output {min-width:0;font-size:12px;text-align:center}
+@media(max-width:760px){body.store-page .store-cart.is-open~.store-toast{top:12px;bottom:auto;width:max-content;max-width:calc(100vw - 24px);box-sizing:border-box}}

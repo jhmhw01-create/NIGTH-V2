@@ -22,3 +22,11 @@ export function addCartItem(cart,product,option,quantity){
   const amount=quantityValue(quantity),found=cart.some(item=>item.id===product.id&&item.option===option);
   return found?cart.map(item=>item.id===product.id&&item.option===option?{...item,quantity:item.quantity+amount}:item):[...cart,{id:product.id,name:product.name,option,quantity:amount,price:product.price,image:product.images[0]}];
 }
+export function changeCartQuantity(cart,id,option,delta){
+  if(delta!==1&&delta!==-1)return cart;
+  return cart.map(item=>{
+    if(item.id!==id||item.option!==option)return item;
+    const quantity=item.quantity+delta;
+    return Number.isSafeInteger(quantity)&&quantity>=1?{...item,quantity}:item;
+  });
+}
