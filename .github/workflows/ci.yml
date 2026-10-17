@@ -1,6 +1,8 @@
 name: Verify NIGHT V2
 
 on:
+  push:
+    branches: [maintenance/v2-baseline-20261017]
   pull_request:
     branches: [main]
 

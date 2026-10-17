@@ -1390,8 +1390,7 @@
         "year-end-awards-2026.html"
       ],
       "buildReferences": [
-        "scripts/build-react.mjs",
-        "scripts/tests/subpage-fashion.test.mjs"
+        "scripts/build-react.mjs"
       ]
     },
     {
