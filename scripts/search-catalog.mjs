@@ -18,21 +18,21 @@ const routeKeywords={
   'woohyun-night-off.html':"WOOHYUN 성우현 RADIO PERSONAL SCHEDULE WOOHYUN'S NIGHT OFF 우현의 나이트 오프",
   'night-in-the-house-2030.html':'NIGHT IN THE HOUSE FANMEETING LUNA 2030',
   'return-2030.html':'RETURN 5MM 2030',
-  'sometime.html':'SOMETIME CINEMATIC 2030'
-  ,'luna8.html':'LUNA 8TH SHINE AND DAWN MEMBERSHIP KIT'
-  ,'taehoon-todays-scenery.html':'TAEHOON 유태훈 오늘의 풍경 SOLO SINGLE 아무 데도 다녀왔어'
-  ,'ihwan-graduation.html':'IHWAN 박이환 GRADUATION 졸업 PERSONAL ARCHIVE'
-  ,'fashion-week-2030.html':'NIGHT 2030 FASHION WEEK DOHA WOOHYUN JIWOO IHWAN TAEHOON'
-  ,'night-selfie-archive.html':'NIGHT SELFIE ARCHIVE BED POST WORKOUT SHOWER BACKSTAGE SNOWMAN DOHA WOOHYUN JIWOO IHWAN TAEHOON'
-  ,'member-fragrance-match.html':'NIGHT MEMBER FRAGRANCE MATCH TOM FORD OUD WOOD MAISON MARGIELA REPLICA JAZZ CLUB MFK GENTLE FLUIDITY SILVER BYREDO MOJAVE GHOST JO MALONE LONDON CYPRESS GRAPEVINE'
-  ,'luxury-brand-ambassador-2030.html':'2030 NIGHT LUXURY BRAND AMBASSADOR SAINT LAURENT PRADA DIOR VALENTINO LOEWE DOHA WOOHYUN JIWOO IHWAN TAEHOON'
-  ,'after-hours-photobook.html':'NIGHT AFTER HOURS PHOTOBOOK VISUAL ALLURE PROVOCATION DANGER BEHIND THE SCENES DOHA WOOHYUN JIWOO IHWAN TAEHOON 독립 화보'
-  ,'doha-taehoon-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME DOHA TAEHOON 윤도하 유태훈 FIRST PITCH CEREMONIAL BATTING 시구 시타'
-  ,'ihwan-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME IHWAN 박이환 NATIONAL ANTHEM 애국가 애국가 제창'
-  ,'jiwoo-woohyun-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME JIWOO WOOHYUN 천지우 성우현 FIRST PITCH CEREMONIAL BATTING 시구 시타'
-  ,'nights-closet.html':"NIGHT'S CLOSET NIGHTS CLOSET WARDROBE WARDROBE SHEET DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈"
-  ,'night-files.html':'NIGHT FILES SELFIE SEQUENCE OUTFIT MATCH FOUR CUT PROFILE PHOTO HISTORY CAMERA ROLL CAMERAROLL 카메라 롤 카메라롤 셀카 의상 인생네컷 프로필 사진 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈'
-  ,'halloween-2026.html':'HALLOWEEN 2026 HALLOWEEN COSTUME HALLOWEEN COSTUME PARTY COSTUME 할로윈 코스튬 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈 WEREWOLF VAMPIRE GRIM REAPER PHANTOM DEVIL GLADIATOR PIRATE DARK KNIGHT VICTORIAN MAGICIAN WHIMSICAL HATTER'
+  'sometime.html':'SOMETIME CINEMATIC 2030',
+  'luna8.html':'LUNA 8TH SHINE AND DAWN MEMBERSHIP KIT',
+  'taehoon-todays-scenery.html':'TAEHOON 유태훈 오늘의 풍경 SOLO SINGLE 아무 데도 다녀왔어',
+  'ihwan-graduation.html':'IHWAN 박이환 GRADUATION 졸업 PERSONAL ARCHIVE',
+  'fashion-week-2030.html':'NIGHT 2030 FASHION WEEK DOHA WOOHYUN JIWOO IHWAN TAEHOON',
+  'night-selfie-archive.html':'NIGHT SELFIE ARCHIVE BED POST WORKOUT SHOWER BACKSTAGE SNOWMAN DOHA WOOHYUN JIWOO IHWAN TAEHOON',
+  'member-fragrance-match.html':'NIGHT MEMBER FRAGRANCE MATCH TOM FORD OUD WOOD MAISON MARGIELA REPLICA JAZZ CLUB MFK GENTLE FLUIDITY SILVER BYREDO MOJAVE GHOST JO MALONE LONDON CYPRESS GRAPEVINE',
+  'luxury-brand-ambassador-2030.html':'2030 NIGHT LUXURY BRAND AMBASSADOR SAINT LAURENT PRADA DIOR VALENTINO LOEWE DOHA WOOHYUN JIWOO IHWAN TAEHOON',
+  'after-hours-photobook.html':'NIGHT AFTER HOURS PHOTOBOOK VISUAL ALLURE PROVOCATION DANGER BEHIND THE SCENES DOHA WOOHYUN JIWOO IHWAN TAEHOON 독립 화보',
+  'doha-taehoon-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME DOHA TAEHOON 윤도하 유태훈 FIRST PITCH CEREMONIAL BATTING 시구 시타',
+  'ihwan-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME IHWAN 박이환 NATIONAL ANTHEM 애국가 애국가 제창',
+  'jiwoo-woohyun-mariners-2030.html':'INCHEON MARINERS MARINERS 2030 BASEBALL HOME GAME JIWOO WOOHYUN 천지우 성우현 FIRST PITCH CEREMONIAL BATTING 시구 시타',
+  'nights-closet.html':"NIGHT'S CLOSET NIGHTS CLOSET WARDROBE WARDROBE SHEET DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈",
+  'night-files.html':'NIGHT FILES SELFIE SEQUENCE OUTFIT MATCH FOUR CUT PROFILE PHOTO HISTORY CAMERA ROLL CAMERAROLL 카메라 롤 카메라롤 셀카 의상 인생네컷 프로필 사진 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈',
+  'halloween-2026.html':'HALLOWEEN 2026 HALLOWEEN COSTUME HALLOWEEN COSTUME PARTY COSTUME 할로윈 코스튬 DOHA WOOHYUN JIWOO IHWAN TAEHOON 윤도하 성우현 천지우 박이환 유태훈 WEREWOLF VAMPIRE GRIM REAPER PHANTOM DEVIL GLADIATOR PIRATE DARK KNIGHT VICTORIAN MAGICIAN WHIMSICAL HATTER'
 };
 
 const escape=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
@@ -66,14 +66,15 @@ const cleanText=value=>decode(String(value||'')
 const mainMarkup=markup=>String(markup||'').match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1]||String(markup||'');
 const tagAttribute=(tag,name)=>tag.match(new RegExp('\\b'+name+'=["\\\']([^"\\\']*)["\\\']','i'))?.[1]||'';
 const headTitle=head=>cleanText(head.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||'NIGHT');
+const openingTags=(markup,name)=>markup.match(new RegExp('<'+name+'\\b[^>]*>','gi'))||[];
 const headDescription=head=>{
-  for(const tag of head.match(/<meta\b[^>]*>/gi)||[]){
+  for(const tag of openingTags(head,'meta')){
     if(tagAttribute(tag,'name').toLowerCase()==='description')return decode(tagAttribute(tag,'content'));
   }
   return '';
 };
 const firstImage=markup=>{
-  for(const tag of markup.match(/<img\b[^>]*>/gi)||[]){
+  for(const tag of openingTags(markup,'img')){
     const src=decode(tagAttribute(tag,'src'));
     if(src)return src;
   }
@@ -85,7 +86,7 @@ const summarize=(description,text)=>{
   return base.slice(0,177).replace(/\s+\S*$/,'').trim()+'…';
 };
 const albumArchiveRoute=album=>{
-  for(const tag of String(album.bodyTemplateHtml||'').match(/<a\b[^>]*>/gi)||[]){
+  for(const tag of openingTags(String(album.bodyTemplateHtml||''),'a')){
     if(!/album-detail-link/i.test(tagAttribute(tag,'class')))continue;
     const href=tagAttribute(tag,'href');
     if(/^[a-z0-9-]+\.html$/i.test(href))return href;
