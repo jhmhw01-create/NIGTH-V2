@@ -1,0 +1,564 @@
+{
+  "baselineCommit": "2957ae343988bace68172cc43709ebeeb4c5b631",
+  "albumIds": [
+    "nightmare",
+    "persona",
+    "wings",
+    "sensational",
+    "infinity",
+    "complete",
+    "after-hours",
+    "phantom",
+    "after-midnight",
+    "nocturne",
+    "eclipse",
+    "no-signal",
+    "new-moon",
+    "lucid",
+    "rest",
+    "paradox",
+    "so-good",
+    "sometime"
+  ],
+  "slots": [
+    {
+      "index": 17,
+      "id": "sometime"
+    },
+    {
+      "index": 14,
+      "id": "rest"
+    },
+    {
+      "index": 15,
+      "id": "paradox"
+    },
+    {
+      "index": 0,
+      "id": "nightmare"
+    },
+    {
+      "index": 1,
+      "id": "persona"
+    },
+    {
+      "index": 2,
+      "id": "wings"
+    },
+    {
+      "index": 3,
+      "id": "sensational"
+    },
+    {
+      "index": 4,
+      "id": "infinity"
+    },
+    {
+      "index": 5,
+      "id": "complete"
+    },
+    {
+      "index": 6,
+      "id": "after-hours"
+    },
+    {
+      "index": 7,
+      "id": "phantom"
+    },
+    {
+      "index": 8,
+      "id": "after-midnight"
+    },
+    {
+      "index": 9,
+      "id": "nocturne"
+    },
+    {
+      "index": 10,
+      "id": "eclipse"
+    },
+    {
+      "index": 11,
+      "id": "no-signal"
+    },
+    {
+      "index": 12,
+      "id": "new-moon"
+    },
+    {
+      "index": 13,
+      "id": "lucid"
+    },
+    {
+      "index": 16,
+      "id": "so-good"
+    }
+  ],
+  "sourceCardOrder": [
+    "return",
+    "sometime",
+    "rest",
+    "paradox",
+    "nightmare",
+    "persona",
+    "wings",
+    "sensational",
+    "infinity",
+    "complete",
+    "after-hours",
+    "phantom",
+    "after-midnight",
+    "nocturne",
+    "eclipse",
+    "no-signal",
+    "new-moon",
+    "lucid",
+    "so-good"
+  ],
+  "displayCardOrder": [
+    "return",
+    "sometime",
+    "rest",
+    "paradox",
+    "nightmare",
+    "persona",
+    "so-good",
+    "wings",
+    "sensational",
+    "infinity",
+    "complete",
+    "after-hours",
+    "phantom",
+    "lucid",
+    "new-moon",
+    "no-signal",
+    "eclipse",
+    "nocturne",
+    "after-midnight"
+  ],
+  "returnCardSha256": "843a7e4fe5aef05960c7c69a3709a8690d76402224cb765c8904dc024fe34722",
+  "renderedContentSha256": "90c0bf7e6930d3d6e77689037da5ad047848a31c75c8cbc8a864c402661ea5a1",
+  "catalogEntries": [
+    {
+      "id": "index",
+      "href": "index.html"
+    },
+    {
+      "id": "about-night",
+      "href": "about-night.html"
+    },
+    {
+      "id": "discography",
+      "href": "discography.html"
+    },
+    {
+      "id": "contents",
+      "href": "contents.html"
+    },
+    {
+      "id": "notice",
+      "href": "notice.html"
+    },
+    {
+      "id": "fanclub",
+      "href": "fanclub.html"
+    },
+    {
+      "id": "gallery",
+      "href": "gallery.html"
+    },
+    {
+      "id": "history",
+      "href": "history.html"
+    },
+    {
+      "id": "listen",
+      "href": "listen.html"
+    },
+    {
+      "id": "archive",
+      "href": "archive.html"
+    },
+    {
+      "id": "member-doha",
+      "href": "member-doha.html"
+    },
+    {
+      "id": "member-ihwan",
+      "href": "member-ihwan.html"
+    },
+    {
+      "id": "member-jiwoo",
+      "href": "member-jiwoo.html"
+    },
+    {
+      "id": "member-taehoon",
+      "href": "member-taehoon.html"
+    },
+    {
+      "id": "member-woohyun",
+      "href": "member-woohyun.html"
+    },
+    {
+      "id": "phantom-2026",
+      "href": "phantom-2026.html"
+    },
+    {
+      "id": "after-hours",
+      "href": "after-hours.html"
+    },
+    {
+      "id": "complete-2027",
+      "href": "complete-2027.html"
+    },
+    {
+      "id": "infinity-2027",
+      "href": "infinity-2027.html"
+    },
+    {
+      "id": "sensational-2027",
+      "href": "sensational-2027.html"
+    },
+    {
+      "id": "wings-2028",
+      "href": "wings-2028.html"
+    },
+    {
+      "id": "so-good-2028",
+      "href": "so-good-2028.html"
+    },
+    {
+      "id": "persona-2028",
+      "href": "persona-2028.html"
+    },
+    {
+      "id": "nightmare-2029",
+      "href": "nightmare-2029.html"
+    },
+    {
+      "id": "paradox-2029",
+      "href": "paradox-2029.html"
+    },
+    {
+      "id": "sometime",
+      "href": "sometime.html"
+    },
+    {
+      "id": "return-2030",
+      "href": "return-2030.html"
+    },
+    {
+      "id": "era-archive",
+      "href": "era-archive.html"
+    },
+    {
+      "id": "concert-archive",
+      "href": "concert-archive.html"
+    },
+    {
+      "id": "dream-night-2027",
+      "href": "dream-night-2027.html"
+    },
+    {
+      "id": "beyond-night-2028",
+      "href": "beyond-night-2028.html"
+    },
+    {
+      "id": "fanmeeting",
+      "href": "fanmeeting.html"
+    },
+    {
+      "id": "night-in-the-house-2030",
+      "href": "night-in-the-house-2030.html"
+    },
+    {
+      "id": "moonlight-club-2029",
+      "href": "moonlight-club-2029.html"
+    },
+    {
+      "id": "moonlight-club-md-2029",
+      "href": "moonlight-club-md-2029.html"
+    },
+    {
+      "id": "coachella-2029",
+      "href": "coachella-2029.html"
+    },
+    {
+      "id": "global-special-music-show",
+      "href": "global-special-music-show.html"
+    },
+    {
+      "id": "special-mc",
+      "href": "special-mc.html"
+    },
+    {
+      "id": "year-end-awards-2026",
+      "href": "year-end-awards-2026.html"
+    },
+    {
+      "id": "daesang-moments",
+      "href": "daesang-moments.html"
+    },
+    {
+      "id": "awards",
+      "href": "awards.html"
+    },
+    {
+      "id": "woohyun-jiwoo-unit-2024",
+      "href": "woohyun-jiwoo-unit-2024.html"
+    },
+    {
+      "id": "doha-taehoon-mariners-2030",
+      "href": "doha-taehoon-mariners-2030.html"
+    },
+    {
+      "id": "ihwan-mariners-2030",
+      "href": "ihwan-mariners-2030.html"
+    },
+    {
+      "id": "jiwoo-woohyun-mariners-2030",
+      "href": "jiwoo-woohyun-mariners-2030.html"
+    },
+    {
+      "id": "luna4",
+      "href": "luna4.html"
+    },
+    {
+      "id": "luna5",
+      "href": "luna5.html"
+    },
+    {
+      "id": "luna6",
+      "href": "luna6.html"
+    },
+    {
+      "id": "luna7",
+      "href": "luna7.html"
+    },
+    {
+      "id": "luna8",
+      "href": "luna8.html"
+    },
+    {
+      "id": "season-greetings-2027",
+      "href": "season-greetings-2027.html"
+    },
+    {
+      "id": "season-greetings-2028",
+      "href": "season-greetings-2028.html"
+    },
+    {
+      "id": "season-greetings-2029",
+      "href": "season-greetings-2029.html"
+    },
+    {
+      "id": "behind",
+      "href": "behind.html"
+    },
+    {
+      "id": "travel",
+      "href": "travel.html"
+    },
+    {
+      "id": "observation-2027",
+      "href": "observation-2027.html"
+    },
+    {
+      "id": "night-off-summer",
+      "href": "night-off-summer.html"
+    },
+    {
+      "id": "documentary-2029",
+      "href": "documentary-2029.html"
+    },
+    {
+      "id": "vlog",
+      "href": "vlog.html"
+    },
+    {
+      "id": "night-originals",
+      "href": "night-originals.html"
+    },
+    {
+      "id": "with-luna",
+      "href": "with-luna.html"
+    },
+    {
+      "id": "if-night",
+      "href": "if-night.html"
+    },
+    {
+      "id": "press",
+      "href": "press.html"
+    },
+    {
+      "id": "five-voices",
+      "href": "five-voices.html"
+    },
+    {
+      "id": "fansign-20260919",
+      "href": "fansign-20260919.html"
+    },
+    {
+      "id": "birthday-cafes-2026-2027",
+      "href": "birthday-cafes-2026-2027.html"
+    },
+    {
+      "id": "fifth-anniversary-2027",
+      "href": "fifth-anniversary-2027.html"
+    },
+    {
+      "id": "doha-play-on",
+      "href": "doha-play-on.html"
+    },
+    {
+      "id": "jiwoo-acting",
+      "href": "jiwoo-acting.html"
+    },
+    {
+      "id": "ihwan-musical",
+      "href": "ihwan-musical.html"
+    },
+    {
+      "id": "ihwan-graduation",
+      "href": "ihwan-graduation.html"
+    },
+    {
+      "id": "woohyun-night-off",
+      "href": "woohyun-night-off.html"
+    },
+    {
+      "id": "taehoon-camera-on-off",
+      "href": "taehoon-camera-on-off.html"
+    },
+    {
+      "id": "taehoon-todays-scenery",
+      "href": "taehoon-todays-scenery.html"
+    },
+    {
+      "id": "debut-archive",
+      "href": "debut-archive.html"
+    },
+    {
+      "id": "out-of-frame",
+      "href": "out-of-frame.html"
+    },
+    {
+      "id": "social-archive",
+      "href": "social-archive.html"
+    },
+    {
+      "id": "fashion-week-2030",
+      "href": "fashion-week-2030.html"
+    },
+    {
+      "id": "night-selfie-archive",
+      "href": "night-selfie-archive.html"
+    },
+    {
+      "id": "member-fragrance-match",
+      "href": "member-fragrance-match.html"
+    },
+    {
+      "id": "luxury-brand-ambassador-2030",
+      "href": "luxury-brand-ambassador-2030.html"
+    },
+    {
+      "id": "after-hours-photobook",
+      "href": "after-hours-photobook.html"
+    },
+    {
+      "id": "halloween-2026",
+      "href": "halloween-2026.html"
+    },
+    {
+      "id": "nights-closet",
+      "href": "nights-closet.html"
+    },
+    {
+      "id": "night-files",
+      "href": "night-files.html"
+    },
+    {
+      "id": "mirror-2024",
+      "href": "mirror-2024.html"
+    },
+    {
+      "id": "store",
+      "href": "store.html"
+    },
+    {
+      "id": "discography-nightmare",
+      "href": "discography.html#nightmare"
+    },
+    {
+      "id": "discography-persona",
+      "href": "discography.html#persona"
+    },
+    {
+      "id": "discography-wings",
+      "href": "discography.html#wings"
+    },
+    {
+      "id": "discography-sensational",
+      "href": "discography.html#sensational"
+    },
+    {
+      "id": "discography-infinity",
+      "href": "discography.html#infinity"
+    },
+    {
+      "id": "discography-complete",
+      "href": "discography.html#complete"
+    },
+    {
+      "id": "discography-after-hours",
+      "href": "discography.html#after-hours"
+    },
+    {
+      "id": "discography-phantom",
+      "href": "discography.html#phantom"
+    },
+    {
+      "id": "discography-after-midnight",
+      "href": "discography.html#after-midnight"
+    },
+    {
+      "id": "discography-nocturne",
+      "href": "discography.html#nocturne"
+    },
+    {
+      "id": "discography-eclipse",
+      "href": "discography.html#eclipse"
+    },
+    {
+      "id": "discography-no-signal",
+      "href": "discography.html#no-signal"
+    },
+    {
+      "id": "discography-new-moon",
+      "href": "discography.html#new-moon"
+    },
+    {
+      "id": "discography-lucid",
+      "href": "discography.html#lucid"
+    },
+    {
+      "id": "discography-rest",
+      "href": "discography.html#rest"
+    },
+    {
+      "id": "discography-paradox",
+      "href": "discography.html#paradox"
+    },
+    {
+      "id": "discography-so-good",
+      "href": "discography.html#so-good"
+    },
+    {
+      "id": "discography-sometime",
+      "href": "discography.html#sometime"
+    }
+  ],
+  "catalogMetadataSha256": "39c150e04dff963fa66a1207601985ae1de2f28a0f304f4c5460c4dc840b31fc"
+}

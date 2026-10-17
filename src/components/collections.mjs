@@ -30,7 +30,7 @@ export function renderCollections(content, collections) {
   const contentsSlots=[...content.matchAll(/\{\{contentsEntries:(\d+)\}\}/g)].map(match=>Number(match[1]));
   const contentsRecords=renderAllContents?[...(collections.contentsEntries||[])]:contentsSlots.map(index=>collections.contentsEntries?.[index]);
   if(contentsRecords.some(record=>!record))throw Error('Unknown contents record');
-  const renderers = {albums:AlbumCard,notices:NoticeItem,memberships:MembershipCard,galleryCards:record=>Record('div',record),contentsEntries:ContentsEntry};
+  const renderers = {notices:NoticeItem,memberships:MembershipCard,galleryCards:record=>Record('div',record),contentsEntries:ContentsEntry};
   const membershipSlots=[...content.matchAll(/\{\{memberships:(\d+)\}\}/g)].map(match=>Number(match[1]));
   const membershipMax=membershipSlots.length?Math.max(...membershipSlots):-1;
   const newerMemberships=membershipMax>=0?(collections.memberships||[]).slice(membershipMax+1).toReversed():[];
@@ -39,11 +39,24 @@ export function renderCollections(content, collections) {
     .replaceAll('{{contentsEntries:all}}',contentsRecords.map(ContentsEntry).join('\n'))
     .replaceAll('{{noticeCount}}',String(collections.notices?.length||0))
     .replaceAll('{{noticesByDate}}',NoticeArchive(collections.notices||[]));
-  return expanded.replace(/\{\{(albums|notices|memberships|galleryCards|contentsEntries):(\d+)\}\}/g, (_, name, indexText) => {
+  const albumsById=new Map();
+  for(const album of collections.albums||[]){
+    if(!album||typeof album.id!=='string'||!album.id)throw Error('Invalid album id');
+    if(albumsById.has(album.id))throw Error('Duplicate album id: '+album.id);
+    albumsById.set(album.id,album);
+  }
+  const withAlbums=expanded.replace(/\{\{album:([^{}]*)\}\}/g,(_,id)=>{
+    if(!albumsById.has(id))throw Error('Unknown album id: '+id);
+    return AlbumCard(albumsById.get(id));
+  });
+  const rendered=withAlbums.replace(/\{\{(notices|memberships|galleryCards|contentsEntries):(\d+)\}\}/g, (_, name, indexText) => {
     const index=Number(indexText);
     if (!collections[name]?.[index]) throw Error('Unknown record: ' + name + ':' + index);
     const rendered=renderers[name](collections[name][index]);
     if(name==='memberships'&&index===0&&newerMemberships.length)return newerMemberships.map(MembershipCard).join('\n')+'\n'+rendered;
     return rendered;
   });
+  const numericAlbum=rendered.match(/\{\{albums:\d+\}\}/);
+  if(numericAlbum)throw Error('Numeric album references are not supported: '+numericAlbum[0]);
+  return rendered;
 }
