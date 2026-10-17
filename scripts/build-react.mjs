@@ -20,6 +20,9 @@ import {archiveFallback,buildSearchCatalog} from './search-catalog.mjs';
 import {syncHubPage} from './hub-sync.mjs';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const normalizePage=page=>syncHubPage(normalizeSeasonGreetingsPage(page));
+const readJson=async path=>JSON.parse(await readFile(path,'utf8'));
+const readPage=async route=>normalizePage(await readJson(join(root,'src/pages',route.replace('.html','.json'))));
+const styleVersion=async name=>createHash('sha256').update(await readFile(join(root,'public/assets/css',name))).digest('hex').slice(0,12);
 export async function buildReactPages() {
   const temporary=join(root,'.react-build');
   await mkdir(temporary,{recursive:true});
@@ -30,14 +33,14 @@ export async function buildReactPages() {
   await writeFile(join(temporary,'store-products.json'),JSON.stringify(products));
   const routes=reactRoutes;
   const detailMap={};
-  for(const route of routes){const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));detailMap[route]=detailNavigation(page);}
+  for(const route of routes){const page=await readPage(route);detailMap[route]=detailNavigation(page);}
   await writeFile(join(temporary,'detail-navigation.json'),JSON.stringify(detailMap));
   const collections={};
-  for(const name of ['albums','notices','contentsEntries','memberships','galleryCards'])collections[name]=JSON.parse(await readFile(join(root,'src/data',name+'.json'),'utf8'));
+  for(const name of ['albums','notices','contentsEntries','memberships','galleryCards'])collections[name]=await readJson(join(root,'src/data',name+'.json'));
   const trees={};
   for(const route of routes.slice(1)) {
     if(route==='store.html'||route==='archive.html'||playerRoutes.includes(route)||collectionRoutes.includes(route))continue;
-    const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
+    const page=await readPage(route);
     trees[route]=pageTree(renderCollections(albumRoutes.includes(route)?albumMarkup(page):stageRoutes.includes(route)||fanclubDetailRoutes.includes(route)||storyRoutes.includes(route)||editorialRoutes.includes(route)||eventRoutes.includes(route)||visualRoutes.includes(route)?archiveMarkup(page):page.contentHtml,collections),imageDimensions);
   }
   await writeFile(join(temporary,'page-trees.json'),JSON.stringify(trees));
@@ -51,10 +54,11 @@ export async function buildReactPages() {
   const pages={};
   const preliminaryMarkup={};
   const emptyCatalog={labels:{},records:[]};
+  const pageDataFor=(route,catalog)=>routeData(route,{trees,navigation:detailMap,catalog,photos,products,imageDimensions,updates:homeUpdates(collections.notices)});
   for(const route of routes){
-    const page=normalizePage(JSON.parse(await readFile(join(root,'src/pages',route.replace('.html','.json')),'utf8')));
+    const page=await readPage(route);
     pages[route]=page;
-    const data=routeData(route,{trees,navigation:detailMap,catalog:emptyCatalog,photos,products,imageDimensions,updates:homeUpdates(collections.notices)});
+    const data=pageDataFor(route,emptyCatalog);
     preliminaryMarkup[route]=renderPage(route,data);
   }
   const catalog=buildSearchCatalog({
@@ -62,29 +66,29 @@ export async function buildReactPages() {
     documents:Object.fromEntries(routes.map(route=>[route,{headHtml:pages[route].headHtml,markup:preliminaryMarkup[route]}])),
     albums:collections.albums
   });
-  const homeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/home-fashion.css'))).digest('hex').slice(0,12);
-  const discographyStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/discography-fashion.css'))).digest('hex').slice(0,12);
-  const historyStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/history-fashion.css'))).digest('hex').slice(0,12);
-  const galleryStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/gallery-fashion.css'))).digest('hex').slice(0,12);
-  const contentsStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/contents-fashion.css'))).digest('hex').slice(0,12);
-  const archiveStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/archive-fashion.css'))).digest('hex').slice(0,12);
-  const noticeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/notice-fashion.css'))).digest('hex').slice(0,12);
-  const fanclubStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/fanclub-fashion.css'))).digest('hex').slice(0,12);
-  const fanclubDetailStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/fanclub-detail-fashion.css'))).digest('hex').slice(0,12);
-  const listenStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/listen-fashion.css'))).digest('hex').slice(0,12);
-  const albumDetailStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/album-detail-fashion.css'))).digest('hex').slice(0,12);
-  const subpageStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/subpage-fashion.css'))).digest('hex').slice(0,12);
-  const stageStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/stage-detail-fashion.css'))).digest('hex').slice(0,12);
-  const storeStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/store-fashion.css'))).digest('hex').slice(0,12);
-  const actingStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/jiwoo-acting.css'))).digest('hex').slice(0,12);
-  const musicalStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/ihwan-musical.css'))).digest('hex').slice(0,12);
-  const nightOffStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/woohyun-night-off.css'))).digest('hex').slice(0,12);
-  const cameraStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/taehoon-camera.css'))).digest('hex').slice(0,12);
-  const stabilityStyleVersion=createHash('sha256').update(await readFile(join(root,'public/assets/css/site-stability.css'))).digest('hex').slice(0,12);
+  const homeStyleVersion=await styleVersion('home-fashion.css');
+  const discographyStyleVersion=await styleVersion('discography-fashion.css');
+  const historyStyleVersion=await styleVersion('history-fashion.css');
+  const galleryStyleVersion=await styleVersion('gallery-fashion.css');
+  const contentsStyleVersion=await styleVersion('contents-fashion.css');
+  const archiveStyleVersion=await styleVersion('archive-fashion.css');
+  const noticeStyleVersion=await styleVersion('notice-fashion.css');
+  const fanclubStyleVersion=await styleVersion('fanclub-fashion.css');
+  const fanclubDetailStyleVersion=await styleVersion('fanclub-detail-fashion.css');
+  const listenStyleVersion=await styleVersion('listen-fashion.css');
+  const albumDetailStyleVersion=await styleVersion('album-detail-fashion.css');
+  const subpageStyleVersion=await styleVersion('subpage-fashion.css');
+  const stageStyleVersion=await styleVersion('stage-detail-fashion.css');
+  const storeStyleVersion=await styleVersion('store-fashion.css');
+  const actingStyleVersion=await styleVersion('jiwoo-acting.css');
+  const musicalStyleVersion=await styleVersion('ihwan-musical.css');
+  const nightOffStyleVersion=await styleVersion('woohyun-night-off.css');
+  const cameraStyleVersion=await styleVersion('taehoon-camera.css');
+  const stabilityStyleVersion=await styleVersion('site-stability.css');
   const indexRoutes=new Set(['index.html','discography.html','history.html','listen.html','gallery.html','contents.html','archive.html','notice.html','fanclub.html']);
   for(const route of routes) {
     const page=pages[route];
-    const pageData=routeData(route,{trees,navigation:detailMap,catalog,photos,products,imageDimensions,updates:homeUpdates(collections.notices)});
+    const pageData=pageDataFor(route,catalog);
     const markup=route==='archive.html'?renderPage(route,pageData):preliminaryMarkup[route];
     const homeTheme=route==='index.html'?'<link rel="stylesheet" href="assets/css/home-fashion.css?v='+homeStyleVersion+'">':route==='discography.html'?'<link rel="stylesheet" href="assets/css/discography-fashion.css?v='+discographyStyleVersion+'">':route==='history.html'?'<link rel="stylesheet" href="assets/css/history-fashion.css?v='+historyStyleVersion+'">':route==='gallery.html'?'<link rel="stylesheet" href="assets/css/gallery-fashion.css?v='+galleryStyleVersion+'">':route==='contents.html'?'<link rel="stylesheet" href="assets/css/contents-fashion.css?v='+contentsStyleVersion+'">':route==='archive.html'?'<link rel="stylesheet" href="assets/css/archive-fashion.css?v='+archiveStyleVersion+'">':route==='notice.html'?'<link rel="stylesheet" href="assets/css/notice-fashion.css?v='+noticeStyleVersion+'">':route==='fanclub.html'?'<link rel="stylesheet" href="assets/css/fanclub-fashion.css?v='+fanclubStyleVersion+'">':'';
     const stageTheme=stageRoutes.includes(route)||eventRoutes.includes(route)?'<link rel="stylesheet" href="assets/css/stage-detail-fashion.css?v='+stageStyleVersion+'">':'';
