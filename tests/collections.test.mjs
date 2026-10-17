@@ -28,5 +28,5 @@ test('AFTER HOURS notice keeps only the album release announcement',async()=>{
 test('title fields are escaped; missing collection records fail the build',()=>{
   const escaped=AlbumCard({id:'x',title:'&<>"\'',bodyTemplateHtml:'<h3>{{title}}</h3>',attributesHtml:' id="x"'});
   assert.equal(escaped,'<article id="x"><h3>&amp;&lt;&gt;&quot;&#39;</h3></article>');
-  assert.throws(()=>renderCollections('<main>{{albums:99}}</main>',{albums:[],notices:[],memberships:[]}),/Unknown record: albums:99/);
+  assert.throws(()=>renderCollections('<main>{{albums:99}}</main>',{albums:[],notices:[],memberships:[]}),/Numeric album references are not supported/);
 });

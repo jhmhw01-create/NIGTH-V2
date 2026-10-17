@@ -34,16 +34,34 @@ test('the eighteen album IDs remain unique and retain their catalog input order'
   }
 });
 
-test('all eighteen numeric slots resolve to the approved album IDs exactly once', () => {
-  const indices = [...page.contentHtml.matchAll(/\{\{albums:(\d+)\}\}/g)].map(match => Number(match[1]));
-  assert.equal(indices.length, 18);
-  assert.equal(new Set(indices).size, 18);
-  const references = indices.map(index => {
-    assert.ok(albums[index], `Missing album at index ${index}`);
-    return {index, id:albums[index].id};
-  });
-  assert.deepEqual(references, baseline.slots);
+test('all eighteen ID slots reference the same approved albums in the same positions', () => {
+  const ids = [...page.contentHtml.matchAll(/\{\{album:([^{}]+)\}\}/g)].map(match => match[1]);
+  assert.equal(ids.length, 18);
+  assert.equal(new Set(ids).size, 18);
+  assert.deepEqual(ids, baseline.slots.map(slot => slot.id));
+  assert.equal(page.contentHtml.includes('{{albums:'), false);
+  assert.equal(rendered.includes('{{album:'), false);
   assert.equal(rendered.includes('{{albums:'), false);
+});
+
+test('ID rendering is byte-identical to the approved numeric-slot expansion', () => {
+  // Test-only legacy oracle: production deliberately rejects numeric references.
+  const numeric = page.contentHtml.replace(/\{\{album:([^{}]+)\}\}/g, (_, id) => {
+    const slot = baseline.slots.find(slot => slot.id === id);
+    assert.ok(slot, id);
+    return `{{albums:${slot.index}}}`;
+  });
+  const legacy = numeric.replace(/\{\{albums:(\d+)\}\}/g, (_, index) => AlbumCard(albums[Number(index)]));
+  assert.equal(sha256(legacy), baseline.renderedContentSha256);
+  assert.equal(rendered, legacy);
+});
+
+test('ID lookup is independent of array positions without mutating the array', () => {
+  const original = structuredClone(albums);
+  for (const reordered of [[...albums].reverse(), [...albums.slice(1), albums[0]]]) {
+    assert.equal(renderCollections(page.contentHtml, {albums:reordered}), rendered);
+  }
+  assert.deepEqual(albums, original);
 });
 
 test('the nineteen authored cards retain their exact rendered content and source order', () => {
@@ -98,12 +116,36 @@ test('all 105 search records preserve their IDs, URLs, order, and search metadat
   assert.equal(sha256(JSON.stringify(metadata)), baseline.catalogMetadataSha256);
 });
 
-test('invalid numeric album references fail instead of rendering an empty or wrong card', () => {
-  for (const index of [18, 99]) {
+test('leftover numeric album references fail, even for valid indices and mixed tokens', () => {
+  for (const index of [0, 17, 18, 99]) {
     assert.throws(() => renderCollections(`{{albums:${index}}}`, {albums}), {
-      message:`Unknown record: albums:${index}`
+      message:`Numeric album references are not supported: {{albums:${index}}}`
     });
   }
-  assert.throws(() => renderCollections('{{albums:0}}', {}), {message:'Unknown record: albums:0'});
-  assert.throws(() => renderCollections('{{albums:0}}', {albums:[undefined]}), {message:'Unknown record: albums:0'});
+  assert.throws(() => renderCollections('{{album:phantom}}{{albums:7}}', {albums}), /Numeric album references are not supported/);
+  assert.throws(() => renderCollections('{{album:nightmare}}', {
+    albums:[{...albums[0], bodyTemplateHtml:'{{albums:0}}'}]
+  }), {message:'Numeric album references are not supported: {{albums:0}}'});
+});
+
+test('unknown and duplicate album IDs produce explicit build errors', () => {
+  for (const id of ['missing', '__proto__', '']) {
+    assert.throws(() => renderCollections(`{{album:${id}}}`, {albums}), {message:`Unknown album id: ${id}`});
+  }
+  assert.throws(() => renderCollections('{{album:phantom}}', {}), {message:'Unknown album id: phantom'});
+  assert.throws(() => renderCollections(page.contentHtml, {albums:[...albums, {...albums[0]}]}), {
+    message:`Duplicate album id: ${albums[0].id}`
+  });
+  assert.throws(() => renderCollections('{{album:phantom}}', {albums:[undefined]}), {message:'Invalid album id'});
+});
+
+test('other collections retain their numeric reference behavior', () => {
+  const record = {id:'sample', title:'Sample', attributesHtml:' id="sample"', bodyTemplateHtml:'<h3>{{title}}</h3>'};
+  const notice = {...record, date:'2026-01-01', year:2026};
+  assert.equal(renderCollections('{{notices:0}}', {notices:[notice]}), '<details id="sample"><h3>Sample</h3></details>');
+  assert.equal(renderCollections('{{memberships:1}}', {memberships:[record, record]}), '<article id="sample"><h3>Sample</h3></article>');
+  assert.equal(renderCollections('{{galleryCards:0}}', {galleryCards:[record]}), '<div id="sample"><h3>Sample</h3></div>');
+  const entry = {...record, href:'sample.html', category:'music', label:'Music', summary:'Summary', action:'Open'};
+  assert.equal(renderCollections('{{contentsEntries:0}}', {contentsEntries:[entry]}), '<a class="content-card contents-text-entry" href="sample.html" data-category="music"><small class="contents-entry-label">Music</small><h3>Sample</h3><p>Summary</p><span class="contents-entry-action">Open</span></a>');
+  assert.throws(() => renderCollections('{{memberships:99}}', {}), {message:'Unknown record: memberships:99'});
 });
